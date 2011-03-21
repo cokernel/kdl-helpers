@@ -12,5 +12,9 @@ module KDL
     def title
       @mets.dublin_core.xpath('//dc:title').first.content
     end
+
+    def creator
+      @mets.dublin_core.xpath('//dc:creator').first.content
+    end
   end
 end
