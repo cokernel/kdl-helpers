@@ -1,0 +1,106 @@
+KDL::DipMaker
+  #stage
+    copies the AIP to the DIPs directory
+    opens the METS file in place
+  #generate_tiles
+    create tiles files and removes master files if the METS file is loaded
+    updates the METS file with tile files (removing master representations) if the METS file is loaded
+    outputs an error message if the METS file is not loaded
+    outputs an error message if no tiler object is provided
+  #build
+    stages construction of the DIP
+    produces tiles for each master file
+    outputs the location of the DIP on success
+    outputs the usage note when the AIP directory is omitted
+    outputs the usage note when the DIPs directory is omitted
+    skips the usage note when all arguments are provided
+  #usage
+    outputs a short usage note
+KDL::Tiler
+  #command
+    sets the --input-directory option
+    sets the --output-directory option
+    sets the --no-move option
+    sets the --delete option
+    sets the --quiet option
+    allows the --file option
+    produces an entire command string
+  #run
+    when no explicit initialization is peformed
+      sends an error message to output
+      does not actually run the external tiler program
+    when full initialization is performed
+      actually runs the external tiler program
+      does not send an error message to output
+KDL::SolrMaker
+  METS header fields
+    repository
+      returns the <access_package:name> of the repository
+  Dublin Core fields
+    KDL Solr fields with only one occurrence allowed
+      #title
+        returns the value of the first <dc:title> element from input
+      #author
+        returns the value of the first <dc:creator> element from input
+      #publisher
+        returns the value of the first <dc:publisher> element from input
+      #format
+        returns the value of the first <dc:format> element from input
+      #description
+        returns the value of the first <dc:description> element from input
+      #type
+        returns the value of the first <dc:type> element from input
+      #usage
+        returns the value of the first <dc:rights> element from input
+      #language
+        returns the value of the first <dc:language> element from input
+    KDL Solr fields with multiple occurrences allowed
+      #subjects
+        returns a list of <dc:subject> values
+KDL::METS
+  #load
+    loads a METS file into memory
+  #save
+    makes a backup copy
+    does not change the METS file if nothing has changed
+    marks the file as unchanged
+  #ids
+    fetches the list of fileGrp identifiers
+  #add_file
+    adds the right file to the correct fileGrp in the fileSec
+    actually updates the METS file with the right file in the correct fileGrp
+    adds a file to the correct div in the structMap
+    marks the METS file as changed
+  #remove_file
+    removes a file from the correct fileGrp in the fileSec
+    removes a file from the correct div in the structMap
+    marks the METS file as changed
+  #file
+    returns the file for a given group and use
+  #href
+    returns the file location for a given group and use
+  #file_id
+    returns the file ID for a given group and use
+KDL::AipMaker
+  #build
+    builds the AIP in the requested directory
+    returns a valid Bag in the BagIt format
+    returns a Bag whose data directory matches the contents of the SIP
+    checks whether the checksums in the Bag match the contents of the SIP
+    returns a Bag whose checksums match the contents of the SIP
+    outputs the location of the AIP on success
+    outputs the usage note when the directory for AIPs is omitted
+    outputs the usage note when the identifier is omitted
+    outputs the usage note when the SIP location is omitted
+  #check_fixity
+    checks internal fixity of the AIP and compares with the SIP
+    outputs an error when SIP and AIP diverge
+    outputs an error when AIP fails fixity check
+  #usage
+    outputs a short usage note
+  #cleanup!
+    clears out the AIP directory
+
+Finished in 6.060049 seconds
+
+63 examples, 0 failures

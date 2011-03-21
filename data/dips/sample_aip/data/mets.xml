@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:rights="http://www.loc.gov/rights/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:lc="http://www.loc.gov/mets/profiles" xmlns:bib="http://www.loc.gov/mets/profiles/bibRecord" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OBJID="KUK-b92-188-30610060" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" PROFILE="lc:bibRecord">
+<metsHdr CREATEDATE="2011-03-07T00:00:00" LASTMODDATE="2011-03-07T00:00:00" RECORDSTATUS="Production">
+<mets:agent ROLE="CREATOR" TYPE="REPOSITORY">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS submitted to KDL.</mets:note>
+</mets:agent>
+<mets:agent ROLE="PRESERVATION" TYPE="ORGANIZATION">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS and associated file(s) submitted in University of Kentucky Preservation Repository.
+</mets:note>
+</mets:agent>
+<mets:altRecordID TYPE="DLXS">c=kyetexts;idno=b92-188-30610060</mets:altRecordID>
+</metsHdr>
+<mets:dmdSec ID="DMD1">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
+<mets:xmlData>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/     http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title xml:lang="en">Ode read August 15, 1907, at the dedication of the monument erected at Gloucester, Massachusetts, in commemoration of the founding of the Massachusetts Bay colony in the year sixteen hundred and twenty-three  / by Madison Cawein.</dc:title>
+  <dc:creator>Cawein, Madison Julius, 1865-1914.</dc:creator>
+  <dc:publisher>J.P. Morton, Louisville, Ky.</dc:publisher>
+  <dc:date>1908.</dc:date>
+  <dc:format>book</dc:format>
+  <dc:type>text</dc:type>
+  <dc:identifier>KUK-b92-188-30610060</dc:identifier>
+  <dc:language>english</dc:language>
+  <dc:rights xml:lang="en">This digital resource may be freely searched and displayed.  Permission must be received for subsequent distribution in print or electronically.  Physical rights are retained by the owning repository.  Copyright is retained in accordance with U. S. copyright laws.  Please go to http://kdl.kyvl.org for more information.</dc:rights>
+  <dc:description>25 p. ; 20 cm.; Microfilm. Atlanta, Ga. : SOLINET, 1994. 1 microfilm reel ; 35 mm. (SOLINET/ASERL Cooperative Microfilming Project (NEH PS-20317) ; SOL MN04382.08 KUK); Printing Master B92-188.; "On old Cape Ann": p. [17]-25.</dc:description>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:amdSec>
+  <mets:rightsMD ID="RMD1">
+    <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="RIGHTSMD">
+      <mets:xmlData>
+        <mets:versionStatement>2002</mets:versionStatement>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:rightsMD>
+<mets:rightsMD ID="ADMRTS1">
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+<mets:xmlData>
+<mets:RightsDeclarationMD RIGHTSCATEGORY="PUBLIC DOMAIN">
+<mets:Context CONTEXTCLASS="GENERAL PUBLIC">
+<mets:Constraints CONSTRAINTTYPE="RE-USE">
+<mets:ConstraintDescription>This volume is considered in the public domain in the United States without any constraints on use.</mets:ConstraintDescription>
+</mets:Constraints>
+</mets:Context>
+</mets:RightsDeclarationMD>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:rightsMD>
+</mets:amdSec>
+<mets:fileSec>
+<mets:fileGrp ID="FileGrp0001">
+
+<mets:file ID="OcrFile0001" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0001.txt" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="ThumbnailFile0001" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="0001/0001_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile0001" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="0001/0001.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile0001" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="0001/0001_tb.jpg" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+<mets:fileGrp ID="FileGrp0002">
+
+<mets:file ID="OcrFile0002" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0002.txt" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="ThumbnailFile0002" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="0002/0002_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile0002" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="0002/0002.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile0002" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="0002/0002_tb.jpg" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+<mets:fileGrp ID="FileGrp0003">
+
+<mets:file ID="OcrFile0003" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0003.txt" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="ThumbnailFile0003" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="0003/0003_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile0003" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="0003/0003.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile0003" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="0003/0003_tb.jpg" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+<mets:fileGrp ID="FileGrp0004">
+
+<mets:file ID="OcrFile0004" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0004.txt" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="ThumbnailFile0004" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="0004/0004_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile0004" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="0004/0004.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile0004" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="0004/0004_tb.jpg" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+</mets:fileSec>
+<mets:structMap TYPE="physical">
+<mets:div TYPE="page" LABEL="NA" ORDER="1">
+
+<mets:fptr FILEID="OcrFile0001"/>
+<mets:fptr FILEID="ThumbnailFile0001"/><mets:fptr FILEID="TiledImageFile0001"/><mets:fptr FILEID="TilesMetadataFile0001"/></mets:div>  
+<mets:div TYPE="page" LABEL="NA" ORDER="2">
+
+<mets:fptr FILEID="OcrFile0002"/>
+<mets:fptr FILEID="ThumbnailFile0002"/><mets:fptr FILEID="TiledImageFile0002"/><mets:fptr FILEID="TilesMetadataFile0002"/></mets:div>  
+<mets:div TYPE="page" LABEL="NA" ORDER="3">
+
+<mets:fptr FILEID="OcrFile0003"/>
+<mets:fptr FILEID="ThumbnailFile0003"/><mets:fptr FILEID="TiledImageFile0003"/><mets:fptr FILEID="TilesMetadataFile0003"/></mets:div>  
+<mets:div TYPE="page" LABEL="2" ORDER="4">
+
+<mets:fptr FILEID="OcrFile0004"/>
+<mets:fptr FILEID="ThumbnailFile0004"/><mets:fptr FILEID="TiledImageFile0004"/><mets:fptr FILEID="TilesMetadataFile0004"/></mets:div>  
+</mets:structMap>
+</mets:mets>

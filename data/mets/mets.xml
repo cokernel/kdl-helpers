@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:rights="http://www.loc.gov/rights/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:lc="http://www.loc.gov/mets/profiles" xmlns:bib="http://www.loc.gov/mets/profiles/bibRecord" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OBJID="KUK-b92-188-30610060" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" PROFILE="lc:bibRecord">
+<metsHdr CREATEDATE="2011-03-07T00:00:00" LASTMODDATE="2011-03-07T00:00:00" RECORDSTATUS="Production">
+<mets:agent ROLE="CREATOR" TYPE="REPOSITORY">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS submitted to KDL.</mets:note>
+</mets:agent>
+<mets:agent ROLE="PRESERVATION" TYPE="ORGANIZATION">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS and associated file(s) submitted in University of Kentucky Preservation Repository.
+</mets:note>
+</mets:agent>
+<mets:altRecordID TYPE="DLXS">c=kyetexts;idno=b92-188-30610060</mets:altRecordID>
+
+</metsHdr>
+<mets:dmdSec ID="DMD1">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
+<mets:xmlData>
+<oai_dc:dc 
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title xml:lang="en">Ode read August 15, 1907, at the dedication of the monument erected at Gloucester, Massachusetts, in commemoration of the founding of the Massachusetts Bay colony in the year sixteen hundred and twenty-three  / by Madison Cawein.</dc:title>
+  <dc:creator>Cawein, Madison Julius, 1865-1914.</dc:creator>
+  <dc:publisher>J.P. Morton, Louisville, Ky.</dc:publisher>
+  <dc:date>1908.</dc:date>
+  <dc:format>book</dc:format>
+  <dc:type>text</dc:type>
+  <dc:identifier>KUK-b92-188-30610060</dc:identifier>
+  <dc:language>english</dc:language>
+  <dc:rights xml:lang="en">This digital resource may be freely searched and displayed.  Permission must be received for subsequent distribution in print or electronically.  Physical rights are retained by the owning repository.  Copyright is retained in accordance with U. S. copyright laws.  Please go to http://kdl.kyvl.org for more information.</dc:rights>
+  <dc:description>25 p. ; 20 cm.; Microfilm. Atlanta, Ga. : SOLINET, 1994. 1 microfilm reel ; 35 mm. (SOLINET/ASERL Cooperative Microfilming Project (NEH PS-20317) ; SOL MN04382.08 KUK); Printing Master B92-188.; "On old Cape Ann": p. [17]-25.</dc:description>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:amdSec>
+  <mets:rightsMD ID="RMD1">
+    <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="RIGHTSMD">
+      <mets:xmlData>
+        <mets:versionStatement>2002</mets:versionStatement>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:rightsMD>
+<mets:rightsMD ID="ADMRTS1">
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+<mets:xmlData>
+<mets:RightsDeclarationMD RIGHTSCATEGORY="PUBLIC DOMAIN">
+<mets:Context CONTEXTCLASS="GENERAL PUBLIC">
+<mets:Constraints CONSTRAINTTYPE="RE-USE">
+<mets:ConstraintDescription>This volume is considered in the public domain in the United States without any constraints on use.</mets:ConstraintDescription>
+</mets:Constraints>
+</mets:Context>
+</mets:RightsDeclarationMD>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:rightsMD>
+</mets:amdSec>
+<mets:fileSec>
+<mets:fileGrp ID="FileGrp0001">
+<mets:file ID="MasterFile0001" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0001.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0001" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0001.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0002">
+<mets:file ID="MasterFile0002" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0002.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0002" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0002.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0003">
+<mets:file ID="MasterFile0003" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0003.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0003" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0003.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0004">
+<mets:file ID="MasterFile0004" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0004.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0004" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0004.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0005">
+<mets:file ID="MasterFile0005" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0005.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0005" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0005.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0006">
+<mets:file ID="MasterFile0006" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0006.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0006" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0006.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0007">
+<mets:file ID="MasterFile0007" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0007.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0007" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0007.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0008">
+<mets:file ID="MasterFile0008" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0008.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0008" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0008.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0009">
+<mets:file ID="MasterFile0009" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0009.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0009" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0009.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0010">
+<mets:file ID="MasterFile0010" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0010.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0010" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0010.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0011">
+<mets:file ID="MasterFile0011" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0011.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0011" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0011.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0012">
+<mets:file ID="MasterFile0012" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0012.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0012" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0012.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0013">
+<mets:file ID="MasterFile0013" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0013.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0013" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0013.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0014">
+<mets:file ID="MasterFile0014" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0014.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0014" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0014.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0015">
+<mets:file ID="MasterFile0015" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0015.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0015" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0015.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0016">
+<mets:file ID="MasterFile0016" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0016.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0016" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0016.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0017">
+<mets:file ID="MasterFile0017" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0017.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0017" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0017.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0018">
+<mets:file ID="MasterFile0018" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0018.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0018" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0018.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0019">
+<mets:file ID="MasterFile0019" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0019.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0019" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0019.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0020">
+<mets:file ID="MasterFile0020" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0020.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0020" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0020.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0021">
+<mets:file ID="MasterFile0021" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0021.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0021" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0021.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0022">
+<mets:file ID="MasterFile0022" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0022.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0022" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0022.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0023">
+<mets:file ID="MasterFile0023" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0023.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0023" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0023.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0024">
+<mets:file ID="MasterFile0024" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0024.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0024" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0024.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0025">
+<mets:file ID="MasterFile0025" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0025.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0025" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0025.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0026">
+<mets:file ID="MasterFile0026" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0026.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0026" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0026.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp0027">
+<mets:file ID="MasterFile0027" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="0027.tif" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="OcrFile0027" USE="ocr" MIMETYPE="text">
+<mets:FLocat xlink:href="0027.txt" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+</mets:fileSec>
+<mets:structMap TYPE="physical">
+<mets:div TYPE="page" LABEL="NA" ORDER="1">
+<fptr FILEID="MasterFile0001" />
+<fptr FILEID="OcrFile0001" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="NA" ORDER="2">
+<fptr FILEID="MasterFile0002" />
+<fptr FILEID="OcrFile0002" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="NA" ORDER="3">
+<fptr FILEID="MasterFile0003" />
+<fptr FILEID="OcrFile0003" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="2" ORDER="4">
+<fptr FILEID="MasterFile0004" />
+<fptr FILEID="OcrFile0004" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="3" ORDER="5">
+<fptr FILEID="MasterFile0005" />
+<fptr FILEID="OcrFile0005" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="4" ORDER="6">
+<fptr FILEID="MasterFile0006" />
+<fptr FILEID="OcrFile0006" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="5" ORDER="7">
+<fptr FILEID="MasterFile0007" />
+<fptr FILEID="OcrFile0007" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="6" ORDER="8">
+<fptr FILEID="MasterFile0008" />
+<fptr FILEID="OcrFile0008" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="7" ORDER="9">
+<fptr FILEID="MasterFile0009" />
+<fptr FILEID="OcrFile0009" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="8" ORDER="10">
+<fptr FILEID="MasterFile0010" />
+<fptr FILEID="OcrFile0010" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="9" ORDER="11">
+<fptr FILEID="MasterFile0011" />
+<fptr FILEID="OcrFile0011" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="10" ORDER="12">
+<fptr FILEID="MasterFile0012" />
+<fptr FILEID="OcrFile0012" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="11" ORDER="13">
+<fptr FILEID="MasterFile0013" />
+<fptr FILEID="OcrFile0013" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="12" ORDER="14">
+<fptr FILEID="MasterFile0014" />
+<fptr FILEID="OcrFile0014" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="13" ORDER="15">
+<fptr FILEID="MasterFile0015" />
+<fptr FILEID="OcrFile0015" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="14" ORDER="16">
+<fptr FILEID="MasterFile0016" />
+<fptr FILEID="OcrFile0016" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="15" ORDER="17">
+<fptr FILEID="MasterFile0017" />
+<fptr FILEID="OcrFile0017" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="16" ORDER="18">
+<fptr FILEID="MasterFile0018" />
+<fptr FILEID="OcrFile0018" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="NA" ORDER="19">
+<fptr FILEID="MasterFile0019" />
+<fptr FILEID="OcrFile0019" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="NA" ORDER="20">
+<fptr FILEID="MasterFile0020" />
+<fptr FILEID="OcrFile0020" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="NA" ORDER="21">
+<fptr FILEID="MasterFile0021" />
+<fptr FILEID="OcrFile0021" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="20" ORDER="22">
+<fptr FILEID="MasterFile0022" />
+<fptr FILEID="OcrFile0022" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="21" ORDER="23">
+<fptr FILEID="MasterFile0023" />
+<fptr FILEID="OcrFile0023" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="22" ORDER="24">
+<fptr FILEID="MasterFile0024" />
+<fptr FILEID="OcrFile0024" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="23" ORDER="25">
+<fptr FILEID="MasterFile0025" />
+<fptr FILEID="OcrFile0025" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="24" ORDER="26">
+<fptr FILEID="MasterFile0026" />
+<fptr FILEID="OcrFile0026" />
+</mets:div>  
+<mets:div TYPE="page" LABEL="25" ORDER="27">
+<fptr FILEID="MasterFile0027" />
+<fptr FILEID="OcrFile0027" />
+</mets:div>  
+</mets:structMap>
+</mets:mets>
