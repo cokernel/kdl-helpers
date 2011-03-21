@@ -4,8 +4,6 @@ module KDL
   class SolrMaker
     def initialize(output, access_package)
       @access_package = access_package
-      #@mets = mets
-      #@dublin_core = @mets.dublin_core
     end
 
     def self.dublin_core_export(dc_field, solr_field=nil, count=1)

@@ -92,6 +92,9 @@ KDL::SolrMaker
     KDL Solr fields with multiple occurrences allowed
       #subjects
         returns a list of <dc:subject> values
+  Index-specific fields
+    #id
+      retrieves the identifier for the object (PENDING: waiting on AipMaker changes)
 KDL::METS
   #load
     loads a METS file into memory
@@ -138,6 +141,11 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.174963 seconds
+Pending:
 
-80 examples, 0 failures
+KDL::SolrMaker Index-specific fields#id retrieves the identifier for the object (waiting on AipMaker changes)
+/opt/pdp/services/src/kdl-helpers/spec/kdl/solr_maker_spec.rb:58
+
+Finished in 5.62942 seconds
+
+81 examples, 0 failures, 1 pending

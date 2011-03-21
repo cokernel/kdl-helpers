@@ -52,5 +52,13 @@ module KDL
         end
       end
     end
+
+    context "Index-specific fields" do
+      describe "#id" do
+        it "retrieves the identifier for the object" do
+          pending('waiting on AipMaker changes')
+        end
+      end
+    end
   end
 end
