@@ -7,23 +7,34 @@ module KDL
     let (:dip_directory) { File.join(dips_directory, dip_id) }
     let (:mets_file) { File.join(dip_directory, 'data', 'mets.xml') }
 
-    describe "#title" do
-      it "returns the value of the first <dc:title> element from input" do
-        access_package = AccessPackage.new(dip_directory)
-        xml = Nokogiri::XML(open(mets_file))
-        dublin_core = Nokogiri::XML(xml.xpath('//oai_dc:dc').first.to_s)
-        title = dublin_core.xpath('//dc:title').first.content
-        access_package.title.should == title
-      end
-    end
-
-    describe "#creator" do
-      it "returns the value of the first <dc:creator> element from input" do
-        access_package = AccessPackage.new(dip_directory)
-        xml = Nokogiri::XML(open(mets_file))
-        dublin_core = Nokogiri::XML(xml.xpath('//oai_dc:dc').first.to_s)
-        creator = dublin_core.xpath('//dc:creator').first.content
-        access_package.creator.should == creator
+    context "Dublin Core access" do
+      [
+        'dc_contributor',
+        'dc_coverage',
+        'dc_creator',
+        'dc_date',
+        'dc_description',
+        'dc_format',
+        'dc_identifier',
+        'dc_language',
+        'dc_publisher',
+        'dc_relation',
+        'dc_rights',
+        'dc_source',
+        'dc_subject',
+        'dc_title',
+        'dc_type',
+      ].each do |dc_field|
+        field = dc_field.sub(/dc_/, '')
+        describe "#{dc_field}" do
+          it "returns a list of all <dc:#{field}> elements from input" do
+            access_package = AccessPackage.new(dip_directory)
+            xml = Nokogiri::XML(open(mets_file))
+            dublin_core = Nokogiri::XML(xml.xpath('//oai_dc:dc').first.to_s)
+            expected = dublin_core.xpath("//dc:#{field}").collect { |n| n.content }
+            access_package.send(dc_field).should == expected
+          end
+        end
       end
     end
   end

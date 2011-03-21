@@ -9,12 +9,12 @@ module KDL
       @mets.load @mets_file
     end
 
-    def title
-      @mets.dublin_core.xpath('//dc:title').first.content
-    end
-
-    def creator
-      @mets.dublin_core.xpath('//dc:creator').first.content
+    def method_missing(name, *args)
+      dc_field = name.to_s
+      if dc_field =~ /^dc_/
+        query = "//dc:#{dc_field.sub(/^dc_/, '')}"
+        @mets.dublin_core.xpath(query).collect { |n| n.content }
+      end
     end
   end
 end
