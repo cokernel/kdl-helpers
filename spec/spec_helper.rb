@@ -1,8 +1,13 @@
+require 'open3'
 require 'rubygems'
 require 'bagit'
 require 'find'
 require 'kdl'
+require 'lorax'
+require 'nokogiri'
 require 'pathname'
+require 'rails'
+
 require 'tempfile'
 
 class Sandbox
