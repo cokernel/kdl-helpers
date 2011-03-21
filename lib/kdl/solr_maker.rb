@@ -2,34 +2,37 @@ require 'spec/spec_helper'
 
 module KDL
   class SolrMaker
-    def initialize(output, mets)
-      @mets = mets
-      @dublin_core = @mets.dublin_core
+    def initialize(output, access_package)
+      @access_package = access_package
+      #@mets = mets
+      #@dublin_core = @mets.dublin_core
     end
 
-    def self.dublin_core_export(dc_field, solr_field=nil)
+    def self.dublin_core_export(dc_field, solr_field=nil, count=1)
       method_name = solr_field ? solr_field : dc_field
-      define_method(method_name) {
-        @dublin_core.send(dc_field)
-      }
+      if count == 1
+        define_method(method_name) {
+          @access_package.send(dc_field).first
+        }
+      else
+        define_method(method_name) {
+          @access_package.send(dc_field)
+        }
+      end
     end
 
-    def self.mets_export(mets_field, solr_field=nil)
-      method_name = solr_field ? solr_field : mets_field
-      define_method(method_name) {
-        @mets.send(mets_field)
-      }
+    def repository 
+      @access_package.repository
     end
 
-    dublin_core_export :title
-    dublin_core_export :publisher
-    dublin_core_export :format
-    dublin_core_export :description
-    dublin_core_export :type
-    dublin_core_export :language
-    dublin_core_export :subjects
-    dublin_core_export :creator, :author
-    dublin_core_export :rights, :usage
-    mets_export        :repository
+    dublin_core_export :dc_title, :title
+    dublin_core_export :dc_publisher, :publisher
+    dublin_core_export :dc_format, :format
+    dublin_core_export :dc_description, :description
+    dublin_core_export :dc_type, :type
+    dublin_core_export :dc_language, :language
+    dublin_core_export :dc_creator, :author
+    dublin_core_export :dc_rights, :usage
+    dublin_core_export :dc_subjects, :subjects, '*'
   end
 end

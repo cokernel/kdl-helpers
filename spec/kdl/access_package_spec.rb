@@ -37,5 +37,16 @@ module KDL
         end
       end
     end
+
+    context "METS file access" do
+      describe "#repository" do
+        it "returns the repository" do
+          access_package = AccessPackage.new dip_directory
+          mets = METS.new
+          mets.load mets_file
+          access_package.repository.should == mets.mets.xpath('//mets:agent[@TYPE="REPOSITORY"]/mets:name').first.content
+        end
+      end
+    end
   end
 end

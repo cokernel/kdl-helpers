@@ -16,5 +16,10 @@ module KDL
         @mets.dublin_core.xpath(query).collect { |n| n.content }
       end
     end
+
+    def repository
+      query = '//mets:agent[@TYPE="REPOSITORY"]/mets:name'
+      @mets.mets.xpath(query).first.content
+    end
   end
 end

@@ -3,12 +3,17 @@ require 'spec_helper'
 module KDL
   describe SolrMaker do
     let(:output) { double('output').as_null_object }
-    let(:access_package) { double('access_package').as_null_object }
-    let(:dublin_core) { double('dublin_core') }
+    let(:dips_directory) { File.join('data', 'dips') }
+    let(:dip_id) { 'sample_aip' }
+    let(:dip_directory) { File.join(dips_directory, dip_id) }
+    let(:access_package) { AccessPackage.new dip_directory }
+    let(:mets) { Nokogiri::XML(open(File.join(dip_directory, 'data', 'mets.xml'))) }
+    let(:dublin_core) { Nokogiri::XML(mets.xpath('//oai_dc:dc').first.to_s) }
+
 
     context "METS header fields" do
       describe "repository" do
-        it "returns the <access_package:name> of the repository" do
+        it "returns the <mets:name> of the repository" do
           access_package.stub(:repository).and_return(fake_sentence)
           solr_maker = SolrMaker.new output, access_package
           solr_maker.repository.should == access_package.repository
@@ -19,21 +24,20 @@ module KDL
     context "Dublin Core fields" do
       context "KDL Solr fields with only one occurrence allowed" do
         [
-          [:title, :title],
-          [:creator, :author],
-          [:publisher, :publisher],
-          [:format, :format],
-          [:description, :description],
-          [:type, :type],
-          [:rights, :usage],
-          [:language, :language],
+          [:dc_title, :title],
+          [:dc_creator, :author],
+          [:dc_publisher, :publisher],
+          [:dc_format, :format],
+          [:dc_description, :description],
+          [:dc_type, :type],
+          [:dc_rights, :usage],
+          [:dc_language, :language],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
-            it "returns the value of the first <dc:#{dc_field}> element from input" do
-              dublin_core.stub(dc_field).and_return(fake_sentence)
+            it "returns the value of the first <dc:#{dc_field.to_s.sub(/^dc_/, '')}> element from input" do
               access_package.stub(:dublin_core).and_return(dublin_core)
               solr_maker = SolrMaker.new output, access_package
-              solr_maker.send(solr_field).should == dublin_core.send(dc_field)
+              solr_maker.send(solr_field).should == dublin_core.xpath("//dc:#{dc_field.to_s.sub(/^dc_/, '')}").collect { |n| n.content }.first
             end
           end
         end
@@ -42,14 +46,9 @@ module KDL
       context "KDL Solr fields with multiple occurrences allowed" do
         describe "#subjects" do
           it "returns a list of <dc:subject> values" do
-            subjects = Array.new
-            27.times do
-              subjects << fake_sentence
-            end
-            dublin_core.stub(:subjects).and_return(subjects)
             access_package.stub(:dublin_core).and_return(dublin_core)
             solr_maker = SolrMaker.new output, access_package
-            solr_maker.send(:subjects).should == dublin_core.send(:subjects)
+            solr_maker.send(:subjects).should == dublin_core.xpath("//dc:subject").collect { |n| n.content }
           end
         end
       end

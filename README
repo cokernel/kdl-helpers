@@ -32,10 +32,45 @@ KDL::Tiler
     when full initialization is performed
       actually runs the external tiler program
       does not send an error message to output
+KDL::AccessPackage
+  Dublin Core access
+    dc_contributor
+      returns a list of all <dc:contributor> elements from input
+    dc_coverage
+      returns a list of all <dc:coverage> elements from input
+    dc_creator
+      returns a list of all <dc:creator> elements from input
+    dc_date
+      returns a list of all <dc:date> elements from input
+    dc_description
+      returns a list of all <dc:description> elements from input
+    dc_format
+      returns a list of all <dc:format> elements from input
+    dc_identifier
+      returns a list of all <dc:identifier> elements from input
+    dc_language
+      returns a list of all <dc:language> elements from input
+    dc_publisher
+      returns a list of all <dc:publisher> elements from input
+    dc_relation
+      returns a list of all <dc:relation> elements from input
+    dc_rights
+      returns a list of all <dc:rights> elements from input
+    dc_source
+      returns a list of all <dc:source> elements from input
+    dc_subject
+      returns a list of all <dc:subject> elements from input
+    dc_title
+      returns a list of all <dc:title> elements from input
+    dc_type
+      returns a list of all <dc:type> elements from input
+  METS file access
+    #repository
+      returns the repository
 KDL::SolrMaker
   METS header fields
     repository
-      returns the <access_package:name> of the repository
+      returns the <mets:name> of the repository
   Dublin Core fields
     KDL Solr fields with only one occurrence allowed
       #title
@@ -81,6 +116,8 @@ KDL::METS
     returns the file location for a given group and use
   #file_id
     returns the file ID for a given group and use
+  #dublin_core
+    retrieves the Dublin Core metadata from the document
 KDL::AipMaker
   #build
     builds the AIP in the requested directory
@@ -101,6 +138,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.060049 seconds
+Finished in 6.009729 seconds
 
-63 examples, 0 failures
+80 examples, 0 failures
