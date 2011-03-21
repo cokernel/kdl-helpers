@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'kdl'
+
+aip_directory, dips_directory = ARGV[0], ARGV[1]
+dipmaker = KDL::DipMaker.new STDOUT, aip_directory, dips_directory
+dipmaker.build
