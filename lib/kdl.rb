@@ -1,4 +1,6 @@
+require 'kdl/access_package'
 require 'kdl/aip_maker'
 require 'kdl/dip_maker'
 require 'kdl/mets'
+require 'kdl/solr_maker'
 require 'kdl/tiler'
