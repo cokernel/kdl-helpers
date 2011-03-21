@@ -14,7 +14,6 @@ module KDL
     context "METS header fields" do
       describe "repository" do
         it "returns the <mets:name> of the repository" do
-          access_package.stub(:repository).and_return(fake_sentence)
           solr_maker = SolrMaker.new output, access_package
           solr_maker.repository.should == access_package.repository
         end
@@ -54,14 +53,4 @@ module KDL
       end
     end
   end
-end
-
-def fake_sentence
-  words = []
-  (1 + rand(10)).times do
-    words << Array.new(1 + rand(7)) { 
-      (rand(122-97) + 97).chr 
-    }.join
-  end
-  words.join(' ')
 end
