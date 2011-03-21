@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'kdl'
+
+sip_directory, identifier, base_dir = ARGV[0], ARGV[1], ARGV[2]
+aipmaker = KDL::AipMaker.new STDOUT, sip_directory, identifier, base_dir
+aipmaker.build
