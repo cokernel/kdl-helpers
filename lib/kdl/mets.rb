@@ -30,6 +30,10 @@ module KDL
       @mets_changed = false
     end
 
+    def dublin_core
+      Nokogiri::XML(@mets.xpath('//oai_dc:dc').first.to_s)
+    end
+
     def backup
       @backup_file = [
         @mets_file,

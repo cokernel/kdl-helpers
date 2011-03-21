@@ -155,6 +155,13 @@ module KDL
         got_file_id.should == expected_file_id
       end
     end
+
+    describe "#dublin_core" do
+      it "retrieves the Dublin Core metadata from the document" do
+        expected = Nokogiri::XML(@mets.mets.xpath("//oai_dc:dc").first.to_s)
+        signatures_should_match(@mets.dublin_core, expected)
+      end
+    end
   end
 end
 
