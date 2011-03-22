@@ -99,6 +99,7 @@ module KDL
             :usage,
             :publisher,
             :parent_id,
+            :repository,
             :format,
             :type,
           ].each do |solr_field| 
