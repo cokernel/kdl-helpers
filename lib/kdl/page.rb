@@ -11,14 +11,18 @@ module KDL
     def page_fields
       hash = {}
       [
+        :id,
         :page_number,
         :sequence_number,
-        :text_href,
         :text,
       ].each do |page_field|
         hash[page_field] = send(page_field)
       end
       hash
+    end
+
+    def id
+      "#{@identifier}_#{sequence_number}"
     end
 
     def sequence_number

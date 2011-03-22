@@ -14,6 +14,7 @@ module KDL
         it "creates a hash of fields common to all pages" do
           page.stub(:text).and_return('howdy')
           [
+            :id,
             :page_number,
             :sequence_number,
             :text,
@@ -35,6 +36,13 @@ module KDL
             mets.should_receive(page_field)
             page.send(page_field)
           end
+        end
+      end
+
+      describe "#id" do
+        it "constructs an identifier for an individual page" do
+          expected = "#{identifier}_#{page.sequence_number}"
+          page.id.should == expected
         end
       end
 
