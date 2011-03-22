@@ -104,12 +104,21 @@ module KDL
     end
 
     def div(options)
-      query = "//mets:div[mets:fptr[@FILEID='#{options[:master_id]}']]"
+      if options.has_key?(:master_id)
+        query = "//mets:div[mets:fptr[@FILEID='#{options[:master_id]}']]"
+      elsif options.has_key?(:fileGrp_id)
+        id = file(:fileGrp => options[:fileGrp_id]).first['ID']
+        query = "//mets:div[mets:fptr[@FILEID='#{id}']]"
+      end
       @mets.xpath(query)
     end
 
     def file(options)
-      query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']"
+      if options.has_key?(:use)
+        query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']"
+      else
+        query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file"
+      end
       @mets.xpath(query)
     end
 
@@ -128,6 +137,10 @@ module KDL
     def file_id(options)
       query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']/@ID"
       @mets.xpath(query).to_s
+    end
+
+    def sequence_number(identifier)
+      div(:fileGrp_id => identifier).first['ORDER']
     end
   end
 end

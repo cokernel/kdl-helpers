@@ -168,6 +168,17 @@ module KDL
         @mets.repository.should == @mets.mets.xpath('//mets:agent[@TYPE="REPOSITORY"]/mets:name').first.content
       end
     end
+
+    context "item-level metadata" do
+      describe "#sequence_number" do
+        it "returns the sequence number for a given id" do
+          identifier = @mets.ids.first
+          div = @mets.div :fileGrp_id => identifier
+          expected = div.first['ORDER']
+          @mets.sequence_number(identifier).should == expected
+        end
+      end
+    end
   end
 end
 

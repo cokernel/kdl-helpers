@@ -32,6 +32,10 @@ KDL::Tiler
     when full initialization is performed
       actually runs the external tiler program
       does not send an error message to output
+KDL::Page
+  Page-specific metadata
+    #sequence_number
+      delegates to METS
 KDL::AccessPackage
   Dublin Core access
     dc_contributor
@@ -150,6 +154,9 @@ KDL::METS
     retrieves the Dublin Core metadata from the document
   #repository
     returns the repository
+  item-level metadata
+    #sequence_number
+      returns the sequence number for a given id
 KDL::AipMaker
   #build
     builds the AIP in the requested directory
@@ -170,6 +177,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.964473 seconds
+Finished in 5.88999 seconds
 
-102 examples, 0 failures
+104 examples, 0 failures
