@@ -43,6 +43,8 @@ KDL::Page
       delegates to METS
     text_href
       delegates to METS
+    #text
+      retrieves the text from the DIP directory
 KDL::AccessPackage
   Dublin Core access
     dc_contributor
@@ -188,6 +190,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.121604 seconds
+Finished in 6.190506 seconds
 
-109 examples, 0 failures
+110 examples, 0 failures

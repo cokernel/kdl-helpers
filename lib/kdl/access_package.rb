@@ -13,7 +13,7 @@ module KDL
 
     def pages
       @mets.ids.collect do |id|
-        Page.new @mets, id
+        Page.new @mets, id, @dip_directory
       end
     end
 

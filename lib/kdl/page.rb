@@ -2,9 +2,10 @@ require 'spec/spec_helper'
 
 module KDL
   class Page
-    def initialize(mets, identifier)
+    def initialize(mets, identifier, dip_directory)
       @mets = mets
       @identifier = identifier
+      @dip_directory = dip_directory
     end
 
     def page_fields
@@ -25,6 +26,12 @@ module KDL
 
     def page_number
       @mets.page_number @identifier
+    end
+
+    def text
+      IO.read(File.join(@dip_directory, 
+                        'data', 
+                        text_href))
     end
 
     def text_href
