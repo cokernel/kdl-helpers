@@ -4,8 +4,9 @@ module KDL
   describe Page do
     context "Page-specific metadata" do
       [
-        :sequence_number,
         :page_number,
+        :sequence_number,
+        :text_href,
       ].each do |page_field| 
         describe "#{page_field}" do
           it "delegates to METS" do

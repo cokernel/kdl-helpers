@@ -14,5 +14,9 @@ module KDL
     def page_number
       @mets.page_number @identifier
     end
+
+    def text_href
+      @mets.text_href @identifier
+    end
   end
 end

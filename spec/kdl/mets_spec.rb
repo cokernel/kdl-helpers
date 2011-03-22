@@ -187,6 +187,15 @@ module KDL
           @mets.page_number(identifier).should == expected
         end
       end
+
+      describe "#text_href" do
+        it "returns the text location for a given id" do
+          identifier = @mets.ids.first
+          expected = @mets.href :fileGrp => identifier,
+                                :use => 'ocr'
+          @mets.text_href(identifier).should == expected
+        end
+      end
     end
   end
 end
