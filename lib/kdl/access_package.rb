@@ -11,6 +11,10 @@ module KDL
       @mets.load @mets_file
     end
 
+    def identifier
+      File.basename(@dip_directory)
+    end
+
     def pages(solr_doc)
       @mets.ids.collect do |id|
         Page.new @mets, id, @dip_directory, solr_doc

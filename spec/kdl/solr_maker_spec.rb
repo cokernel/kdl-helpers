@@ -9,10 +9,14 @@ module KDL
     let(:dip_id) { 'sample_aip' }
     let(:solr_directory) { File.join(solrs_directory, dip_id) }
 
+    before(:each) do
+      access_package.stub(:identifier).and_return(dip_id)
+    end
+
     context "METS header fields" do
       describe "#repository" do
         it "delegates to AccessPackage" do
-          solr_maker = SolrMaker.new output, access_package, solr_directory
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
           access_package.should_receive(:repository)
           solr_maker.repository
         end
@@ -20,7 +24,7 @@ module KDL
 
       describe "#date_digitized" do
         it "delegates to AccessPackage" do
-          solr_maker = SolrMaker.new output, access_package, solr_directory
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
           access_package.should_receive(:date_digitized)
           solr_maker.date_digitized
         end
@@ -47,7 +51,7 @@ module KDL
           :dc_type,
         ].each do |dc_field|
           it "delegates fetching <#{dc_field.to_s.sub(/_/, ':')}> to AccessPackage" do
-            solr_maker = SolrMaker.new output, access_package, solr_directory
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
             access_package.should_receive(dc_field)
             solr_maker.send(dc_field)
           end
@@ -69,7 +73,7 @@ module KDL
           describe "##{solr_field}" do
             it "delegates fetching #{solr_field} to AccessPackage" do
               access_package.stub(dc_field).and_return(['sample', 'output'])
-              solr_maker = SolrMaker.new output, access_package, solr_directory
+              solr_maker = SolrMaker.new output, access_package, solrs_directory
               solr_maker.send(solr_field).should == access_package.send(dc_field).first
             end
           end
@@ -80,7 +84,7 @@ module KDL
         describe "#subjects" do
           it "delegates to AccessPackage" do
             access_package.stub(:dc_subject).and_return(['one', 'two', 'three'])
-            solr_maker = SolrMaker.new output, access_package, solr_directory
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
             solr_maker.subjects.should == access_package.dc_subject
           end
         end
@@ -91,7 +95,7 @@ module KDL
       describe "#parent_id" do
         it "delegates to AccessPackage" do
           access_package.stub(:dc_identifier).and_return(['sample_identifier'])
-          solr_maker = SolrMaker.new output, access_package, solr_directory
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
           solr_maker.parent_id.should == 'sample_identifier'
         end
       end
@@ -100,7 +104,7 @@ module KDL
     context "Export" do
       describe "#save" do
         it "passes save to each page" do
-          solr_maker = SolrMaker.new output, access_package, solr_directory
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
           solr_maker.stub(:pages).and_return([double('page').as_null_object])
           solr_maker.pages.each do |page|
             page.should_receive(:save).with(solr_directory)
@@ -111,7 +115,7 @@ module KDL
 
       describe "#solr_doc" do
         it "creates a hash of fields common to all pages" do
-          solr_maker = SolrMaker.new output, access_package, solr_directory
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
           [
             :author,
             :title,
@@ -133,7 +137,7 @@ module KDL
 
       describe "#pages" do
         it "delegates to AccessPackage" do
-          solr_maker = SolrMaker.new output, access_package, solr_directory
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
           access_package.should_receive(:pages)
           solr_maker.pages
         end

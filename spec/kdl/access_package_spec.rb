@@ -73,5 +73,14 @@ module KDL
         end
       end
     end
+    
+    context "package information" do
+      describe "#identifier" do
+        it "returns the package identifier for the DIP" do
+          access_package = AccessPackage.new dip_directory
+          access_package.identifier.should == File.basename(dip_directory)
+        end
+      end
+    end
   end
 end

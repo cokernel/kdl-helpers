@@ -2,9 +2,10 @@ require 'spec/spec_helper'
 
 module KDL
   class SolrMaker
-    def initialize(output, access_package, solr_directory)
+    def initialize(output, access_package, solrs_directory)
       @access_package = access_package
-      @solr_directory = solr_directory
+      @solrs_directory = solrs_directory
+      @solr_directory = File.join(@solrs_directory, @access_package.identifier)
     end
 
     def save

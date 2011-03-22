@@ -90,6 +90,9 @@ KDL::AccessPackage
       delegates to the METS object
     #pages
       returns an array of Page objects
+  package information
+    #identifier
+      returns the package identifier for the DIP
 KDL::SolrMaker
   METS header fields
     #repository
@@ -202,6 +205,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.193483 seconds
+Finished in 6.244657 seconds
 
-116 examples, 0 failures
+117 examples, 0 failures
