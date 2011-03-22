@@ -7,7 +7,7 @@ module KDL
     let(:dips_directory) { File.join('data', 'dips') }
     let(:dip_id) { 'sample_aip' }
     let(:dip_directory) { File.join(dips_directory, dip_id) }
-    let(:page) { Page.new mets, identifier, dip_directory }
+    let(:page) { Page.new mets, identifier, dip_directory, Hash.new }
 
     context "Export" do
       describe "#page_fields" do
@@ -50,7 +50,7 @@ module KDL
         it "retrieves the text from the DIP directory" do
           mets = METS.new
           mets.load File.join(dip_directory, 'data', 'mets.xml')
-          page = Page.new mets, identifier, dip_directory
+          page = Page.new mets, identifier, dip_directory, Hash.new
           file = File.join(dip_directory, 'data', page.text_href)
           page.text.should == IO.read(file)
         end

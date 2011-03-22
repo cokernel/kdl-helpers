@@ -58,7 +58,7 @@ module KDL
       describe "#pages" do
         it "returns an array of Page objects" do
           access_package = AccessPackage.new dip_directory
-          pages = access_package.pages
+          pages = access_package.pages Hash.new
           pages.each do |page|
             page.class.should == Page
           end

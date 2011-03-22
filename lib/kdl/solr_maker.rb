@@ -39,7 +39,7 @@ module KDL
     end
 
     def pages
-      @access_package.pages
+      @access_package.pages solr_doc
     end
 
     def method_missing(name, *args)

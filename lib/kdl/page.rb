@@ -2,23 +2,23 @@ require 'spec/spec_helper'
 
 module KDL
   class Page
-    def initialize(mets, identifier, dip_directory)
+    def initialize(mets, identifier, dip_directory, solr_doc)
       @mets = mets
       @identifier = identifier
       @dip_directory = dip_directory
+      @solr_doc = solr_doc
     end
 
     def page_fields
-      hash = {}
       [
         :id,
         :page_number,
         :sequence_number,
         :text,
       ].each do |page_field|
-        hash[page_field] = send(page_field)
+        @solr_doc[page_field] = send(page_field)
       end
-      hash
+      @solr_doc
     end
 
     def id
