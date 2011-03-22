@@ -15,9 +15,12 @@ module KDL
     end
 
     context "METS header fields" do
-      describe "repository" do
-        it "returns the <mets:name> of the repository" do
-          @solr_maker.repository.should == @access_package.repository
+      describe "#repository" do
+        it "delegates to AccessPackage" do
+          access_package = double('access_package')
+          solr_maker = SolrMaker.new output, access_package
+          access_package.should_receive(:repository)
+          solr_maker.repository
         end
       end
     end

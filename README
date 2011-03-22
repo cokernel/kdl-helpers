@@ -69,8 +69,8 @@ KDL::AccessPackage
       returns the repository
 KDL::SolrMaker
   METS header fields
-    repository
-      returns the <mets:name> of the repository
+    #repository
+      delegates to AccessPackage
   Dublin Core fields
     KDL Solr fields with only one occurrence allowed
       #title
@@ -141,6 +141,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.613236 seconds
+Finished in 5.85646 seconds
 
 81 examples, 0 failures
