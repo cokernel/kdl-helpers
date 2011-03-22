@@ -32,6 +32,7 @@ module KDL
         :publisher,
         :parent_id,
         :repository,
+        :date_digitized,
         :format,
         :type,
       ].each do |solr_field|
