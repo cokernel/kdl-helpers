@@ -33,6 +33,9 @@ KDL::Tiler
       actually runs the external tiler program
       does not send an error message to output
 KDL::Page
+  Export
+    #page_fields
+      creates a hash of fields common to all pages
   Page-specific metadata
     page_number
       delegates to METS
@@ -185,6 +188,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.564476 seconds
+Finished in 6.121604 seconds
 
-108 examples, 0 failures
+109 examples, 0 failures
