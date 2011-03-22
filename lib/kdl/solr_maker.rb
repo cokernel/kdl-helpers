@@ -23,7 +23,7 @@ module KDL
       @access_package.repository
     end
 
-    def id
+    def parent_id
       @access_package.dc_identifier.first
     end
 

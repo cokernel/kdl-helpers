@@ -54,11 +54,11 @@ module KDL
     end
 
     context "Index-specific fields" do
-      describe "#id" do
-        it "retrieves the identifier for the object" do
+      describe "#parent_id" do
+        it "retrieves the identifier for the container object" do
           access_package.stub(:dublin_core).and_return(dublin_core)
           solr_maker = SolrMaker.new output, access_package
-          solr_maker.id.should == dublin_core.xpath("//dc:identifier").collect { |n| n.content }.first
+          solr_maker.parent_id.should == dublin_core.xpath("//dc:identifier").collect { |n| n.content }.first
         end
       end
     end
