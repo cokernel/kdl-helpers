@@ -13,7 +13,7 @@ module KDL
       @output.puts "Usage: solrmaker <DIP directory> <SOLR exports directory>"
     end
 
-    def save
+    def build
       pages.each do |page|
         page.save @solr_directory
       end

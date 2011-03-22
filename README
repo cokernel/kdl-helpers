@@ -153,7 +153,7 @@ KDL::SolrMaker
     #parent_id_s
       delegates to AccessPackage
   Export
-    #save
+    #build
       passes save to each page
     #solr_doc
       creates a hash of fields common to all pages
@@ -216,6 +216,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 7.587148 seconds
+Finished in 5.925038 seconds
 
 122 examples, 0 failures

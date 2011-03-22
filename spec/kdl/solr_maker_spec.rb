@@ -116,14 +116,14 @@ module KDL
     end
 
     context "Export" do
-      describe "#save" do
+      describe "#build" do
         it "passes save to each page" do
           solr_maker = SolrMaker.new output, access_package, solrs_directory
           solr_maker.stub(:pages).and_return([double('page').as_null_object])
           solr_maker.pages.each do |page|
             page.should_receive(:save).with(solr_directory)
           end
-          solr_maker.save
+          solr_maker.build
         end
       end
 
