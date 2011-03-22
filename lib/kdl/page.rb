@@ -7,6 +7,18 @@ module KDL
       @identifier = identifier
     end
 
+    def page_fields
+      hash = {}
+      [
+        :page_number,
+        :sequence_number,
+        :text_href,
+      ].each do |page_field|
+        hash[page_field] = send(page_field)
+      end
+      hash
+    end
+
     def sequence_number
       @mets.sequence_number @identifier
     end
