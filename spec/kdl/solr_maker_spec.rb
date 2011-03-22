@@ -56,7 +56,9 @@ module KDL
     context "Index-specific fields" do
       describe "#id" do
         it "retrieves the identifier for the object" do
-          pending('waiting on AipMaker changes')
+          access_package.stub(:dublin_core).and_return(dublin_core)
+          solr_maker = SolrMaker.new output, access_package
+          solr_maker.id.should == dublin_core.xpath("//dc:identifier").collect { |n| n.content }.first
         end
       end
     end

@@ -23,6 +23,10 @@ module KDL
       @access_package.repository
     end
 
+    def id
+      @access_package.dc_identifier.first
+    end
+
     dublin_core_export :dc_title, :title
     dublin_core_export :dc_publisher, :publisher
     dublin_core_export :dc_format, :format
