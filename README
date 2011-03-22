@@ -39,9 +39,9 @@ KDL::Page
     #page_fields
       creates a hash of fields common to all pages
   Page-specific metadata
-    page_number
+    page_number_display
       delegates to METS
-    sequence_number
+    sequence_number_display
       delegates to METS
     text_href
       delegates to METS
@@ -98,9 +98,9 @@ KDL::SolrMaker
     #help
       outputs a short usage note
   METS header fields
-    #repository
+    #repository_s
       delegates to AccessPackage
-    #date_digitized
+    #date_digitized_display
       delegates to AccessPackage
   Dublin Core fields
     fetching
@@ -120,29 +120,37 @@ KDL::SolrMaker
       delegates fetching <dc:title> to AccessPackage
       delegates fetching <dc:type> to AccessPackage
     KDL Solr fields with only one occurrence allowed
-      #title
-        delegates fetching title to AccessPackage
-      #author
-        delegates fetching author to AccessPackage
-      #publisher
-        delegates fetching publisher to AccessPackage
-      #format
-        delegates fetching format to AccessPackage
-      #description
-        delegates fetching description to AccessPackage
-      #type
-        delegates fetching type to AccessPackage
-      #usage
-        delegates fetching usage to AccessPackage
-      #language
-        delegates fetching language to AccessPackage
-      #date
-        delegates fetching date to AccessPackage
+      #title_t
+        delegates fetching title_t to AccessPackage
+      #title_display
+        delegates fetching title_display to AccessPackage
+      #author_t
+        delegates fetching author_t to AccessPackage
+      #author_display
+        delegates fetching author_display to AccessPackage
+      #publisher_t
+        delegates fetching publisher_t to AccessPackage
+      #publisher_display
+        delegates fetching publisher_display to AccessPackage
+      #format_facet
+        delegates fetching format_facet to AccessPackage
+      #description_t
+        delegates fetching description_t to AccessPackage
+      #description_display
+        delegates fetching description_display to AccessPackage
+      #type_display
+        delegates fetching type_display to AccessPackage
+      #usage_display
+        delegates fetching usage_display to AccessPackage
+      #language_facet
+        delegates fetching language_facet to AccessPackage
+      #date_facet
+        delegates fetching date_facet to AccessPackage
     KDL Solr fields with multiple occurrences allowed
-      #subjects
+      #subject_topic_facet
         delegates to AccessPackage
   Index-specific fields
-    #parent_id
+    #parent_id_s
       delegates to AccessPackage
   Export
     #save
@@ -208,6 +216,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.663373 seconds
+Finished in 7.587148 seconds
 
-118 examples, 0 failures
+122 examples, 0 failures

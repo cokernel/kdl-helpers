@@ -24,19 +24,19 @@ module KDL
     end
 
     context "METS header fields" do
-      describe "#repository" do
+      describe "#repository_s" do
         it "delegates to AccessPackage" do
           solr_maker = SolrMaker.new output, access_package, solrs_directory
           access_package.should_receive(:repository)
-          solr_maker.repository
+          solr_maker.repository_s
         end
       end
 
-      describe "#date_digitized" do
+      describe "#date_digitized_display" do
         it "delegates to AccessPackage" do
           solr_maker = SolrMaker.new output, access_package, solrs_directory
           access_package.should_receive(:date_digitized)
-          solr_maker.date_digitized
+          solr_maker.date_digitized_display
         end
       end
     end
@@ -70,15 +70,19 @@ module KDL
 
       context "KDL Solr fields with only one occurrence allowed" do
         [
-          [:dc_title, :title],
-          [:dc_creator, :author],
-          [:dc_publisher, :publisher],
-          [:dc_format, :format],
-          [:dc_description, :description],
-          [:dc_type, :type],
-          [:dc_rights, :usage],
-          [:dc_language, :language],
-          [:dc_date, :date],
+          [:dc_title, :title_t],
+          [:dc_title, :title_display],
+          [:dc_creator, :author_t],
+          [:dc_creator, :author_display],
+          [:dc_publisher, :publisher_t],
+          [:dc_publisher, :publisher_display],
+          [:dc_format, :format_facet],
+          [:dc_description, :description_t],
+          [:dc_description, :description_display],
+          [:dc_type, :type_display],
+          [:dc_rights, :usage_display],
+          [:dc_language, :language_facet],
+          [:dc_date, :date_facet],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
             it "delegates fetching #{solr_field} to AccessPackage" do
@@ -91,22 +95,22 @@ module KDL
       end
   
       context "KDL Solr fields with multiple occurrences allowed" do
-        describe "#subjects" do
+        describe "#subject_topic_facet" do
           it "delegates to AccessPackage" do
             access_package.stub(:dc_subject).and_return(['one', 'two', 'three'])
             solr_maker = SolrMaker.new output, access_package, solrs_directory
-            solr_maker.subjects.should == access_package.dc_subject
+            solr_maker.subject_topic_facet.should == access_package.dc_subject
           end
         end
       end
     end
 
     context "Index-specific fields" do
-      describe "#parent_id" do
+      describe "#parent_id_s" do
         it "delegates to AccessPackage" do
           access_package.stub(:dc_identifier).and_return(['sample_identifier'])
           solr_maker = SolrMaker.new output, access_package, solrs_directory
-          solr_maker.parent_id.should == 'sample_identifier'
+          solr_maker.parent_id_s.should == 'sample_identifier'
         end
       end
     end
@@ -127,19 +131,23 @@ module KDL
         it "creates a hash of fields common to all pages" do
           solr_maker = SolrMaker.new output, access_package, solrs_directory
           [
-            :author,
-            :title,
-            :description,
-            :subjects,
-            :date,
-            :language,
-            :usage,
-            :publisher,
-            :parent_id,
-            :repository,
-            :date_digitized,
-            :format,
-            :type,
+            :author_t,
+            :author_display,
+            :title_t,
+            :title_display,
+            :description_t,
+            :description_display,
+            :subject_topic_facet,
+            :date_facet,
+            :language_facet,
+            :usage_display,
+            :publisher_t,
+            :publisher_display,
+            :parent_id_s,
+            :repository_s,
+            :date_digitized_display,
+            :format_facet,
+            :type_display,
           ].each do |solr_field| 
             solr_maker.solr_doc.should have_key(solr_field)
           end

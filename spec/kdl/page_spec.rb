@@ -36,8 +36,8 @@ module KDL
           page.stub(:text).and_return('howdy')
           [
             :id,
-            :page_number,
-            :sequence_number,
+            :page_number_display,
+            :sequence_number_display,
             :text,
           ].each do |page_field|
             page.page_fields.should have_key(page_field)
@@ -48,13 +48,14 @@ module KDL
 
     context "Page-specific metadata" do
       [
-        :page_number,
-        :sequence_number,
+        :page_number_display,
+        :sequence_number_display,
         :text_href,
       ].each do |page_field| 
         describe "#{page_field}" do
           it "delegates to METS" do
-            mets.should_receive(page_field)
+            mets_field = page_field.to_s.sub(/_display/, '').to_sym
+            mets.should_receive(mets_field)
             page.send(page_field)
           end
         end
@@ -62,7 +63,7 @@ module KDL
 
       describe "#id" do
         it "constructs an identifier for an individual page" do
-          expected = "#{identifier}_#{page.sequence_number}"
+          expected = "#{identifier}_#{page.sequence_number_display}"
           page.id.should == expected
         end
       end

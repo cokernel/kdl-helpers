@@ -22,8 +22,8 @@ module KDL
     def page_fields
       [
         :id,
-        :page_number,
-        :sequence_number,
+        :page_number_display,
+        :sequence_number_display,
         :text,
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
@@ -32,14 +32,14 @@ module KDL
     end
 
     def id
-      "#{@identifier}_#{sequence_number}"
+      "#{@identifier}_#{sequence_number_display}"
     end
 
-    def sequence_number
+    def sequence_number_display
       @mets.sequence_number @identifier
     end
 
-    def page_number
+    def page_number_display
       @mets.page_number @identifier
     end
 
