@@ -6,16 +6,18 @@ module KDL
     let(:dips_directory) { File.join('data', 'dips') }
     let(:dip_id) { 'sample_aip' }
     let(:dip_directory) { File.join(dips_directory, dip_id) }
-    let(:access_package) { AccessPackage.new dip_directory }
-    let(:mets) { Nokogiri::XML(open(File.join(dip_directory, 'data', 'mets.xml'))) }
-    let(:dublin_core) { Nokogiri::XML(mets.xpath('//oai_dc:dc').first.to_s) }
 
+    before(:each) do
+      @access_package = AccessPackage.new dip_directory
+      @mets = Nokogiri::XML(open(File.join(dip_directory, 'data', 'mets.xml')))
+      @dublin_core = Nokogiri::XML(@mets.xpath('//oai_dc:dc').first.to_s)
+      @solr_maker = SolrMaker.new output, @access_package
+    end
 
     context "METS header fields" do
       describe "repository" do
         it "returns the <mets:name> of the repository" do
-          solr_maker = SolrMaker.new output, access_package
-          solr_maker.repository.should == access_package.repository
+          @solr_maker.repository.should == @access_package.repository
         end
       end
     end
@@ -34,9 +36,7 @@ module KDL
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
             it "returns the value of the first <dc:#{dc_field.to_s.sub(/^dc_/, '')}> element from input" do
-              access_package.stub(:dublin_core).and_return(dublin_core)
-              solr_maker = SolrMaker.new output, access_package
-              solr_maker.send(solr_field).should == dublin_core.xpath("//dc:#{dc_field.to_s.sub(/^dc_/, '')}").collect { |n| n.content }.first
+              @solr_maker.send(solr_field).should == @dublin_core.xpath("//dc:#{dc_field.to_s.sub(/^dc_/, '')}").collect { |n| n.content }.first
             end
           end
         end
@@ -45,9 +45,7 @@ module KDL
       context "KDL Solr fields with multiple occurrences allowed" do
         describe "#subjects" do
           it "returns a list of <dc:subject> values" do
-            access_package.stub(:dublin_core).and_return(dublin_core)
-            solr_maker = SolrMaker.new output, access_package
-            solr_maker.send(:subjects).should == dublin_core.xpath("//dc:subject").collect { |n| n.content }
+            @solr_maker.subjects.should == @dublin_core.xpath("//dc:subject").collect { |n| n.content }
           end
         end
       end
@@ -56,9 +54,7 @@ module KDL
     context "Index-specific fields" do
       describe "#parent_id" do
         it "retrieves the identifier for the container object" do
-          access_package.stub(:dublin_core).and_return(dublin_core)
-          solr_maker = SolrMaker.new output, access_package
-          solr_maker.parent_id.should == dublin_core.xpath("//dc:identifier").collect { |n| n.content }.first
+          @solr_maker.parent_id.should == @dublin_core.xpath("//dc:identifier").collect { |n| n.content }.first
         end
       end
     end
