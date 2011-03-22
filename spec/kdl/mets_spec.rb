@@ -162,6 +162,12 @@ module KDL
         signatures_should_match(@mets.dublin_core, expected)
       end
     end
+
+    describe "#repository" do
+      it "returns the repository" do
+        @mets.repository.should == @mets.mets.xpath('//mets:agent[@TYPE="REPOSITORY"]/mets:name').first.content
+      end
+    end
   end
 end
 

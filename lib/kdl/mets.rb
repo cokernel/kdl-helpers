@@ -34,6 +34,11 @@ module KDL
       Nokogiri::XML(@mets.xpath('//oai_dc:dc').first.to_s)
     end
 
+    def repository
+      query = '//mets:agent[@TYPE="REPOSITORY"]/mets:name'
+      @mets.xpath(query).first.content
+    end
+
     def backup
       @backup_file = [
         @mets_file,

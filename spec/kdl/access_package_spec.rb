@@ -40,11 +40,18 @@ module KDL
 
     context "METS file access" do
       describe "#repository" do
-        it "returns the repository" do
+        it "delegates to the METS object" do
           access_package = AccessPackage.new dip_directory
-          mets = METS.new
-          mets.load mets_file
-          access_package.repository.should == mets.mets.xpath('//mets:agent[@TYPE="REPOSITORY"]/mets:name').first.content
+          access_package.mets.should_receive(:repository)
+          access_package.repository
+        end
+      end
+
+      describe "#ids" do
+        it "delegates to the METS object" do
+          access_package = AccessPackage.new dip_directory
+          access_package.mets.should_receive(:ids)
+          access_package.ids
         end
       end
     end

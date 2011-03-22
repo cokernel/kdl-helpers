@@ -2,6 +2,8 @@ require 'spec/spec_helper'
 
 module KDL
   class AccessPackage
+    attr_reader :mets
+
     def initialize(dip_directory)
       @dip_directory = dip_directory
       @mets_file = File.join(dip_directory, 'data', 'mets.xml')
@@ -18,8 +20,11 @@ module KDL
     end
 
     def repository
-      query = '//mets:agent[@TYPE="REPOSITORY"]/mets:name'
-      @mets.mets.xpath(query).first.content
+      @mets.repository
+    end
+
+    def ids
+      @mets.ids
     end
   end
 end
