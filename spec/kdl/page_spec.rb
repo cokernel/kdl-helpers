@@ -12,10 +12,11 @@ module KDL
     context "Export" do
       describe "#page_fields" do
         it "creates a hash of fields common to all pages" do
+          page.stub(:text).and_return('howdy')
           [
             :page_number,
             :sequence_number,
-            :text_href,
+            :text,
           ].each do |page_field|
             page.page_fields.should have_key(page_field)
           end

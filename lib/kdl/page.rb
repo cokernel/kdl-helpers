@@ -14,6 +14,7 @@ module KDL
         :page_number,
         :sequence_number,
         :text_href,
+        :text,
       ].each do |page_field|
         hash[page_field] = send(page_field)
       end
