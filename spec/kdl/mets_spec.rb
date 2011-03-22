@@ -178,6 +178,15 @@ module KDL
           @mets.sequence_number(identifier).should == expected
         end
       end
+
+      describe "#page_number" do
+        it "returns the page number for a given id" do
+          identifier = @mets.ids.first
+          div = @mets.div :fileGrp_id => identifier
+          expected = div.first['LABEL']
+          @mets.page_number(identifier).should == expected
+        end
+      end
     end
   end
 end

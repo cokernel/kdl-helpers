@@ -34,7 +34,9 @@ KDL::Tiler
       does not send an error message to output
 KDL::Page
   Page-specific metadata
-    #sequence_number
+    sequence_number
+      delegates to METS
+    page_number
       delegates to METS
 KDL::AccessPackage
   Dublin Core access
@@ -157,6 +159,8 @@ KDL::METS
   item-level metadata
     #sequence_number
       returns the sequence number for a given id
+    #page_number
+      returns the page number for a given id
 KDL::AipMaker
   #build
     builds the AIP in the requested directory
@@ -177,6 +181,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.88999 seconds
+Finished in 5.749669 seconds
 
-104 examples, 0 failures
+106 examples, 0 failures

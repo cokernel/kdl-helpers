@@ -142,5 +142,9 @@ module KDL
     def sequence_number(identifier)
       div(:fileGrp_id => identifier).first['ORDER']
     end
+
+    def page_number(identifier)
+      div(:fileGrp_id => identifier).first['LABEL']
+    end
   end
 end

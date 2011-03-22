@@ -10,5 +10,9 @@ module KDL
     def sequence_number
       @mets.sequence_number @identifier
     end
+
+    def page_number
+      @mets.page_number @identifier
+    end
   end
 end
