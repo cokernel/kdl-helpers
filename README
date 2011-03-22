@@ -82,6 +82,8 @@ KDL::AccessPackage
   METS file access
     #repository
       delegates to the METS object
+    #date_digitized
+      delegates to the METS object
     #ids
       delegates to the METS object
     #pages
@@ -89,6 +91,8 @@ KDL::AccessPackage
 KDL::SolrMaker
   METS header fields
     #repository
+      delegates to AccessPackage
+    #date_digitized
       delegates to AccessPackage
   Dublin Core fields
     fetching
@@ -165,6 +169,8 @@ KDL::METS
     retrieves the Dublin Core metadata from the document
   #repository
     returns the repository
+  #date_digitized
+    returns the date digitized
   item-level metadata
     #sequence_number
       returns the sequence number for a given id
@@ -192,6 +198,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.704241 seconds
+Finished in 6.009229 seconds
 
-111 examples, 0 failures
+114 examples, 0 failures

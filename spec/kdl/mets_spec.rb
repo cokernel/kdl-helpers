@@ -169,6 +169,12 @@ module KDL
       end
     end
 
+    describe "#date_digitized" do
+      it "returns the date digitized" do
+        @mets.date_digitized.should == @mets.mets.xpath('//mets:amdSec//mets:versionStatement').first.content
+      end
+    end
+
     context "item-level metadata" do
       describe "#sequence_number" do
         it "returns the sequence number for a given id" do

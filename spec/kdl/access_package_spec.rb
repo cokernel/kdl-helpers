@@ -47,6 +47,14 @@ module KDL
         end
       end
 
+      describe "#date_digitized" do
+        it "delegates to the METS object" do
+          access_package = AccessPackage.new dip_directory
+          access_package.mets.should_receive(:date_digitized)
+          access_package.date_digitized
+        end
+      end
+
       describe "#ids" do
         it "delegates to the METS object" do
           access_package = AccessPackage.new dip_directory

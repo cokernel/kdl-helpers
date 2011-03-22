@@ -39,6 +39,11 @@ module KDL
       @mets.xpath(query).first.content
     end
 
+    def date_digitized
+      query = '//mets:amdSec//mets:versionStatement'
+      @mets.xpath(query).first.content
+    end
+
     def backup
       @backup_file = [
         @mets_file,

@@ -25,6 +25,10 @@ module KDL
       @mets.repository
     end
 
+    def date_digitized
+      @mets.date_digitized
+    end
+
     def method_missing(name, *args)
       dc_field = name.to_s
       if dc_field =~ /^dc_/

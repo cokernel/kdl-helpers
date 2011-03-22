@@ -13,6 +13,14 @@ module KDL
           solr_maker.repository
         end
       end
+
+      describe "#date_digitized" do
+        it "delegates to AccessPackage" do
+          solr_maker = SolrMaker.new output, access_package
+          access_package.should_receive(:date_digitized)
+          solr_maker.date_digitized
+        end
+      end
     end
 
     context "Dublin Core fields" do

@@ -31,6 +31,10 @@ module KDL
       @access_package.repository
     end
 
+    def date_digitized
+      @access_package.date_digitized
+    end
+
     def parent_id
       @access_package.dc_identifier.first
     end
