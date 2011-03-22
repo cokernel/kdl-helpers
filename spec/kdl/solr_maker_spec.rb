@@ -39,7 +39,7 @@ module KDL
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
             it "returns the value of the first <dc:#{dc_field.to_s.sub(/^dc_/, '')}> element from input" do
-              @solr_maker.send(solr_field).should == @dublin_core.xpath("//dc:#{dc_field.to_s.sub(/^dc_/, '')}").collect { |n| n.content }.first
+              @solr_maker.send(solr_field).should == @access_package.send(dc_field).first
             end
           end
         end
@@ -48,7 +48,7 @@ module KDL
       context "KDL Solr fields with multiple occurrences allowed" do
         describe "#subjects" do
           it "returns a list of <dc:subject> values" do
-            @solr_maker.subjects.should == @dublin_core.xpath("//dc:subject").collect { |n| n.content }
+            @solr_maker.subjects.should == @access_package.dc_subject
           end
         end
       end
