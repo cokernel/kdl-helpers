@@ -3,21 +3,11 @@ require 'spec_helper'
 module KDL
   describe SolrMaker do
     let(:output) { double('output').as_null_object }
-    let(:dips_directory) { File.join('data', 'dips') }
-    let(:dip_id) { 'sample_aip' }
-    let(:dip_directory) { File.join(dips_directory, dip_id) }
-
-    before(:each) do
-      @access_package = AccessPackage.new dip_directory
-      @mets = Nokogiri::XML(open(File.join(dip_directory, 'data', 'mets.xml')))
-      @dublin_core = Nokogiri::XML(@mets.xpath('//oai_dc:dc').first.to_s)
-      @solr_maker = SolrMaker.new output, @access_package
-    end
+    let(:access_package) { double('access_package').as_null_object }
 
     context "METS header fields" do
       describe "#repository" do
         it "delegates to AccessPackage" do
-          access_package = double('access_package')
           solr_maker = SolrMaker.new output, access_package
           access_package.should_receive(:repository)
           solr_maker.repository
@@ -26,6 +16,32 @@ module KDL
     end
 
     context "Dublin Core fields" do
+      context "fetching" do
+        [
+          :dc_contributor,
+          :dc_coverage,
+          :dc_creator,
+          :dc_date,
+          :dc_description,
+          :dc_format,
+          :dc_identifier,
+          :dc_language,
+          :dc_publisher,
+          :dc_relation,
+          :dc_rights,
+          :dc_source,
+          :dc_subject,
+          :dc_title,
+          :dc_type,
+        ].each do |dc_field|
+          it "delegates fetching <#{dc_field.to_s.sub(/_/, ':')}> to AccessPackage" do
+            solr_maker = SolrMaker.new output, access_package
+            access_package.should_receive(dc_field)
+            solr_maker.send(dc_field)
+          end
+        end
+      end
+
       context "KDL Solr fields with only one occurrence allowed" do
         [
           [:dc_title, :title],
@@ -38,8 +54,10 @@ module KDL
           [:dc_language, :language],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
-            it "returns the value of the first <dc:#{dc_field.to_s.sub(/^dc_/, '')}> element from input" do
-              @solr_maker.send(solr_field).should == @access_package.send(dc_field).first
+            it "delegates fetching #{solr_field} to AccessPackage" do
+              access_package.stub(dc_field).and_return(['sample', 'output'])
+              solr_maker = SolrMaker.new output, access_package
+              solr_maker.send(solr_field).should == access_package.send(dc_field).first
             end
           end
         end
@@ -47,8 +65,10 @@ module KDL
   
       context "KDL Solr fields with multiple occurrences allowed" do
         describe "#subjects" do
-          it "returns a list of <dc:subject> values" do
-            @solr_maker.subjects.should == @access_package.dc_subject
+          it "delegates to AccessPackage" do
+            access_package.stub(:dc_subject).and_return(['one', 'two', 'three'])
+            solr_maker = SolrMaker.new output, access_package
+            solr_maker.subjects.should == access_package.dc_subject
           end
         end
       end
@@ -56,8 +76,10 @@ module KDL
 
     context "Index-specific fields" do
       describe "#parent_id" do
-        it "retrieves the identifier for the container object" do
-          @solr_maker.parent_id.should == @dublin_core.xpath("//dc:identifier").collect { |n| n.content }.first
+        it "delegates to AccessPackage" do
+          access_package.stub(:dc_identifier).and_return(['sample_identifier'])
+          solr_maker = SolrMaker.new output, access_package
+          solr_maker.parent_id.should == 'sample_identifier'
         end
       end
     end

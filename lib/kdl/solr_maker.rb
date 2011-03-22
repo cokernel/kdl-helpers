@@ -27,6 +27,16 @@ module KDL
       @access_package.dc_identifier.first
     end
 
+    def subjects
+      @access_package.dc_subject
+    end
+
+    def method_missing(name, *args)
+      if name.to_s =~ /^dc_/
+        @access_package.send(name)
+      end
+    end
+
     dublin_core_export :dc_title, :title
     dublin_core_export :dc_publisher, :publisher
     dublin_core_export :dc_format, :format
@@ -35,6 +45,5 @@ module KDL
     dublin_core_export :dc_language, :language
     dublin_core_export :dc_creator, :author
     dublin_core_export :dc_rights, :usage
-    dublin_core_export :dc_subjects, :subjects, '*'
   end
 end
