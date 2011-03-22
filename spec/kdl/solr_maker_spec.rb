@@ -52,6 +52,7 @@ module KDL
           [:dc_type, :type],
           [:dc_rights, :usage],
           [:dc_language, :language],
+          [:dc_date, :date],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
             it "delegates fetching #{solr_field} to AccessPackage" do
@@ -80,6 +81,29 @@ module KDL
           access_package.stub(:dc_identifier).and_return(['sample_identifier'])
           solr_maker = SolrMaker.new output, access_package
           solr_maker.parent_id.should == 'sample_identifier'
+        end
+      end
+    end
+
+    context "Export" do
+      describe "#solr_doc" do
+        it "creates a hash of fields common to all pages" do
+          solr_maker = SolrMaker.new output, access_package
+          [
+            :author,
+            :title,
+            :description,
+            :subjects,
+            :date,
+            :language,
+            :usage,
+            :publisher,
+            :parent_id,
+            :format,
+            :type,
+          ].each do |solr_field| 
+            solr_maker.solr_doc.should have_key(solr_field)
+          end
         end
       end
     end

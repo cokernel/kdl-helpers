@@ -6,17 +6,24 @@ module KDL
       @access_package = access_package
     end
 
-    def self.dublin_core_export(dc_field, solr_field=nil, count=1)
-      method_name = solr_field ? solr_field : dc_field
-      if count == 1
-        define_method(method_name) {
-          @access_package.send(dc_field).first
-        }
-      else
-        define_method(method_name) {
-          @access_package.send(dc_field)
-        }
+    def solr_doc
+      hash = {}
+      [
+        :author,
+        :title,
+        :description,
+        :subjects,
+        :date,
+        :language,
+        :usage,
+        :publisher,
+        :parent_id,
+        :format,
+        :type,
+      ].each do |solr_field|
+        hash[solr_field] = send(solr_field)
       end
+      hash
     end
 
     def repository 
@@ -34,6 +41,21 @@ module KDL
     def method_missing(name, *args)
       if name.to_s =~ /^dc_/
         @access_package.send(name)
+      else
+        return super
+      end
+    end
+
+    def self.dublin_core_export(dc_field, solr_field=nil, count=1)
+      method_name = solr_field ? solr_field : dc_field
+      if count == 1
+        define_method(method_name) {
+          @access_package.send(dc_field).first
+        }
+      else
+        define_method(method_name) {
+          @access_package.send(dc_field)
+        }
       end
     end
 
@@ -45,5 +67,6 @@ module KDL
     dublin_core_export :dc_language, :language
     dublin_core_export :dc_creator, :author
     dublin_core_export :dc_rights, :usage
+    dublin_core_export :dc_date, :date
   end
 end
