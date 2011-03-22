@@ -3,6 +3,11 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'kdl'
 
 dip_directory, solrs_directory = ARGV[0], ARGV[1]
-access_package = KDL::AccessPackage.new dip_directory
-solr_maker = KDL::SolrMaker.new STDOUT, access_package
-solr_maker.build
+unless dip_directory.nil?
+  access_package = KDL::AccessPackage.new dip_directory
+  solr_maker = KDL::SolrMaker.new STDOUT, access_package, solrs_directory
+  solr_maker.build
+else
+  solr_maker = KDL::SolrMaker.new STDOUT, nil, solrs_directory
+  solr_maker.help
+end

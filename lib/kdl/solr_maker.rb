@@ -6,7 +6,9 @@ module KDL
       @output = output
       @access_package = access_package
       @solrs_directory = solrs_directory
-      @solr_directory = File.join(@solrs_directory, @access_package.identifier)
+      unless @access_package.nil?
+        @solr_directory = File.join(@solrs_directory, @access_package.identifier)
+      end
     end
 
     def help
