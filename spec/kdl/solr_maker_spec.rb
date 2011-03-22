@@ -106,6 +106,14 @@ module KDL
           end
         end
       end
+
+      describe "#pages" do
+        it "delegates to AccessPackage" do
+          solr_maker = SolrMaker.new output, access_package
+          access_package.should_receive(:pages)
+          solr_maker.pages
+        end
+      end
     end
   end
 end

@@ -38,11 +38,15 @@ module KDL
       @access_package.dc_subject
     end
 
+    def pages
+      @access_package.pages
+    end
+
     def method_missing(name, *args)
       if name.to_s =~ /^dc_/
         @access_package.send(name)
       else
-        return super
+        super
       end
     end
 

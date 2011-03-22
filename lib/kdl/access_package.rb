@@ -11,20 +11,28 @@ module KDL
       @mets.load @mets_file
     end
 
-    def method_missing(name, *args)
-      dc_field = name.to_s
-      if dc_field =~ /^dc_/
-        query = "//dc:#{dc_field.sub(/^dc_/, '')}"
-        @mets.dublin_core.xpath(query).collect { |n| n.content }
+    def pages
+      @mets.ids.collect do |id|
+        Page.new @mets, id
       end
+    end
+
+    def ids
+      @mets.ids
     end
 
     def repository
       @mets.repository
     end
 
-    def ids
-      @mets.ids
+    def method_missing(name, *args)
+      dc_field = name.to_s
+      if dc_field =~ /^dc_/
+        query = "//dc:#{dc_field.sub(/^dc_/, '')}"
+        @mets.dublin_core.xpath(query).collect { |n| n.content }
+      else
+        super
+      end
     end
   end
 end
