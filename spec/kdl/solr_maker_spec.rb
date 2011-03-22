@@ -13,6 +13,16 @@ module KDL
       access_package.stub(:identifier).and_return(dip_id)
     end
 
+    context "command-line interface" do
+      describe "#help" do
+        it "outputs a short usage note" do
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
+          output.should_receive(:puts)
+          solr_maker.help
+        end
+      end
+    end
+
     context "METS header fields" do
       describe "#repository" do
         it "delegates to AccessPackage" do

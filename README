@@ -94,6 +94,9 @@ KDL::AccessPackage
     #identifier
       returns the package identifier for the DIP
 KDL::SolrMaker
+  command-line interface
+    #help
+      outputs a short usage note
   METS header fields
     #repository
       delegates to AccessPackage
@@ -205,6 +208,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.244657 seconds
+Finished in 5.663373 seconds
 
-117 examples, 0 failures
+118 examples, 0 failures

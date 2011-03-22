@@ -3,9 +3,14 @@ require 'spec/spec_helper'
 module KDL
   class SolrMaker
     def initialize(output, access_package, solrs_directory)
+      @output = output
       @access_package = access_package
       @solrs_directory = solrs_directory
       @solr_directory = File.join(@solrs_directory, @access_package.identifier)
+    end
+
+    def help
+      @output.puts "Usage: solrmaker <DIP directory> <SOLR exports directory>"
     end
 
     def save
