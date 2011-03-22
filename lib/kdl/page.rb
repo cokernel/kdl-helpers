@@ -2,11 +2,21 @@ require 'spec/spec_helper'
 
 module KDL
   class Page
+    attr_reader :identifier
+
     def initialize(mets, identifier, dip_directory, solr_doc)
       @mets = mets
       @identifier = identifier
       @dip_directory = dip_directory
       @solr_doc = solr_doc
+    end
+
+    def save(solr_directory)
+      FileUtils.mkdir_p(solr_directory)
+      solr_file = File.join(solr_directory, @identifier)
+      File.open(solr_file, 'w') { |f|
+        f.write page_fields
+      }
     end
 
     def page_fields

@@ -8,8 +8,29 @@ module KDL
     let(:dip_id) { 'sample_aip' }
     let(:dip_directory) { File.join(dips_directory, dip_id) }
     let(:page) { Page.new mets, identifier, dip_directory, Hash.new }
+    let(:playground) { File.join('data', 'playground') }
+    let(:solrs_directory) { File.join(playground, 'solr') }
+    let(:solr_directory) { File.join(solrs_directory, dip_id) }
 
     context "Export" do
+      describe "#save" do
+        before(:each) do
+          FileUtils.mkdir_p(solr_directory)
+        end
+
+        after(:each) do
+          FileUtils.rm_rf(playground)
+        end
+
+        it "serializes page_fields to a JSON file in the specified directory" do
+          mets = METS.new
+          mets.load File.join(dip_directory, 'data', 'mets.xml')
+          page = Page.new mets, identifier, dip_directory, Hash.new
+          page.save solr_directory
+          File.file?(File.join(solr_directory, page.identifier)).should be_true
+        end
+      end
+
       describe "#page_fields" do
         it "creates a hash of fields common to all pages" do
           page.stub(:text).and_return('howdy')

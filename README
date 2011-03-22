@@ -34,6 +34,8 @@ KDL::Tiler
       does not send an error message to output
 KDL::Page
   Export
+    #save
+      serializes page_fields to a JSON file in the specified directory
     #page_fields
       creates a hash of fields common to all pages
   Page-specific metadata
@@ -137,6 +139,8 @@ KDL::SolrMaker
     #parent_id
       delegates to AccessPackage
   Export
+    #save
+      passes save to each page
     #solr_doc
       creates a hash of fields common to all pages
     #pages
@@ -198,6 +202,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.009229 seconds
+Finished in 6.193483 seconds
 
-114 examples, 0 failures
+116 examples, 0 failures
