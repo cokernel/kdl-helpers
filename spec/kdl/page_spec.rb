@@ -108,6 +108,7 @@ module KDL
           whitelist = [
             :title_t,
             :title_display,
+            :format,
             :language_display,
             :usage_display,
             :parent_id_s,
@@ -128,7 +129,7 @@ module KDL
           page.stub(:text).and_return('howdy')
           page.page_fields[:title_t].should_not be_nil
           page.page_fields[:title_t].should == 'Page 2'
-          page.page_fields[:title_display].should == 'Page 2'
+          page.page_fields[:title_display].should == "Page 2 of #{solr_doc[:title_display]}"
         end
       end
     end

@@ -10,6 +10,7 @@ module KDL
       @parent_id = parent_id
       @dip_directory = dip_directory
       @solr_doc = solr_doc
+      @title = solr_doc[:title_display]
     end
 
     def save(solr_directory)
@@ -26,6 +27,7 @@ module KDL
         [
           :language_display,
           :usage_display,
+          :format,
           :parent_id_s,
           :relation_display,
           :repository_display,
@@ -34,7 +36,7 @@ module KDL
         end
         the_title = "#{page_type.capitalize} #{label_display}"
         new_solr_doc[:title_t] = the_title
-        new_solr_doc[:title_display] = the_title
+        new_solr_doc[:title_display] = "#{the_title} of #{@title}"
         @solr_doc = new_solr_doc
       end
       [
