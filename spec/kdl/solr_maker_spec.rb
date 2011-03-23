@@ -72,6 +72,7 @@ module KDL
         [
           [:dc_title, :title_t],
           [:dc_title, :title_display],
+          [:dc_title, :title_sort],
           [:dc_creator, :author_t],
           [:dc_creator, :author_display],
           [:dc_publisher, :publisher_t],
@@ -136,6 +137,7 @@ module KDL
             :author_display,
             :title_t,
             :title_display,
+            :title_sort,
             :description_t,
             :description_display,
             :subject_topic_facet,

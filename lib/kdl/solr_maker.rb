@@ -28,6 +28,7 @@ module KDL
         :author_display,
         :title_t,
         :title_display,
+        :title_sort,
         :description_t,
         :description_display,
         :subject_topic_facet,
@@ -90,6 +91,7 @@ module KDL
 
     dublin_core_export :dc_title, :title_t
     dublin_core_export :dc_title, :title_display
+    dublin_core_export :dc_title, :title_sort
     dublin_core_export :dc_publisher, :publisher_t
     dublin_core_export :dc_publisher, :publisher_display
     dublin_core_export :dc_format, :format

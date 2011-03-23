@@ -3,6 +3,7 @@ require 'spec/spec_helper'
 module KDL
   class Page
     attr_reader :identifier
+    attr_reader :solr_doc
 
     def initialize(mets, identifier, parent_id, dip_directory, solr_doc)
       @mets = mets
@@ -33,6 +34,7 @@ module KDL
           :relation_display,
           :repository_display,
           :title_display,
+          :title_sort,
         ].each do |solr_field|
           new_solr_doc[solr_field] = @solr_doc[solr_field]
         end

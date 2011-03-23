@@ -13,6 +13,7 @@ module KDL
             :author_display => 'foo',
             :title_t => 'foo',
             :title_display => 'foo',
+            :title_sort => 'foo',
             :description_t => 'foo',
             :description_display => 'foo',
             :subject_topic_facet => 'foo',
@@ -79,29 +80,9 @@ module KDL
           page.stub(:page_type).and_return('page')
           page.stub(:label_display).and_return('1')
           page.stub(:text).and_return('howdy')
-          [
-            :author_t,
-            :author_display,
-            :title_t,
-            :title_display,
-            :description_t,
-            :description_display,
-            :subject_topic_facet,
-            :date_facet,
-            :language_display,
-            :usage_display,
-            :publisher_t,
-            :publisher_display,
-            :parent_id_s,
-            :repository_facet,
-            :repository_display,
-            :date_digitized_display,
-            :format,
-            :type_display,
-            :relation_display,
-          ].each do |solr_field| 
+          page.solr_doc.keys.each do |solr_field|
             page.page_fields.should have_key(solr_field)
-          end 
+          end
           page.page_fields[:title_display].should == "Page 1 of #{solr_doc[:title_t]}"
         end
 
@@ -111,6 +92,7 @@ module KDL
           whitelist = [
             :title_t,
             :title_display,
+            :title_sort,
             :format,
             :language_display,
             :usage_display,
