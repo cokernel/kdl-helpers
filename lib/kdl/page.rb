@@ -28,6 +28,7 @@ module KDL
           :usage_display,
           :parent_id_s,
           :relation_display,
+          :repository_display,
         ].each do |solr_field|
           new_solr_doc[solr_field] = @solr_doc[solr_field]
         end

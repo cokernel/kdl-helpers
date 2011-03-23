@@ -22,7 +22,8 @@ module KDL
             :publisher_t => 'foo',
             :publisher_display => 'foo',
             :parent_id_s => 'foo',
-            :repository_s => 'foo',
+            :repository_t => 'foo',
+            :repository_display => 'foo',
             :date_digitized_display => 'foo',
             :format_facet => 'foo',
             :type_display => 'foo',
@@ -83,7 +84,8 @@ module KDL
             :publisher_t,
             :publisher_display,
             :parent_id_s,
-            :repository_s,
+            :repository_t,
+            :repository_display,
             :date_digitized_display,
             :format_facet,
             :type_display,
@@ -103,6 +105,7 @@ module KDL
             :usage_display,
             :parent_id_s,
             :relation_display,
+            :repository_display,
           ]
           whitelist.each do |solr_field| 
             page.page_fields.should have_key(solr_field)

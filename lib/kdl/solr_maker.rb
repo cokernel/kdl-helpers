@@ -37,7 +37,8 @@ module KDL
         :publisher_t,
         :publisher_display,
         :parent_id_s,
-        :repository_s,
+        :repository_t,
+        :repository_display,
         :date_digitized_display,
         :format_facet,
         :type_display,
@@ -46,10 +47,6 @@ module KDL
         hash[solr_field] = send(solr_field)
       end
       hash
-    end
-
-    def repository_s
-      @access_package.repository
     end
 
     def date_digitized_display
@@ -71,6 +68,8 @@ module KDL
     def method_missing(name, *args)
       if name.to_s =~ /^dc_/
         @access_package.send(name)
+      elsif name.to_s =~ /^repository/
+        @access_package.repository
       else
         super
       end
