@@ -41,6 +41,7 @@ module KDL
         :date_digitized_display,
         :format_facet,
         :type_display,
+        :relation_display,
       ].each do |solr_field|
         hash[solr_field] = send(solr_field)
       end
@@ -101,5 +102,6 @@ module KDL
     dublin_core_export :dc_creator, :author_display
     dublin_core_export :dc_rights, :usage_display
     dublin_core_export :dc_date, :date_facet
+    dublin_core_export :dc_relation, :relation_display
   end
 end

@@ -83,6 +83,7 @@ module KDL
           [:dc_rights, :usage_display],
           [:dc_language, :language_facet],
           [:dc_date, :date_facet],
+          [:dc_relation, :relation_display],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
             it "delegates fetching #{solr_field} to AccessPackage" do
@@ -148,6 +149,7 @@ module KDL
             :date_digitized_display,
             :format_facet,
             :type_display,
+            :relation_display,
           ].each do |solr_field| 
             solr_maker.solr_doc.should have_key(solr_field)
           end
