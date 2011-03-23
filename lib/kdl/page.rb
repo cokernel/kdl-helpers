@@ -47,6 +47,7 @@ module KDL
         :id,
         :label_display,
         :sequence_number_display,
+        :sequence_sort,
         :text,
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
@@ -68,6 +69,10 @@ module KDL
 
     def sequence_number_display
       @mets.sequence_number @identifier
+    end
+
+    def sequence_sort
+      sprintf("%05d", sequence_number_display)
     end
 
     def label_display

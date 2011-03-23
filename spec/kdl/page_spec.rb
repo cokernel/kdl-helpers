@@ -35,6 +35,7 @@ module KDL
             :id,
             :label_display,
             :sequence_number_display,
+            :sequence_sort,
             :text,
             ]}
     let(:playground) { File.join('data', 'playground') }
@@ -70,6 +71,7 @@ module KDL
       describe "#page_fields" do
         it "creates a hash of fields common to all pages" do
           page.stub(:text).and_return('howdy')
+          page.stub(:sequence_number_display).and_return('1')
           page_specific_fields.each do |page_field|
             page.page_fields.should have_key(page_field)
           end
@@ -89,6 +91,7 @@ module KDL
         it "only includes specified fields for subsequent pages" do
           page = Page.new mets, identifier_p2, dip_id, dip_directory, solr_doc
           page.stub(:text).and_return('howdy')
+          page.stub(:sequence_number_display).and_return(2)
           whitelist = [
             :title_t,
             :title_display,
@@ -131,6 +134,14 @@ module KDL
             mets.should_receive(mets_field)
             page.send(page_field)
           end
+        end
+      end
+
+      describe "#sequence_sort" do
+        it "is a zero-padded version of sequence_number_display" do
+          page.stub(:sequence_number_display).and_return('1')
+          number = page.sequence_number_display
+          page.sequence_sort.should == '00001'
         end
       end
 

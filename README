@@ -50,6 +50,8 @@ KDL::Page
       delegates to METS
     text_href
       delegates to METS
+    #sequence_sort
+      is a zero-padded version of sequence_number_display
     #id
       constructs an identifier for an individual page
     #text
@@ -227,6 +229,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.330105 seconds
+Finished in 5.90826 seconds
 
-129 examples, 0 failures
+130 examples, 0 failures
