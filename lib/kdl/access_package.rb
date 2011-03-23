@@ -17,7 +17,7 @@ module KDL
 
     def pages(solr_doc)
       @mets.ids.collect do |id|
-        Page.new @mets, identifier, @dip_directory, solr_doc
+        Page.new @mets, id, identifier, @dip_directory, solr_doc
       end
     end
 

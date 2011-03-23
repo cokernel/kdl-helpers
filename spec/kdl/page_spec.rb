@@ -7,7 +7,7 @@ module KDL
     let(:dips_directory) { File.join('data', 'dips') }
     let(:dip_id) { 'sample_aip' }
     let(:dip_directory) { File.join(dips_directory, dip_id) }
-    let(:page) { Page.new mets, identifier, dip_directory, Hash.new }
+    let(:page) { Page.new mets, identifier, dip_id, dip_directory, Hash.new }
     let(:playground) { File.join('data', 'playground') }
     let(:solrs_directory) { File.join(playground, 'solr') }
     let(:solr_directory) { File.join(solrs_directory, dip_id) }
@@ -25,7 +25,7 @@ module KDL
         it "serializes page_fields to a JSON file in the specified directory" do
           mets = METS.new
           mets.load File.join(dip_directory, 'data', 'mets.xml')
-          page = Page.new mets, identifier, dip_directory, Hash.new
+          page = Page.new mets, identifier, dip_id, dip_directory, Hash.new
           page.save solr_directory
           File.file?(File.join(solr_directory, page.identifier)).should be_true
         end
@@ -63,7 +63,7 @@ module KDL
 
       describe "#id" do
         it "constructs an identifier for an individual page" do
-          expected = "#{identifier}_#{page.sequence_number_display}"
+          expected = "#{dip_id}_#{page.sequence_number_display}"
           page.id.should == expected
         end
       end
@@ -72,7 +72,7 @@ module KDL
         it "retrieves the text from the DIP directory" do
           mets = METS.new
           mets.load File.join(dip_directory, 'data', 'mets.xml')
-          page = Page.new mets, identifier, dip_directory, Hash.new
+          page = Page.new mets, identifier, dip_id, dip_directory, Hash.new
           file = File.join(dip_directory, 'data', page.text_href)
           page.text.should == IO.read(file)
         end

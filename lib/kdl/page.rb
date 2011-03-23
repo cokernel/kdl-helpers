@@ -4,9 +4,10 @@ module KDL
   class Page
     attr_reader :identifier
 
-    def initialize(mets, identifier, dip_directory, solr_doc)
+    def initialize(mets, identifier, parent_id, dip_directory, solr_doc)
       @mets = mets
       @identifier = identifier
+      @parent_id = parent_id
       @dip_directory = dip_directory
       @solr_doc = solr_doc
     end
@@ -32,7 +33,7 @@ module KDL
     end
 
     def id
-      "#{@identifier}_#{sequence_number_display}"
+      "#{@parent_id}_#{sequence_number_display}"
     end
 
     def sequence_number_display
