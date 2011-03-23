@@ -75,9 +75,13 @@ module KDL
     end
 
     def text
-      IO.read(File.join(@dip_directory, 
-                        'data', 
-                        text_href))
+      begin
+        IO.read(File.join(@dip_directory, 
+                          'data', 
+                          text_href))
+      rescue
+        ''
+      end
     end
 
     def text_href
