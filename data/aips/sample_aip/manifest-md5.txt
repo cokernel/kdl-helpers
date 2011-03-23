@@ -1,5 +1,5 @@
 e3f29b3c9c5c3c350251a43c0f97b9ac data/directives.txt
-da49ccde5e75b9f82870aedc38bfa106 data/mets.xml
+30c03668f6c7e0fd7441ce57c9d7b54a data/mets.xml
 418b454a4aef69551d06f4e9b3d883a2 data/0002.tif
 5a58ed45d0f93b8e07e9bea36eb323a9 data/0001.txt
 81051bcc2cf1bedf378224b0a93e2877 data/0002.txt

@@ -1,6 +1,6 @@
 e3f29b3c9c5c3c350251a43c0f97b9ac data/directives.txt
-f1441cc19cc664870f21435007e3bcb7 data/mets.xml
-6b6f5b7235de24a05f2b0b512d8482c6 data/mets.xml.bak
+7327b27556bffa8140e98275b080c22c data/mets.xml
+2d4e6ea216c6f60bea10b00992699247 data/mets.xml.bak
 96bcbf781cedf3a15be9c4d3fee6d10a data/0003/0003.tls
 53c1a2aec980b6d63dec744a91fc1444 data/0003/0003_tb.jpg
 a8622b16892ffc5162b16e7fefd1c0af data/0003/0003.txt
