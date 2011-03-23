@@ -40,7 +40,7 @@ module KDL
         :repository_t,
         :repository_display,
         :date_digitized_display,
-        :format_facet,
+        :format,
         :type_display,
         :relation_display,
       ].each do |solr_field|
@@ -92,7 +92,7 @@ module KDL
     dublin_core_export :dc_title, :title_display
     dublin_core_export :dc_publisher, :publisher_t
     dublin_core_export :dc_publisher, :publisher_display
-    dublin_core_export :dc_format, :format_facet
+    dublin_core_export :dc_format, :format
     dublin_core_export :dc_description, :description_t
     dublin_core_export :dc_description, :description_display
     dublin_core_export :dc_type, :type_display

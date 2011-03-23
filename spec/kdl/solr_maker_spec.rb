@@ -76,7 +76,7 @@ module KDL
           [:dc_creator, :author_display],
           [:dc_publisher, :publisher_t],
           [:dc_publisher, :publisher_display],
-          [:dc_format, :format_facet],
+          [:dc_format, :format],
           [:dc_description, :description_t],
           [:dc_description, :description_display],
           [:dc_type, :type_display],
@@ -148,7 +148,7 @@ module KDL
             :repository_t,
             :repository_display,
             :date_digitized_display,
-            :format_facet,
+            :format,
             :type_display,
             :relation_display,
           ].each do |solr_field| 

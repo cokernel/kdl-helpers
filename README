@@ -137,8 +137,8 @@ KDL::SolrMaker
         delegates fetching publisher_t to AccessPackage
       #publisher_display
         delegates fetching publisher_display to AccessPackage
-      #format_facet
-        delegates fetching format_facet to AccessPackage
+      #format
+        delegates fetching format to AccessPackage
       #description_t
         delegates fetching description_t to AccessPackage
       #description_display
@@ -225,6 +225,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.724704 seconds
+Finished in 6.121302 seconds
 
 128 examples, 0 failures
