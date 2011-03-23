@@ -152,6 +152,10 @@ module KDL
       div(:fileGrp_id => identifier).first['LABEL']
     end
 
+    def page_type(identifier)
+      div(:fileGrp_id => identifier).first['TYPE']
+    end
+
     def text_href(identifier)
       href :fileGrp => identifier, 
            :use => 'ocr'

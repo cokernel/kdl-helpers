@@ -32,7 +32,7 @@ module KDL
         ].each do |solr_field|
           new_solr_doc[solr_field] = @solr_doc[solr_field]
         end
-        the_title = @solr_doc[:label_display]
+        the_title = "#{page_type.capitalize} #{label_display}"
         new_solr_doc[:title_t] = the_title
         new_solr_doc[:title_display] = the_title
         @solr_doc = new_solr_doc
@@ -48,6 +48,14 @@ module KDL
       @solr_doc
     end
 
+    def page_title
+      if sequence_number_display.to_i > 1
+        "#{type.capitalize} #{label_display}"
+      else
+        @solr_doc[:title_t]
+      end
+    end
+
     def id
       "#{@parent_id}_#{sequence_number_display}"
     end
@@ -58,6 +66,10 @@ module KDL
 
     def label_display
       @mets.label @identifier
+    end
+
+    def page_type
+      @mets.page_type @identifier
     end
 
     def text

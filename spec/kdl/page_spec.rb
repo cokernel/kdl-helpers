@@ -59,6 +59,13 @@ module KDL
         end
       end
 
+      describe "#page_type" do
+        it "delegates to METS" do
+          mets.should_receive(:page_type)
+          page.page_type
+        end
+      end
+
       describe "#page_fields" do
         it "creates a hash of fields common to all pages" do
           page.stub(:text).and_return('howdy')
@@ -111,6 +118,17 @@ module KDL
             page.page_fields.should have_key(solr_field)
           end 
           page.page_fields.length.should == whitelist.length + page_specific_fields.length
+        end
+
+        it "includes an abbreviated title for subsequent pages" do
+          page = Page.new mets, identifier_p2, dip_id, dip_directory, solr_doc
+          page.stub(:page_type).and_return('page')
+          page.stub(:sequence_number_display).and_return('2')
+          page.stub(:label_display).and_return('2')
+          page.stub(:text).and_return('howdy')
+          page.page_fields[:title_t].should_not be_nil
+          page.page_fields[:title_t].should == 'Page 2'
+          page.page_fields[:title_display].should == 'Page 2'
         end
       end
     end

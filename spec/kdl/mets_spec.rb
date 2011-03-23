@@ -194,6 +194,15 @@ module KDL
         end
       end
 
+      describe "#page_type" do
+        it "returns the type for a given id" do
+          identifier = @mets.ids.first
+          div = @mets.div :fileGrp_id => identifier
+          expected = div.first['TYPE']
+          @mets.page_type(identifier).should == expected
+        end
+      end
+
       describe "#text_href" do
         it "returns the text location for a given id" do
           identifier = @mets.ids.first

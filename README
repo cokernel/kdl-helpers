@@ -36,10 +36,13 @@ KDL::Page
   Export
     #save
       serializes page_fields to a JSON file in the specified directory
+    #page_type
+      delegates to METS
     #page_fields
       creates a hash of fields common to all pages
       includes all solr_doc fields for the first page
       only includes specified fields for subsequent pages
+      includes an abbreviated title for subsequent pages
   Page-specific metadata
     label_display
       delegates to METS
@@ -198,6 +201,8 @@ KDL::METS
       returns the sequence number for a given id
     #label
       returns the label for a given id
+    #page_type
+      returns the type for a given id
     #text_href
       returns the text location for a given id
 KDL::AipMaker
@@ -220,6 +225,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.098858 seconds
+Finished in 5.724704 seconds
 
-125 examples, 0 failures
+128 examples, 0 failures
