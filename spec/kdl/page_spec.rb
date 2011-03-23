@@ -27,7 +27,7 @@ module KDL
           mets.load File.join(dip_directory, 'data', 'mets.xml')
           page = Page.new mets, identifier, dip_id, dip_directory, Hash.new
           page.save solr_directory
-          File.file?(File.join(solr_directory, page.identifier)).should be_true
+          File.file?(File.join(solr_directory, page.id)).should be_true
         end
       end
 

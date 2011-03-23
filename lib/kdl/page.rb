@@ -14,7 +14,7 @@ module KDL
 
     def save(solr_directory)
       FileUtils.mkdir_p(solr_directory)
-      solr_file = File.join(solr_directory, @identifier)
+      solr_file = File.join(solr_directory, id)
       File.open(solr_file, 'w') { |f|
         f.write page_fields.to_json
       }
