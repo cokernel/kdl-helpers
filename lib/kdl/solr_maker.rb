@@ -32,12 +32,12 @@ module KDL
         :description_display,
         :subject_topic_facet,
         :date_facet,
-        :language_facet,
+        :language_display,
         :usage_display,
         :publisher_t,
         :publisher_display,
         :parent_id_s,
-        :repository_t,
+        :repository_facet,
         :repository_display,
         :date_digitized_display,
         :format,
@@ -96,7 +96,7 @@ module KDL
     dublin_core_export :dc_description, :description_t
     dublin_core_export :dc_description, :description_display
     dublin_core_export :dc_type, :type_display
-    dublin_core_export :dc_language, :language_facet
+    dublin_core_export :dc_language, :language_display
     dublin_core_export :dc_creator, :author_t
     dublin_core_export :dc_creator, :author_display
     dublin_core_export :dc_rights, :usage_display

@@ -24,7 +24,7 @@ module KDL
       if sequence_number_display.to_i > 1
         new_solr_doc = Hash.new
         [
-          :language_facet,
+          :language_display,
           :usage_display,
           :parent_id_s,
           :relation_display,

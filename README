@@ -147,8 +147,8 @@ KDL::SolrMaker
         delegates fetching type_display to AccessPackage
       #usage_display
         delegates fetching usage_display to AccessPackage
-      #language_facet
-        delegates fetching language_facet to AccessPackage
+      #language_display
+        delegates fetching language_display to AccessPackage
       #date_facet
         delegates fetching date_facet to AccessPackage
       #relation_display
@@ -225,6 +225,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.121302 seconds
+Finished in 6.058238 seconds
 
 128 examples, 0 failures
