@@ -148,7 +148,7 @@ module KDL
       div(:fileGrp_id => identifier).first['ORDER']
     end
 
-    def page_number(identifier)
+    def label(identifier)
       div(:fileGrp_id => identifier).first['LABEL']
     end
 

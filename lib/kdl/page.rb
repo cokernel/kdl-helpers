@@ -32,14 +32,14 @@ module KDL
         ].each do |solr_field|
           new_solr_doc[solr_field] = @solr_doc[solr_field]
         end
-        the_title = @solr_doc[:page_number_display]
+        the_title = @solr_doc[:label_display]
         new_solr_doc[:title_t] = the_title
         new_solr_doc[:title_display] = the_title
         @solr_doc = new_solr_doc
       end
       [
         :id,
-        :page_number_display,
+        :label_display,
         :sequence_number_display,
         :text,
       ].each do |page_field|
@@ -56,8 +56,8 @@ module KDL
       @mets.sequence_number @identifier
     end
 
-    def page_number_display
-      @mets.page_number @identifier
+    def label_display
+      @mets.label @identifier
     end
 
     def text

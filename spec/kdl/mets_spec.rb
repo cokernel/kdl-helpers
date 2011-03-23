@@ -185,12 +185,12 @@ module KDL
         end
       end
 
-      describe "#page_number" do
-        it "returns the page number for a given id" do
+      describe "#label" do
+        it "returns the label for a given id" do
           identifier = @mets.ids.first
           div = @mets.div :fileGrp_id => identifier
           expected = div.first['LABEL']
-          @mets.page_number(identifier).should == expected
+          @mets.label(identifier).should == expected
         end
       end
 

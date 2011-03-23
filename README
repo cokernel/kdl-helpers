@@ -41,7 +41,7 @@ KDL::Page
       includes all solr_doc fields for the first page
       only includes specified fields for subsequent pages
   Page-specific metadata
-    page_number_display
+    label_display
       delegates to METS
     sequence_number_display
       delegates to METS
@@ -196,8 +196,8 @@ KDL::METS
   item-level metadata
     #sequence_number
       returns the sequence number for a given id
-    #page_number
-      returns the page number for a given id
+    #label
+      returns the label for a given id
     #text_href
       returns the text location for a given id
 KDL::AipMaker
@@ -220,6 +220,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.716018 seconds
+Finished in 6.098858 seconds
 
 125 examples, 0 failures

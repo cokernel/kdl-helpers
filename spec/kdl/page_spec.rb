@@ -32,7 +32,7 @@ module KDL
     let(:page) { Page.new mets, identifier, dip_id, dip_directory, solr_doc }
     let(:page_specific_fields) { [
             :id,
-            :page_number_display,
+            :label_display,
             :sequence_number_display,
             :text,
             ]}
@@ -117,7 +117,7 @@ module KDL
 
     context "Page-specific metadata" do
       [
-        :page_number_display,
+        :label_display,
         :sequence_number_display,
         :text_href,
       ].each do |page_field| 
