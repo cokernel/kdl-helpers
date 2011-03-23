@@ -21,6 +21,21 @@ module KDL
     end
 
     def page_fields
+      if sequence_number_display.to_i > 1
+        new_solr_doc = Hash.new
+        [
+          :language_facet,
+          :usage_display,
+          :parent_id_s,
+          :relation_display,
+        ].each do |solr_field|
+          new_solr_doc[solr_field] = @solr_doc[solr_field]
+        end
+        the_title = @solr_doc[:page_number_display]
+        new_solr_doc[:title_t] = the_title
+        new_solr_doc[:title_display] = the_title
+        @solr_doc = new_solr_doc
+      end
       [
         :id,
         :page_number_display,

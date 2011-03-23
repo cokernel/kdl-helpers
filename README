@@ -38,6 +38,8 @@ KDL::Page
       serializes page_fields to a JSON file in the specified directory
     #page_fields
       creates a hash of fields common to all pages
+      includes all solr_doc fields for the first page
+      only includes specified fields for subsequent pages
   Page-specific metadata
     page_number_display
       delegates to METS
@@ -146,6 +148,8 @@ KDL::SolrMaker
         delegates fetching language_facet to AccessPackage
       #date_facet
         delegates fetching date_facet to AccessPackage
+      #relation_display
+        delegates fetching relation_display to AccessPackage
     KDL Solr fields with multiple occurrences allowed
       #subject_topic_facet
         delegates to AccessPackage
@@ -216,6 +220,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.799288 seconds
+Finished in 5.676594 seconds
 
-122 examples, 0 failures
+125 examples, 0 failures
