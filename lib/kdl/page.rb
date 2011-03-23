@@ -22,6 +22,7 @@ module KDL
     end
 
     def page_fields
+      @solr_doc[:title_display] = "#{page_type.capitalize} #{label_display} of #{@title}"
       if sequence_number_display.to_i > 1
         new_solr_doc = Hash.new
         [
@@ -31,12 +32,13 @@ module KDL
           :parent_id_s,
           :relation_display,
           :repository_display,
+          :title_display,
         ].each do |solr_field|
           new_solr_doc[solr_field] = @solr_doc[solr_field]
         end
         the_title = "#{page_type.capitalize} #{label_display}"
         new_solr_doc[:title_t] = the_title
-        new_solr_doc[:title_display] = "#{the_title} of #{@title}"
+        #new_solr_doc[:title_display] = "#{the_title} of #{@title}"
         @solr_doc = new_solr_doc
       end
       [

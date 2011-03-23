@@ -76,6 +76,8 @@ module KDL
 
         it "includes all solr_doc fields for the first page" do
           page.stub(:sequence_number_display).and_return(1)
+          page.stub(:page_type).and_return('page')
+          page.stub(:label_display).and_return('1')
           page.stub(:text).and_return('howdy')
           [
             :author_t,
@@ -100,6 +102,7 @@ module KDL
           ].each do |solr_field| 
             page.page_fields.should have_key(solr_field)
           end 
+          page.page_fields[:title_display].should == "Page 1 of #{solr_doc[:title_t]}"
         end
 
         it "only includes specified fields for subsequent pages" do
@@ -129,7 +132,7 @@ module KDL
           page.stub(:text).and_return('howdy')
           page.page_fields[:title_t].should_not be_nil
           page.page_fields[:title_t].should == 'Page 2'
-          page.page_fields[:title_display].should == "Page 2 of #{solr_doc[:title_display]}"
+          page.page_fields[:title_display].should == "Page 2 of #{solr_doc[:title_t]}"
         end
       end
     end
