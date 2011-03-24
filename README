@@ -56,6 +56,8 @@ KDL::Page
       constructs an identifier for an individual page
     #text
       retrieves the text from the DIP directory
+    #text_s
+      delegates to text
 KDL::AccessPackage
   Dublin Core access
     dc_contributor
@@ -229,6 +231,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.90826 seconds
+Finished in 6.277371 seconds
 
-130 examples, 0 failures
+131 examples, 0 failures

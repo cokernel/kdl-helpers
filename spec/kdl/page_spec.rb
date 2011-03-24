@@ -37,6 +37,7 @@ module KDL
             :sequence_number_display,
             :sequence_sort,
             :text,
+            :text_s,
             ]}
     let(:playground) { File.join('data', 'playground') }
     let(:solrs_directory) { File.join(playground, 'solr') }
@@ -159,6 +160,17 @@ module KDL
           page = Page.new mets, identifier, dip_id, dip_directory, Hash.new
           file = File.join(dip_directory, 'data', page.text_href)
           page.text.should == IO.read(file)
+        end
+      end
+
+      describe "#text_s" do
+        it "delegates to text" do
+          mets = METS.new
+          mets.load File.join(dip_directory, 'data', 'mets.xml')
+          page = Page.new mets, identifier, dip_id, dip_directory, Hash.new
+          file = File.join(dip_directory, 'data', page.text_href)
+          page.should_receive(:text)
+          page.text_s
         end
       end
     end

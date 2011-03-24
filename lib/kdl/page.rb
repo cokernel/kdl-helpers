@@ -49,6 +49,7 @@ module KDL
         :sequence_number_display,
         :sequence_sort,
         :text,
+        :text_s,
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
       end
@@ -91,6 +92,10 @@ module KDL
       rescue
         ''
       end
+    end
+
+    def text_s
+      text
     end
 
     def text_href
