@@ -58,6 +58,12 @@ module KDL
                             :use => 'tiles metadata'
           href.length.should be > 0
           href = dipmaker.mets.href :fileGrp => fileGrp_id,
+                            :use => 'reference image'
+          href.length.should be > 0
+          href = dipmaker.mets.href :fileGrp => fileGrp_id,
+                            :use => 'print image'
+          href.length.should be > 0
+          href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'master'
           href.length.should == 0
         end
@@ -77,6 +83,12 @@ module KDL
                                 length.should be > 0
           dipmaker.mets.file_id(:fileGrp => fileGrp_id,
                                 :use => 'tiles metadata').
+                                length.should be > 0
+          dipmaker.mets.file_id(:fileGrp => fileGrp_id,
+                                :use => 'reference image').
+                                length.should be > 0
+          dipmaker.mets.file_id(:fileGrp => fileGrp_id,
+                                :use => 'print image').
                                 length.should be > 0
           dipmaker.mets.file_id(:fileGrp => fileGrp_id,
                                 :use => 'master').

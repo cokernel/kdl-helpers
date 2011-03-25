@@ -52,6 +52,18 @@ module KDL
                          :file => thumb_href,
                          :mimetype => 'text/plain'
 
+          ref_href = File.join(base, base + '.jpg')
+          @mets.add_file :fileGrp => fileGrp_id,
+                         :use => 'reference image',
+                         :file => ref_href,
+                         :mimetype => 'image/jpeg'
+
+          pdf_href = File.join(base, base + '.pdf')
+          @mets.add_file :fileGrp => fileGrp_id,
+                         :use => 'print image',
+                         :file => pdf_href,
+                         :mimetype => 'application/pdf'
+
           master_id = @mets.file_id :fileGrp => fileGrp_id,
                          :use => 'master'
           @mets.remove_file :file_id => master_id
