@@ -144,6 +144,11 @@ module KDL
       @mets.xpath(query).to_s
     end
 
+    def reference_image_path(identifier)
+      href :fileGrp => identifier,
+           :use => 'reference image'
+    end
+
     def sequence_number(identifier)
       div(:fileGrp_id => identifier).first['ORDER']
     end

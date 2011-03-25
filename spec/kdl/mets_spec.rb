@@ -5,6 +5,7 @@ module KDL
     let (:fileGrp_id) { @mets.ids.first }
     let (:playground) { File.join('data', 'playground') }
     let (:aips_directory) { File.join('data', 'aips') }
+    let (:dips_directory) { File.join('data', 'dips') }
 
     before(:each) do
       FileUtils::mkdir_p File.join(playground, 'mets')
@@ -209,6 +210,21 @@ module KDL
           expected = @mets.href :fileGrp => identifier,
                                 :use => 'ocr'
           @mets.text_href(identifier).should == expected
+        end
+      end
+
+      describe "#reference_image_path" do
+        it "returns the relative location for the reference image for a given id" do
+          dip_mets_src = File.join(dips_directory, 'sample_aip', 'data', 'mets.xml')
+          dip_mets_file = File.join(playground, 'mets', 'dip-mets.xml')
+          FileUtils.cp dip_mets_src, dip_mets_file
+          mets = METS.new
+          mets.load dip_mets_file
+          identifier = mets.ids.first
+          expected = mets.href :fileGrp => identifier,
+                               :use => 'reference image'
+          expected.should_not be_nil
+          mets.reference_image_path(identifier).should == expected
         end
       end
     end
