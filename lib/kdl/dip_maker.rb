@@ -49,7 +49,7 @@ module KDL
           meta_href = File.join(base, base + '.txt')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'tiles metadata',
-                         :file => thumb_href,
+                         :file => meta_href,
                          :mimetype => 'text/plain'
 
           ref_href = File.join(base, base + '.jpg')
