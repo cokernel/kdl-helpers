@@ -227,6 +227,21 @@ module KDL
           mets.reference_image_path(identifier).should == expected
         end
       end
+
+      describe "#viewer_path" do
+        it "returns the relative location for the gmapviewer metadata file for a given id" do
+          dip_mets_src = File.join(dips_directory, 'sample_aip', 'data', 'mets.xml')
+          dip_mets_file = File.join(playground, 'mets', 'dip-mets.xml')
+          FileUtils.cp dip_mets_src, dip_mets_file
+          mets = METS.new
+          mets.load dip_mets_file
+          identifier = mets.ids.first
+          expected = mets.href :fileGrp => identifier,
+                               :use => 'tiles metadata'
+          expected.should_not be_nil
+          mets.viewer_path(identifier).should == expected
+        end
+      end
     end
   end
 end

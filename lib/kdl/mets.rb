@@ -149,6 +149,11 @@ module KDL
            :use => 'reference image'
     end
 
+    def viewer_path(identifier)
+      href :fileGrp => identifier,
+           :use => 'tiles metadata'
+    end
+
     def sequence_number(identifier)
       div(:fileGrp_id => identifier).first['ORDER']
     end

@@ -51,6 +51,7 @@ module KDL
         :text,
         :text_s,
         :reference_image_url_s,
+        :viewer_url_s,
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
       end
@@ -74,6 +75,14 @@ module KDL
         @parent_id,
         'data',
         @mets.reference_image_path(@identifier)
+      ].join('/')
+    end
+
+    def viewer_url_s
+      [ 'http://nyx.uky.edu/dips',
+        @parent_id,
+        'data',
+        @mets.viewer_path(@identifier)
       ].join('/')
     end
 

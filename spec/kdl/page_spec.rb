@@ -104,6 +104,7 @@ module KDL
             :parent_id_s,
             :relation_display,
             :repository_display,
+            :viewer_url_s,
           ]
           whitelist.each do |solr_field| 
             page.page_fields.should have_key(solr_field)
@@ -144,6 +145,14 @@ module KDL
           mets.stub(:reference_image_path).and_return('0001/0001.jpg')
           mets.should_receive(:reference_image_path)
           page.reference_image_url_s.should == "http://nyx.uky.edu/dips/#{dip_id}/data/0001/0001.jpg"
+        end
+      end
+
+      describe "#viewer_url_s" do
+        it "partially delegates to METS" do
+          mets.stub(:viewer_path).and_return('0001/0001.txt')
+          mets.should_receive(:viewer_path)
+          page.viewer_url_s.should == "http://nyx.uky.edu/dips/#{dip_id}/data/0001/0001.txt"
         end
       end
 
