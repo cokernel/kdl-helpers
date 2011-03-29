@@ -29,6 +29,7 @@ module KDL
             :format => 'foo',
             :type_display => 'foo',
             :relation_display => 'foo',
+            :mets_url_display => 'foo',
             }}
     let(:page) { Page.new mets, identifier, dip_id, dip_directory, solr_doc }
     let(:page_specific_fields) { [
@@ -105,6 +106,7 @@ module KDL
             :relation_display,
             :repository_display,
             :viewer_url_s,
+            :mets_url_display,
           ]
           whitelist.each do |solr_field| 
             page.page_fields.should have_key(solr_field)

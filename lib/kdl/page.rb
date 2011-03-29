@@ -35,12 +35,12 @@ module KDL
           :repository_display,
           :title_display,
           :title_sort,
+          :mets_url_display,
         ].each do |solr_field|
           new_solr_doc[solr_field] = @solr_doc[solr_field]
         end
         the_title = "#{page_type.capitalize} #{label_display}"
         new_solr_doc[:title_t] = the_title
-        #new_solr_doc[:title_display] = "#{the_title} of #{@title}"
         @solr_doc = new_solr_doc
       end
       [

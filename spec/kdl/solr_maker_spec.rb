@@ -161,6 +161,7 @@ module KDL
             :format,
             :type_display,
             :relation_display,
+            :mets_url_display,
           ].each do |solr_field| 
             solr_maker.solr_doc.should have_key(solr_field)
           end
@@ -172,6 +173,18 @@ module KDL
           solr_maker = SolrMaker.new output, access_package, solrs_directory
           access_package.should_receive(:pages)
           solr_maker.pages
+        end
+      end
+
+      describe "#mets_url_display" do
+        it "returns the location of the METS file" do
+          access_package.stub(:identifier).and_return('sample_aip')
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
+          solr_maker.mets_url_display.should == [
+            'http://nyx.uky.edu/dips',
+            access_package.identifier,
+            'data/mets.xml',
+          ].join('/')
         end
       end
     end

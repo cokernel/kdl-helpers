@@ -44,6 +44,7 @@ module KDL
         :format,
         :type_display,
         :relation_display,
+        :mets_url_display,
       ].each do |solr_field|
         hash[solr_field] = send(solr_field)
       end
@@ -64,6 +65,14 @@ module KDL
 
     def pages
       @access_package.pages solr_doc
+    end
+
+    def mets_url_display
+      [
+        'http://nyx.uky.edu/dips',
+        @access_package.identifier,
+        'data/mets.xml',
+      ].join('/')
     end
 
     def method_missing(name, *args)
