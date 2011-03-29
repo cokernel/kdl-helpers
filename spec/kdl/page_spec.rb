@@ -17,7 +17,7 @@ module KDL
             :description_t => 'foo',
             :description_display => 'foo',
             :subject_topic_facet => 'foo',
-            :date_facet => 'foo',
+            :pub_date => 'foo',
             :language_display => 'foo',
             :usage_display => 'foo',
             :publisher_t => 'foo',

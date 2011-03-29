@@ -83,7 +83,7 @@ module KDL
           [:dc_type, :type_display],
           [:dc_rights, :usage_display],
           [:dc_language, :language_display],
-          [:dc_date, :date_facet],
+          [:dc_date, :pub_date],
           [:dc_relation, :relation_display],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
@@ -141,7 +141,7 @@ module KDL
             :description_t,
             :description_display,
             :subject_topic_facet,
-            :date_facet,
+            :pub_date,
             :language_display,
             :usage_display,
             :publisher_t,

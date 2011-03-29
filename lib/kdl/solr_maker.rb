@@ -32,7 +32,7 @@ module KDL
         :description_t,
         :description_display,
         :subject_topic_facet,
-        :date_facet,
+        :pub_date,
         :language_display,
         :usage_display,
         :publisher_t,
@@ -102,7 +102,7 @@ module KDL
     dublin_core_export :dc_creator, :author_t
     dublin_core_export :dc_creator, :author_display
     dublin_core_export :dc_rights, :usage_display
-    dublin_core_export :dc_date, :date_facet
+    dublin_core_export :dc_date, :pub_date
     dublin_core_export :dc_relation, :relation_display
   end
 end
