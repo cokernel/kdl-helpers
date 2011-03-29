@@ -50,6 +50,10 @@ KDL::Page
       delegates to METS
     text_href
       delegates to METS
+    #reference_image_url_s
+      partially delegates to METS
+    #viewer_url_s
+      partially delegates to METS
     #sequence_sort
       is a zero-padded version of sequence_number_display
     #id
@@ -155,10 +159,10 @@ KDL::SolrMaker
         delegates fetching usage_display to AccessPackage
       #language_display
         delegates fetching language_display to AccessPackage
-      #date_facet
-        delegates fetching date_facet to AccessPackage
       #relation_display
         delegates fetching relation_display to AccessPackage
+      #pub_date
+        partially delegates fetching pub_date to AcessPackage
     KDL Solr fields with multiple occurrences allowed
       #subject_topic_facet
         delegates to AccessPackage
@@ -211,6 +215,10 @@ KDL::METS
       returns the type for a given id
     #text_href
       returns the text location for a given id
+    #reference_image_path
+      returns the relative location for the reference image for a given id
+    #viewer_path
+      returns the relative location for the gmapviewer metadata file for a given id
 KDL::AipMaker
   #build
     builds the AIP in the requested directory
@@ -231,6 +239,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.277371 seconds
+Finished in 8.316859 seconds
 
-131 examples, 0 failures
+135 examples, 0 failures

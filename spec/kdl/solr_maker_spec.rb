@@ -83,7 +83,6 @@ module KDL
           [:dc_type, :type_display],
           [:dc_rights, :usage_display],
           [:dc_language, :language_display],
-          [:dc_date, :pub_date],
           [:dc_relation, :relation_display],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
@@ -92,6 +91,14 @@ module KDL
               solr_maker = SolrMaker.new output, access_package, solrs_directory
               solr_maker.send(solr_field).should == access_package.send(dc_field).first
             end
+          end
+        end
+
+        describe "#pub_date" do
+          it "partially delegates fetching pub_date to AcessPackage" do
+            access_package.stub(:dc_date).and_return(['1908.'])
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            solr_maker.pub_date.should == access_package.dc_date.first.gsub(/\D/, '')
           end
         end
       end
@@ -131,6 +138,7 @@ module KDL
 
       describe "#solr_doc" do
         it "creates a hash of fields common to all pages" do
+          access_package.stub(:dc_date).and_return('1908.')
           solr_maker = SolrMaker.new output, access_package, solrs_directory
           [
             :author_t,

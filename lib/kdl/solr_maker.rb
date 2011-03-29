@@ -89,6 +89,11 @@ module KDL
       end
     end
 
+    def pub_date
+      raw_date = @access_package.dc_date.first
+      raw_date.gsub(/\D/, '')
+    end
+
     dublin_core_export :dc_title, :title_t
     dublin_core_export :dc_title, :title_display
     dublin_core_export :dc_title, :title_sort
@@ -102,7 +107,6 @@ module KDL
     dublin_core_export :dc_creator, :author_t
     dublin_core_export :dc_creator, :author_display
     dublin_core_export :dc_rights, :usage_display
-    dublin_core_export :dc_date, :pub_date
     dublin_core_export :dc_relation, :relation_display
   end
 end
