@@ -33,6 +33,7 @@ module KDL
           :parent_id_s,
           :relation_display,
           :repository_display,
+        #new_solr_doc[:title_display] = "#{the_title} of #{@title}"
           :title_display,
           :title_sort,
           :mets_url_display,
@@ -52,6 +53,7 @@ module KDL
         :text_s,
         :reference_image_url_s,
         :viewer_url_s,
+        :pdf_url_display,
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
       end
@@ -68,6 +70,14 @@ module KDL
 
     def id
       "#{@parent_id}_#{sequence_number_display}"
+    end
+
+    def pdf_url_display
+      [ 'http://nyx.uky.edu/dips',
+        @parent_id,
+        'data',
+        @mets.print_image_path(@identifier)
+      ].join('/')
     end
 
     def reference_image_url_s

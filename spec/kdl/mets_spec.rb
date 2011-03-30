@@ -213,6 +213,21 @@ module KDL
         end
       end
 
+      describe "#print_image_path" do
+        it "returns the relative location for the print image for a given id" do
+          dip_mets_src = File.join(dips_directory, 'sample_aip', 'data', 'mets.xml')
+          dip_mets_file = File.join(playground, 'mets', 'dip-mets.xml')
+          FileUtils.cp dip_mets_src, dip_mets_file
+          mets = METS.new
+          mets.load dip_mets_file
+          identifier = mets.ids.first
+          expected = mets.href :fileGrp => identifier,
+                               :use => 'print image'
+          expected.should_not be_nil
+          mets.print_image_path(identifier).should == expected
+        end
+      end
+
       describe "#reference_image_path" do
         it "returns the relative location for the reference image for a given id" do
           dip_mets_src = File.join(dips_directory, 'sample_aip', 'data', 'mets.xml')

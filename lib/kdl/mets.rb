@@ -144,6 +144,11 @@ module KDL
       @mets.xpath(query).to_s
     end
 
+    def print_image_path(identifier)
+      href :fileGrp => identifier,
+           :use => 'print image'
+    end
+
     def reference_image_path(identifier)
       href :fileGrp => identifier,
            :use => 'reference image'

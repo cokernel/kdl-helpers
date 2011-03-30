@@ -40,6 +40,7 @@ module KDL
             :text,
             :text_s,
             :reference_image_url_s,
+            :pdf_url_display,
             ]}
     let(:playground) { File.join('data', 'playground') }
     let(:solrs_directory) { File.join(playground, 'solr') }
@@ -139,6 +140,14 @@ module KDL
             mets.should_receive(mets_field)
             page.send(page_field)
           end
+        end
+      end
+
+      describe "#pdf_url_display" do
+        it "partially delegates to METS" do
+          mets.stub(:print_image_path).and_return('0001/0001.pdf')
+          mets.should_receive(:print_image_path)
+          page.pdf_url_display.should == "http://nyx.uky.edu/dips/#{dip_id}/data/0001/0001.pdf"
         end
       end
 

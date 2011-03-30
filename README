@@ -50,6 +50,8 @@ KDL::Page
       delegates to METS
     text_href
       delegates to METS
+    #pdf_url_display
+      partially delegates to METS
     #reference_image_url_s
       partially delegates to METS
     #viewer_url_s
@@ -217,6 +219,8 @@ KDL::METS
       returns the type for a given id
     #text_href
       returns the text location for a given id
+    #print_image_path
+      returns the relative location for the print image for a given id
     #reference_image_path
       returns the relative location for the reference image for a given id
     #viewer_path
@@ -241,6 +245,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 8.386897 seconds
+Finished in 8.209067 seconds
 
-136 examples, 0 failures
+138 examples, 0 failures
