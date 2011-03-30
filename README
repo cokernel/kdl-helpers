@@ -4,7 +4,9 @@ KDL::DipMaker
     opens the METS file in place
   #generate_tiles
     create tiles files and removes master files if the METS file is loaded
+    removes tiff images from the METS file
     updates the METS file with tile files (removing master representations) if the METS file is loaded
+    updates removing tiff image representations if the METS file is loaded
     outputs an error message if the METS file is not loaded
     outputs an error message if no tiler object is provided
   #build
@@ -245,6 +247,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 8.209067 seconds
+Finished in 10.142046 seconds
 
-138 examples, 0 failures
+140 examples, 0 failures

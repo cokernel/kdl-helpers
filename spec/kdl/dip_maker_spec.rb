@@ -63,9 +63,23 @@ module KDL
           href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'print image'
           href.length.should be > 0
-          href = dipmaker.mets.href :fileGrp => fileGrp_id,
+        end
+      end
+
+      it "removes tiff images from the METS file" do
+        dip_directory = File.join(dips_directory, File.basename(aip_directory))
+        dipmaker.stage
+        tiler = Tiler.new output
+        dipmaker.generate_tiles(tiler)
+        dip = BagIt::Bag.new dip_directory
+        dipmaker.mets.ids.each do |fileGrp_id|
+          tiff_href = dipmaker.mets.href :fileGrp => fileGrp_id,
+                            :use => 'tiff image'
+          master_href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'master'
-          href.length.should == 0
+          if master_href.length > 0
+            tiff_href.length.should == 0
+          end
         end
       end
 
@@ -90,9 +104,22 @@ module KDL
           dipmaker.mets.file_id(:fileGrp => fileGrp_id,
                                 :use => 'print image').
                                 length.should be > 0
-          dipmaker.mets.file_id(:fileGrp => fileGrp_id,
-                                :use => 'master').
-                                length.should == 0
+        end
+      end
+
+      it "updates removing tiff image representations if the METS file is loaded" do
+        dip_directory = File.join(dips_directory, File.basename(aip_directory))
+        dipmaker.stage
+        tiler = double('tiler').as_null_object
+        dipmaker.generate_tiles(tiler)
+        dipmaker.mets.ids.each do |fileGrp_id|
+          master_length = dipmaker.mets.file_id(:fileGrp => fileGrp_id,
+                                :use => 'master').length
+          if master_length > 0
+            dipmaker.mets.file_id(:fileGrp => fileGrp_id,
+                                  :use => 'tiff image').
+                                  length.should == 0
+          end
         end
       end
 

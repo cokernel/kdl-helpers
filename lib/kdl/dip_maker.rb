@@ -23,8 +23,14 @@ module KDL
     def generate_tiles(tiler=nil)
       if @mets.loaded? and tiler
         @mets.ids.each do |fileGrp_id|
+          use = 'tiff image'
           href = @mets.href :fileGrp => fileGrp_id,
-                            :use => 'master'
+                            :use => use
+          if href.length == 0
+            use = 'master'
+            href = @mets.href :fileGrp => fileGrp_id,
+                              :use => use
+          end
           base = File.basename(href, '.tif')
           tiler.configure :input_directory => @dip.data_dir,
                          :output_directory => @dip.data_dir,
@@ -65,7 +71,7 @@ module KDL
                          :mimetype => 'application/pdf'
 
           master_id = @mets.file_id :fileGrp => fileGrp_id,
-                         :use => 'master'
+                         :use => use
           @mets.remove_file :file_id => master_id
           @mets.save
           @dip.manifest!
