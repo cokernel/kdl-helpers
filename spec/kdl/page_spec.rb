@@ -125,6 +125,17 @@ module KDL
           page.page_fields[:title_t].should == 'Page 2'
           page.page_fields[:title_display].should == "Page 2 of #{solr_doc[:title_t]}"
         end
+
+        it "includes a modified title for subsequent pages of type 'sequence'" do
+          page = Page.new mets, identifier_p2, dip_id, dip_directory, solr_doc
+          page.stub(:page_type).and_return('sequence')
+          page.stub(:sequence_number_display).and_return('3')
+          page.stub(:label_display).and_return('2')
+          page.stub(:text).and_return('howdy')
+          page.page_fields[:title_t].should_not be_nil
+          page.page_fields[:title_t].should == 'Sequence 2'
+          page.page_fields[:title_display].should == "Sequence 3 of #{solr_doc[:title_t]}"
+        end
       end
     end
 

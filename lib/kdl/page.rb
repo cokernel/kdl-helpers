@@ -23,7 +23,13 @@ module KDL
     end
 
     def page_fields
-      @solr_doc[:title_display] = "#{page_type.capitalize} #{label_display} of #{@title}"
+      the_label = 
+      if page_type == 'sequence'
+        sequence_number_display
+      else
+        label_display
+      end
+      @solr_doc[:title_display] = "#{page_type.capitalize} #{the_label} of #{@title}"
       if sequence_number_display.to_i > 1
         new_solr_doc = Hash.new
         [

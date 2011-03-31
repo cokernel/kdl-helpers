@@ -45,6 +45,7 @@ KDL::Page
       includes all solr_doc fields for the first page
       only includes specified fields for subsequent pages
       includes an abbreviated title for subsequent pages
+      includes a modified title for subsequent pages of type 'sequence'
   Page-specific metadata
     label_display
       delegates to METS
@@ -247,6 +248,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 10.142046 seconds
+Finished in 10.378061 seconds
 
-140 examples, 0 failures
+141 examples, 0 failures
