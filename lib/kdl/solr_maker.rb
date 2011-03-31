@@ -100,7 +100,7 @@ module KDL
 
     def pub_date
       raw_date = @access_package.dc_date.first
-      raw_date.gsub(/\D/, '')
+      raw_date.gsub(/\D/, '')[0..3]
     end
 
     dublin_core_export :dc_title, :title_t

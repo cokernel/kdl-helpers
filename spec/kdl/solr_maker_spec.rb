@@ -96,9 +96,9 @@ module KDL
 
         describe "#pub_date" do
           it "partially delegates fetching pub_date to AcessPackage" do
-            access_package.stub(:dc_date).and_return(['1908.'])
+            access_package.stub(:dc_date).and_return(['1908.02'])
             solr_maker = SolrMaker.new output, access_package, solrs_directory
-            solr_maker.pub_date.should == access_package.dc_date.first.gsub(/\D/, '')
+            solr_maker.pub_date.should == access_package.dc_date.first.gsub(/\D/, '')[0..3]
           end
         end
       end
