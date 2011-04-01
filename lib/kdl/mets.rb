@@ -99,7 +99,7 @@ module KDL
     end
 
     def ids
-      mets.xpath('//mets:fileGrp').collect do |node|
+      mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'Finding Aid' }.collect do |node|
         node['ID']
       end
     end

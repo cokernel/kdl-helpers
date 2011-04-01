@@ -52,7 +52,7 @@ module KDL
 
     describe "#ids" do
       it "fetches the list of fileGrp identifiers" do
-        expected = @mets.mets.xpath('//mets:fileGrp').collect do |node|
+        expected = @mets.mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'Finding Aid'}.collect do |node|
           node['ID']
         end
         got = @mets.ids
