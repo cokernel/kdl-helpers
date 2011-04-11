@@ -180,7 +180,7 @@
         <mets:fptr FILEID="MasterFile001_0005"/>
       </mets:div>
     </mets:div>
-		<mets:div TYPE="folder" LABEL="2" ORDER="1" DMDID="DMD66M37_1_02">
+		<mets:div TYPE="folder" LABEL="2" ORDER="2" DMDID="DMD66M37_1_02">
       <mets:div TYPE="part" LABEL="f2:01" ORDER="1">
         <mets:fptr FILEID="MasterFile002_0001"/>
       </mets:div>
