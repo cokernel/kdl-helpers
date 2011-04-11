@@ -164,9 +164,9 @@ module KDL
 
       describe "#reference_image_url_s" do
         it "partially delegates to METS" do
-          mets.stub(:reference_image_path).and_return('0001/0001.jpg')
+          mets.stub(:reference_image_path).and_return('66M37_1_01/0001/0001.jpg')
           mets.should_receive(:reference_image_path)
-          page.reference_image_url_s.should == "http://nyx.uky.edu/dips/#{dip_id}/data/0001/0001.jpg"
+          page.reference_image_url_s.should == "http://nyx.uky.edu/dips/#{dip_id}/data/66M37_1_01/0001/0001.jpg"
         end
       end
 

@@ -31,7 +31,11 @@ module KDL
             href = @mets.href :fileGrp => fileGrp_id,
                               :use => use
           end
-          base = File.basename(href, '.tif')
+          stem = File.basename(href, '.tif')
+          base = File.join(
+            File.dirname(href),
+            stem
+          )
           tiler.configure :input_directory => @dip.data_dir,
                          :output_directory => @dip.data_dir,
                          :no_move => true,
@@ -40,31 +44,31 @@ module KDL
                          :file => href
           tiler.run
 
-          thumb_href = File.join(base, base + '_tb.jpg')
+          thumb_href = File.join(base, stem + '_tb.jpg')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'thumbnail',
                          :file => thumb_href,
                          :mimetype => 'image/jpeg'
 
-          tls_href = File.join(base, base + '.tls')
+          tls_href = File.join(base, stem + '.tls')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'tiled image',
                          :file => tls_href,
                          :mimetype => 'application/octet-stream'
 
-          meta_href = File.join(base, base + '.txt')
+          meta_href = File.join(base, stem + '.txt')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'tiles metadata',
                          :file => meta_href,
                          :mimetype => 'text/plain'
 
-          ref_href = File.join(base, base + '.jpg')
+          ref_href = File.join(base, stem + '.jpg')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'reference image',
                          :file => ref_href,
                          :mimetype => 'image/jpeg'
 
-          pdf_href = File.join(base, base + '.pdf')
+          pdf_href = File.join(base, stem + '.pdf')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'print image',
                          :file => pdf_href,
