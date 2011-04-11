@@ -159,6 +159,16 @@ module KDL
            :use => 'tiles metadata'
     end
 
+    def order_path(options)
+      the_div = div(options).first
+      the_path = [the_div['ORDER']]
+      while the_div.parent.name == 'div'
+        the_path.unshift the_div.parent['ORDER']
+        the_div = the_div.parent
+      end
+      the_path
+    end
+
     def sequence_number(identifier)
       div(:fileGrp_id => identifier).first['ORDER']
     end

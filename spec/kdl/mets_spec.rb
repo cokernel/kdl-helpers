@@ -177,6 +177,19 @@ module KDL
     end
 
     context "item-level metadata" do
+      describe "#order_path" do
+        it "returns the ORDER attributes of the mets:div for a given id and its mets:div ancestors in descent order" do
+          mets_src = File.join('data', 'mets', 'mets2.xml')
+          mets_file = File.join(playground, 'mets', 'mets2.xml')
+          FileUtils.cp mets_src, mets_file
+          mets = KDL::METS.new
+          mets.load mets_file
+          identifier = 'FileGrp002_0003'
+          expected = ['1', '1', '1', '3']
+          mets.order_path(:fileGrp_id => identifier).should == expected
+        end
+      end
+
       describe "#sequence_number" do
         it "returns the sequence number for a given id" do
           identifier = @mets.ids.first

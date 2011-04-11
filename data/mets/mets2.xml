@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:rights="http://www.loc.gov/rights/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:lc="http://www.loc.gov/mets/profiles" xmlns:bib="http://www.loc.gov/mets/profiles/bibRecord" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OBJID="KUKM-66M37" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" PROFILE="lc:bibRecord">
+<metsHdr CREATEDATE="2011-03-07T00:00:00" LASTMODDATE="2011-03-07T00:00:00" RECORDSTATUS="Production">
+<mets:agent ROLE="CREATOR" TYPE="REPOSITORY">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS submitted to KDL.</mets:note>
+</mets:agent>
+<mets:agent ROLE="PRESERVATION" TYPE="ORGANIZATION">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS and associated file(s) submitted in University of Kentucky Preservation Repository.</mets:note>
+</mets:agent>
+<mets:altRecordID TYPE="DLXS">66M37</mets:altRecordID>
+</metsHdr>
+<mets:dmdSec ID="DMD1">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
+<mets:xmlData>
+<oai_dc:dc 
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title xml:lang="en">Cooper-Phillips family papers.</dc:title>
+  <dc:creator>Cooper family.</dc:creator>
+  <dc:subject>Cooper family.</dc:subject>
+  <dc:subject>Cooper, Spencer, 1787-1839</dc:subject>
+  <dc:subject>Observer and reporter. (Lexington, Ky.)</dc:subject>
+  <dc:subject>Phillips family.</dc:subject>
+  <dc:subject>Phillips, Annie,  (Anna), Cooper</dc:subject>
+  <dc:subject>Phillips, Theodore B.</dc:subject>
+  <dc:subject>W.S. Hume and Co..</dc:subject>
+  <dc:subject>Wickliffe family.</dc:subject>
+  <dc:subject>Wickliffe, Daniel Carmichael, 1810-1870</dc:subject>
+  <dc:subject>Wickliffe, Virginia, Cooper</dc:subject>
+  <dc:subject>Kentucky--Genealogy.</dc:subject>
+  <dc:subject>Liquor industry--Kentucky--History--19th century.</dc:subject>
+  <dc:subject>United States--History--Civil War, 1861-1865--Public opinion.</dc:subject>
+  <dc:publisher>University of Kentucky</dc:publisher>
+  <dc:date>1857-1866, 1839-1911</dc:date>
+  <dc:format>collections</dc:format>
+  <dc:type>image</dc:type>
+  <dc:identifier>KUKM-66M37</dc:identifier>
+  <dc:language>english</dc:language>
+  <dc:rights xml:lang="en">This digital resource may be freely searched and displayed.  Permission must be received for subsequent distribution in print or electronically.  Physical rights are retained by the owning repository.  Copyright is retained in accordance with U. S. copyright laws.  Please go to http://kdl.kyvl.org for more information.</dc:rights>
+  <dc:description>0.45 Cubic feet.  1 box.  The Cooper-Phillips family papers document the family of Spencer Cooper, a Lexington, Kentucky clergyman and his daughter Annie's family with Theodore Phillips.</dc:description>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:dmdSec ID="DMD66M37_1_01">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
+<mets:xmlData>
+<oai_dc:dc 
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title xml:lang="en">General</dc:title>
+  <dc:date>1839-1868</dc:date>
+  <dc:identifier>66M37_1_01</dc:identifier>
+  <dc:format>collections</dc:format>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:dmdSec ID="DMD66M37_1_02">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
+<mets:xmlData>
+<oai_dc:dc 
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title xml:lang="en">General to Anna Cooper</dc:title>
+  <dc:date>[11 February 1858]-11 September 1865</dc:date>
+  <dc:identifier>66M37_1_02</dc:identifier>
+  <dc:format>collections</dc:format>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:amdSec>
+  <mets:rightsMD ID="RMD1">
+    <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="RIGHTSMD">
+      <mets:xmlData>
+        <mets:versionStatement>2011</mets:versionStatement>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:rightsMD>
+<mets:rightsMD ID="ADMRTS1">
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+<mets:xmlData>
+<mets:RightsDeclarationMD RIGHTSCATEGORY="">
+<mets:Context CONTEXTCLASS="GENERAL PUBLIC">
+<mets:Constraints CONSTRAINTTYPE="RE-USE">
+<mets:ConstraintDescription>View Collection Guide to obtain rights information.</mets:ConstraintDescription>
+</mets:Constraints>
+</mets:Context>
+</mets:RightsDeclarationMD>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:rightsMD>
+</mets:amdSec>
+<mets:fileSec>
+<mets:fileGrp ID="FORMAT1" USE="Finding Aid">
+<mets:file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10">
+<mets:FLocat xlink:href="66M37.xml" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp001_0001">
+<mets:file ID="MasterFile001_0001" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_01/0001.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp001_0002">
+<mets:file ID="MasterFile001_0002" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_01/0002.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp001_0003">
+<mets:file ID="MasterFile001_0003" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_01/0003.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp001_0004">
+<mets:file ID="MasterFile001_0004" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_01/0004.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp001_0005">
+<mets:file ID="MasterFile001_0005" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_01/0005.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp002_0001">
+<mets:file ID="MasterFile002_0001" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_02/0001.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp002_0002">
+<mets:file ID="MasterFile002_0002" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_02/0002.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp002_0003">
+<mets:file ID="MasterFile002_0003" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_02/0003.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp002_0004">
+<mets:file ID="MasterFile002_0004" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_02/0004.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp002_0005">
+<mets:file ID="MasterFile002_0005" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="66M37_1_02/0005.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+</mets:fileSec>
+<mets:structMap TYPE="physical">
+<mets:div TYPE="series" LABEL="I. Correspondence, 1839-1893" ORDER="1">
+	<mets:div TYPE="box" LABEL="1" ORDER="1">
+		<mets:div TYPE="folder" LABEL="1" ORDER="1" DMDID="DMD66M37_1_01">
+      <mets:div TYPE="part" LABEL="f1:01" ORDER="1">
+        <mets:fptr FILEID="MasterFile001_0001"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f1:02" ORDER="2">
+        <mets:fptr FILEID="MasterFile001_0002"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f1:03" ORDER="3">
+        <mets:fptr FILEID="MasterFile001_0003"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f1:04" ORDER="4">
+        <mets:fptr FILEID="MasterFile001_0004"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f1:05" ORDER="5">
+        <mets:fptr FILEID="MasterFile001_0005"/>
+      </mets:div>
+    </mets:div>
+		<mets:div TYPE="folder" LABEL="2" ORDER="1" DMDID="DMD66M37_1_02">
+      <mets:div TYPE="part" LABEL="f2:01" ORDER="1">
+        <mets:fptr FILEID="MasterFile002_0001"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f2:02" ORDER="2">
+        <mets:fptr FILEID="MasterFile002_0002"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f2:03" ORDER="3">
+        <mets:fptr FILEID="MasterFile002_0003"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f2:04" ORDER="4">
+        <mets:fptr FILEID="MasterFile002_0004"/>
+      </mets:div>
+      <mets:div TYPE="part" LABEL="f2:05" ORDER="5">
+        <mets:fptr FILEID="MasterFile002_0005"/>
+      </mets:div>
+    </mets:div>
+	</mets:div>
+</mets:div>
+</mets:structMap>
+</mets:mets>
