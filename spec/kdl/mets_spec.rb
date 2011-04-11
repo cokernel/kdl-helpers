@@ -184,7 +184,7 @@ module KDL
           FileUtils.cp mets_src, mets_file
           mets = KDL::METS.new
           mets.load mets_file
-          identifier = 'FileGrp002_0003'
+          identifier = 'FileGrp1_1_002_0003'
           expected = ['1', '1', '2', '3']
           mets.order_path(identifier).should == expected
         end
