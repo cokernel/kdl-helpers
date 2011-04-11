@@ -29,7 +29,10 @@ module KDL
       else
         label_display
       end
-      @solr_doc[:title_display] = "#{page_type.capitalize} #{the_label} of #{@title}"
+      label_path = @mets.label_path @identifier
+      label_path.pop
+      label_path.push "#{page_type.capitalize} #{the_label}"
+      @solr_doc[:title_display] = "#{label_path.join(' &gt; ')} of #{@title}"
       if sequence_number_display.to_i > 1
         new_solr_doc = Hash.new
         [

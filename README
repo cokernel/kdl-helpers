@@ -46,6 +46,7 @@ KDL::Page
       only includes specified fields for subsequent pages
       includes an abbreviated title for subsequent pages
       includes a modified title for subsequent pages of type 'sequence'
+      includes a breadcrumb trail in title_display when possible
   Page-specific metadata
     label_display
       delegates to METS
@@ -215,6 +216,8 @@ KDL::METS
   #date_digitized
     returns the date digitized
   item-level metadata
+    #label_path
+      returns the LABEL attributes of the mets:div for a given id and its eligible mets:div ancestors in descent order
     #order_path
       returns the ORDER attributes of the mets:div for a given id and its eligible mets:div ancestors in descent order
     #sequence_number
@@ -251,6 +254,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 10.758305 seconds
+Finished in 10.807456 seconds
 
-143 examples, 0 failures
+145 examples, 0 failures

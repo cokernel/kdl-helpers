@@ -160,6 +160,16 @@ module KDL
            :use => 'tiles metadata'
     end
 
+    def label_path(identifier)
+      the_div = div(:fileGrp_id => identifier).first
+      the_path = [the_div['LABEL']]
+      while the_div.parent.name == 'div'
+        the_path.unshift the_div.parent['LABEL']
+        the_div = the_div.parent
+      end
+      the_path
+    end
+
     def order_path(identifier)
       the_div = div(:fileGrp_id => identifier).first
       the_path = [the_div['ORDER']]

@@ -47,40 +47,6 @@
 </mets:xmlData>
 </mets:mdWrap>
 </mets:dmdSec>
-<mets:dmdSec ID="DMD66M37_1_01">
-<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
-<mets:xmlData>
-<oai_dc:dc 
-    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
-    xmlns:dc="http://purl.org/dc/elements/1.1/" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
-    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title xml:lang="en">General</dc:title>
-  <dc:date>1839-1868</dc:date>
-  <dc:identifier>66M37_1_01</dc:identifier>
-  <dc:format>collections</dc:format>
-</oai_dc:dc>
-</mets:xmlData>
-</mets:mdWrap>
-</mets:dmdSec>
-<mets:dmdSec ID="DMD66M37_1_02">
-<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
-<mets:xmlData>
-<oai_dc:dc 
-    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
-    xmlns:dc="http://purl.org/dc/elements/1.1/" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
-    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title xml:lang="en">General to Anna Cooper</dc:title>
-  <dc:date>[11 February 1858]-11 September 1865</dc:date>
-  <dc:identifier>66M37_1_02</dc:identifier>
-  <dc:format>collections</dc:format>
-</oai_dc:dc>
-</mets:xmlData>
-</mets:mdWrap>
-</mets:dmdSec>
 <mets:amdSec>
   <mets:rightsMD ID="RMD1">
     <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="RIGHTSMD">
@@ -163,37 +129,37 @@
 <mets:structMap TYPE="physical">
 <mets:div TYPE="series" LABEL="I. Correspondence, 1839-1893" ORDER="1">
 	<mets:div TYPE="box" LABEL="1" ORDER="1">
-		<mets:div TYPE="folder" LABEL="1" ORDER="1" DMDID="DMD66M37_1_01">
-      <mets:div TYPE="part" LABEL="f1:01" ORDER="1">
+		<mets:div TYPE="folder" LABEL="General, 1839-1868" ORDER="1">
+      <mets:div TYPE="part" LABEL="1" ORDER="1">
         <mets:fptr FILEID="MasterFile1_1_001_0001"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f1:02" ORDER="2">
+      <mets:div TYPE="part" LABEL="2" ORDER="2">
         <mets:fptr FILEID="MasterFile1_1_001_0002"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f1:03" ORDER="3">
+      <mets:div TYPE="part" LABEL="3" ORDER="3">
         <mets:fptr FILEID="MasterFile1_1_001_0003"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f1:04" ORDER="4">
+      <mets:div TYPE="part" LABEL="4" ORDER="4">
         <mets:fptr FILEID="MasterFile1_1_001_0004"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f1:05" ORDER="5">
+      <mets:div TYPE="part" LABEL="5" ORDER="5">
         <mets:fptr FILEID="MasterFile1_1_001_0005"/>
       </mets:div>
     </mets:div>
-		<mets:div TYPE="folder" LABEL="2" ORDER="2" DMDID="DMD66M37_1_02">
-      <mets:div TYPE="part" LABEL="f2:01" ORDER="1">
+		<mets:div TYPE="folder" LABEL="General to Anna Cooper, [11 February 1858]-11 September 1865" ORDER="2">
+      <mets:div TYPE="part" LABEL="1" ORDER="1">
         <mets:fptr FILEID="MasterFile1_1_002_0001"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f2:02" ORDER="2">
+      <mets:div TYPE="part" LABEL="2" ORDER="2">
         <mets:fptr FILEID="MasterFile1_1_002_0002"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f2:03" ORDER="3">
+      <mets:div TYPE="part" LABEL="3" ORDER="3">
         <mets:fptr FILEID="MasterFile1_1_002_0003"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f2:04" ORDER="4">
+      <mets:div TYPE="part" LABEL="4" ORDER="4">
         <mets:fptr FILEID="MasterFile1_1_002_0004"/>
       </mets:div>
-      <mets:div TYPE="part" LABEL="f2:05" ORDER="5">
+      <mets:div TYPE="part" LABEL="5" ORDER="5">
         <mets:fptr FILEID="MasterFile1_1_002_0005"/>
       </mets:div>
     </mets:div>

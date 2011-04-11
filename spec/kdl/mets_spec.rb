@@ -177,6 +177,24 @@ module KDL
     end
 
     context "item-level metadata" do
+      describe "#label_path" do
+        it "returns the LABEL attributes of the mets:div for a given id and its eligible mets:div ancestors in descent order" do
+          mets_src = File.join('data', 'mets', 'mets2.xml')
+          mets_file = File.join(playground, 'mets', 'mets2.xml')
+          FileUtils.cp mets_src, mets_file
+          mets = KDL::METS.new
+          mets.load mets_file
+          identifier = 'FileGrp1_1_002_0003'
+          expected = [
+            'I. Correspondence, 1839-1893',
+            '1',
+            'General to Anna Cooper, [11 February 1858]-11 September 1865',
+            '3',
+          ]
+          mets.label_path(identifier).should == expected
+        end
+      end
+
       describe "#order_path" do
         it "returns the ORDER attributes of the mets:div for a given id and its eligible mets:div ancestors in descent order" do
           mets_src = File.join('data', 'mets', 'mets2.xml')

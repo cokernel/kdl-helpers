@@ -89,6 +89,7 @@ module KDL
           page.solr_doc.keys.each do |solr_field|
             page.page_fields.should have_key(solr_field)
           end
+          mets.stub(:label_path).and_return(['1'])
           page.page_fields[:title_display].should == "Page 1 of #{solr_doc[:title_t]}"
         end
 
@@ -122,6 +123,7 @@ module KDL
           page.stub(:text).and_return('howdy')
           page.page_fields[:title_t].should_not be_nil
           page.page_fields[:title_t].should == 'Page 2'
+          mets.stub(:label_path).and_return(['2'])
           page.page_fields[:title_display].should == "Page 2 of #{solr_doc[:title_t]}"
         end
 
@@ -133,7 +135,22 @@ module KDL
           page.stub(:text).and_return('howdy')
           page.page_fields[:title_t].should_not be_nil
           page.page_fields[:title_t].should == 'Sequence 2'
+          mets.stub(:label_path).and_return(['3'])
           page.page_fields[:title_display].should == "Sequence 3 of #{solr_doc[:title_t]}"
+        end
+
+        it "includes a breadcrumb trail in title_display when possible" do
+          FileUtils.mkdir_p File.join(playground, 'mets')
+          mets_src = File.join('data', 'mets', 'mets2.xml')
+          mets_file = File.join(playground, 'mets', 'mets2.xml')
+          FileUtils.cp mets_src, mets_file
+          mets = KDL::METS.new
+          mets.load mets_file
+          page = Page.new mets, 'FileGrp1_1_002_0003', dip_id, dip_directory, solr_doc
+          page.stub(:page_type).and_return('page')
+          page.stub(:sequence_number_display).and_return('3')
+          page.stub(:text).and_return('howdy')
+          page.page_fields[:title_display].should == "I. Correspondence, 1839-1893 &gt; 1 &gt; General to Anna Cooper, [11 February 1858]-11 September 1865 &gt; Page 3 of #{solr_doc[:title_t]}"
         end
       end
     end
