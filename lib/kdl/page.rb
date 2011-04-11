@@ -75,7 +75,7 @@ module KDL
     end
 
     def id
-      "#{@parent_id}_#{sequence_number_display}"
+      "#{@parent_id}_#{page_identifier}"
     end
 
     def pdf_url_display

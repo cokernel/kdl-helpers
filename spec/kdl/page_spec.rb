@@ -196,6 +196,7 @@ module KDL
 
       describe "#id" do
         it "constructs an identifier for an individual page" do
+          page.stub(:page_identifer).and_return('1_1_2_3')
           expected = "#{dip_id}_#{page.page_identifier}"
           page.id.should == expected
         end
