@@ -53,11 +53,15 @@ KDL::Page
       delegates to METS
     text_href
       delegates to METS
+    #parent_id_s
+      strikes the last _d+ group from the identifier
     #pdf_url_display
       partially delegates to METS
     #reference_image_url_s
       partially delegates to METS
     #viewer_url_s
+      partially delegates to METS
+    #page_identifier
       partially delegates to METS
     #sequence_sort
       is a zero-padded version of sequence_number_display
@@ -171,9 +175,6 @@ KDL::SolrMaker
     KDL Solr fields with multiple occurrences allowed
       #subject_topic_facet
         delegates to AccessPackage
-  Index-specific fields
-    #parent_id_s
-      delegates to AccessPackage
   Export
     #build
       passes save to each page
@@ -214,6 +215,8 @@ KDL::METS
   #date_digitized
     returns the date digitized
   item-level metadata
+    #order_path
+      returns the ORDER attributes of the mets:div for a given id and its eligible mets:div ancestors in descent order
     #sequence_number
       returns the sequence number for a given id
     #label
@@ -248,6 +251,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 10.378061 seconds
+Finished in 10.758305 seconds
 
-141 examples, 0 failures
+143 examples, 0 failures
