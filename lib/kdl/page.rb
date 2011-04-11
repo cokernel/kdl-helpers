@@ -60,6 +60,7 @@ module KDL
         :reference_image_url_s,
         :viewer_url_s,
         :pdf_url_display,
+        :parent_id_s,
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
       end

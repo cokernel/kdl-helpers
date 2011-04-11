@@ -22,7 +22,6 @@ module KDL
             :usage_display => 'foo',
             :publisher_t => 'foo',
             :publisher_display => 'foo',
-            :parent_id_s => 'foo',
             :repository_facet => 'foo',
             :repository_display => 'foo',
             :date_digitized_display => 'foo',
@@ -41,6 +40,7 @@ module KDL
             :text_s,
             :reference_image_url_s,
             :pdf_url_display,
+            :parent_id_s,
             ]}
     let(:playground) { File.join('data', 'playground') }
     let(:solrs_directory) { File.join(playground, 'solr') }
@@ -103,7 +103,6 @@ module KDL
             :format,
             :language_display,
             :usage_display,
-            :parent_id_s,
             :relation_display,
             :repository_display,
             :viewer_url_s,
