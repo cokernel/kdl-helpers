@@ -178,6 +178,14 @@ module KDL
         end
       end
 
+      describe "#page_identifier" do
+        it "partially delegates to METS" do
+          mets.stub(:order_path).and_return(['1', '1', '2', '3'])
+          mets.should_receive(:order_path)
+          page.page_identifier.should == '1_1_2_3'
+        end
+      end
+
       describe "#sequence_sort" do
         it "is a zero-padded version of sequence_number_display" do
           page.stub(:sequence_number_display).and_return('1')
@@ -188,7 +196,7 @@ module KDL
 
       describe "#id" do
         it "constructs an identifier for an individual page" do
-          expected = "#{dip_id}_#{page.sequence_number_display}"
+          expected = "#{dip_id}_#{page.page_identifier}"
           page.id.should == expected
         end
       end

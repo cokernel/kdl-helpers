@@ -177,12 +177,6 @@ module KDL
     end
 
     context "item-level metadata" do
-      describe "#ineligible_types" do
-        it "should exclude series and box" do
-          @mets.ineligible_types.sort.should == ['box', 'series']
-        end
-      end
-
       describe "#order_path" do
         it "returns the ORDER attributes of the mets:div for a given id and its eligible mets:div ancestors in descent order" do
           mets_src = File.join('data', 'mets', 'mets2.xml')
@@ -191,8 +185,8 @@ module KDL
           mets = KDL::METS.new
           mets.load mets_file
           identifier = 'FileGrp002_0003'
-          expected = ['2', '3']
-          mets.order_path(:fileGrp_id => identifier).should == expected
+          expected = ['1', '1', '2', '3']
+          mets.order_path(identifier).should == expected
         end
       end
 

@@ -106,6 +106,10 @@ module KDL
       @mets.sequence_number @identifier
     end
 
+    def page_identifier
+      @mets.order_path(@identifier).join('_')
+    end
+
     def sequence_sort
       sprintf("%05d", sequence_number_display)
     end

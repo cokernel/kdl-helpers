@@ -9,7 +9,6 @@ module KDL
 
     def initialize
       @loaded = false
-      @ineligible_types = ['box', 'series']
     end
 
     def load(mets_file)
@@ -161,13 +160,11 @@ module KDL
            :use => 'tiles metadata'
     end
 
-    def order_path(options)
-      the_div = div(options).first
+    def order_path(identifier)
+      the_div = div(:fileGrp_id => identifier).first
       the_path = [the_div['ORDER']]
       while the_div.parent.name == 'div'
-        unless @ineligible_types.include? the_div.parent['TYPE']
-          the_path.unshift the_div.parent['ORDER']
-        end
+        the_path.unshift the_div.parent['ORDER']
         the_div = the_div.parent
       end
       the_path
