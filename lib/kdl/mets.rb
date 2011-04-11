@@ -5,9 +5,11 @@ module KDL
     attr_reader :mets
     attr_reader :mets_file
     attr_reader :backup_file
+    attr_reader :ineligible_types
 
     def initialize
       @loaded = false
+      @ineligible_types = ['box', 'series']
     end
 
     def load(mets_file)
@@ -163,7 +165,9 @@ module KDL
       the_div = div(options).first
       the_path = [the_div['ORDER']]
       while the_div.parent.name == 'div'
-        the_path.unshift the_div.parent['ORDER']
+        unless @ineligible_types.include? the_div.parent['TYPE']
+          the_path.unshift the_div.parent['ORDER']
+        end
         the_div = the_div.parent
       end
       the_path
