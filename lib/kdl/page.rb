@@ -78,6 +78,10 @@ module KDL
       "#{@parent_id}_#{page_identifier}"
     end
 
+    def parent_id_s
+      id.sub(/_\d+$/, '')
+    end
+
     def pdf_url_display
       [ 'http://nyx.uky.edu/dips',
         @parent_id,

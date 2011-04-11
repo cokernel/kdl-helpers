@@ -37,7 +37,6 @@ module KDL
         :usage_display,
         :publisher_t,
         :publisher_display,
-        :parent_id_s,
         :repository_facet,
         :repository_display,
         :date_digitized_display,
@@ -53,10 +52,6 @@ module KDL
 
     def date_digitized_display
       @access_package.date_digitized
-    end
-
-    def parent_id_s
-      @access_package.dc_identifier.first
     end
 
     def subject_topic_facet

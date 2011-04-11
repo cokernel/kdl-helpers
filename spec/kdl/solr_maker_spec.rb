@@ -114,16 +114,6 @@ module KDL
       end
     end
 
-    context "Index-specific fields" do
-      describe "#parent_id_s" do
-        it "delegates to AccessPackage" do
-          access_package.stub(:dc_identifier).and_return(['sample_identifier'])
-          solr_maker = SolrMaker.new output, access_package, solrs_directory
-          solr_maker.parent_id_s.should == 'sample_identifier'
-        end
-      end
-    end
-
     context "Export" do
       describe "#build" do
         it "passes save to each page" do
@@ -154,7 +144,6 @@ module KDL
             :usage_display,
             :publisher_t,
             :publisher_display,
-            :parent_id_s,
             :repository_facet,
             :repository_display,
             :date_digitized_display,

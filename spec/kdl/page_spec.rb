@@ -154,6 +154,15 @@ module KDL
         end
       end
 
+      describe "#parent_id_s" do
+        it "strikes the last _\d+ group from the identifier" do
+          probable_parent = 'identifier_1_1_2'
+          id = "#{probable_parent}_3"
+          page.stub(:id).and_return(id)
+          page.parent_id_s.should == probable_parent
+        end
+      end
+
       describe "#pdf_url_display" do
         it "partially delegates to METS" do
           mets.stub(:print_image_path).and_return('0001/0001.pdf')
