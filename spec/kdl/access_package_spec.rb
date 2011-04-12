@@ -81,6 +81,14 @@ module KDL
           access_package.identifier.should == File.basename(dip_directory)
         end
       end
+
+      describe "#hasFindingAid" do
+        it "partially delegates to METS" do
+          access_package = AccessPackage.new dip_directory
+          access_package.mets.should_receive(:hasFileGrpWithUse).with('Finding Aid')
+          access_package.hasFindingAid
+        end
+      end
     end
   end
 end

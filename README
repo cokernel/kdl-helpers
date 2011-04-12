@@ -116,6 +116,8 @@ KDL::AccessPackage
   package information
     #identifier
       returns the package identifier for the DIP
+    #hasFindingAid
+      partially delegates to METS
 KDL::SolrMaker
   command-line interface
     #help
@@ -186,35 +188,42 @@ KDL::SolrMaker
     #mets_url_display
       returns the location of the METS file
 KDL::METS
-  #load
-    loads a METS file into memory
-  #save
-    makes a backup copy
-    does not change the METS file if nothing has changed
-    marks the file as unchanged
-  #ids
-    fetches the list of fileGrp identifiers
-  #add_file
-    adds the right file to the correct fileGrp in the fileSec
-    actually updates the METS file with the right file in the correct fileGrp
-    adds a file to the correct div in the structMap
-    marks the METS file as changed
-  #remove_file
-    removes a file from the correct fileGrp in the fileSec
-    removes a file from the correct div in the structMap
-    marks the METS file as changed
-  #file
-    returns the file for a given group and use
-  #href
-    returns the file location for a given group and use
-  #file_id
-    returns the file ID for a given group and use
-  #dublin_core
-    retrieves the Dublin Core metadata from the document
-  #repository
-    returns the repository
-  #date_digitized
-    returns the date digitized
+  File operations
+    #load
+      loads a METS file into memory
+    #save
+      makes a backup copy
+      does not change the METS file if nothing has changed
+      marks the file as unchanged
+  Package-level metadata
+    #ids
+      fetches the list of fileGrp identifiers
+    #hasFileGrpWithUse
+      essentially delegates to fileGrp
+    #fileGrp
+      returns the fileGrp for a given use
+    #file
+      returns the file for a given group and use
+    #href
+      returns the file location for a given group and use
+    #file_id
+      returns the file ID for a given group and use
+    #dublin_core
+      retrieves the Dublin Core metadata from the document
+    #repository
+      returns the repository
+    #date_digitized
+      returns the date digitized
+  Modification
+    #add_file
+      adds the right file to the correct fileGrp in the fileSec
+      actually updates the METS file with the right file in the correct fileGrp
+      adds a file to the correct div in the structMap
+      marks the METS file as changed
+    #remove_file
+      removes a file from the correct fileGrp in the fileSec
+      removes a file from the correct div in the structMap
+      marks the METS file as changed
   item-level metadata
     #label_path
       returns the LABEL attributes of the mets:div for a given id and its eligible mets:div ancestors in descent order
@@ -254,6 +263,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 10.807456 seconds
+Finished in 10.220991 seconds
 
-145 examples, 0 failures
+148 examples, 0 failures

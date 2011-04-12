@@ -70,9 +70,12 @@
 </mets:rightsMD>
 </mets:amdSec>
 <mets:fileSec>
-<mets:fileGrp ID="FORMAT1" USE="Finding Aid">
-<mets:file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10">
+<mets:fileGrp ID="FileGrpFindingAid" USE="Finding Aid">
+<mets:file ID="MasterFindingAid" USE="master" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10">
 <mets:FLocat xlink:href="66M37.xml" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="AccessFindingAid" USE="access" MIMETYPE="application/xml">
+<mets:FLocat xlink:href="66M37.dao.xml" LOCTYPE="OTHER"/>
 </mets:file>
 </mets:fileGrp>
 <mets:fileGrp ID="FileGrp1_1_001_0001">

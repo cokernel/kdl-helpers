@@ -21,6 +21,10 @@ module KDL
       end
     end
 
+    def hasFindingAid
+      @mets.hasFileGrpWithUse('Finding Aid')
+    end
+
     def ids
       @mets.ids
     end

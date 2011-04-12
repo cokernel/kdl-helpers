@@ -115,6 +115,15 @@ module KDL
       @mets.xpath(query)
     end
 
+    def hasFileGrpWithUse(use)
+      fileGrp(:use => use).length > 0
+    end
+
+    def fileGrp(options)
+      query = "//mets:fileGrp[@USE='#{options[:use]}']"
+      @mets.xpath(query)
+    end
+
     def file(options)
       if options.has_key?(:use)
         query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']"
