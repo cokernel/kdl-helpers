@@ -4,11 +4,12 @@ module KDL
   class DipMaker
     attr_reader :aip_directory, :dips_directory, :mets
 
-    def initialize(output, aip_directory=nil, dips_directory=nil)
+    def initialize(output, aip_directory=nil, dips_directory=nil, options = Hash.new)
       @output = output
       @aip_directory = aip_directory
       @dips_directory = dips_directory
       @mets = METS.new
+      @options = options
     end
 
     def build
@@ -42,33 +43,49 @@ module KDL
                          :delete => true,
                          :quiet => true,
                          :file => href
-          tiler.run
 
           thumb_href = File.join(base, stem + '_tb.jpg')
+          tls_href = File.join(base, stem + '.tls')
+          meta_href = File.join(base, stem + '.txt')
+          ref_href = File.join(base, stem + '.jpg')
+          pdf_href = File.join(base, stem + '.pdf')
+
+          if @options.has_key?(:mets_only)
+            # fake creation
+            FileUtils.mkdir_p File.join(@dip.data_dir, base)
+            [
+              thumb_href,
+              tls_href,
+              meta_href,
+              ref_href,
+              pdf_href,
+            ].each do |file|
+              FileUtils.touch File.join(@dip.data_dir, file)
+            end
+          else
+            tiler.run
+          end
+
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'thumbnail',
                          :file => thumb_href,
                          :mimetype => 'image/jpeg'
 
-          tls_href = File.join(base, stem + '.tls')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'tiled image',
                          :file => tls_href,
                          :mimetype => 'application/octet-stream'
 
-          meta_href = File.join(base, stem + '.txt')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'tiles metadata',
                          :file => meta_href,
                          :mimetype => 'text/plain'
 
-          ref_href = File.join(base, stem + '.jpg')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'reference image',
                          :file => ref_href,
                          :mimetype => 'image/jpeg'
 
-          pdf_href = File.join(base, stem + '.pdf')
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'print image',
                          :file => pdf_href,

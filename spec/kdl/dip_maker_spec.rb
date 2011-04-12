@@ -7,6 +7,7 @@ module KDL
     let (:aip_directory) { 'data/aips/sample_aip' }
     let (:dips_directory) { "#{playground}/dips" }
     let (:dipmaker) { DipMaker.new output, aip_directory, dips_directory }
+    let (:dipmaker_mets_only) { DipMaker.new output, aip_directory, dips_directory, :mets_only => true}
 
     after(:each) do
       FileUtils.rm_rf(dips_directory)
@@ -51,31 +52,36 @@ module KDL
           href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'thumbnail'
           href.length.should be > 0
+          File.file?(href).should be_true
           href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'tiled image'
           href.length.should be > 0
+          File.file?(href).should be_true
           href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'tiles metadata'
           href.length.should be > 0
+          File.file?(href).should be_true
           href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'reference image'
           href.length.should be > 0
+          File.file?(href).should be_true
           href = dipmaker.mets.href :fileGrp => fileGrp_id,
                             :use => 'print image'
           href.length.should be > 0
+          File.file?(href).should be_true
         end
       end
 
       it "removes tiff images from the METS file" do
         dip_directory = File.join(dips_directory, File.basename(aip_directory))
-        dipmaker.stage
+        dipmaker_mets_only.stage
         tiler = Tiler.new output
-        dipmaker.generate_tiles(tiler)
+        dipmaker_mets_only.generate_tiles(tiler)
         dip = BagIt::Bag.new dip_directory
-        dipmaker.mets.ids.each do |fileGrp_id|
-          tiff_href = dipmaker.mets.href :fileGrp => fileGrp_id,
+        dipmaker_mets_only.mets.ids.each do |fileGrp_id|
+          tiff_href = dipmaker_mets_only.mets.href :fileGrp => fileGrp_id,
                             :use => 'tiff image'
-          master_href = dipmaker.mets.href :fileGrp => fileGrp_id,
+          master_href = dipmaker_mets_only.mets.href :fileGrp => fileGrp_id,
                             :use => 'master'
           if master_href.length > 0
             tiff_href.length.should == 0
@@ -150,9 +156,8 @@ module KDL
       it "outputs the location of the DIP on success" do
         dip_directory = File.join(dips_directory, File.basename(aip_directory))
         output.should_receive(:puts).with("Built DIP at #{dip_directory}")
-        dipmaker.build
+        dipmaker_mets_only.build
       end
-
 
       it "outputs the usage note when the AIP directory is omitted" do
         dipmaker = DipMaker.new output
@@ -167,8 +172,8 @@ module KDL
       end
 
       it "skips the usage note when all arguments are provided" do
-        dipmaker.should_not_receive(:usage)
-        dipmaker.build
+        dipmaker_mets_only.should_not_receive(:usage)
+        dipmaker_mets_only.build
       end
     end
 
