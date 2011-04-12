@@ -75,22 +75,6 @@
 <mets:FLocat xlink:href="0002.txt" LOCTYPE="OTHER"/>
 </mets:file>
 </mets:fileGrp>
-<mets:fileGrp ID="FileGrp0003">
-<mets:file ID="MasterFile0003" USE="master" MIMETYPE="image/tiff">
-<mets:FLocat xlink:href="0003.tif" LOCTYPE="OTHER"/>
-</mets:file>
-<mets:file ID="OcrFile0003" USE="ocr" MIMETYPE="text">
-<mets:FLocat xlink:href="0003.txt" LOCTYPE="OTHER"/>
-</mets:file>
-</mets:fileGrp>
-<mets:fileGrp ID="FileGrp0004">
-<mets:file ID="MasterFile0004" USE="master" MIMETYPE="image/tiff">
-<mets:FLocat xlink:href="0004.tif" LOCTYPE="OTHER"/>
-</mets:file>
-<mets:file ID="OcrFile0004" USE="ocr" MIMETYPE="text">
-<mets:FLocat xlink:href="0004.txt" LOCTYPE="OTHER"/>
-</mets:file>
-</mets:fileGrp>
 </mets:fileSec>
 <mets:structMap TYPE="physical">
 <mets:div TYPE="page" LABEL="NA" ORDER="1">
@@ -100,14 +84,6 @@
 <mets:div TYPE="page" LABEL="NA" ORDER="2">
 <mets:fptr FILEID="MasterFile0002" />
 <mets:fptr FILEID="OcrFile0002" />
-</mets:div>  
-<mets:div TYPE="page" LABEL="NA" ORDER="3">
-<mets:fptr FILEID="MasterFile0003" />
-<mets:fptr FILEID="OcrFile0003" />
-</mets:div>  
-<mets:div TYPE="page" LABEL="2" ORDER="4">
-<mets:fptr FILEID="MasterFile0004" />
-<mets:fptr FILEID="OcrFile0004" />
 </mets:div>  
 </mets:structMap>
 </mets:mets>
