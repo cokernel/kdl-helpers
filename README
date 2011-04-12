@@ -3,7 +3,7 @@ KDL::DipMaker
     copies the AIP to the DIPs directory
     opens the METS file in place
   #generate_tiles
-    create tiles files and removes master files if the METS file is loaded
+    create tiles files and removes master files if the METS file is loaded (FAILED - 1)
     removes tiff images from the METS file
     updates the METS file with tile files (removing master representations) if the METS file is loaded
     updates removing tiff image representations if the METS file is loaded
@@ -263,6 +263,13 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.989009 seconds
+1)
+'KDL::DipMaker#generate_tiles create tiles files and removes master files if the METS file is loaded' FAILED
+expected false to be true
+/opt/pdp/services/src/kdl-helpers/spec/kdl/dip_maker_spec.rb:55:
+/opt/pdp/services/src/kdl-helpers/spec/kdl/dip_maker_spec.rb:51:in `each'
+/opt/pdp/services/src/kdl-helpers/spec/kdl/dip_maker_spec.rb:51:
 
-148 examples, 0 failures
+Finished in 4.958381 seconds
+
+148 examples, 1 failure

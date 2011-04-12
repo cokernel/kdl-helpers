@@ -40,6 +40,20 @@ module KDL
         end
       end
     end
+    
+    context "Finding aid fields" do
+      describe "#solr_doc" do
+        it "includes finding_aid_url_s when a finding aid is present" do
+          pending('tiler')
+        end
+
+        it "does not include finding_aid_url_s when a finding aid is not present" do
+          pending('tiler')
+          solr_maker = SolrMaker.new output, access_package, solrs_directory
+          solr_maker.solr_doc.should_not have_key(:finding_aid_url_s)
+        end
+      end
+    end
 
     context "Dublin Core fields" do
       context "fetching" do
