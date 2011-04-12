@@ -47,6 +47,13 @@ module KDL
       ].each do |solr_field|
         hash[solr_field] = send(solr_field)
       end
+      if @access_package.hasFindingAid
+        hash[:finding_aid_url_s] = [
+          'http://nyx.uky.edu/dips',
+          @access_package.identifier,
+          'something'
+        ].join('/')
+      end
       hash
     end
 
