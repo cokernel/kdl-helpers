@@ -5,7 +5,9 @@ module KDL
     let (:dips_directory) { File.join('data', 'dips') }
     let (:dip_id) { 'sample_aip' }
     let (:dip_directory) { File.join(dips_directory, dip_id) }
+    let (:playground) { File.join('data', 'playground') }
     let (:mets_file) { File.join(dip_directory, 'data', 'mets.xml') }
+    let (:mets_file_with_finding_aid) { File.join('data', 'mets', 'mets2.xml') }
 
     context "Dublin Core access" do
       [
@@ -87,6 +89,24 @@ module KDL
           access_package = AccessPackage.new dip_directory
           access_package.mets.should_receive(:hasFileGrpWithUse).with('Finding Aid')
           access_package.hasFindingAid
+        end
+      end
+
+      describe "#finding_aid_url" do
+        before(:each) do
+          @dip_dir_with_finding_aid = File.join(playground, 'dip')
+          FileUtils.mkdir_p File.join(@dip_dir_with_finding_aid, 'data')
+          FileUtils.cp mets_file_with_finding_aid, File.join(@dip_dir_with_finding_aid, 'data', 'mets.xml')
+        end
+
+        after(:each) do
+          FileUtils.rm_rf playground
+        end
+
+        it "partially delegates to METS" do
+          access_package = AccessPackage.new @dip_dir_with_finding_aid
+          access_package.mets.should_receive(:href).with(:fileGrp_use => 'Finding Aid', :file_use => 'access')
+          access_package.finding_aid_url
         end
       end
     end

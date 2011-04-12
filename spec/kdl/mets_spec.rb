@@ -100,6 +100,13 @@ module KDL
                                 :use => 'ocr'
           got_href.should == expected_href
         end
+
+        it "returns the file location for a given fileGrp use and file use" do
+          expected_href = @mets_with_finding_aid.mets.xpath("//mets:fileGrp[@USE='Finding Aid']/mets:file[@USE='master']//mets:FLocat/@xlink:href").first.content
+          got_href = @mets_with_finding_aid.href :fileGrp_use => 'Finding Aid',
+            :file_use => 'master'
+          got_href.should == expected_href
+        end
       end
   
       describe "#file_id" do

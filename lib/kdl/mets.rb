@@ -134,7 +134,11 @@ module KDL
     end
 
     def href(options)
-      query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']//mets:FLocat"
+      if options.has_key?(:fileGrp_use)
+        query = "//mets:fileGrp[@USE='#{options[:fileGrp_use]}']/mets:file[@USE='#{options[:file_use]}']//mets:FLocat"
+      else
+        query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']//mets:FLocat"
+      end
       result = @mets.xpath(query).first
       if result.nil?
         ''

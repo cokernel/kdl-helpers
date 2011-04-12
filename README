@@ -118,6 +118,8 @@ KDL::AccessPackage
       returns the package identifier for the DIP
     #hasFindingAid
       partially delegates to METS
+    #finding_aid_url
+      partially delegates to METS
 KDL::SolrMaker
   command-line interface
     #help
@@ -210,6 +212,7 @@ KDL::METS
       returns the file for a given group and use
     #href
       returns the file location for a given group and use
+      returns the file location for a given fileGrp use and file use
     #file_id
       returns the file ID for a given group and use
     #dublin_core
@@ -267,6 +270,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 4.302375 seconds
+Finished in 4.888621 seconds
 
-150 examples, 0 failures
+152 examples, 0 failures

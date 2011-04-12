@@ -21,6 +21,17 @@ module KDL
       end
     end
 
+    def finding_aid_url
+      if hasFindingAid
+        [ 'http://nyx.uky.edu/dips',
+          identifier,
+          'data',
+          @mets.href(:fileGrp_use => 'Finding Aid',
+                     :file_use => 'access')
+        ].join('/')
+      end
+    end
+
     def hasFindingAid
       @mets.hasFileGrpWithUse('Finding Aid')
     end
