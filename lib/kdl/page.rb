@@ -42,7 +42,6 @@ module KDL
           :parent_id_s,
           :relation_display,
           :repository_display,
-        #new_solr_doc[:title_display] = "#{the_title} of #{@title}"
           :title_display,
           :title_sort,
           :mets_url_display,

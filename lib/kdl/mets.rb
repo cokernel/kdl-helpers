@@ -56,10 +56,7 @@ module KDL
     def add_file(options)
       id = file_id :fileGrp => options[:fileGrp],
                        :use => options[:use]
-      if id.length > 0
-        #return file :fileGrp => options[:fileGrp],
-        #            :use => options[:use]
-      else
+      if id.length == 0
         flocat = Nokogiri::XML::Node.new "FLocat", @mets
         flocat['xlink:href'] = options[:file]
         flocat['LOCTYPE'] = 'OTHER'
@@ -83,7 +80,6 @@ module KDL
         the_div.first.add_child(fptr)
   
         @mets_changed = true
-        #file
       end
       file :fileGrp => options[:fileGrp],
            :use => options[:use]
