@@ -108,6 +108,7 @@ module KDL
             :repository_display,
             :viewer_url_s,
             :mets_url_display,
+            :finding_aid_url_s,
           ]
           whitelist.each do |solr_field| 
             page.page_fields.should have_key(solr_field)
