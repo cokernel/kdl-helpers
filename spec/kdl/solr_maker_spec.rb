@@ -43,16 +43,20 @@ module KDL
     
     context "Finding aid fields" do
       describe "#solr_doc" do
-        it "includes finding_aid_url_s when a finding aid is present" do
-          solr_maker = SolrMaker.new output, access_package, solrs_directory
-          access_package.stub(:hasFindingAid).and_return(true)
-          solr_maker.solr_doc.should have_key(:finding_aid_url_s)
+        context "when a finding aid is present" do
+          it "includes finding_aid_url_s" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasFindingAid).and_return(true)
+            solr_maker.solr_doc.should have_key(:finding_aid_url_s)
+          end
         end
 
-        it "does not include finding_aid_url_s when a finding aid is not present" do
-          solr_maker = SolrMaker.new output, access_package, solrs_directory
-          access_package.stub(:hasFindingAid).and_return(false)
-          solr_maker.solr_doc.should_not have_key(:finding_aid_url_s)
+        context "when a finding aid is not present" do
+          it "does not include finding_aid_url_s" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasFindingAid).and_return(false)
+            solr_maker.solr_doc.should_not have_key(:finding_aid_url_s)
+          end
         end
       end
     end

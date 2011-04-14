@@ -84,15 +84,7 @@ module KDL
         end
       end
 
-      describe "#hasFindingAid" do
-        it "partially delegates to METS" do
-          access_package = AccessPackage.new dip_directory
-          access_package.mets.should_receive(:hasFileGrpWithUse).with('Finding Aid')
-          access_package.hasFindingAid
-        end
-      end
-
-      describe "#finding_aid_url" do
+      context "finding aid fields" do
         before(:each) do
           @dip_dir_with_finding_aid = File.join(playground, 'dip')
           FileUtils.mkdir_p File.join(@dip_dir_with_finding_aid, 'data')
@@ -102,11 +94,21 @@ module KDL
         after(:each) do
           FileUtils.rm_rf playground
         end
-
-        it "partially delegates to METS" do
-          access_package = AccessPackage.new @dip_dir_with_finding_aid
-          access_package.mets.should_receive(:href).with(:fileGrp_use => 'Finding Aid', :file_use => 'access')
-          access_package.finding_aid_url
+  
+        describe "#hasFindingAid" do
+          it "partially delegates to METS" do
+            access_package = AccessPackage.new dip_directory
+            access_package.mets.should_receive(:hasFileGrpWithUse).with('Finding Aid')
+            access_package.hasFindingAid
+          end
+        end
+  
+        describe "#finding_aid_url" do
+          it "partially delegates to METS" do
+            access_package = AccessPackage.new @dip_dir_with_finding_aid
+            access_package.mets.should_receive(:href).with(:fileGrp_use => 'Finding Aid', :file_use => 'access')
+            access_package.finding_aid_url
+          end
         end
       end
     end

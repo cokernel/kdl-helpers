@@ -48,8 +48,14 @@ module KDL
         hash[solr_field] = send(solr_field)
       end
       if @access_package.hasFindingAid
-        hash[:finding_aid_url_s] = @access_package.finding_aid_url
+        hash.merge! finding_aid_fields
       end
+      hash
+    end
+
+    def finding_aid_fields
+      hash = {}
+      hash[:finding_aid_url_s] = @access_package.finding_aid_url
       hash
     end
 

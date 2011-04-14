@@ -116,10 +116,11 @@ KDL::AccessPackage
   package information
     #identifier
       returns the package identifier for the DIP
-    #hasFindingAid
-      partially delegates to METS
-    #finding_aid_url
-      partially delegates to METS
+    finding aid fields
+      #hasFindingAid
+        partially delegates to METS
+      #finding_aid_url
+        partially delegates to METS
 KDL::SolrMaker
   command-line interface
     #help
@@ -131,8 +132,10 @@ KDL::SolrMaker
       delegates to AccessPackage
   Finding aid fields
     #solr_doc
-      includes finding_aid_url_s when a finding aid is present
-      does not include finding_aid_url_s when a finding aid is not present
+      when a finding aid is present
+        includes finding_aid_url_s
+      when a finding aid is not present
+        does not include finding_aid_url_s
   Dublin Core fields
     fetching
       delegates fetching <dc:contributor> to AccessPackage
@@ -270,6 +273,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 4.888621 seconds
+Finished in 4.355911 seconds
 
 152 examples, 0 failures
