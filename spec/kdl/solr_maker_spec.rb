@@ -7,7 +7,9 @@ module KDL
     let(:playground) { File.join('data', 'playground') }
     let(:solrs_directory) { File.join(playground, 'solr') }
     let(:dip_id) { 'sample_aip' }
+    let(:dip_id_oh) { 'sample_oral_history' }
     let(:solr_directory) { File.join(solrs_directory, dip_id) }
+    let(:solr_directory_oh) { File.join(solrs_directory, dip_id_oh) }
 
     before(:each) do
       access_package.stub(:identifier).and_return(dip_id)
@@ -177,65 +179,107 @@ module KDL
     end
 
     context "Export" do
-      describe "#build" do
-        it "passes save to each page" do
-          solr_maker = SolrMaker.new output, access_package, solrs_directory
-          solr_maker.stub(:pages).and_return([double('page').as_null_object])
-          solr_maker.pages.each do |page|
-            page.should_receive(:save).with(solr_directory)
-          end
-          solr_maker.build
-        end
-      end
-
-      describe "#solr_doc" do
-        it "creates a hash of fields common to all pages" do
-          access_package.stub(:dc_date).and_return('1908.')
-          solr_maker = SolrMaker.new output, access_package, solrs_directory
-          [
-            :author_t,
-            :author_display,
-            :title_t,
-            :title_display,
-            :title_sort,
-            :description_t,
-            :description_display,
-            :subject_topic_facet,
-            :pub_date,
-            :language_display,
-            :usage_display,
-            :publisher_t,
-            :publisher_display,
-            :repository_facet,
-            :repository_display,
-            :date_digitized_display,
-            :format,
-            :type_display,
-            :relation_display,
-            :mets_url_display,
-          ].each do |solr_field| 
-            solr_maker.solr_doc.should have_key(solr_field)
+      context "All objects" do
+        describe "#solr_doc" do
+          it "creates a hash of fields common to all pages" do
+            access_package.stub(:dc_date).and_return('1908.')
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            [
+              :author_t,
+              :author_display,
+              :title_t,
+              :title_display,
+              :title_sort,
+              :description_t,
+              :description_display,
+              :subject_topic_facet,
+              :pub_date,
+              :language_display,
+              :usage_display,
+              :publisher_t,
+              :publisher_display,
+              :repository_facet,
+              :repository_display,
+              :date_digitized_display,
+              :format,
+              :type_display,
+              :relation_display,
+              :mets_url_display,
+            ].each do |solr_field| 
+              solr_maker.solr_doc.should have_key(solr_field)
+            end
           end
         end
-      end
-
-      describe "#pages" do
-        it "delegates to AccessPackage" do
-          solr_maker = SolrMaker.new output, access_package, solrs_directory
-          access_package.should_receive(:pages)
-          solr_maker.pages
+  
+        describe "#pages" do
+          it "delegates to AccessPackage" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.should_receive(:pages)
+            solr_maker.pages
+          end
+        end
+  
+        describe "#mets_url_display" do
+          it "returns the location of the METS file" do
+            access_package.stub(:identifier).and_return('sample_aip')
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            solr_maker.mets_url_display.should == [
+              'http://nyx.uky.edu/dips',
+              access_package.identifier,
+              'data/mets.xml',
+            ].join('/')
+          end
         end
       end
 
-      describe "#mets_url_display" do
-        it "returns the location of the METS file" do
-          access_package.stub(:identifier).and_return('sample_aip')
-          solr_maker = SolrMaker.new output, access_package, solrs_directory
-          solr_maker.mets_url_display.should == [
-            'http://nyx.uky.edu/dips',
-            access_package.identifier,
-            'data/mets.xml',
-          ].join('/')
+      context "Paged objects" do
+        describe "#build" do
+          it "passes save to each page" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            solr_maker.stub(:paged?).and_return(true)
+            solr_maker.stub(:pages).and_return([double('page').as_null_object])
+            solr_maker.pages.each do |page|
+              page.should_receive(:save).with(solr_directory)
+            end
+            solr_maker.build
+          end
+        end
+      end
+
+      context "Unpaged objects" do
+        before(:each) do
+          @dip_directory_oh = File.join([
+            'data', 
+            'dips',
+            'sample_oral_history',
+          ])
+          @access_package_oh = KDL::AccessPackage.new @dip_directory_oh
+          @solr_maker_oh = KDL::SolrMaker.new output, @access_package_oh, solrs_directory
+        end
+
+        after(:each) do
+        end
+
+        describe "#identifier" do
+          it "delegates to AccessPackage" do
+            access_package_oh = KDL::AccessPackage.new @dip_directory_oh
+            solr_maker_oh = KDL::SolrMaker.new output, access_package_oh, solrs_directory
+            solr_maker_oh.identifier.should == access_package_oh.identifier
+          end
+        end
+
+        describe "#build" do
+          it "calls save" do
+            @solr_maker_oh.should_receive(:save)
+            @solr_maker_oh.build
+          end
+        end
+
+        describe "#save" do
+          it "serializes solr_doc to a JSON file in the Solr directory set during initialization" do
+            @solr_maker_oh.save 
+            File.file?(File.join(solr_directory_oh, @solr_maker_oh.identifier)).should be_true
+          end
         end
       end
     end

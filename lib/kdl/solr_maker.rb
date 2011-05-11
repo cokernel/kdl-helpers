@@ -16,9 +16,25 @@ module KDL
     end
 
     def build
-      pages.each do |page|
-        page.save @solr_directory
+      if paged?
+        pages.each do |page|
+          page.save @solr_directory
+        end
+      else
+        save
       end
+    end
+
+    def save
+      FileUtils.mkdir_p(@solr_directory)
+      solr_file = File.join(@solr_directory, identifier)
+      File.open(solr_file, 'w') { |f|
+        f.write solr_doc.to_json
+      }
+    end
+
+    def paged?
+      not(@access_package.hasOralHistory)
     end
 
     def solr_doc
@@ -123,6 +139,10 @@ module KDL
 
     def author_display
       author_t
+    end
+
+    def identifier
+      @access_package.identifier
     end
 
     dublin_core_export :dc_title, :title_t
