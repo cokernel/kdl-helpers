@@ -260,6 +260,13 @@ module KDL
         after(:each) do
         end
 
+        describe "#solr_doc" do
+          it "sets the id field" do
+            @solr_maker_oh.solr_doc.should have_key(:id)
+            @solr_maker_oh.solr_doc[:id].should == @solr_maker_oh.identifier
+          end
+        end
+
         describe "#identifier" do
           it "delegates to AccessPackage" do
             access_package_oh = KDL::AccessPackage.new @dip_directory_oh

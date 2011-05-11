@@ -69,6 +69,9 @@ module KDL
       if @access_package.hasFindingAid
         hash.merge! finding_aid_fields
       end
+      unless paged?
+        hash[:id] = identifier
+      end
       hash
     end
 
