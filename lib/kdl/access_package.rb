@@ -21,6 +21,28 @@ module KDL
       end
     end
 
+    def synchronization_url
+      oral_history_url 'synchronization' 
+    end
+
+    def reference_audio_url
+      oral_history_url 'reference audio'
+    end
+
+    def oral_history_url(use)
+      if hasOralHistory
+        item = @mets.href :fileGrp_use => 'oral history',
+                          :file_use => use
+        unless item.nil?
+          [ 'http://nyx.uky.edu/dips',
+             identifier,
+             'data',
+             item,
+          ].join('/')
+        end
+      end
+    end
+
     def finding_aid_url
       if hasFindingAid
         [ 'http://nyx.uky.edu/dips',
@@ -30,6 +52,11 @@ module KDL
                      :file_use => 'access')
         ].join('/')
       end
+    end
+
+    def hasOralHistory
+      @mets.hasFileGrpWithUse('synchronization') or 
+      @mets.hasFileGrpWithUse('reference audio')
     end
 
     def hasFindingAid

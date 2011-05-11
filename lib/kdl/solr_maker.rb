@@ -47,9 +47,19 @@ module KDL
       ].each do |solr_field|
         hash[solr_field] = send(solr_field)
       end
+      if @access_package.hasOralHistory
+        hash.merge! oral_history_fields
+      end
       if @access_package.hasFindingAid
         hash.merge! finding_aid_fields
       end
+      hash
+    end
+
+    def oral_history_fields
+      hash = {}
+      hash[:synchronization_url_s] = @access_package.synchronization_url
+      hash[:reference_audio_url_s] = @access_package.reference_audio_url
       hash
     end
 

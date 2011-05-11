@@ -87,7 +87,7 @@
 </mets:rightsMD>
 </mets:amdSec>
 <mets:fileSec>
-<mets:fileGrp ID="FileGrp0001" USE="oral history">
+<mets:fileGrp ID="FileGrp0001">
 <mets:file ID="SynchronizationFile0001" USE="synchronization" MIMETYPE="text/xml">
 <mets:FLocat xlink:href="030H46RPWCR35_AndrewYoung.xml" LOCTYPE="OTHER"/>
 </mets:file>

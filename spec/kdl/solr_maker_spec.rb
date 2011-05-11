@@ -40,6 +40,24 @@ module KDL
         end
       end
     end
+
+    context "Oral history fields" do
+      describe "#solr_doc" do
+        context "when an oral history is present" do
+          it "includes synchronization_url_s" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasOralHistory).and_return(true)
+            solr_maker.solr_doc.should have_key(:synchronization_url_s)
+          end
+
+          it "includes reference_audio_url_s" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasOralHistory).and_return(true)
+            solr_maker.solr_doc.should have_key(:reference_audio_url_s)
+          end
+        end
+      end
+    end
     
     context "Finding aid fields" do
       describe "#solr_doc" do
