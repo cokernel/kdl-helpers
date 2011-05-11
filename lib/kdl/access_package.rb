@@ -33,6 +33,7 @@ module KDL
       if hasOralHistory
         item = @mets.href :fileGrp_use => 'oral history',
                           :file_use => use
+
         unless item.nil?
           [ 'http://nyx.uky.edu/dips',
              identifier,
@@ -55,8 +56,7 @@ module KDL
     end
 
     def hasOralHistory
-      @mets.hasFileGrpWithUse('synchronization') or 
-      @mets.hasFileGrpWithUse('reference audio')
+      @mets.hasFileGrpWithUse('oral history')
     end
 
     def hasFindingAid

@@ -117,6 +117,13 @@ KDL::AccessPackage
   package information
     #identifier
       returns the package identifier for the DIP
+    oral history fields
+      #hasOralHistory
+        partially delegates to METS
+      #synchronization_url
+        partially delegates to METS
+      #reference_audio_url
+        partially delegates to METS
     finding aid fields
       #hasFindingAid
         partially delegates to METS
@@ -131,6 +138,11 @@ KDL::SolrMaker
       delegates to AccessPackage
     #date_digitized_display
       delegates to AccessPackage
+  Oral history fields
+    #solr_doc
+      when an oral history is present
+        includes synchronization_url_s
+        includes reference_audio_url_s
   Finding aid fields
     #solr_doc
       when a finding aid is present
@@ -276,6 +288,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 4.365213 seconds
+Finished in 4.854281 seconds
 
-154 examples, 0 failures
+159 examples, 0 failures

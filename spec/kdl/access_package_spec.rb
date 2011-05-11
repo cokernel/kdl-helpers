@@ -90,6 +90,7 @@ module KDL
           @dip_dir_with_oral_history = File.join(playground, 'dip')
           FileUtils.mkdir_p File.join(@dip_dir_with_oral_history, 'data')
           FileUtils.cp mets_file_with_oral_history, File.join(@dip_dir_with_oral_history, 'data', 'mets.xml')
+          @access_package_oh = AccessPackage.new @dip_dir_with_oral_history
         end
 
         after(:each) do
@@ -97,42 +98,23 @@ module KDL
         end
 
         describe "#hasOralHistory" do
-          before (:each) do
-            @access_package_oh = AccessPackage.new dip_directory
-          end
-
           it "partially delegates to METS" do
-            @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('synchronization')
-            @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('reference audio')
+            @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('oral history')
             @access_package_oh.hasOralHistory
           end
+        end
 
-          it "returns true if AccessPackage has a synchronization file" do
-            @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('synchronization').and_return(true)
+        describe "#synchronization_url" do
+          it "partially delegates to METS" do
             @access_package_oh.hasOralHistory.should be_true
+            @access_package_oh.synchronization_url
           end
+        end
 
-          it "returns true if AccessPackage has a reference audio file" do
-            @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('synchronization').and_return(false)
-            @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('reference audio').and_return(true)
+        describe "#reference_audio_url" do
+          it "partially delegates to METS" do
             @access_package_oh.hasOralHistory.should be_true
-          end
-
-          describe "#synchronization_url" do
-            it "partially delegates to METS" do
-              @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('synchronization').and_return(true)
-              @access_package_oh.mets.should_receive(:href).with(:fileGrp_use => 'oral history', :file_use => 'synchronization')
-              @access_package_oh.synchronization_url
-            end
-          end
-
-          describe "#reference_audio_url" do
-            it "partially delegates to METS" do
-              @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('synchronization').and_return(false)
-              @access_package_oh.mets.should_receive(:hasFileGrpWithUse).with('reference audio').and_return(true)
-              @access_package_oh.mets.should_receive(:href).with(:fileGrp_use => 'oral history', :file_use => 'reference audio')
-              @access_package_oh.reference_audio_url
-            end
+            @access_package_oh.reference_audio_url
           end
         end
       end
