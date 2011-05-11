@@ -88,7 +88,7 @@
 </mets:amdSec>
 <mets:fileSec>
 <mets:fileGrp ID="FileGrp0001">
-<mets:file ID="MetadataFile0001" USE="metadata" MIMETYPE="text">
+<mets:file ID="SynchronizationFile0001" USE="synchronization" MIMETYPE="text/xml">
 <mets:FLocat xlink:href="030H46RPWCR35_AndrewYoung.xml" LOCTYPE="OTHER"/>
 </mets:file>
 <mets:file ID="ReferenceAudioFile0001" USE="reference audio" MIMETYPE="audio/mp3">
@@ -98,7 +98,7 @@
 </mets:fileSec>
 <mets:structMap TYPE="physical">
 <mets:div TYPE="interview" LABEL="Interview with Andrew Young, March 17, 1964" ORDER="1">
-<mets:fptr FILEID="MetadataFile0001" />
+<mets:fptr FILEID="SynchronizationFile0001" />
 <mets:fptr FILEID="ReferenceAudioFile0001" />
 </mets:div>
 </mets:structMap>
