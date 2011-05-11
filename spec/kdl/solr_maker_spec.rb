@@ -93,8 +93,6 @@ module KDL
           [:dc_title, :title_t],
           [:dc_title, :title_display],
           [:dc_title, :title_sort],
-          [:dc_creator, :author_t],
-          [:dc_creator, :author_display],
           [:dc_publisher, :publisher_t],
           [:dc_publisher, :publisher_display],
           [:dc_format, :format],
@@ -111,6 +109,32 @@ module KDL
               solr_maker = SolrMaker.new output, access_package, solrs_directory
               solr_maker.send(solr_field).should == access_package.send(dc_field).first
             end
+          end
+        end
+
+        describe "#author_t" do
+          it "is a period-separated list of dc:creator elements" do
+            dip_directory_oh = File.join([
+              'data', 
+              'dips',
+              'sample_oral_history',
+            ])
+            access_package_oh = KDL::AccessPackage.new dip_directory_oh
+            solr_maker_oh = KDL::SolrMaker.new output, access_package_oh, solrs_directory
+            solr_maker_oh.author_t.should == 'Andrew Young; interviewee.  Robert Penn Warren; interviewer.'
+          end
+        end
+
+        describe "#author_display" do
+          it "is the same as #author_t" do
+            dip_directory_oh = File.join([
+              'data', 
+              'dips',
+              'sample_oral_history',
+            ])
+            access_package_oh = KDL::AccessPackage.new dip_directory_oh
+            solr_maker_oh = KDL::SolrMaker.new output, access_package_oh, solrs_directory
+            solr_maker_oh.author_display.should == solr_maker_oh.author_t
           end
         end
 

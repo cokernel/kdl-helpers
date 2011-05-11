@@ -107,6 +107,14 @@ module KDL
       raw_date.gsub(/\D/, '')[0..3]
     end
 
+    def author_t
+      @access_package.dc_creator.join('.  ') + '.'
+    end
+
+    def author_display
+      author_t
+    end
+
     dublin_core_export :dc_title, :title_t
     dublin_core_export :dc_title, :title_display
     dublin_core_export :dc_title, :title_sort
@@ -117,8 +125,6 @@ module KDL
     dublin_core_export :dc_description, :description_display
     dublin_core_export :dc_type, :type_display
     dublin_core_export :dc_language, :language_display
-    dublin_core_export :dc_creator, :author_t
-    dublin_core_export :dc_creator, :author_display
     dublin_core_export :dc_rights, :usage_display
     dublin_core_export :dc_relation, :relation_display
   end

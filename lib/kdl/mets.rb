@@ -32,7 +32,7 @@ module KDL
     end
 
     def dublin_core
-      Nokogiri::XML(@mets.xpath('//oai_dc:dc').first.to_s)
+      Nokogiri::XML(@mets.xpath('//oai_dc:dc', @mets.collect_namespaces).first.to_s)
     end
 
     def repository

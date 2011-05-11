@@ -161,10 +161,6 @@ KDL::SolrMaker
         delegates fetching title_display to AccessPackage
       #title_sort
         delegates fetching title_sort to AccessPackage
-      #author_t
-        delegates fetching author_t to AccessPackage
-      #author_display
-        delegates fetching author_display to AccessPackage
       #publisher_t
         delegates fetching publisher_t to AccessPackage
       #publisher_display
@@ -183,6 +179,10 @@ KDL::SolrMaker
         delegates fetching language_display to AccessPackage
       #relation_display
         delegates fetching relation_display to AccessPackage
+      #author_t
+        is a period-separated list of dc:creator elements
+      #author_display
+        is the same as #author_t
       #pub_date
         partially delegates fetching pub_date to AcessPackage
     KDL Solr fields with multiple occurrences allowed
@@ -276,6 +276,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 4.621901 seconds
+Finished in 4.365213 seconds
 
 154 examples, 0 failures
