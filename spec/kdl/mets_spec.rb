@@ -3,6 +3,7 @@ require 'spec_helper'
 module KDL
   describe METS do
     let (:fileGrp_id) { @mets.ids.first }
+    let (:fileGrp_id_tif) { 'FileGrp1_1_001_0001' }
     let (:playground) { File.join('data', 'playground') }
     let (:aips_directory) { File.join('data', 'aips') }
     let (:dips_directory) { File.join('data', 'dips') }
@@ -106,6 +107,15 @@ module KDL
           got_href = @mets_with_finding_aid.href :fileGrp_use => 'Finding Aid',
             :file_use => 'master'
           got_href.should == expected_href
+        end
+      end
+
+      describe "#mimetype" do
+        it "returns the MIMETYPE for a given group and use" do
+          expected_mime_type = 'image/tiff'
+          got_mime_type = @mets_with_finding_aid.mimetype :fileGrp => fileGrp_id_tif,
+                                         :use => 'master'
+          got_mime_type.should == expected_mime_type
         end
       end
   

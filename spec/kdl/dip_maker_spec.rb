@@ -5,8 +5,10 @@ module KDL
     let (:output) { double('output').as_null_object }
     let (:playground) { 'data/playground' }
     let (:aip_directory) { 'data/aips/sample_aip' }
+    let (:aip_directory_oh) { 'data/aips/sample_oral_history' }
     let (:dips_directory) { "#{playground}/dips" }
     let (:dipmaker) { DipMaker.new output, aip_directory, dips_directory }
+    let (:dipmaker_oh) { DipMaker.new output, aip_directory_oh, dips_directory }
     let (:dipmaker_mets_only) { DipMaker.new output, aip_directory, dips_directory, :mets_only => true}
 
     after(:each) do
@@ -42,6 +44,14 @@ module KDL
     end
 
     describe "#generate_tiles" do
+      it "does not attempt to tile non-TIFF files" do
+        dip_directory = File.join(dips_directory, File.basename(aip_directory_oh))
+        dipmaker_oh.stage
+        tiler = Tiler.new output
+        tiler.should_not_receive(:run)
+        dipmaker_oh.generate_tiles(tiler)
+      end
+
       it "create tiles files and removes master files if the METS file is loaded" do
         dip_directory = File.join(dips_directory, File.basename(aip_directory))
         dipmaker.stage

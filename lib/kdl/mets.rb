@@ -149,6 +149,11 @@ module KDL
       end
     end
 
+    def mimetype(options)
+      query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']/@MIMETYPE"
+      @mets.xpath(query).to_s
+    end
+
     def file_id(options)
       query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']/@ID"
       @mets.xpath(query).to_s

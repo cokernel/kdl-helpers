@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:rights="http://www.loc.gov/rights/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:lc="http://www.loc.gov/mets/profiles" xmlns:bib="http://www.loc.gov/mets/profiles/bibRecord" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OBJID="KUK_030H46RPWCR35_AndrewYoung" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd"  PROFILE="lc:bibRecord">
+<metsHdr CREATEDATE="2011-03-07T00:00:00" LASTMODDATE="2011-03-07T00:00:00" RECORDSTATUS="Production">
+<mets:agent ROLE="CREATOR" TYPE="REPOSITORY">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS submitted to KDL.</mets:note>
+</mets:agent>
+<mets:agent ROLE="PRESERVATION" TYPE="ORGANIZATION">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS and associated file(s) submitted in University of Kentucky Preservation Repository.</mets:note>
+</mets:agent>
+<mets:altRecordID TYPE="DLXS">03OH46RPWCR35_AndrewYoung.xml</mets:altRecordID>
+</metsHdr>
+<mets:dmdSec ID="DMD1">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="DLXS_BIBCLASS">
+<mets:xmlData>
+<oai_dc:dc 
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title xml:lang="en">Interview with Andrew Young, March 17, 1964</dc:title>
+  <dc:creator>Andrew Young; interviewee</dc:creator>
+  <dc:creator>Robert Penn Warren; interviewer</dc:creator>
+  <dc:subject>Young, Andrew, 1932- --Interviews</dc:subject>
+  <dc:subject>African Americans--Economic conditions</dc:subject>
+  <dc:subject>Middle class African Americans</dc:subject>
+  <dc:subject>College integration--Connecticut--Hartford</dc:subject>
+  <dc:subject>African Americans--Education (Higher)</dc:subject>
+  <dc:subject>Hartford Theological Seminary</dc:subject>
+  <dc:subject>African American families</dc:subject>
+  <dc:subject>Whites--Southern States</dc:subject>
+  <dc:subject>Police--Southern States</dc:subject>
+  <dc:subject>Civil rights workers--Violence against</dc:subject>
+  <dc:subject>Galamison, Milton A. (Milton Arthur), 1923-1988</dc:subject>
+  <dc:subject>New Orleans (La.)</dc:subject>
+  <dc:subject>Hedgeman, Anna Arnold, 1899-1990</dc:subject>
+  <dc:subject>Civil rights movements</dc:subject>
+  <dc:subject>African Americans--Civil rights</dc:subject>
+  <dc:subject>African Americans--Social conditions</dc:subject>
+  <dc:subject>Racism</dc:subject>
+  <dc:subject>New Orleans (La.)--Race relations</dc:subject>
+  <dc:subject>Anthropology</dc:subject>
+  <dc:subject>African Americans--Race identity</dc:subject>
+  <dc:subject>Blacks--Race identity</dc:subject>
+  <dc:subject>Southern States--Race relations</dc:subject>
+  <dc:subject>School integration</dc:subject>
+  <dc:subject>Educational equalization</dc:subject>
+  <dc:subject>African Americans--Politics and government</dc:subject>
+  <dc:subject>Nonviolence</dc:subject>
+  <dc:subject>King, Martin Luther, Jr., 1929-1968</dc:subject>
+  <dc:subject>African Americans--Relations with Africans</dc:subject>
+  <dc:subject>Busing for school integration</dc:subject>
+  <dc:publisher>University of Kentucky</dc:publisher>
+  <dc:date>1964-03-17</dc:date>
+  <dc:type>oral history</dc:type>
+  <dc:type>audio</dc:type>
+  <dc:identifier>KUK:RPWCR001:03OH46RPWCR35</dc:identifier>
+  <dc:language>english</dc:language>
+  <dc:rights xml:lang="en">This digital resource may be freely searched and displayed.  Permission must be received for subsequent distribution in print or electronically.  Physical rights are retained by the owning repository.  Copyright is retained in accordance with U. S. copyright laws.  Please go to http://kdl.kyvl.org for more information.</dc:rights>
+  <dc:description>Andrew Young (1932- ) is an African American politician who was a civil right activist and pastor.   Born in New Orleans, Louisiana, Young received his Bachelor's of Science in 1951 from Howard University in Washington, D.C.   After earning his Master's of Divinity from Hartford Theological Seminary in Connecticut, in 1955 Young accepted the pastorate at Bethany Congregational Church in Thomasville, Georgia where he began his work with civil rights.  In 1961 Young left his position as pastor to work with the Southern Christian Leadership Conference (SCLC) in Atlanta, Georgia organizing nonviolence workshops for potential civil rights leaders.  He organized voter registration and desegregation campaigns, worked closely with Dr. Martin Luther King, Jr. as a trusted aide, and eventually became Executive Director of the SCLC.  Young was with Dr. King when he was assassinated in 1968.  Young served in the U.S. House of Representatives (1973-1977) as a Georgia State Representative and was appointed as the United States' first African American U.S. Ambassador to the United Nations (1977-1979) by Jimmy Carter in 1977.  Young was elected Mayor of Atlanta in 1981 and re-elected in 1985.  Andrew Young describes his early encounters with racism and growing up in New Orleans, Louisiana in a middle-class African American family. He recalls the lack of support middle-class African Americans provided to others less fortunate and remembers his first experience with integrated education at the Hartford Seminary in Connecticut.  Young describes returning to the South to become pastor at a church in Alabama where he met his wife. He discusses the conflicts that he sees between white American and African American culture and the African American's relationship to Africa.  Young also discusses the relationship and similarities and differences between African Americans and whites in the South.  He explains the matriarchy of African American family life and how the civil rights movement is changing this.  Young mentions his experiences as a civil rights activist in the South and the difficulties of the civil rights movement.  He describes what he calls the "schizophrenia" of the segregationist and recalls a "warm" conversation with a police officer who, he later finds out, had just beaten a young African American girl.  Young also describes other members of the movement, including Anna Hedgeman and Reverend Milton Galamison.  He discusses school segregation, equality in education for African Americans, and the issues surrounding school integration and bussing.  Young concludes by describing African American leadership within the civil rights movement and the shift in audience that will occur as the movement progresses.</dc:description>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:amdSec>
+  <mets:rightsMD ID="RMD1">
+    <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="RIGHTSMD">
+      <mets:xmlData>
+        <mets:versionStatement>2011</mets:versionStatement>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:rightsMD>
+<mets:rightsMD ID="ADMRTS1">
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+<mets:xmlData>
+<mets:RightsDeclarationMD RIGHTSCATEGORY="">
+<mets:Context CONTEXTCLASS="GENERAL PUBLIC">
+<mets:Constraints CONSTRAINTTYPE="RE-USE">
+<mets:ConstraintDescription>View Collection Guide to obtain rights information.</mets:ConstraintDescription>
+</mets:Constraints>
+</mets:Context>
+</mets:RightsDeclarationMD>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:rightsMD>
+</mets:amdSec>
+<mets:fileSec>
+<mets:fileGrp ID="FileGrp0001">
+<mets:file ID="MetadataFile0001" USE="metadata" MIMETYPE="text">
+<mets:FLocat xlink:href="030H46RPWCR35_AndrewYoung.xml" LOCTYPE="OTHER"/>
+</mets:file>
+<mets:file ID="ReferenceAudioFile0001" USE="reference audio" MIMETYPE="audio/mp3">
+<mets:FLocat xlink:href="030H46RPWCR35_AndrewYoung.mp3" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+</mets:fileSec>
+<mets:structMap TYPE="physical">
+<mets:div TYPE="interview" LABEL="Interview with Andrew Young, March 17, 1964" ORDER="1">
+<mets:fptr FILEID="MetadataFile0001" />
+<mets:fptr FILEID="ReferenceAudioFile0001" />
+</mets:div>
+</mets:structMap>
+</mets:mets>

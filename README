@@ -3,6 +3,7 @@ KDL::DipMaker
     copies the AIP to the DIPs directory
     opens the METS file in place
   #generate_tiles
+    does not attempt to tile non-TIFF files
     create tiles files and removes master files if the METS file is loaded
     removes tiff images from the METS file
     updates the METS file with tile files (removing master representations) if the METS file is loaded
@@ -216,6 +217,8 @@ KDL::METS
     #href
       returns the file location for a given group and use
       returns the file location for a given fileGrp use and file use
+    #mimetype
+      returns the MIMETYPE for a given group and use
     #file_id
       returns the file ID for a given group and use
     #dublin_core
@@ -273,6 +276,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 4.355911 seconds
+Finished in 4.621901 seconds
 
-152 examples, 0 failures
+154 examples, 0 failures

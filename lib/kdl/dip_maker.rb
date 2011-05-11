@@ -32,6 +32,12 @@ module KDL
             href = @mets.href :fileGrp => fileGrp_id,
                               :use => use
           end
+
+          mimetype = @mets.mimetype :fileGrp => fileGrp_id,
+                                    :use => use
+
+          return unless mimetype == "image/tiff"
+
           stem = File.basename(href, '.tif')
           base = File.join(
             File.dirname(href),
