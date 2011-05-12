@@ -35,11 +35,8 @@ module KDL
                           :file_use => use
 
         unless item.nil?
-          [ 'http://nyx.uky.edu/dips',
-             identifier,
-             'data',
-             item,
-          ].join('/')
+          item.sub!( /\.xml$/, '')
+          "http://nyx.uky.edu/oh/render.php?cachefile=#{item}"
         end
       end
     end
