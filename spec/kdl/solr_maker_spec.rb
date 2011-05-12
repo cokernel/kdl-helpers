@@ -265,6 +265,11 @@ module KDL
             @solr_maker_oh.solr_doc.should have_key(:id)
             @solr_maker_oh.solr_doc[:id].should == @solr_maker_oh.identifier
           end
+
+          it "sets the unpaged field" do
+            @solr_maker_oh.solr_doc.should have_key(:unpaged_display)
+            @solr_maker_oh.solr_doc[:unpaged_display].should == '1'
+          end
         end
 
         describe "#identifier" do

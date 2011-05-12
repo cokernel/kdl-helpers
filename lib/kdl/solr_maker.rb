@@ -71,6 +71,7 @@ module KDL
       end
       unless paged?
         hash[:id] = identifier
+        hash[:unpaged_display] = '1'
       end
       hash
     end
