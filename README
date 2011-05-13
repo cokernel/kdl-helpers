@@ -201,14 +201,26 @@ KDL::SolrMaker
       #subject_topic_facet
         delegates to AccessPackage
   Export
-    #build
-      passes save to each page
-    #solr_doc
-      creates a hash of fields common to all pages
-    #pages
-      delegates to AccessPackage
-    #mets_url_display
-      returns the location of the METS file
+    All objects
+      #solr_doc
+        creates a hash of fields common to all pages
+      #pages
+        delegates to AccessPackage
+      #mets_url_display
+        returns the location of the METS file
+    Paged objects
+      #build
+        passes save to each page
+    Unpaged objects
+      #solr_doc
+        sets the id field
+        sets the unpaged field
+      #identifier
+        delegates to AccessPackage
+      #build
+        calls save
+      #save
+        serializes solr_doc to a JSON file in the Solr directory set during initialization
 KDL::METS
   File operations
     #load
@@ -288,6 +300,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 4.854281 seconds
+Finished in 6.101189 seconds
 
-159 examples, 0 failures
+164 examples, 0 failures

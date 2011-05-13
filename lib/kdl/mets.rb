@@ -143,9 +143,9 @@ module KDL
       if result.nil?
         ''
       elsif result['xlink:href'].nil?
-        result['href']
+        result['href'].gsub(/^\.\//, '')
       else
-        result['xlink:href']
+        result['xlink:href'].gsub(/^\.\//, '')
       end
     end
 
