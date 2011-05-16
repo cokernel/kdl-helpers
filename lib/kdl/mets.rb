@@ -149,15 +149,15 @@ module KDL
       end
     end
 
-    def mimetype(options)
-      query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']/@MIMETYPE"
-      @mets.xpath(query).to_s
+    def self.add_file_attr(method_name, attribute)
+      define_method method_name do |options|
+        query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']/@#{attribute}"
+        @mets.xpath(query).to_s
+      end
     end
 
-    def file_id(options)
-      query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']/@ID"
-      @mets.xpath(query).to_s
-    end
+    add_file_attr :mimetype, :MIMETYPE
+    add_file_attr :file_id, :ID
 
     def label_path(identifier)
       the_div = div(:fileGrp_id => identifier).first
