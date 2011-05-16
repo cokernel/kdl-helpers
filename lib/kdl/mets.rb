@@ -159,21 +159,6 @@ module KDL
       @mets.xpath(query).to_s
     end
 
-    def print_image_path(identifier)
-      href :fileGrp => identifier,
-           :use => 'print image'
-    end
-
-    def reference_image_path(identifier)
-      href :fileGrp => identifier,
-           :use => 'reference image'
-    end
-
-    def viewer_path(identifier)
-      href :fileGrp => identifier,
-           :use => 'tiles metadata'
-    end
-
     def label_path(identifier)
       the_div = div(:fileGrp_id => identifier).first
       the_path = [the_div['LABEL']]
@@ -194,15 +179,22 @@ module KDL
       the_path
     end
 
+    def self.add_href_field(method_name, use)
+      define_method method_name do |identifier|
+        href :fileGrp => identifier,
+             :use => use.to_s.gsub(/_/, ' ')
+      end
+    end
+
+    add_href_field :print_image_path, :print_image
+    add_href_field :reference_image_path, :reference_image
+    add_href_field :viewer_path, :tiles_metadata
+    add_href_field :text_href, :ocr
+
     def self.add_div_field(method_name, field)
       define_method method_name do |identifier|
         div(:fileGrp_id => identifier).first[field.to_s]
       end
-    end
-
-    def text_href(identifier)
-      href :fileGrp => identifier, 
-           :use => 'ocr'
     end
 
     add_div_field :sequence_number, :ORDER
