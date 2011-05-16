@@ -73,6 +73,11 @@ KDL::Page
       retrieves the text from the DIP directory
     #text_s
       delegates to text
+KDL::MetsFixer
+  loads a METS file
+  #has_bad_file_ids
+    detects problems with files in a mets:fileGrp
+    does not detect problems where they do not exist
 KDL::AccessPackage
   Dublin Core access
     dc_contributor
@@ -300,6 +305,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.566768 seconds
+Finished in 6.021545 seconds
 
-164 examples, 0 failures
+167 examples, 0 failures

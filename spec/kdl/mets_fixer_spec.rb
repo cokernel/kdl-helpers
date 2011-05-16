@@ -19,5 +19,15 @@ module KDL
     it "loads a METS file" do
       @mets_fixer.mets.class.should == KDL::METS
     end
+
+    describe "#has_bad_file_ids" do
+      it "detects problems with files in a mets:fileGrp" do
+        @mets_fixer.has_bad_file_ids('FileGrp002').should be_true
+      end
+
+      it "does not detect problems where they do not exist" do
+        @mets_fixer.has_bad_file_ids('FileGrp001').should be_false
+      end
+    end
   end
 end
