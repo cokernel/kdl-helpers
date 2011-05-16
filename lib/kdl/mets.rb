@@ -35,15 +35,14 @@ module KDL
       Nokogiri::XML(@mets.xpath('//oai_dc:dc', @mets.collect_namespaces).first.to_s)
     end
 
-    def repository
-      query = '//mets:agent[@TYPE="REPOSITORY"]/mets:name'
-      @mets.xpath(query).first.content
+    def self.add_canned_query(method_name, query)
+      define_method method_name do
+        @mets.xpath(query).first.content
+      end
     end
 
-    def date_digitized
-      query = '//mets:amdSec//mets:versionStatement'
-      @mets.xpath(query).first.content
-    end
+    add_canned_query :repository, '//mets:agent[@TYPE="REPOSITORY"]/mets:name'
+    add_canned_query :date_digitized, '//mets:amdSec//mets:versionStatement'
 
     def backup
       @backup_file = [
