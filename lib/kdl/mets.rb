@@ -5,31 +5,46 @@ module KDL
     attr_reader :mets
     attr_reader :mets_file
     attr_reader :backup_file
-    attr_reader :ineligible_types
 
     def initialize
       @loaded = false
-    end
-
-    def load(mets_file)
-      @mets_file = mets_file
-      @mets = Nokogiri::XML open(@mets_file)
-      @mets_changed = false
-      @loaded = true
     end
 
     def loaded?
       @loaded
     end
 
+    def changed?
+      @changed
+    end
+
+    # raw file access
+
+    def load(mets_file)
+      @mets_file = mets_file
+      @mets = Nokogiri::XML open(@mets_file)
+      @changed = false
+      @loaded = true
+    end
+
     def save
       backup
-      return unless @mets_changed
+      return unless @changed
       File.open(@mets_file, 'w') do |f|
         @mets.write_xml_to f
       end
-      @mets_changed = false
+      @changed = false
     end
+
+    def backup
+      @backup_file = [
+        @mets_file,
+        '.bak',
+      ].join('')
+      FileUtils.cp @mets_file, @backup_file
+    end
+
+    # object-level metadata
 
     def dublin_core
       Nokogiri::XML(@mets.xpath('//oai_dc:dc', @mets.collect_namespaces).first.to_s)
@@ -44,55 +59,7 @@ module KDL
     add_canned_query :repository, '//mets:agent[@TYPE="REPOSITORY"]/mets:name'
     add_canned_query :date_digitized, '//mets:amdSec//mets:versionStatement'
 
-    def backup
-      @backup_file = [
-        @mets_file,
-        '.bak',
-      ].join('')
-      FileUtils.cp @mets_file, @backup_file
-    end
-
-    def add_file(options)
-      id = file_id :fileGrp => options[:fileGrp],
-                       :use => options[:use]
-      if id.length == 0
-        flocat = Nokogiri::XML::Node.new "FLocat", @mets
-        flocat['xlink:href'] = options[:file]
-        flocat['LOCTYPE'] = 'OTHER'
-  
-        the_file = Nokogiri::XML::Node.new "file", @mets
-        file_id = file_id_for options[:use], options[:fileGrp]
-        the_file['ID'] = file_id
-        the_file['USE'] = options[:use]
-        the_file['MIMETYPE'] = options[:mimetype]
-  
-        the_file.add_child(flocat)
-  
-        @mets.xpath("//mets:fileGrp[@ID='#{options[:fileGrp]}']").first.add_child(the_file)
-  
-        fptr = Nokogiri::XML::Node.new "fptr", @mets
-        fptr['FILEID'] = file_id
-  
-        master_id = file_id_for 'master', options[:fileGrp]
-
-        the_div = div :master_id => master_id
-        the_div.first.add_child(fptr)
-  
-        @mets_changed = true
-      end
-      file :fileGrp => options[:fileGrp],
-           :use => options[:use]
-    end
-
-    def remove_file(options)
-      @mets.xpath("//mets:file[@ID='#{options[:file_id]}']").first.remove
-      @mets.xpath("//mets:div/mets:fptr[@FILEID='#{options[:file_id]}']").first.remove
-      @mets_changed = true
-    end
-
-    def changed?
-      @mets_changed
-    end
+    # item-level metadata
 
     def ids
       mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'Finding Aid' }.collect do |node|
@@ -194,5 +161,45 @@ module KDL
     add_div_field :sequence_number, :ORDER
     add_div_field :label, :LABEL
     add_div_field :page_type, :TYPE
+
+    # file modification
+
+    def add_file(options)
+      id = file_id :fileGrp => options[:fileGrp],
+                       :use => options[:use]
+      if id.length == 0
+        flocat = Nokogiri::XML::Node.new "FLocat", @mets
+        flocat['xlink:href'] = options[:file]
+        flocat['LOCTYPE'] = 'OTHER'
+  
+        the_file = Nokogiri::XML::Node.new "file", @mets
+        file_id = file_id_for options[:use], options[:fileGrp]
+        the_file['ID'] = file_id
+        the_file['USE'] = options[:use]
+        the_file['MIMETYPE'] = options[:mimetype]
+  
+        the_file.add_child(flocat)
+  
+        @mets.xpath("//mets:fileGrp[@ID='#{options[:fileGrp]}']").first.add_child(the_file)
+  
+        fptr = Nokogiri::XML::Node.new "fptr", @mets
+        fptr['FILEID'] = file_id
+  
+        master_id = file_id_for 'master', options[:fileGrp]
+
+        the_div = div :master_id => master_id
+        the_div.first.add_child(fptr)
+  
+        @changed = true
+      end
+      file :fileGrp => options[:fileGrp],
+           :use => options[:use]
+    end
+
+    def remove_file(options)
+      @mets.xpath("//mets:file[@ID='#{options[:file_id]}']").first.remove
+      @mets.xpath("//mets:div/mets:fptr[@FILEID='#{options[:file_id]}']").first.remove
+      @changed = true
+    end
   end
 end
