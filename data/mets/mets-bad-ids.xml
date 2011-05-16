@@ -60,7 +60,7 @@
 </mets:amdSec>
 <mets:fileSec>
 <mets:fileGrp ID="FileGrp001">
-<mets:file ID="MasterFile1" USE="master" MIMETYPE="image/tiff">
+<mets:file ID="MasterFile001" USE="master" MIMETYPE="image/tiff">
 <mets:FLocat xlink:href="win_1912_001.tif" LOCTYPE="OTHER"/>
 </mets:file>
 </mets:fileGrp>
@@ -182,7 +182,7 @@
 </mets:fileSec>
 <mets:structMap>
 <mets:div TYPE="sheet" LABEL="1" ORDER="1">
-<mets:fptr FILEID="MasterFile1" />
+<mets:fptr FILEID="MasterFile001" />
 </mets:div>
 <mets:div TYPE="sheet" LABEL="2" ORDER="2">
 <mets:fptr FILEID="MasterFile2" />
