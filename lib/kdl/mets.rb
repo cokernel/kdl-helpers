@@ -159,25 +159,20 @@ module KDL
     add_file_attr :mimetype, :MIMETYPE
     add_file_attr :file_id, :ID
 
-    def label_path(identifier)
-      the_div = div(:fileGrp_id => identifier).first
-      the_path = [the_div['LABEL']]
-      while the_div.parent.name == 'div'
-        the_path.unshift the_div.parent['LABEL']
-        the_div = the_div.parent
+    def self.add_path(method_name, field)
+      define_method method_name do |identifier|
+        the_div = div(:fileGrp_id => identifier).first
+        the_path = [the_div[field.to_s]]
+        while the_div.parent.name == 'div'
+          the_path.unshift the_div.parent[field.to_s]
+          the_div = the_div.parent
+        end
+        the_path
       end
-      the_path
     end
 
-    def order_path(identifier)
-      the_div = div(:fileGrp_id => identifier).first
-      the_path = [the_div['ORDER']]
-      while the_div.parent.name == 'div'
-        the_path.unshift the_div.parent['ORDER']
-        the_div = the_div.parent
-      end
-      the_path
-    end
+    add_path :label_path, :LABEL
+    add_path :order_path, :ORDER
 
     def self.add_href_field(method_name, use)
       define_method method_name do |identifier|
