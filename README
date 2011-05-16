@@ -300,6 +300,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.101189 seconds
+Finished in 5.847561 seconds
 
 164 examples, 0 failures

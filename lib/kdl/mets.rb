@@ -194,21 +194,19 @@ module KDL
       the_path
     end
 
-    def sequence_number(identifier)
-      div(:fileGrp_id => identifier).first['ORDER']
-    end
-
-    def label(identifier)
-      div(:fileGrp_id => identifier).first['LABEL']
-    end
-
-    def page_type(identifier)
-      div(:fileGrp_id => identifier).first['TYPE']
+    def self.add_div_field(method_name, field)
+      define_method method_name do |identifier|
+        div(:fileGrp_id => identifier).first[field.to_s]
+      end
     end
 
     def text_href(identifier)
       href :fileGrp => identifier, 
            :use => 'ocr'
     end
+
+    add_div_field :sequence_number, :ORDER
+    add_div_field :label, :LABEL
+    add_div_field :page_type, :TYPE
   end
 end
