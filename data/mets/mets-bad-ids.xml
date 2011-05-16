@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:rights="http://www.loc.gov/rights/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:lc="http://www.loc.gov/mets/profiles" xmlns:bib="http://www.loc.gov/mets/profiles/bibRecord" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OBJID="KUK-win1912" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" PROFILE="lc:bibRecord">
+<metsHdr CREATEDATE="2011-03-07T00:00:00" LASTMODDATE="2011-03-07T00:00:00" RECORDSTATUS="Production">
+<mets:agent ROLE="CREATOR" TYPE="REPOSITORY">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS submitted to KDL.</mets:note>
+</mets:agent>
+<mets:agent ROLE="PRESERVATION" TYPE="ORGANIZATION">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS and associated file(s) submitted in University of Kentucky Preservation Repository.
+</mets:note>
+</mets:agent>
+<mets:altRecordID TYPE="DLXS">KUK-win1912</mets:altRecordID>
+</metsHdr>
+<mets:dmdSec ID="DMD1">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
+<mets:xmlData>
+<oai_dc:dc 
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+    http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>win1912</dc:identifier>
+<dc:creator>New York : Sanborn Map Company.</dc:creator>
+<dc:format>maps</dc:format>
+<dc:type>image</dc:type>
+<dc:language>english</dc:language>
+<dc:rights xml:lang="en">This digital resource may be freely searched and displayed.  Permission must be received for subsequent distribution in print or electronically.  Physical rights are retained by the owning repository.  Copyright is retained in accordance with U. S. copyright laws.  Please go to http://kdl.kyvl.org for more information.</dc:rights>
+<dc:title>Insurance maps of Winchester, Clark County, Kentucky : [including Ford]  </dc:title>
+<dc:description>1 map on 24 sheets : col. ; sheets 64 x 54 cm. Scale [ca. 1:50] &quot;March 1912.&quot; Shows property lines, buildings with construction and insurance characteristics and addresses. Includes index. </dc:description>
+<dc:publisher>New York : Sanborn Map Co.</dc:publisher>
+<dc:coverage>Winchester, Kentucky (Clark County)</dc:coverage>
+<dc:date>1912</dc:date>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:amdSec>
+  <mets:rightsMD ID="RMD1">
+    <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="RIGHTSMD">
+      <mets:xmlData>
+        <mets:versionStatement>2007</mets:versionStatement>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:rightsMD>
+<mets:rightsMD ID="ADMRTS1">
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+<mets:xmlData>
+<mets:RightsDeclarationMD RIGHTSCATEGORY="PUBLIC DOMAIN">
+<mets:Context CONTEXTCLASS="GENERAL PUBLIC">
+<mets:Constraints CONSTRAINTTYPE="RE-USE">
+<mets:ConstraintDescription>This volume is considered in the public domain in the United States without any constraints on use.</mets:ConstraintDescription>
+</mets:Constraints>
+</mets:Context>
+</mets:RightsDeclarationMD>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:rightsMD>
+</mets:amdSec>
+<mets:fileSec>
+<mets:fileGrp ID="FileGrp001">
+<mets:file ID="MasterFile1" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_001.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp002">
+<mets:file ID="MasterFile2" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_002.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp003">
+<mets:file ID="MasterFile3" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_003.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp004">
+<mets:file ID="MasterFile4" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_004.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp005">
+<mets:file ID="MasterFile5" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_005.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp006">
+<mets:file ID="MasterFile6" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_006.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp007">
+<mets:file ID="MasterFile7" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_007.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp008">
+<mets:file ID="MasterFile8" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_008.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp009">
+<mets:file ID="MasterFile9" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_009.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp010">
+<mets:file ID="MasterFile10" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_010.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp011">
+<mets:file ID="MasterFile11" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_011.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp012">
+<mets:file ID="MasterFile12" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_012.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp013">
+<mets:file ID="MasterFile13" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_013.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp014">
+<mets:file ID="MasterFile14" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_014.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp015">
+<mets:file ID="MasterFile15" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_015.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp016">
+<mets:file ID="MasterFile16" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_016.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp017">
+<mets:file ID="MasterFile17" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_017.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp018">
+<mets:file ID="MasterFile18" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_018.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp019">
+<mets:file ID="MasterFile19" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_019.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp020">
+<mets:file ID="MasterFile20" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_020.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp021">
+<mets:file ID="MasterFile21" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_021.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp022">
+<mets:file ID="MasterFile22" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_022.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp023">
+<mets:file ID="MasterFile23" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_023.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+<mets:fileGrp ID="FileGrp024">
+<mets:file ID="MasterFile24" USE="master" MIMETYPE="image/tiff">
+<mets:FLocat xlink:href="win_1912_024.tif" LOCTYPE="OTHER"/>
+</mets:file>
+</mets:fileGrp>
+</mets:fileSec>
+<mets:structMap>
+<mets:div TYPE="sheet" LABEL="1" ORDER="1">
+<mets:fptr FILEID="MasterFile1" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="2" ORDER="2">
+<mets:fptr FILEID="MasterFile2" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="3" ORDER="3">
+<mets:fptr FILEID="MasterFile3" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="4" ORDER="4">
+<mets:fptr FILEID="MasterFile4" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="5" ORDER="5">
+<mets:fptr FILEID="MasterFile5" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="6" ORDER="6">
+<mets:fptr FILEID="MasterFile6" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="7" ORDER="7">
+<mets:fptr FILEID="MasterFile7" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="8" ORDER="8">
+<mets:fptr FILEID="MasterFile8" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="9" ORDER="9">
+<mets:fptr FILEID="MasterFile9" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="10" ORDER="10">
+<mets:fptr FILEID="MasterFile10" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="11" ORDER="11">
+<mets:fptr FILEID="MasterFile11" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="12" ORDER="12">
+<mets:fptr FILEID="MasterFile12" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="13" ORDER="13">
+<mets:fptr FILEID="MasterFile13" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="14" ORDER="14">
+<mets:fptr FILEID="MasterFile14" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="15" ORDER="15">
+<mets:fptr FILEID="MasterFile15" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="16" ORDER="16">
+<mets:fptr FILEID="MasterFile16" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="17" ORDER="17">
+<mets:fptr FILEID="MasterFile17" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="18" ORDER="18">
+<mets:fptr FILEID="MasterFile18" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="19" ORDER="19">
+<mets:fptr FILEID="MasterFile19" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="20" ORDER="20">
+<mets:fptr FILEID="MasterFile20" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="21" ORDER="21">
+<mets:fptr FILEID="MasterFile21" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="22" ORDER="22">
+<mets:fptr FILEID="MasterFile22" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="23" ORDER="23">
+<mets:fptr FILEID="MasterFile23" />
+</mets:div>
+<mets:div TYPE="sheet" LABEL="24" ORDER="24">
+<mets:fptr FILEID="MasterFile24" />
+</mets:div>
+</mets:structMap>
+</mets:mets>
