@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'kdl'
+
+mets_directory = ARGV[0]
+
+Find.find(mets_directory) do |path|
+  if path =~ /mets\.xml$/ and File.file?(path)
+    puts "Fixing #{path}"
+    mets_fixer = KDL::MetsFixer.new(path)
+    mets_fixer.fix_all
+  end
+end
