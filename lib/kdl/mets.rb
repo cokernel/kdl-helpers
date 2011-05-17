@@ -18,6 +18,10 @@ module KDL
       @changed
     end
 
+    def mark_changed
+      @changed = true
+    end
+
     # raw file access
 
     def load(mets_file)
