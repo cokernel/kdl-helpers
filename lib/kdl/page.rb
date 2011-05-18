@@ -46,6 +46,8 @@ module KDL
           :title_sort,
           :mets_url_display,
           :finding_aid_url_s,
+          :coverage_facet,
+          :source_facet,
         ].each do |solr_field|
           new_solr_doc[solr_field] = @solr_doc[solr_field]
         end

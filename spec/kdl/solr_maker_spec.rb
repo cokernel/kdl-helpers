@@ -122,6 +122,8 @@ module KDL
           [:dc_rights, :usage_display],
           [:dc_language, :language_display],
           [:dc_relation, :relation_display],
+          [:dc_coverage, :coverage_facet],
+          [:dc_source, :source_facet],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
             it "delegates fetching #{solr_field} to AccessPackage" do
@@ -205,6 +207,8 @@ module KDL
               :type_display,
               :relation_display,
               :mets_url_display,
+              :coverage_facet,
+              :source_facet,
             ].each do |solr_field| 
               solr_maker.solr_doc.should have_key(solr_field)
             end

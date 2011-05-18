@@ -60,6 +60,8 @@ module KDL
         :type_display,
         :relation_display,
         :mets_url_display,
+        :coverage_facet,
+        :source_facet,
       ].each do |solr_field|
         hash[solr_field] = send(solr_field)
       end
@@ -161,5 +163,7 @@ module KDL
     dublin_core_export :dc_language, :language_display
     dublin_core_export :dc_rights, :usage_display
     dublin_core_export :dc_relation, :relation_display
+    dublin_core_export :dc_coverage, :coverage_facet
+    dublin_core_export :dc_source, :source_facet
   end
 end
