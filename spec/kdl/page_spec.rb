@@ -29,8 +29,8 @@ module KDL
             :type_display => 'foo',
             :relation_display => 'foo',
             :mets_url_display => 'foo',
-            :coverage_facet => 'foo',
-            :source_facet => 'foo',
+            :coverage_s => 'foo',
+            :source_s => 'foo',
             }}
     let(:page) { Page.new mets, identifier, dip_id, dip_directory, solr_doc }
     let(:page_specific_fields) { [
@@ -111,8 +111,8 @@ module KDL
             :viewer_url_s,
             :mets_url_display,
             :finding_aid_url_s,
-            :coverage_facet,
-            :source_facet,
+            :coverage_s,
+            :source_s,
           ]
           whitelist.each do |solr_field| 
             page.page_fields.should have_key(solr_field)
