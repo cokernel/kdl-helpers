@@ -44,8 +44,8 @@ module KDL
     end
 
     context "Oral history fields" do
-      describe "#solr_doc" do
-        context "when an oral history is present" do
+      context "when an oral history is present" do
+        describe "#solr_doc" do
           it "includes synchronization_url_s" do
             solr_maker = SolrMaker.new output, access_package, solrs_directory
             access_package.stub(:hasOralHistory).and_return(true)
@@ -56,6 +56,37 @@ module KDL
             solr_maker = SolrMaker.new output, access_package, solrs_directory
             access_package.stub(:hasOralHistory).and_return(true)
             solr_maker.solr_doc.should have_key(:reference_audio_url_s)
+          end
+
+          it "includes text and text_s" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasOralHistory).and_return(true)
+            solr_maker.solr_doc.should have_key(:text)
+            solr_maker.solr_doc.should have_key(:text_s)
+          end
+        end
+
+        describe "#sync_xml" do 
+          it "delegates to AccessPackage" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasOralHistory).and_return(true)
+            access_package.should_receive(:sync_xml)
+            solr_maker.sync_xml
+          end
+        end
+
+        describe "#oral_history_text" do
+          it "pulls text from the synchronization XML file" do
+            dip_directory_oh = File.join(
+              'data',
+              'dips',
+              dip_id_oh
+            )
+            access_package_oh = AccessPackage.new dip_directory_oh
+            access_package_oh.sync_xml.should_not be_nil
+            solr_maker = SolrMaker.new output, access_package_oh, solrs_directory
+            solr_maker.oral_history_text.should_not be_nil
+            solr_maker.oral_history_text.should =~ /WARREN:\ Start/
           end
         end
       end

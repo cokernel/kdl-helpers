@@ -104,6 +104,18 @@ module KDL
           end
         end
 
+        describe "#sync_xml" do
+          it "partially delegates to METS" do
+            real_dip_dir = File.join(
+              dips_directory,
+              'sample_oral_history'
+            )
+            real_access_package_oh = KDL::AccessPackage.new real_dip_dir
+            real_access_package_oh.hasOralHistory.should be_true
+            real_access_package_oh.sync_xml
+          end
+        end
+
         describe "#synchronization_url" do
           it "partially delegates to METS" do
             @access_package_oh.hasOralHistory.should be_true

@@ -21,6 +21,18 @@ module KDL
       end
     end
 
+    def sync_xml
+      if hasOralHistory
+        item = @mets.href :fileGrp_use => 'oral history',
+                          :file_use => 'synchronization'
+
+        unless item.nil?
+          file = File.join @dip_directory, 'data', item
+          xml = Nokogiri::XML(open(file))
+        end
+      end
+    end
+
     def synchronization_url
       oral_history_url 'synchronization' 
     end

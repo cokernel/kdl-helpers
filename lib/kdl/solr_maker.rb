@@ -82,6 +82,8 @@ module KDL
       hash = {}
       hash[:synchronization_url_s] = @access_package.synchronization_url
       hash[:reference_audio_url_s] = @access_package.reference_audio_url
+      hash[:text] = oral_history_text
+      hash[:text_s] = oral_history_text
       hash
     end
 
@@ -89,6 +91,16 @@ module KDL
       hash = {}
       hash[:finding_aid_url_s] = @access_package.finding_aid_url
       hash
+    end
+
+    def oral_history_text
+      sync_xml.xpath('//INST').first.content
+    end
+
+    def sync_xml
+      if @access_package.hasOralHistory
+        @access_package.sync_xml
+      end
     end
 
     def date_digitized_display
