@@ -33,28 +33,6 @@ module KDL
       label_path.pop
       label_path.push "#{page_type.capitalize} #{the_label}"
       @solr_doc[:title_display] = "#{label_path.join(' > ')} of #{@title}"
-      if sequence_number_display.to_i > 1
-        new_solr_doc = Hash.new
-        [
-          :language_display,
-          :usage_display,
-          :format,
-          :parent_id_s,
-          :relation_display,
-          :repository_display,
-          :title_display,
-          :title_sort,
-          :mets_url_display,
-          :finding_aid_url_s,
-          :coverage_s,
-          :source_s,
-        ].each do |solr_field|
-          new_solr_doc[solr_field] = @solr_doc[solr_field]
-        end
-        the_title = "#{page_type.capitalize} #{label_display}"
-        new_solr_doc[:title_t] = the_title
-        @solr_doc = new_solr_doc
-      end
       [
         :id,
         :label_display,

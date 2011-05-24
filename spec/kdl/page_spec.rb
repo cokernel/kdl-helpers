@@ -83,65 +83,18 @@ module KDL
           end
         end
 
-        it "includes all solr_doc fields for the first page" do
-          page.stub(:sequence_number_display).and_return(1)
+        it "includes all solr_doc fields for all pages" do
           page.stub(:page_type).and_return('page')
-          page.stub(:label_display).and_return('1')
           page.stub(:text).and_return('howdy')
-          page.solr_doc.keys.each do |solr_field|
-            page.page_fields.should have_key(solr_field)
+          (1..2).each do |number|
+            page.stub(:label_display).and_return(number.to_s)
+            page.stub(:sequence_number_display).and_return(number)
+            page.solr_doc.keys.each do |solr_field|
+              page.page_fields.should have_key(solr_field)
+            end
+            mets.stub(:label_path).and_return([number.to_s])
+            page.page_fields[:title_display].should == "Page #{number} of #{solr_doc[:title_t]}"
           end
-          mets.stub(:label_path).and_return(['1'])
-          page.page_fields[:title_display].should == "Page 1 of #{solr_doc[:title_t]}"
-        end
-
-        it "only includes specified fields for subsequent pages" do
-          page = Page.new mets, identifier_p2, dip_id, dip_directory, solr_doc
-          page.stub(:text).and_return('howdy')
-          page.stub(:sequence_number_display).and_return(2)
-          whitelist = [
-            :title_t,
-            :title_display,
-            :title_sort,
-            :format,
-            :language_display,
-            :usage_display,
-            :relation_display,
-            :repository_display,
-            :viewer_url_s,
-            :mets_url_display,
-            :finding_aid_url_s,
-            :coverage_s,
-            :source_s,
-          ]
-          whitelist.each do |solr_field| 
-            page.page_fields.should have_key(solr_field)
-          end 
-          page.page_fields.length.should == whitelist.length + page_specific_fields.length
-        end
-
-        it "includes an abbreviated title for subsequent pages" do
-          page = Page.new mets, identifier_p2, dip_id, dip_directory, solr_doc
-          page.stub(:page_type).and_return('page')
-          page.stub(:sequence_number_display).and_return('2')
-          page.stub(:label_display).and_return('2')
-          page.stub(:text).and_return('howdy')
-          page.page_fields[:title_t].should_not be_nil
-          page.page_fields[:title_t].should == 'Page 2'
-          mets.stub(:label_path).and_return(['2'])
-          page.page_fields[:title_display].should == "Page 2 of #{solr_doc[:title_t]}"
-        end
-
-        it "includes a modified title for subsequent pages of type 'sequence'" do
-          page = Page.new mets, identifier_p2, dip_id, dip_directory, solr_doc
-          page.stub(:page_type).and_return('sequence')
-          page.stub(:sequence_number_display).and_return('3')
-          page.stub(:label_display).and_return('2')
-          page.stub(:text).and_return('howdy')
-          page.page_fields[:title_t].should_not be_nil
-          page.page_fields[:title_t].should == 'Sequence 2'
-          mets.stub(:label_path).and_return(['3'])
-          page.page_fields[:title_display].should == "Sequence 3 of #{solr_doc[:title_t]}"
         end
 
         it "includes a breadcrumb trail in title_display when possible" do

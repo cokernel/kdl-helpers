@@ -43,10 +43,7 @@ KDL::Page
       delegates to METS
     #page_fields
       creates a hash of fields common to all pages
-      includes all solr_doc fields for the first page
-      only includes specified fields for subsequent pages
-      includes an abbreviated title for subsequent pages
-      includes a modified title for subsequent pages of type 'sequence'
+      includes all solr_doc fields for all pages
       includes a breadcrumb trail in title_display when possible
   Page-specific metadata
     label_display
@@ -322,6 +319,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.095661 seconds
+Finished in 6.053182 seconds
 
-177 examples, 0 failures
+174 examples, 0 failures
