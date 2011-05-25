@@ -49,6 +49,9 @@ module KDL
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
       end
+      unless @solr_doc[:source_s].nil?
+        @solr_doc[:text] += @solr_doc[:source_s]
+      end
       @solr_doc
     end
 
