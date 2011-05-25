@@ -155,6 +155,7 @@ module KDL
           [:dc_relation, :relation_display],
           [:dc_coverage, :coverage_s],
           [:dc_source, :source_s],
+          [:dc_contributor, :contributor_s],
         ].each do |dc_field, solr_field|
           describe "##{solr_field}" do
             it "delegates fetching #{solr_field} to AccessPackage" do
@@ -240,6 +241,7 @@ module KDL
               :mets_url_display,
               :coverage_s,
               :source_s,
+              :contributor_s,
             ].each do |solr_field| 
               solr_maker.solr_doc.should have_key(solr_field)
             end
