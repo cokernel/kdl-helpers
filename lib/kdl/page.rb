@@ -33,6 +33,8 @@ module KDL
       label_path.pop
       label_path.push "#{page_type.capitalize} #{the_label}"
       @solr_doc[:title_display] = "#{label_path.join(' > ')} of #{@title}"
+      @solr_doc[:title_guide_display] = @solr_doc[:title_sort]
+      @solr_doc[:title_t] = @solr_doc[:title_display]
       [
         :id,
         :label_display,

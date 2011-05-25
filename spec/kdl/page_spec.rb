@@ -93,7 +93,7 @@ module KDL
               page.page_fields.should have_key(solr_field)
             end
             mets.stub(:label_path).and_return([number.to_s])
-            page.page_fields[:title_display].should == "Page #{number} of #{solr_doc[:title_t]}"
+            page.page_fields[:title_display].should == "Page #{number} of #{solr_doc[:title_sort]}"
           end
         end
 
@@ -108,7 +108,8 @@ module KDL
           page.stub(:page_type).and_return('page')
           page.stub(:sequence_number_display).and_return('3')
           page.stub(:text).and_return('howdy')
-          page.page_fields[:title_display].should == "I. Correspondence, 1839-1893 > 1 > General to Anna Cooper, [11 February 1858]-11 September 1865 > Page 3 of #{solr_doc[:title_t]}"
+          page.page_fields[:title_display].should == "I. Correspondence, 1839-1893 > 1 > General to Anna Cooper, [11 February 1858]-11 September 1865 > Page 3 of #{solr_doc[:title_sort]}"
+          page.page_fields[:title_t].should == page.page_fields[:title_display]
         end
       end
     end
