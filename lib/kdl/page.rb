@@ -43,7 +43,7 @@ module KDL
         :text,
         :text_s,
         :reference_image_url_s,
-        :thumbnail_url_display,
+        :thumbnail_url_s,
         :viewer_url_s,
         :pdf_url_display,
         :parent_id_s,
@@ -89,7 +89,7 @@ module KDL
       ].join('/')
     end
 
-    def thumbnail_url_display
+    def thumbnail_url_s
       [ 'http://nyx.uky.edu/dips',
         @parent_id,
         'data',
