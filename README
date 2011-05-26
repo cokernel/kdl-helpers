@@ -58,6 +58,8 @@ KDL::Page
       partially delegates to METS
     #reference_image_url_s
       partially delegates to METS
+    #thumbnail_url_s
+      partially delegates to METS
     #viewer_url_s
       partially delegates to METS
     #page_identifier
@@ -312,6 +314,8 @@ KDL::METS
       returns the relative location for the print image for a given id
     #reference_image_path
       returns the relative location for the reference image for a given id
+    #thumbnail_path
+      returns the relative location for the thumbnail image for a given id
     #viewer_path
       returns the relative location for the gmapviewer metadata file for a given id
 KDL::AipMaker
@@ -334,6 +338,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.435413 seconds
+Finished in 6.544609 seconds
 
-181 examples, 0 failures
+183 examples, 0 failures

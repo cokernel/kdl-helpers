@@ -41,6 +41,7 @@ module KDL
             :text,
             :text_s,
             :reference_image_url_s,
+            :thumbnail_url_s,
             :pdf_url_display,
             :parent_id_s,
             :coordinates_s,
@@ -154,6 +155,14 @@ module KDL
           mets.stub(:reference_image_path).and_return('66M37_1_01/0001/0001.jpg')
           mets.should_receive(:reference_image_path)
           page.reference_image_url_s.should == "http://nyx.uky.edu/dips/#{dip_id}/data/66M37_1_01/0001/0001.jpg"
+        end
+      end
+
+      describe "#thumbnail_url_s" do
+        it "partially delegates to METS" do
+          mets.stub(:thumbnail_path).and_return('66M37_1_01/0001/0001_tb.jpg')
+          mets.should_receive(:thumbnail_path)
+          page.thumbnail_url_s.should == "http://nyx.uky.edu/dips/#{dip_id}/data/66M37_1_01/0001/0001_tb.jpg"
         end
       end
 
