@@ -58,7 +58,7 @@ KDL::Page
       partially delegates to METS
     #reference_image_url_s
       partially delegates to METS
-    #thumbnail_url_s
+    #thumbnail_url_display
       partially delegates to METS
     #viewer_url_s
       partially delegates to METS
@@ -338,6 +338,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.544609 seconds
+Finished in 7.391945 seconds
 
 183 examples, 0 failures
