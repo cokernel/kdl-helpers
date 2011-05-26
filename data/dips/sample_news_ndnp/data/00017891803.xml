@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets TYPE="KDL_GROUP" LABEL="00017891803" 
+     xmlns:mix="http://www.loc.gov/mix/" xmlns:ndnp="http://www.loc.gov/ndnp" xmlns:premis="http://www.loc.gov/standards/premis" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.loc.gov/METS/">
+
+     <!--METS HEADER-->
+     <metsHdr CREATEDATE="2010-10-28T08:18:35">
+        <agent ROLE="CREATOR" TYPE="ORGANIZATION">
+            <name>University of Kentucky</name>
+        </agent>
+    </metsHdr>
+
+
+	<dmdSec ID="techTargetModsBib">
+		<mdWrap MDTYPE="MODS" LABEL="Tech Target metadata">
+			<xmlData>
+				<mods:mods>
+					<mods:titleInfo>
+						<mods:title>Preservation Microfilm Scanner Target PMT1</mods:title>
+					</mods:titleInfo>
+                    <mods:note type="agencyResponsibleForReproduction" displayLabel="University of Kentucky; Lexington, KY">kyu</mods:note>
+                    <mods:note type="publisher">John Bradford</mods:note>
+				</mods:mods>
+			</xmlData>
+		</mdWrap>
+	</dmdSec>
+
+                    
+    <amdSec>
+        <!--TECHNICAL METADATA-->
+        
+        <techMD ID="reelTechMD">
+            <mdWrap MDTYPE="OTHER" OTHERMDTYPE="NDNP Reel Technical Metadata" LABEL="NDNP technical metadata for microfilm reel">
+                <xmlData>
+                    <ndnp:reelTechMD>
+                        <ndnp:titles>Kentucky gazette (Lexington, Ky. : 1789)</ndnp:titles>
+                        <ndnp:startDate>1789-03-14</ndnp:startDate>
+                        <ndnp:endDate>1803-01-11</ndnp:endDate>
+                        <ndnp:captureResolutionOriginal measurement="pixels/inch">300</ndnp:captureResolutionOriginal>
+                        <ndnp:guideToContentsPresentFlag>false</ndnp:guideToContentsPresentFlag>
+                        <ndnp:dateMicrofilmCreated>2010</ndnp:dateMicrofilmCreated>
+                        <ndnp:looseLeavesFlag>1</ndnp:looseLeavesFlag>
+                        <ndnp:boundVolumeFlag>0</ndnp:boundVolumeFlag>
+                        <ndnp:comments>Original documents were digitized courtesy Lexington Public Library; UK Libraries provided conservation measures to ensure the finest digital reproduction possible; Kentucky Virtual Library (KYVL) provided funding and established online access to the digital edition through the Kentuckiana Digital Library.</ndnp:comments>
+		                <ndnp:comments>Publisher: John Bradford</ndnp:comments>
+                        <ndnp:dimensions>12</ndnp:dimensions>
+                        <ndnp:pagesPerIssue>4</ndnp:pagesPerIssue>
+                        <ndnp:numberOfResolutionTargets>2</ndnp:numberOfResolutionTargets>
+                        <ndnp:colorProfile>Adobe RGB</ndnp:colorProfile>
+                        <ndnp:bitDepth>24</ndnp:bitDepth>
+                    </ndnp:reelTechMD>
+                </xmlData>
+            </mdWrap>
+        </techMD>                    
+    </amdSec>
+    
+    <!--FILE SECTION-->
+    <fileSec>
+    </fileSec>
+
+    <!--STRUCTURAL MAP-->    
+    <structMap xmlns:np="urn:library-of-congress:ndnp:mets:newspaper">
+        <div TYPE="np:reel" ADMID="reelTechMD">
+        </div>
+    </structMap>
+    
+</mets>

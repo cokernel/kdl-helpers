@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets TYPE="urn:library-of-congress:ndnp:mets:newspaper:issue" PROFILE="urn:library-of-congress:mets:profiles:ndnp:issue:v1.5" LABEL="Kentucky gazette (Lexington, Ky. : 1789), 1789-03-14" 
+     xmlns:mix="http://www.loc.gov/mix/" xmlns:ndnp="http://www.loc.gov/ndnp" xmlns:premis="http://www.oclc.org/premis" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/METS/"
+     xsi:schemaLocation="
+     http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version17/mets.v1-7.xsd  
+     http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd" >
+     
+     <!--METS HEADER-->
+     <metsHdr CREATEDATE="2010-10-28T08:20:01">
+        <agent ROLE="CREATOR" TYPE="ORGANIZATION">
+            <name>University of Kentucky</name>
+        </agent>
+    </metsHdr>
+
+    <!--DESCRIPTIVE METADATA-->
+    
+    <dmdSec ID="issueModsBib">                
+        <mdWrap MDTYPE="MODS" LABEL="Issue metadata">
+            <xmlData>
+                <mods:mods>
+                    <mods:relatedItem type="host">
+                        <mods:identifier type="lccn">sn82014782</mods:identifier>
+                        <mods:part>
+                            <mods:detail type="volume">
+                                <mods:number>2</mods:number>
+                            </mods:detail>
+                            <mods:detail type="issue">
+                                <mods:number>29</mods:number>
+                            </mods:detail>
+                            <mods:detail type="edition">
+                                <mods:number>1</mods:number>
+                            </mods:detail>
+                        </mods:part>
+                    </mods:relatedItem>
+                    <mods:originInfo>
+                        <mods:dateIssued encoding="iso8601">1789-03-14</mods:dateIssued>
+                    </mods:originInfo>
+                    <mods:note type="comments">Publisher: John Bradford</mods:note>
+                    <mods:note type="noteAboutReproduction">Present</mods:note>
+                </mods:mods>
+            </xmlData>
+        </mdWrap>
+    </dmdSec>
+
+  
+ 
+    <dmdSec ID="pageModsBib1">
+        <mdWrap MDTYPE="MODS" LABEL="Page metadata">
+            <xmlData>
+                <mods:mods>
+                    <mods:part>                        
+                        <mods:extent unit="pages">
+                            <mods:start>1</mods:start>
+                        </mods:extent>
+                    </mods:part>
+                    <mods:relatedItem type="original">
+						<mods:physicalDescription>
+							<mods:form type="microfilm"/>
+						</mods:physicalDescription>                        
+                        
+                        <mods:identifier type="reel">00017891803</mods:identifier>
+                        <mods:identifier type="reel sequence number">1</mods:identifier>
+                        <mods:location>
+	                        <mods:physicalLocation authority="marcorg" displayLabel="Lexington Public Library; Lexington, KY">kylx</mods:physicalLocation>
+                        </mods:location>
+                    </mods:relatedItem>
+                    <mods:note type="agencyResponsibleForReproduction" displayLabel="University of Kentucky; Lexington, KY">kyu</mods:note>
+                    <mods:note type="comments">Publisher: John Bradford</mods:note>
+                    <mods:note type="noteAboutReproduction" >Present</mods:note>
+                </mods:mods>
+            </xmlData>
+        </mdWrap>
+    </dmdSec>
+    <dmdSec ID="pageModsBib2">
+        <mdWrap MDTYPE="MODS" LABEL="Page metadata">
+            <xmlData>
+                <mods:mods>
+                    <mods:part>                        
+                        <mods:extent unit="pages">
+                            <mods:start>2</mods:start>
+                        </mods:extent>
+                    </mods:part>
+                    <mods:relatedItem type="original">
+						<mods:physicalDescription>
+							<mods:form type="microfilm"/>
+						</mods:physicalDescription>                        
+                        
+                        <mods:identifier type="reel">00017891803</mods:identifier>
+                        <mods:identifier type="reel sequence number">2</mods:identifier>
+                        <mods:location>
+	                        <mods:physicalLocation authority="marcorg" displayLabel="Lexington Public Library; Lexington, KY">kylx</mods:physicalLocation>
+                        </mods:location>
+                    </mods:relatedItem>
+                    <mods:note type="agencyResponsibleForReproduction" displayLabel="University of Kentucky; Lexington, KY">kyu</mods:note>
+                    <mods:note type="comments">Publisher: John Bradford</mods:note>
+                    <mods:note type="noteAboutReproduction" >Present</mods:note>
+                </mods:mods>
+            </xmlData>
+        </mdWrap>
+    </dmdSec>
+
+    <!--FILE SECTION-->
+    <fileSec>
+        
+        <fileGrp ID="pageFileGrp1">
+            <file ID="masterFile1" USE="master" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0000.tif" />                                    
+            </file>
+            <file ID="serviceFile1" USE="service" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0000.jp2" />                                                
+            </file>
+            <file ID="otherDerivativeFile1" USE="derivative" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0000.pdf" />                                                
+            </file>            
+            <file ID="ocrFile1" USE="ocr" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0000.xml" />                                                
+            </file>                       
+        </fileGrp>
+                
+        
+        <fileGrp ID="pageFileGrp2">
+            <file ID="masterFile2" USE="master" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0001.tif" />                                    
+            </file>
+            <file ID="serviceFile2" USE="service" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0001.jp2" />                                                
+            </file>
+            <file ID="otherDerivativeFile2" USE="derivative" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0001.pdf" />                                                
+            </file>            
+            <file ID="ocrFile2" USE="ocr" >               
+                <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="file" xlink:href="0001.xml" />                                                
+            </file>                       
+        </fileGrp>
+                
+    </fileSec>
+
+    <!--STRUCTURAL MAP-->    
+    <structMap xmlns:np="urn:library-of-congress:ndnp:mets:newspaper">
+        <div TYPE="np:issue" DMDID="issueModsBib">
+                 <div TYPE="np:page" DMDID="pageModsBib1">
+                    <fptr FILEID="masterFile1" />
+                    <fptr FILEID="serviceFile1" />
+                    <fptr FILEID="otherDerivativeFile1" />
+                    <fptr FILEID="ocrFile1" />
+                </div>                
+                
+                 <div TYPE="np:page" DMDID="pageModsBib2">
+                    <fptr FILEID="masterFile2" />
+                    <fptr FILEID="serviceFile2" />
+                    <fptr FILEID="otherDerivativeFile2" />
+                    <fptr FILEID="ocrFile2" />
+                </div>                
+                
+ 
+        </div>         
+    </structMap>
+
+ </mets>
