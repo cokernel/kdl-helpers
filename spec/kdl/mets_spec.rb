@@ -61,7 +61,7 @@ module KDL
     context "Package-level metadata" do
       describe "#ids" do
         it "fetches the list of fileGrp identifiers" do
-          expected = @mets.mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'Finding Aid'}.collect do |node|
+          expected = @mets.mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'Finding Aid' or node['USE'] == 'reel metadata' }.collect do |node|
             node['ID']
           end
           got = @mets.ids
@@ -275,6 +275,26 @@ module KDL
           expected = @mets.href :fileGrp => identifier,
                                 :use => 'ocr'
           @mets.text_href(identifier).should == expected
+        end
+      end
+
+      describe "#alto_href" do
+        it "returns the ALTO location for a given id" do
+          mets = METS.new
+          mets.load File.join('data', 'dips', 'sample_news_ndnp', 'data', 'mets.xml')
+          identifier = mets.ids.first
+          expected = mets.href :fileGrp => identifier,
+                               :use => 'coordinates'
+          mets.alto_href(identifier).should == expected
+        end
+      end
+
+      describe "#reel_metadata_href" do
+        it "returns the relative location of the reel metadata from NDNP reel metadata" do
+          mets = METS.new
+          mets.load File.join('data', 'dips', 'sample_news_ndnp', 'data', 'mets.xml')
+          identifier = mets.ids.first
+          mets.reel_metadata_href.should == '00017891803.xml'
         end
       end
 

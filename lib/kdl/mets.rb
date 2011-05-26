@@ -66,7 +66,7 @@ module KDL
     # item-level metadata
 
     def ids
-      mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'Finding Aid' }.collect do |node|
+      mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'Finding Aid' or node['USE'] == 'reel metadata' }.collect do |node|
         node['ID']
       end
     end
@@ -155,6 +155,13 @@ module KDL
     add_href_field :reference_image_path, :reference_image
     add_href_field :viewer_path, :tiles_metadata
     add_href_field :text_href, :ocr
+    add_href_field :alto_href, :coordinates
+
+    def reel_metadata_href
+      node = mets.xpath('//mets:fileGrp').select { |node| node['USE'] == 'reel metadata' }.first
+      href :fileGrp => node['ID'],
+           :use => 'reel metadata'
+    end
 
     def self.add_div_field(method_name, field)
       define_method method_name do |identifier|

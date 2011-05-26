@@ -70,6 +70,15 @@ KDL::Page
       retrieves the text from the DIP directory
     #text_s
       delegates to text
+    ALTO
+      #alto
+        delegates to METS
+      #coordinates_hash
+        extracts a hash with words as keys and coordinates as values
+      #resolution
+        partially delegates to METS
+      #coordinates_s
+        dumps #coordinates_hash into JSON
 KDL::MetsFixer
   loads a METS file
   #has_bad_file_ids
@@ -210,6 +219,8 @@ KDL::SolrMaker
         delegates fetching coverage_s to AccessPackage
       #source_s
         delegates fetching source_s to AccessPackage
+      #contributor_s
+        delegates fetching contributor_s to AccessPackage
       #author_t
         is a period-separated list of dc:creator elements
       #author_display
@@ -293,6 +304,10 @@ KDL::METS
       returns the type for a given id
     #text_href
       returns the text location for a given id
+    #alto_href
+      returns the ALTO location for a given id
+    #reel_metadata_href
+      returns the relative location of the reel metadata from NDNP reel metadata
     #print_image_path
       returns the relative location for the print image for a given id
     #reference_image_path
@@ -319,6 +334,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 5.773667 seconds
+Finished in 6.435413 seconds
 
-174 examples, 0 failures
+181 examples, 0 failures

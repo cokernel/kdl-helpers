@@ -43,6 +43,7 @@ module KDL
             :reference_image_url_s,
             :pdf_url_display,
             :parent_id_s,
+            :coordinates_s,
             ]}
     let(:playground) { File.join('data', 'playground') }
     let(:solrs_directory) { File.join(playground, 'solr') }
@@ -78,6 +79,7 @@ module KDL
         it "creates a hash of fields common to all pages" do
           page.stub(:text).and_return('howdy')
           page.stub(:sequence_number_display).and_return('1')
+          page.stub(:coordinates_s).and_return('')
           page_specific_fields.each do |page_field|
             page.page_fields.should have_key(page_field)
           end
@@ -86,6 +88,7 @@ module KDL
         it "includes all solr_doc fields for all pages" do
           page.stub(:page_type).and_return('page')
           page.stub(:text).and_return('howdy')
+          page.stub(:coordinates_s).and_return('')
           (1..2).each do |number|
             page.stub(:label_display).and_return(number.to_s)
             page.stub(:sequence_number_display).and_return(number)
@@ -206,6 +209,93 @@ module KDL
           page.text_s
         end
       end
+
+      context "ALTO" do
+        let(:alto_id) { 'sample_news_ndnp' }
+        let(:alto_dip_directory) { File.join('data', 'dips', alto_id) }
+        let(:page_id) { 'FileGrp0001' }
+
+        before(:each) do
+          @alto_mets = METS.new
+          @alto_mets.load File.join(alto_dip_directory, 'data', 'mets.xml')
+          @alto_page = Page.new @alto_mets, page_id, alto_id, alto_dip_directory, Hash.new
+        end
+
+        describe "#alto" do
+          it "delegates to METS" do
+            file = File.join(alto_dip_directory, 'data', '0000.xml')
+            signatures_should_match(@alto_page.alto, Nokogiri::XML(IO.read(file)))
+          end
+        end
+  
+        describe "#coordinates_hash" do
+          it "extracts a hash with words as keys and coordinates as values" do
+            @alto_page.should_receive(:alto).and_return(sample_alto)
+            got = @alto_page.coordinates_hash
+            got.class.should == Hash
+            expected = sample_coordinates_hash
+            got.should == expected
+          end
+        end
+
+        describe "#resolution" do
+          it "partially delegates to METS" do
+            @alto_page.resolution.should == 300
+          end
+        end
+  
+        describe "#coordinates_s" do
+          it "dumps #coordinates_hash into JSON" do
+            @alto_page.should_receive(:alto).and_return(sample_alto)
+            got = @alto_page.coordinates_s
+            expected = sample_coordinates_json
+            JSON.parse(got).should == JSON.parse(expected)
+          end
+        end
+      end
     end
   end
+end
+
+def sample_coordinates_json
+  "{\"sample\":[[66.0,68.0,2292.0,466.0]],\"chowder\":[[32.0,33.0,1583.0,366.0]],\"howdy\":[[104.0,45.0,286.0,362.0],[74.0,70.0,1568.0,462.0]],\"this\":[[76.0,70.0,1766.0,462.0]],\"is\":[[70.0,74.0,1948.0,466.0]],\"alto\":[[68.0,72.0,2440.0,462.0]]}"
+end
+
+def sample_coordinates_hash
+  {
+    "sample" => [[66.0, 68.0, 2292.0, 466.0]], 
+    "chowder" => [[32.0, 33.0, 1583.0, 366.0]], 
+    "howdy" => [[104.0, 45.0, 286.0, 362.0], [74.0, 70.0, 1568.0, 462.0]], 
+    "this" => [[76.0, 70.0, 1766.0, 462.0]], 
+    "is" => [[70.0, 74.0, 1948.0, 466.0]], 
+    "alto" => [[68.0, 72.0, 2440.0, 462.0]],
+  }
+end
+
+def sample_alto
+  text = <<-eos
+  <Page ID="PAGE.0" HEIGHT="21036" WIDTH="12928" PHYSICAL_IMG_NR="1" PROCESSING="OCR.0" PC="0.956">
+    <PrintSpace ID="PS.0" HEIGHT="21036.0" WIDTH="12928.0" HPOS="0.0" VPOS="0.0">
+    <TextBlock xmlns:ns1="http://www.w3.org/1999/xlink" ID="TB.0001.1" HEIGHT="184" WIDTH="1040" HPOS="1144" VPOS="1444" ns1:type="simple" language="en">
+      <TextLine ID="TB.0001.1_0" HEIGHT="184.0" WIDTH="1040.0" HPOS="1144.0" VPOS="1444.0">
+        <String ID="TB.0001.1_0_0" STYLEREFS="TS_12.0" HEIGHT="180.0" WIDTH="416.0" HPOS="1144.0" VPOS="1448.0" CONTENT="howdy" WC="0.956"/>
+        <SP WIDTH="92.0" HPOS="1560.0" VPOS="1444.0"/>
+        <String ID="TB.0001.2_0_1" STYLEREFS="TS_11.0" HEIGHT="132.0" WIDTH="128.0" HPOS="6332.0" VPOS="1464.0" CONTENT="chowder" WC="0.956"/>
+      </TextLine>
+
+      <TextLine ID="TB.0001.2_3" HEIGHT="312.0" WIDTH="4928.0" HPOS="6272.0" VPOS="1848.0">
+        <String ID="TB.0001.2_3_0" STYLEREFS="TS_10.0_B" HEIGHT="280.0" WIDTH="296.0" HPOS="6272.0" VPOS="1848.0" CONTENT="Howdy." WC="0.956"/>
+        <SP WIDTH="496.0" HPOS="6568.0" VPOS="1848.0"/>
+        <String ID="TB.0001.2_3_1" STYLEREFS="TS_10.0_BI" HEIGHT="280.0" WIDTH="304.0" HPOS="7064.0" VPOS="1848.0" CONTENT="This" WC="0.956"/>
+        <SP WIDTH="424.0" HPOS="7368.0" VPOS="1848.0"/>
+        <String ID="TB.0001.2_3_2" STYLEREFS="TS_10.0_BI" HEIGHT="296.0" WIDTH="280.0" HPOS="7792.0" VPOS="1864.0" CONTENT="is" WC="0.956"/>
+        <SP WIDTH="1096.0" HPOS="8072.0" VPOS="1848.0"/>
+        <String ID="TB.0001.2_3_3" STYLEREFS="TS_10.0_B" HEIGHT="272.0" WIDTH="264.0" HPOS="9168.0" VPOS="1864.0" CONTENT="sample" WC="0.956"/>
+        <SP WIDTH="328.0" HPOS="9432.0" VPOS="1848.0"/>
+        <String ID="TB.0001.2_3_4" STYLEREFS="TS_10.0_B" HEIGHT="288.0" WIDTH="272.0" HPOS="9760.0" VPOS="1848.0" CONTENT="ALTO" WC="0.956"/
+      </TextLine>
+    </TextBlock>
+  </Page>
+  eos
+  Nokogiri::XML(text)
 end

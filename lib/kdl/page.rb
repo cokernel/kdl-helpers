@@ -46,6 +46,7 @@ module KDL
         :viewer_url_s,
         :pdf_url_display,
         :parent_id_s,
+        :coordinates_s,
       ].each do |page_field|
         @solr_doc[page_field] = send(page_field)
       end
@@ -131,6 +132,52 @@ module KDL
 
     def text_href
       @mets.text_href @identifier
+    end
+
+    def alto
+      file = @mets.alto_href @identifier
+      if file.length > 0
+        @alto = Nokogiri::XML(
+                  IO.read(File.join(@dip_directory,
+                                    'data',
+                                    file)))
+      end
+    end
+
+    def coordinates_s
+      JSON.dump coordinates_hash
+    end
+
+    def coordinates_hash
+      coordinates = Hash.new
+      xml = alto
+      if xml
+        resmod = resolution.to_f / 1200
+        xml.css('String').each do |string|
+          content = string.attribute('CONTENT').text.downcase.strip
+          content.gsub!(/\W/, '')
+          coordinates[content] ||= []
+          coordinates[content] << [ 'WIDTH',
+            'HEIGHT',
+            'HPOS',
+            'VPOS' ].collect do |attribute|
+            string.attribute(attribute).text.to_f * resmod
+          end
+        end
+      end
+      coordinates
+    end
+
+    def resolution
+      if @resolution.nil?
+        file = @mets.reel_metadata_href
+        xml = Nokogiri::XML(
+                IO.read(File.join(@dip_directory,
+                                  'data',
+                                  file)))
+        @resolution = xml.xpath('//ndnp:reelTechMD/ndnp:captureResolutionOriginal').first.content.to_i
+      end
+      @resolution
     end
   end
 end
