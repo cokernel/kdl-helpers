@@ -35,6 +35,18 @@ module KDL
         tiler.command.should include('--quiet')
       end
 
+      it "allows the --make-pdfs option" do
+        tiler = Tiler.new output
+        tiler.configure :make_pdfs => true
+        tiler.command.should include('--make-pdfs')
+      end
+
+      it "allows the --no-pdfs option" do
+        tiler = Tiler.new output
+        tiler.configure :make_pdfs => false
+        tiler.command.should include('--no-pdfs')
+      end
+
       it "allows the --file option" do
         tiler = Tiler.new output
         tiler.configure :file => '/path/to/file'
@@ -48,7 +60,7 @@ module KDL
                   :no_move => true,
                   :quiet => true,
                   :file => 'just/this/one'
-        tiler.command.should == '/opt/pdp/bin/tiler.py --input-directory=/path/to/input --output-directory=/path/to/output --no-move --quiet --file=just/this/one'
+        tiler.command.should == '/opt/pdp/bin/tiler.py --input-directory=/path/to/input --output-directory=/path/to/output --no-move --quiet --make-pdfs --file=just/this/one'
       end
     end
 

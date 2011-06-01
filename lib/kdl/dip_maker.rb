@@ -49,12 +49,24 @@ module KDL
                          :delete => true,
                          :quiet => true,
                          :file => href
+          
+          pdf_path = @mets.print_image_path(fileGrp_id)
+          if pdf_path.nil? or pdf_path.length == 0
+            wants_pdf = true
+          else
+            wants_pdf = false
+          end
 
           thumb_href = File.join(base, stem + '_tb.jpg')
           tls_href = File.join(base, stem + '.tls')
           meta_href = File.join(base, stem + '.txt')
           ref_href = File.join(base, stem + '.jpg')
-          pdf_href = File.join(base, stem + '.pdf')
+
+          if wants_pdf
+            pdf_href = File.join(base, stem + '.pdf')
+          else
+            tiler.configure :make_pdfs => false
+          end
 
           if @options.has_key?(:mets_only)
             # fake creation
@@ -64,9 +76,11 @@ module KDL
               tls_href,
               meta_href,
               ref_href,
-              pdf_href,
             ].each do |file|
               FileUtils.touch File.join(@dip.data_dir, file)
+            end
+            if wants_pdf
+              FileUtils.touch File.join(@dip.data_dir, pdf_href)
             end
           else
             tiler.run
@@ -92,10 +106,12 @@ module KDL
                          :file => ref_href,
                          :mimetype => 'image/jpeg'
 
-          @mets.add_file :fileGrp => fileGrp_id,
-                         :use => 'print image',
-                         :file => pdf_href,
-                         :mimetype => 'application/pdf'
+          if wants_pdf
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'print image',
+                           :file => pdf_href,
+                           :mimetype => 'application/pdf'
+          end
 
           master_id = @mets.file_id :fileGrp => fileGrp_id,
                          :use => use

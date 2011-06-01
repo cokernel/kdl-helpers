@@ -5,10 +5,11 @@ module KDL
     def initialize(output)
       @output = output
       @initialized = false 
+      @options = Hash.new
     end
 
     def configure(options=nil)
-      @options = options
+      @options.merge!(options)
       required_keys = [
         :input_directory,
         :output_directory,
@@ -54,6 +55,11 @@ module KDL
          bits << "--quiet"
       else
          bits << "--verbose"
+      end
+      if @options[:make_pdfs].class == FalseClass
+         bits << "--no-pdfs"
+      else
+         bits << "--make-pdfs"
       end
       # optional arguments
       if @options[:file]
