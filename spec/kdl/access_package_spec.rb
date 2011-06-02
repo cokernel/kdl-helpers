@@ -141,6 +141,29 @@ module KDL
         after(:each) do
           FileUtils.rm_rf playground
         end
+
+        describe "#pages" do
+          it "includes a page for the finding aid" do
+            access_package = AccessPackage.new @dip_dir_with_finding_aid
+            pages = access_package.pages Hash.new
+            pages.first.identifier.should == 'FileGrpFindingAid'
+            pages.first.should be_finding_aid
+          end
+
+          it "does not mark other pages as finding aids" do
+            access_package = AccessPackage.new @dip_dir_with_finding_aid
+            pages = access_package.pages Hash.new
+            pages.last.should_not be_finding_aid
+          end
+        end
+
+        describe "#isFindingAid" do
+          it "checks whether a specific item corresponds to a finding aid" do
+            access_package = AccessPackage.new @dip_dir_with_finding_aid
+            access_package.isFindingAid('FileGrpFindingAid').should be_true
+            access_package.isFindingAid('FileGrp1_1_001_0001').should be_false
+          end
+        end
   
         describe "#hasFindingAid" do
           it "partially delegates to METS" do

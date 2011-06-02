@@ -5,13 +5,14 @@ module KDL
     attr_reader :identifier
     attr_reader :solr_doc
 
-    def initialize(mets, identifier, parent_id, dip_directory, solr_doc)
+    def initialize(mets, identifier, parent_id, dip_directory, solr_doc, finding_aid=false)
       @mets = mets
       @identifier = identifier
       @parent_id = parent_id
       @dip_directory = dip_directory
       @solr_doc = solr_doc
       @title = solr_doc[:title_display]
+      @finding_aid = finding_aid
     end
 
     def save(solr_directory)
@@ -187,6 +188,10 @@ module KDL
         @resolution = xml.xpath('//ndnp:reelTechMD/ndnp:captureResolutionOriginal').first.content.to_i
       end
       @resolution
+    end
+
+    def finding_aid?
+      @finding_aid
     end
   end
 end

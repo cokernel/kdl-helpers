@@ -17,7 +17,7 @@ module KDL
 
     def pages(solr_doc)
       @mets.ids.collect do |id|
-        Page.new @mets, id, identifier, @dip_directory, solr_doc
+        Page.new @mets, id, identifier, @dip_directory, solr_doc, isFindingAid(id)
       end
     end
 
@@ -66,6 +66,15 @@ module KDL
 
     def hasOralHistory
       @mets.hasFileGrpWithUse('oral history')
+    end
+
+    def isFindingAid(id)
+      if hasFindingAid
+        fileGrp = @mets.fileGrp(:use => 'Finding Aid').first
+        fileGrp['ID'] == id
+      else
+        false
+      end
     end
 
     def hasFindingAid

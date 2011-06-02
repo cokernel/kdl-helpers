@@ -148,6 +148,11 @@ KDL::AccessPackage
       #reference_audio_url
         partially delegates to METS
     finding aid fields
+      #pages
+        includes a page for the finding aid
+        does not mark other pages as finding aids
+      #isFindingAid
+        checks whether a specific item corresponds to a finding aid
       #hasFindingAid
         partially delegates to METS
       #finding_aid_url
@@ -340,6 +345,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 8.357181 seconds
+Finished in 6.945799 seconds
 
-185 examples, 0 failures
+188 examples, 0 failures
