@@ -24,6 +24,31 @@ module KDL
     end
 
     def page_fields
+      if finding_aid?
+        finding_aid_fields
+      else
+        paged_page_fields
+      end
+    end
+
+    def finding_aid_fields
+      @solr_doc[:title_display] = @title
+      @solr_doc[:title_guide_display] = @solr_doc[:title_sort]
+      @solr_doc[:title_t] = @solr_doc[:title_display]
+      [
+        :id,
+        :text,
+        :text_s,
+      ].each do |page_field|
+        @solr_doc[page_field] = send(page_field)
+      end
+      unless @solr_doc[:source_s].nil?
+        @solr_doc[:text] += @solr_doc[:source_s]
+      end
+      @solr_doc
+    end
+
+    def paged_page_fields
       the_label = 
       if page_type == 'sequence'
         sequence_number_display
@@ -67,7 +92,11 @@ module KDL
     end
 
     def id
-      "#{@parent_id}_#{page_identifier}"
+      if finding_aid?
+        @parent_id
+      else
+        "#{@parent_id}_#{page_identifier}"
+      end
     end
 
     def parent_id_s

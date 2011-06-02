@@ -47,6 +47,7 @@ KDL::Page
       creates a hash of fields common to all pages
       includes all solr_doc fields for all pages
       includes a breadcrumb trail in title_display when possible
+      includes a restricted set of fields for finding aid pages
   Page-specific metadata
     label_display
       delegates to METS
@@ -70,6 +71,7 @@ KDL::Page
       is a zero-padded version of sequence_number_display
     #id
       constructs an identifier for an individual page
+      uses the parent id for a finding aid
     #text
       retrieves the text from the DIP directory
     #text_s
@@ -345,6 +347,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.945799 seconds
+Finished in 6.561793 seconds
 
-188 examples, 0 failures
+190 examples, 0 failures

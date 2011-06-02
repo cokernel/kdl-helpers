@@ -115,6 +115,42 @@ module KDL
           page.page_fields[:title_display].should == "I. Correspondence, 1839-1893 > 1 > General to Anna Cooper, [11 February 1858]-11 September 1865 > Page 3 of #{solr_doc[:title_sort]}"
           page.page_fields[:title_t].should == page.page_fields[:title_display]
         end
+
+        it "includes a restricted set of fields for finding aid pages" do
+          FileUtils.mkdir_p File.join(playground, 'mets')
+          mets_src = File.join('data', 'mets', 'mets2.xml')
+          mets_file = File.join(playground, 'mets', 'mets2.xml')
+          FileUtils.cp mets_src, mets_file
+          mets = KDL::METS.new
+          mets.load mets_file
+          page = Page.new mets, 'FileGrpFindingAid', dip_id, dip_directory, solr_doc, true
+          page.page_fields.should_not be_nil
+          wanted_keys = [
+            :id,
+            :title_display,
+            :title_guide_display,
+            :title_t,
+            :text,
+            :text_s,
+          ]
+          wanted_keys.each do |key|
+            page.page_fields.should have_key(key)
+          end
+          unwanted_keys = [
+            :label_display,
+            :sequence_number_display,
+            :sequence_sort,
+            :reference_image_url_s,
+            :thumbnail_url_s,
+            :viewer_url_s,
+            :pdf_url_display,
+            :parent_id_s,
+            :coordinates_s,
+          ]
+          unwanted_keys.each do |key|
+            page.page_fields.should_not have_key(key)
+          end
+        end
       end
     end
 
@@ -195,6 +231,12 @@ module KDL
           page.stub(:page_identifer).and_return('1_1_2_3')
           expected = "#{dip_id}_#{page.page_identifier}"
           page.id.should == expected
+        end
+
+        it "uses the parent id for a finding aid" do
+          page.stub(:finding_aid?).and_return(true)
+          page.stub(:page_identifer).and_return('1_1_2_3')
+          page.id.should == dip_id
         end
       end
 
