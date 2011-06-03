@@ -150,6 +150,8 @@ module KDL
           unwanted_keys.each do |key|
             page.page_fields.should_not have_key(key)
           end
+          page.page_fields.should have_key(:unpaged_display)
+          page.page_fields[:unpaged_display].should == true
         end
       end
     end

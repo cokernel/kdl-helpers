@@ -32,20 +32,22 @@ module KDL
     end
 
     def finding_aid_fields
-      @solr_doc[:title_display] = @title
-      @solr_doc[:title_guide_display] = @solr_doc[:title_sort]
-      @solr_doc[:title_t] = @solr_doc[:title_display]
+      fields = @solr_doc.dup
+      fields[:title_display] = @title
+      fields[:title_guide_display] = fields[:title_sort]
+      fields[:title_t] = fields[:title_display]
       [
         :id,
         :text,
         :text_s,
       ].each do |page_field|
-        @solr_doc[page_field] = send(page_field)
+        fields[page_field] = send(page_field)
       end
-      unless @solr_doc[:source_s].nil?
-        @solr_doc[:text] += @solr_doc[:source_s]
+      unless fields[:source_s].nil?
+        fields[:text] += fields[:source_s]
       end
-      @solr_doc
+      fields[:unpaged_display] = true
+      fields
     end
 
     def paged_page_fields
@@ -58,9 +60,10 @@ module KDL
       label_path = @mets.label_path @identifier
       label_path.pop
       label_path.push "#{page_type.capitalize} #{the_label}"
-      @solr_doc[:title_display] = "#{label_path.join(' > ')} of #{@title}"
-      @solr_doc[:title_guide_display] = @solr_doc[:title_sort]
-      @solr_doc[:title_t] = @solr_doc[:title_display]
+      fields = @solr_doc.dup
+      fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
+      fields[:title_guide_display] = fields[:title_sort]
+      fields[:title_t] = fields[:title_display]
       [
         :id,
         :label_display,
@@ -75,12 +78,12 @@ module KDL
         :parent_id_s,
         :coordinates_s,
       ].each do |page_field|
-        @solr_doc[page_field] = send(page_field)
+        fields[page_field] = send(page_field)
       end
-      unless @solr_doc[:source_s].nil?
-        @solr_doc[:text] += @solr_doc[:source_s]
+      unless fields[:source_s].nil?
+        fields[:text] += fields[:source_s]
       end
-      @solr_doc
+      fields
     end
 
     def page_title
