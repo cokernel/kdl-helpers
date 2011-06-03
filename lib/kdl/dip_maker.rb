@@ -52,7 +52,17 @@ module KDL
           
           pdf_path = @mets.print_image_path(fileGrp_id)
           if pdf_path.nil? or pdf_path.length == 0
-            wants_pdf = true
+            pdf_path = @mets.href :fileGrp => fileGrp_id,
+                                  :use => 'master'
+            if pdf_path.nil? or pdf_path.length == 0
+              wants_pdf = true
+            else
+              if pdf_path =~ /\.pdf$/
+                wants_pdf = false
+              else
+                wants_pdf = true
+              end
+            end
           else
             wants_pdf = false
           end
