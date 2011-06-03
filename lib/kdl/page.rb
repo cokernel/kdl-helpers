@@ -83,6 +83,11 @@ module KDL
       unless fields[:source_s].nil?
         fields[:text] += fields[:source_s]
       end
+      if page_type == 'photograph'
+        fields[:format] = 'images'
+      elsif page_type == 'part'
+        fields[:format] = 'archival folders'
+      end
       fields
     end
 
