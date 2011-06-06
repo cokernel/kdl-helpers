@@ -78,6 +78,7 @@ module KDL
         hash[:id] = identifier
         hash[:unpaged_display] = '1'
       end
+      hash[:digital_content_available_s] = @access_package.hasDigitizedContent
       hash
     end
 

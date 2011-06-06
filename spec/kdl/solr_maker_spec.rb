@@ -100,6 +100,22 @@ module KDL
             access_package.stub(:hasFindingAid).and_return(true)
             solr_maker.solr_doc.should have_key(:finding_aid_url_s)
           end
+
+          it "sets :digital_content_available_s to true if digitized content is available" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasFindingAid).and_return(true)
+            access_package.stub(:hasDigitizedContent).and_return(true)
+            solr_maker.solr_doc.should have_key(:digital_content_available_s)
+            solr_maker.solr_doc[:digital_content_available_s].should be_true
+          end
+
+          it "sets :digital_content_available_s to false if digitized content is not available" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            access_package.stub(:hasFindingAid).and_return(true)
+            access_package.stub(:hasDigitizedContent).and_return(false)
+            solr_maker.solr_doc.should have_key(:digital_content_available_s)
+            solr_maker.solr_doc[:digital_content_available_s].should be_false
+          end
         end
 
         context "when a finding aid is not present" do

@@ -104,6 +104,14 @@ module KDL
       @mets.hasFileGrpWithUse('Finding Aid')
     end
 
+    def hasDigitizedContent
+      begin
+        ids.count > 1
+      rescue
+        false
+      end
+    end
+
     def ids
       @mets.ids
     end

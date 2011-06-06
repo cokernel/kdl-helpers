@@ -174,6 +174,26 @@ module KDL
             access_package.hasFindingAid
           end
         end
+
+        describe "#hasDigitizedContent" do
+          it "partially delegates to METS" do
+            access_package = AccessPackage.new dip_directory
+            access_package.mets.should_receive(:ids)
+            access_package.hasDigitizedContent
+          end
+
+          it "returns true if METS has at least 2 ids" do
+            access_package = AccessPackage.new dip_directory
+            access_package.mets.stub(:ids).and_return(['one', 'two'])
+            access_package.hasDigitizedContent.should be_true
+          end
+
+          it "returns false if METS has less than 2 ids" do
+            access_package = AccessPackage.new dip_directory
+            access_package.mets.stub(:ids).and_return(['one'])
+            access_package.hasDigitizedContent.should be_false
+          end
+        end
   
         describe "#finding_aid_url" do
           it "partially delegates to METS" do
