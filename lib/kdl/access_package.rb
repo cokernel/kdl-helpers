@@ -17,10 +17,16 @@ module KDL
 
     def pages(solr_doc)
       @mets.ids.collect do |id|
+        doc = solr_doc.dup
         if isFindingAid(id)
-          solr_doc[:text] = finding_aid_text
+          doc[:text] = finding_aid_text
+        elsif solr_doc.has_key?(:finding_aid_url_s)
+          doc.delete(:description_t)
+          doc.delete(:description_display)
+          doc.delete(:pub_date)
+          doc.delete(:subject_topic_facet)
         end
-        Page.new @mets, id, identifier, @dip_directory, solr_doc, isFindingAid(id)
+        Page.new @mets, id, identifier, @dip_directory, doc, isFindingAid(id)
       end
     end
 

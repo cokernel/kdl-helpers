@@ -166,6 +166,32 @@ module KDL
           end
         end
 
+        describe "#title" do
+          it "is a lowercased version of the title with initial stopwords removed" do
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            {
+              'A, An, The: A Comparative History' => 'comparative history',
+              'As the Code Churns' => 'code churns',
+              'At the Whisky a Go Go' => 'whisky a go go',
+              'Be the Change You Want to Become' => 'change you want to become',
+              'But Me No Buts: A Guide to Yes' => 'me no buts a guide to yes',
+              'By the Way, Your Nose is as Long as a Telephone Pole' => 'way your nose is as long as a telephone pole',
+              'Do, or Do Not: There is No Try' => 'or do not there is no try',
+              'For Score: Seven Years Playing Gammon on the Spanish Main' => 'score seven years playing gammon on the spanish main',
+              'If: Rudyard Kipling and the Rise of Schlock' => 'rudyard kipling and the rise of schlock',
+              'In the Flow: How Not to Be Distracted by Ooh Shiny' => 'flow how not to be distracted by ooh shiny',
+              'Is it Me?' => 'me',
+              'Of Things' => 'things',
+              'On the Road Again' => 'road again',
+              'The Quick Sly Fox' => 'quick sly fox',
+              'To Boldly Split' => 'boldly split',
+            }.each do |raw, processed|
+              solr_maker.stub(:title_raw).and_return(raw)
+              solr_maker.title.should == processed
+            end
+          end
+        end
+
         describe "#author_t" do
           it "is a period-separated list of dc:creator elements" do
             dip_directory_oh = File.join([
@@ -224,6 +250,7 @@ module KDL
               :title_t,
               :title_display,
               :title_sort,
+              :title_processed_s,
               :description_t,
               :description_display,
               :subject_topic_facet,

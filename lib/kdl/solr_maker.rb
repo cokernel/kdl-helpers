@@ -29,7 +29,8 @@ module KDL
       FileUtils.mkdir_p(@solr_directory)
       solr_file = File.join(@solr_directory, identifier)
       File.open(solr_file, 'w') { |f|
-        f.write solr_doc.to_json
+        hash = solr_doc.dup
+        f.write hash.to_json
       }
     end
 
@@ -45,6 +46,7 @@ module KDL
         :title_t,
         :title_display,
         :title_sort,
+        :title_processed_s,
         :description_t,
         :description_display,
         :subject_topic_facet,
@@ -164,6 +166,41 @@ module KDL
       @access_package.identifier
     end
 
+    def stopwords
+      [
+        'a',
+        'an',
+        'as',
+        'at',
+        'be',
+        'but',
+        'by',
+        'do',
+        'for',
+        'if',
+        'in',
+        'is',
+        'it',
+        'of',
+        'on',
+        'the',
+        'to',
+      ]
+    end
+
+    def title_processed_s
+      title
+    end
+
+    def title
+      words = title_raw.downcase.gsub(/[^a-z ]/, '').sub(/^insurance\ maps\ of\ /, '').split(/\s+/)
+      while stopwords.include?(words.first)
+        words.shift
+      end
+      words.join(' ')
+    end
+
+    dublin_core_export :dc_title, :title_raw
     dublin_core_export :dc_title, :title_t
     dublin_core_export :dc_title, :title_display
     dublin_core_export :dc_title, :title_sort

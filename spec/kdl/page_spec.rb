@@ -45,7 +45,13 @@ module KDL
             :pdf_url_display,
             :parent_id_s,
             :coordinates_s,
+            :browse_key_sort,
             ]}
+    let(:full_sample_solr_doc) {
+      hash = solr_doc.dup
+      hash[:title_processed_s] = 'foo'
+      hash
+    }
     let(:playground) { File.join('data', 'playground') }
     let(:solrs_directory) { File.join(playground, 'solr') }
     let(:solr_directory) { File.join(solrs_directory, dip_id) }
@@ -63,7 +69,7 @@ module KDL
         it "serializes page_fields to a JSON file in the specified directory" do
           mets = METS.new
           mets.load File.join(dip_directory, 'data', 'mets.xml')
-          page = Page.new mets, identifier, dip_id, dip_directory, Hash.new
+          page = Page.new mets, identifier, dip_id, dip_directory, full_sample_solr_doc
           page.save solr_directory
           File.file?(File.join(solr_directory, page.id)).should be_true
         end
@@ -123,7 +129,7 @@ module KDL
           FileUtils.cp mets_src, mets_file
           mets = KDL::METS.new
           mets.load mets_file
-          page = Page.new mets, 'FileGrpFindingAid', dip_id, dip_directory, solr_doc, true
+          page = Page.new mets, 'FileGrpFindingAid', dip_id, dip_directory, full_sample_solr_doc, true
           page.page_fields.should_not be_nil
           wanted_keys = [
             :id,
@@ -168,6 +174,14 @@ module KDL
             mets.should_receive(mets_field)
             page.send(page_field)
           end
+        end
+      end
+
+      describe "#browse_key_sort" do
+        it "includes the first letter of the title, the sequence number, and the stopworded title" do
+          page = Page.new mets, identifier, dip_id, dip_directory, {:title_processed_s => 'flow how not to be distracted by ooh shiny'}
+          page.stub(:sequence_sort).and_return('00001')
+          page.browse_key_sort.should == 'f00001 flow how not to be distracted by ooh shiny'
         end
       end
 

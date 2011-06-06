@@ -55,6 +55,8 @@ KDL::Page
       delegates to METS
     text_href
       delegates to METS
+    #browse_key_sort
+      includes the first letter of the title, the sequence number, and the stopworded title
     #parent_id_s
       strikes the last _d+ group from the identifier
     #pdf_url_display
@@ -234,6 +236,8 @@ KDL::SolrMaker
         delegates fetching source_s to AccessPackage
       #contributor_s
         delegates fetching contributor_s to AccessPackage
+      #title
+        is a lowercased version of the title with initial stopwords removed
       #author_t
         is a period-separated list of dc:creator elements
       #author_display
@@ -349,6 +353,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 6.756118 seconds
+Finished in 7.18955 seconds
 
-191 examples, 0 failures
+193 examples, 0 failures

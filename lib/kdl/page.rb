@@ -24,11 +24,14 @@ module KDL
     end
 
     def page_fields
+      hash = Hash.new
       if finding_aid?
-        finding_aid_fields
+        hash = finding_aid_fields
       else
-        paged_page_fields
+        hash = paged_page_fields
       end
+      hash[:browse_key_sort] = browse_key_sort
+      hash
     end
 
     def finding_aid_fields
@@ -96,6 +99,14 @@ module KDL
         "#{type.capitalize} #{label_display}"
       else
         @solr_doc[:title_t]
+      end
+    end
+
+    def browse_key_sort
+      begin
+        "#{@solr_doc[:title_processed_s][0..0]}#{sequence_sort} #{@solr_doc[:title_processed_s]}"
+      rescue
+        ''
       end
     end
 
