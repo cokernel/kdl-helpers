@@ -164,12 +164,16 @@ module KDL
     end
 
     def text
-      begin
-        IO.read(File.join(@dip_directory, 
-                          'data', 
-                          text_href))
-      rescue
-        ''
+      if finding_aid? and @solr_doc.has_key?(:text)
+        @solr_doc[:text]
+      else
+        begin
+          IO.read(File.join(@dip_directory, 
+                            'data', 
+                            text_href))
+        rescue
+          ''
+        end
       end
     end
 

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ead xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd" xmlns:ns2="http://www.w3.org/1999/xlink" xmlns="urn:isbn:1-931666-22-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <eadheader findaidstatus="Completed" repositoryencoding="iso15511" countryencoding="iso3166-1" dateencoding="iso8601" langencoding="iso639-2b">
+        <eadid>kukm1m66m37</eadid>
+        <filedesc>
+            <titlestmt>
+                <titleproper>Cooper-Phillips family papers, 1839-1911, bulk 1857-1866
+                    <num>66M37</num>
+                </titleproper>
+                <author>Finding aid prepared by Katie L.B. Henningsen, Access Archivist</author>
+            </titlestmt>
+            <publicationstmt>
+                <p>
+                    <extref ns2:type="simple" ns2:actuate="onLoad" ns2:show="embed" ns2:href="http://kdl.kyvl.org/images/seals/ukseal.gif"/>
+                </p>
+                <publisher>University of Kentucky Special Collections</publisher>
+                <address>
+                    <addressline>Special Collections</addressline>
+                    <addressline>Margaret I. King Building, North</addressline>
+                    <addressline>Lexington, KY, 40506-0039</addressline>
+                    <addressline>(859) 257-8611</addressline>
+                    <addressline>SCLREF@LSV.UKY.EDU</addressline>
+                </address>
+                <date>1/10/2011</date>
+            </publicationstmt>
+        </filedesc>
+        <profiledesc>
+            <creation>This finding aid was produced using the Archivists' Toolkit
+                <date>2011-03-03T13:03-0500</date>
+            </creation>
+            <langusage>Description is in English.</langusage>
+            <descrules>Describing Archives: A Content Standard</descrules>
+        </profiledesc>
+    </eadheader>
+    <archdesc level="collection">
+        <did>
+            <unittitle>Cooper-Phillips family papers</unittitle>
+            <unitid>66M37</unitid>
+            <repository>
+                <corpname>University of Kentucky Special Collections</corpname>
+            </repository>
+            <langmaterial>
+                <language langcode="eng"/>
+            </langmaterial>
+            <physdesc>
+                <extent>0.45 Cubic feet</extent>
+                <extent>1 box</extent>
+            </physdesc>
+            <unitdate normal="1857/1866" type="bulk">Bulk, 1857-1866</unitdate>
+            <unitdate normal="1839/1911" type="inclusive">1839-1911</unitdate>
+            <abstract id="ref40" label="Abstract">The Cooper-Phillips family papers document the family of Spencer Cooper, a Lexington, Kentucky clergyman and his daughter Annie's family with Theodore Phillips.</abstract>
+            <origination label="creator">
+                <famname rules="aacr" source="local">Cooper family.</famname>
+            </origination>
+        </did>
+        <accessrestrict id="ref4">
+            <head>Conditions Governing Access note</head>
+            <p>Collection is open to researchers by appointment.</p>
+        </accessrestrict>
+        <userestrict id="ref5">
+            <head>Conditions Governing Use note</head>
+            <p>The physical rights to the materials in this collection are held by the University of Kentucky Special Collections.</p>
+        </userestrict>
+        <prefercite id="ref6">
+            <head>Preferred Citation note</head>
+            <p>66M37 : [identification of item], Cooper-Phillips family papers, 1839-1911, bulk 1857-1866, University of Kentucky Special Collections.</p>
+        </prefercite>
+        <bioghist id="ref7">
+            <head>Biographical note</head>
+            <p>Spencer Cooper, a Methodist minister from Lexington, Kentucky, had two daughters Anna (Annie) and Virginia. In 1869, Annie married Theodore B. Phillips an accountant for W.S. Hume and Co., distillers of sour mash, bourdon, rye and malt whiskies. Virginia married Daniel Carmichael Wickliffe a lawyer and editor of the Lexington 
+                <title render="italic">Observer and Reporter</title> and Kentucky Secretary of State under Governor James Fisher Robinson.</p>
+        </bioghist>
+        <scopecontent id="ref8">
+            <head>Scope and Contents note</head>
+            <p>The Cooper-Phillips family papers consist of letters, receipts, and business papers created by the family of Spencer Cooper, a Lexington, Kentucky clergyman. Included are several letters concerning the Civil War from Cooper's children, all of whom supported the Union. Letters dating from the 1880s and 1890s were created by the family of Annie Cooper and her husband, Theodore Phillips.</p>
+        </scopecontent>
+        <arrangement id="ref9">
+            <head>Arrangement note</head>
+            <p>Collection is arranged by format.</p>
+        </arrangement>
+        <controlaccess>
+            <famname rules="aacr" source="local">Cooper family.</famname>
+            <persname rules="aacr" source="local">Cooper, Spencer, 1787-1839</persname>
+            <corpname rules="aacr" source="local">Observer and reporter. (Lexington, Ky.)</corpname>
+            <famname rules="aacr" source="local">Phillips family.</famname>
+            <persname rules="aacr" source="local">Phillips, Annie,  (Anna), Cooper</persname>
+            <persname rules="aacr" source="local">Phillips, Theodore B.</persname>
+            <corpname rules="aacr" source="local">W.S. Hume and Co..</corpname>
+            <famname rules="aacr" source="local">Wickliffe family.</famname>
+            <persname rules="aacr" source="naf">Wickliffe, Daniel Carmichael, 1810-1870</persname>
+            <persname rules="aacr" source="local">Wickliffe, Virginia, Cooper</persname>
+            <geogname source="lcsh">Kentucky--Genealogy.</geogname>
+            <subject source="lcsh">Liquor industry--Kentucky--History--19th century.</subject>
+            <geogname source="lcsh">United States--History--Civil War, 1861-1865--Public opinion.</geogname>
+        </controlaccess>
+        <dsc>
+            <c01 id="ref10" level="series">
+                <did>
+                    <unittitle>Correspondence,</unittitle>
+                    <unitid>I.</unitid>
+                    <unitdate>1839-1893</unitdate>
+                </did>
+                <c02 id="ref11" level="file">
+                    <did>
+                        <unittitle>General,</unittitle>
+                        <container id="cid735001" type="Box" label="Text">1</container>
+                        <container parent="cid735001" type="Folder">1</container>
+                        <unitdate>1839-1868</unitdate>
+                        <dao entityref="sample_collections_folder_level_1_1_1_1"/>
+                    </did>
+                    <scopecontent id="ref31">
+                        <head>Scope and Contents note</head>
+                        <p>This folder contains invitations and announcements received by the Cooper family, as well as correspondence in which the recipient or sender could not be clearly identified; some documents are undated.</p>
+                    </scopecontent>
+                </c02>
+                <c02 id="ref12" level="file">
+                    <did>
+                        <unittitle>General to Anna Cooper,</unittitle>
+                        <container id="cid735002" type="Box" label="Text">1</container>
+                        <container parent="cid735002" type="Folder">2</container>
+                        <unitdate>[11 February 1858]-11 September 1865</unitdate>
+                        <dao entityref="sample_collections_folder_level_1_1_2_1"/>
+                    </did>
+                    <scopecontent id="ref32">
+                        <head>Scope and Contents note</head>
+                        <p>This folder contains letters written to Anna Cooper from friends and relatives, including nieces and nephews.</p>
+                    </scopecontent>
+                </c02>
+            </c01>
+        </dsc>
+    </archdesc>
+</ead>

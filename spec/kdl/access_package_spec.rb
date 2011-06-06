@@ -8,6 +8,7 @@ module KDL
     let (:playground) { File.join('data', 'playground') }
     let (:mets_file) { File.join(dip_directory, 'data', 'mets.xml') }
     let (:mets_file_with_finding_aid) { File.join('data', 'mets', 'mets2.xml') }
+    let (:finding_aid_file) { File.join('data', 'mets', '66M37.dao.xml') }
     let (:mets_file_with_oral_history) { File.join('data', 'mets', 'mets3.xml') }
 
     context "Dublin Core access" do
@@ -136,6 +137,7 @@ module KDL
           @dip_dir_with_finding_aid = File.join(playground, 'dip')
           FileUtils.mkdir_p File.join(@dip_dir_with_finding_aid, 'data')
           FileUtils.cp mets_file_with_finding_aid, File.join(@dip_dir_with_finding_aid, 'data', 'mets.xml')
+          FileUtils.cp finding_aid_file, File.join(@dip_dir_with_finding_aid, 'data', '66M37.dao.xml')
         end
 
         after(:each) do
@@ -178,6 +180,16 @@ module KDL
             access_package = AccessPackage.new @dip_dir_with_finding_aid
             access_package.mets.should_receive(:href).with(:fileGrp_use => 'Finding Aid', :file_use => 'access')
             access_package.finding_aid_url
+          end
+        end
+
+        describe "#finding_aid_text" do
+          it "partially delegates to METS" do
+            access_package = AccessPackage.new @dip_dir_with_finding_aid
+            href = access_package.mets.href(:fileGrp_use => 'Finding Aid', :file_use => 'access')
+            expected = Nokogiri::XML(IO.read(File.join(@dip_dir_with_finding_aid, 'data', href))).content
+            expected.should_not be_nil
+            access_package.finding_aid_text.should == expected
           end
         end
       end

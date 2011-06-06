@@ -17,6 +17,9 @@ module KDL
 
     def pages(solr_doc)
       @mets.ids.collect do |id|
+        if isFindingAid(id)
+          solr_doc[:text] = finding_aid_text
+        end
         Page.new @mets, id, identifier, @dip_directory, solr_doc, isFindingAid(id)
       end
     end
@@ -61,6 +64,20 @@ module KDL
           @mets.href(:fileGrp_use => 'Finding Aid',
                      :file_use => 'access')
         ].join('/')
+      end
+    end
+
+    def finding_aid_text
+      if hasFindingAid
+        Nokogiri::XML(
+          IO.read(
+            File.join(
+              @dip_directory,
+              'data',
+              @mets.href(:fileGrp_use => 'Finding Aid',
+                         :file_use => 'access')))).content
+      else
+        return ''
       end
     end
 
