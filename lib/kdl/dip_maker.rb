@@ -68,6 +68,7 @@ module KDL
           end
 
           thumb_href = File.join(base, stem + '_tb.jpg')
+          front_thumb_href = File.join(base, stem + '_ftb.jpg')
           tls_href = File.join(base, stem + '.tls')
           meta_href = File.join(base, stem + '.txt')
           ref_href = File.join(base, stem + '.jpg')
@@ -83,6 +84,7 @@ module KDL
             FileUtils.mkdir_p File.join(@dip.data_dir, base)
             [
               thumb_href,
+              front_thumb_href,
               tls_href,
               meta_href,
               ref_href,
@@ -99,6 +101,11 @@ module KDL
           @mets.add_file :fileGrp => fileGrp_id,
                          :use => 'thumbnail',
                          :file => thumb_href,
+                         :mimetype => 'image/jpeg'
+
+          @mets.add_file :fileGrp => fileGrp_id,
+                         :use => 'front thumbnail',
+                         :file => front_thumb_href,
                          :mimetype => 'image/jpeg'
 
           @mets.add_file :fileGrp => fileGrp_id,

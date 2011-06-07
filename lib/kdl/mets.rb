@@ -154,6 +154,7 @@ module KDL
     add_href_field :print_image_path, :print_image
     add_href_field :reference_image_path, :reference_image
     add_href_field :thumbnail_path, :thumbnail
+    add_href_field :front_thumbnail_path, :front_thumbnail
     add_href_field :viewer_path, :tiles_metadata
     add_href_field :text_href, :ocr
     add_href_field :alto_href, :coordinates

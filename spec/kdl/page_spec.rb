@@ -218,6 +218,14 @@ module KDL
         end
       end
 
+      describe "#front_thumbnail_url_s" do
+        it "partially delegates to METS" do
+          mets.stub(:front_thumbnail_path).and_return('66M37_1_01/0001/0001_ftb.jpg')
+          mets.should_receive(:front_thumbnail_path)
+          page.front_thumbnail_url_s.should == "http://nyx.uky.edu/dips/#{dip_id}/data/66M37_1_01/0001/0001_ftb.jpg"
+        end
+      end
+
       describe "#viewer_url_s" do
         it "partially delegates to METS" do
           mets.stub(:viewer_path).and_return('0001/0001.txt')

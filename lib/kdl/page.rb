@@ -146,6 +146,14 @@ module KDL
       ].join('/')
     end
 
+    def front_thumbnail_url_s
+      [ 'http://nyx.uky.edu/dips',
+        @parent_id,
+        'data',
+        @mets.front_thumbnail_path(@identifier)
+      ].join('/')
+    end
+
     def viewer_url_s
       [ 'http://nyx.uky.edu/dips',
         @parent_id,

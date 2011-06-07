@@ -109,6 +109,9 @@ module KDL
                                 :use => 'thumbnail').
                                 length.should be > 0
           dipmaker.mets.file_id(:fileGrp => fileGrp_id,
+                                :use => 'front thumbnail').
+                                length.should be > 0
+          dipmaker.mets.file_id(:fileGrp => fileGrp_id,
                                 :use => 'tiled image').
                                 length.should be > 0
           dipmaker.mets.file_id(:fileGrp => fileGrp_id,
