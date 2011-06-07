@@ -42,6 +42,7 @@ module KDL
             :text_s,
             :reference_image_url_s,
             :thumbnail_url_s,
+            :front_thumbnail_url_s,
             :pdf_url_display,
             :parent_id_s,
             :coordinates_s,

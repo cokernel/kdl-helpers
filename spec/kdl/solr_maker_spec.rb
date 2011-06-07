@@ -235,10 +235,24 @@ module KDL
         end
 
         describe "#pub_date" do
-          it "partially delegates fetching pub_date to AcessPackage" do
+          it "partially delegates fetching pub_date to AccessPackage" do
             access_package.stub(:dc_date).and_return(['1908.02'])
             solr_maker = SolrMaker.new output, access_package, solrs_directory
             solr_maker.pub_date.should == access_package.dc_date.first.gsub(/\D/, '')[0..3]
+          end
+        end
+
+        describe "#full_date_s" do
+          it "partially delegates fetching full_date_s to AccessPackage" do
+            access_package.stub(:dc_date).and_return(['1900-01-02'])
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            solr_maker.full_date_s.should == access_package.dc_date.first
+          end
+
+          it "is empty if the date is not in YYYY-MM-DD format" do
+            access_package.stub(:dc_date).and_return(['ca. 1900'])
+            solr_maker = SolrMaker.new output, access_package, solrs_directory
+            solr_maker.full_date_s.should == ''
           end
         end
       end
@@ -271,6 +285,7 @@ module KDL
               :description_display,
               :subject_topic_facet,
               :pub_date,
+              :full_date_s,
               :language_display,
               :usage_display,
               :publisher_t,

@@ -51,6 +51,7 @@ module KDL
         :description_display,
         :subject_topic_facet,
         :pub_date,
+        :full_date_s,
         :language_display,
         :usage_display,
         :publisher_t,
@@ -153,6 +154,15 @@ module KDL
     def pub_date
       raw_date = @access_package.dc_date.first
       raw_date.gsub(/\D/, '')[0..3]
+    end
+
+    def full_date_s
+      raw_date = @access_package.dc_date.first
+      if raw_date =~ /^\d\d\d\d-\d\d-\d\d/
+        raw_date[0..9]
+      else
+        ''
+      end
     end
 
     def author_t
