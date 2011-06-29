@@ -3,6 +3,7 @@ require 'spec/spec_helper'
 module KDL
   class DipMaker
     attr_reader :aip_directory, :dips_directory, :mets
+    attr_reader :dip_directory
 
     def initialize(output, aip_directory=nil, dips_directory=nil, options = Hash.new)
       @output = output
@@ -10,6 +11,15 @@ module KDL
       @dips_directory = dips_directory
       @mets = METS.new
       @options = options
+      begin
+        if @options.has_key?(:dip_directory) and @options[:dip_directory].length > 0
+          @basename = @options[:dip_directory]
+        else
+          @basename = File.basename(@aip_directory)
+        end
+      rescue
+        @basename = ''
+      end
     end
 
     def build
@@ -147,7 +157,7 @@ module KDL
 
     def stage
       @aip = BagIt::Bag.new @aip_directory
-      @dip_directory = File.join(@dips_directory, File.basename(@aip_directory))
+      @dip_directory = File.join(@dips_directory, @basename) 
       FileUtils.mkdir_p @dips_directory unless File.directory? @dips_directory
       @dip = BagIt::Bag.new @dip_directory
       Find.find(@aip.data_dir) do |aipfile|

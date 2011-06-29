@@ -1,5 +1,7 @@
 KDL::DipMaker
   #stage
+    sets @dip_directory to the directory name of the AIP directory if no other name is provided
+    accepts a DIP id provided in the options
     copies the AIP to the DIPs directory
     opens the METS file in place
   #generate_tiles
@@ -64,6 +66,8 @@ KDL::Page
     #reference_image_url_s
       partially delegates to METS
     #thumbnail_url_s
+      partially delegates to METS
+    #front_thumbnail_url_s
       partially delegates to METS
     #viewer_url_s
       partially delegates to METS
@@ -159,6 +163,10 @@ KDL::AccessPackage
         checks whether a specific item corresponds to a finding aid
       #hasFindingAid
         partially delegates to METS
+      #hasDigitizedContent
+        partially delegates to METS
+        returns true if METS has at least 2 ids
+        returns false if METS has less than 2 ids
       #finding_aid_url
         partially delegates to METS
       #finding_aid_text
@@ -186,6 +194,8 @@ KDL::SolrMaker
     #solr_doc
       when a finding aid is present
         includes finding_aid_url_s
+        sets :digital_content_available_s to true if digitized content is available
+        sets :digital_content_available_s to false if digitized content is not available
       when a finding aid is not present
         does not include finding_aid_url_s
   Dublin Core fields
@@ -243,7 +253,10 @@ KDL::SolrMaker
       #author_display
         is the same as #author_t
       #pub_date
-        partially delegates fetching pub_date to AcessPackage
+        partially delegates fetching pub_date to AccessPackage
+      #full_date_s
+        partially delegates fetching full_date_s to AccessPackage
+        is empty if the date is not in YYYY-MM-DD format
     KDL Solr fields with multiple occurrences allowed
       #subject_topic_facet
         delegates to AccessPackage
@@ -353,6 +366,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 7.18955 seconds
+Finished in 7.581049 seconds
 
-193 examples, 0 failures
+203 examples, 0 failures

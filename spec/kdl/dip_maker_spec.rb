@@ -10,12 +10,25 @@ module KDL
     let (:dipmaker) { DipMaker.new output, aip_directory, dips_directory }
     let (:dipmaker_oh) { DipMaker.new output, aip_directory_oh, dips_directory }
     let (:dipmaker_mets_only) { DipMaker.new output, aip_directory, dips_directory, :mets_only => true}
+    let (:dipmaker_with_own_id) { DipMaker.new output, aip_directory, dips_directory, :dip_directory => 'test_id' }
 
     after(:each) do
       FileUtils.rm_rf(dips_directory)
     end
 
     describe "#stage" do
+      it "sets @dip_directory to the directory name of the AIP directory if no other name is provided" do
+        dip_directory = File.join(dips_directory, File.basename(aip_directory))
+        dipmaker.stage
+        File.basename(dipmaker.dip_directory).should == File.basename(aip_directory)
+      end
+
+      it "accepts a DIP id provided in the options" do
+        dipmaker_with_own_id.stage
+        File.basename(dipmaker_with_own_id.dip_directory).should == 'test_id'
+      end
+
+
       it "copies the AIP to the DIPs directory" do
         dip_directory = File.join(dips_directory, File.basename(aip_directory))
         dipmaker.stage

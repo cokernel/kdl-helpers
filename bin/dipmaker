@@ -3,5 +3,12 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'kdl'
 
 aip_directory, dips_directory = ARGV[0], ARGV[1]
-dipmaker = KDL::DipMaker.new STDOUT, aip_directory, dips_directory
+
+if ARGV.length > 2
+  basename = ARGV[2]
+else
+  basename = File.basename(aip_directory)
+end
+
+dipmaker = KDL::DipMaker.new STDOUT, aip_directory, dips_directory, :dip_directory => basename
 dipmaker.build
