@@ -298,6 +298,8 @@ KDL::METS
       returns the fileGrp for a given use
     #file
       returns the file for a given group and use
+    #referenced?
+      returns true if the argument is referenced as an xlink:href attribute in the METS file
     #href
       returns the file location for a given group and use
       returns the file location for a given fileGrp use and file use
@@ -366,6 +368,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 7.581049 seconds
+Finished in 7.776395 seconds
 
-203 examples, 0 failures
+204 examples, 0 failures

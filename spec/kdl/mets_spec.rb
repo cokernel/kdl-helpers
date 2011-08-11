@@ -93,6 +93,13 @@ module KDL
           got_file.should == expected_file
         end
       end
+
+      describe "#referenced?" do
+        it "returns true if the argument is referenced as an xlink:href attribute in the METS file" do
+          @mets.referenced?('0001.tif').should be_true
+          @mets.referenced?('0001.jp2').should be_false
+        end
+      end
   
       describe "#href" do
         it "returns the file location for a given group and use" do

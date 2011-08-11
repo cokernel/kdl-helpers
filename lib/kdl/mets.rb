@@ -103,6 +103,15 @@ module KDL
       @mets.xpath(query)
     end
 
+    def referenced?(string)
+      @mets.xpath('//mets:FLocat').each do |flocat|
+        if flocat['href'] == string or flocat['xlink:href'] == string
+          return true
+        end
+      end
+      false
+    end
+
     def href(options)
       if options.has_key?(:fileGrp_use)
         query = "//mets:fileGrp[@USE='#{options[:fileGrp_use]}']/mets:file[@USE='#{options[:file_use]}']//mets:FLocat"
