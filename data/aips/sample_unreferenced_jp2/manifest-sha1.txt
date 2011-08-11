@@ -1,0 +1,5 @@
+2b77ee9e852bcc327cf8653c960080d7e88293fa data/directives.txt
+c1599715c06bf68733b874f72d79230f8f5ce3c0 data/03OH46RPWCR35_AndrewYoung.mp3
+0b1d16dfb0139c2e231ec873d7c0aad03329c5ae data/mets.xml
+466cf7d5b5943ecf1fe0410063474bcfc83a4d50 data/03OH46RPWCR35_AndrewYoung.xml
+bc4b8ce35f6035d299a41a68819cc50c25d4815e data/0259.jp2

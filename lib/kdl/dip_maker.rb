@@ -20,6 +20,9 @@ module KDL
       rescue
         @basename = ''
       end
+      if @dips_directory
+        @dip_directory = File.join(@dips_directory, @basename) 
+      end
     end
 
     def build
@@ -29,6 +32,22 @@ module KDL
       stage
       generate_tiles(Tiler.new @output)
       @output.puts("Built DIP at #{@dip_directory}")
+      cleanup
+    end
+
+    def cleanup
+      pn = Pathname.new(File.join @dip_directory, 'data')
+      Find.find(@dip_directory) do |path|
+        if path.downcase =~ /\.jp2$/ and File.file?(path)
+          rpn = Pathname.new(path)
+          relpath = rpn.relative_path_from(pn)
+          unless relpath.nil?
+            unless @mets.referenced?(relpath.to_s)
+              @dip.remove_file(relpath)
+            end
+          end
+        end
+      end
     end
 
     def generate_tiles(tiler=nil)
@@ -157,7 +176,6 @@ module KDL
 
     def stage
       @aip = BagIt::Bag.new @aip_directory
-      @dip_directory = File.join(@dips_directory, @basename) 
       FileUtils.mkdir_p @dips_directory unless File.directory? @dips_directory
       @dip = BagIt::Bag.new @dip_directory
       Find.find(@aip.data_dir) do |aipfile|

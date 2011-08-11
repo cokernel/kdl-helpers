@@ -6,6 +6,7 @@ module KDL
     let (:playground) { 'data/playground' }
     let (:aip_directory) { 'data/aips/sample_aip' }
     let (:aip_directory_oh) { 'data/aips/sample_oral_history' }
+    let (:aip_directory_jp2) { 'data/aips/sample_unreferenced_jp2' }
     let (:dips_directory) { "#{playground}/dips" }
     let (:dipmaker) { DipMaker.new output, aip_directory, dips_directory }
     let (:dipmaker_oh) { DipMaker.new output, aip_directory_oh, dips_directory }
@@ -27,7 +28,6 @@ module KDL
         dipmaker_with_own_id.stage
         File.basename(dipmaker_with_own_id.dip_directory).should == 'test_id'
       end
-
 
       it "copies the AIP to the DIPs directory" do
         dip_directory = File.join(dips_directory, File.basename(aip_directory))
@@ -168,6 +168,17 @@ module KDL
       end
     end
 
+    describe "#cleanup" do
+      it "removes unreferenced JP2 files" do
+        dip_directory_jp2 = File.join(dips_directory, File.basename(aip_directory_jp2))
+        dipmaker_jp2 = DipMaker.new output, aip_directory_jp2, dips_directory
+        dipmaker_jp2.stage
+        File.exists?(File.join dip_directory_jp2, 'data', '0259.jp2').should be_true
+        dipmaker_jp2.cleanup
+        File.exists?(File.join dip_directory_jp2, 'data', '0259.jp2').should be_false
+      end
+    end
+
     describe "#build" do
       it "stages construction of the DIP" do
         dipmaker.should_receive(:stage)
@@ -183,6 +194,13 @@ module KDL
         dip_directory = File.join(dips_directory, File.basename(aip_directory))
         output.should_receive(:puts).with("Built DIP at #{dip_directory}")
         dipmaker_mets_only.build
+      end
+
+      it "calls #cleanup once finished" do
+        dip_directory = File.join(dips_directory, File.basename(aip_directory))
+        dipmaker_jp2 = DipMaker.new output, aip_directory_jp2, dips_directory
+        dipmaker_jp2.should_receive(:cleanup)
+        dipmaker_jp2.build
       end
 
       it "outputs the usage note when the AIP directory is omitted" do
