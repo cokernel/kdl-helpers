@@ -180,8 +180,16 @@ module KDL
       @dip = BagIt::Bag.new @dip_directory
       Find.find(@aip.data_dir) do |aipfile|
         if File.file? aipfile
-          path = Pathname.new(aipfile).relative_path_from(Pathname.new(@aip.data_dir)).to_s
-          @dip.add_file(path, aipfile)
+          unless aipfile =~ /\.dao\.xml/
+            path = Pathname.new(aipfile).relative_path_from(Pathname.new(@aip.data_dir)).to_s
+            @dip.add_file(path, aipfile)
+          else
+            path = Pathname.new(aipfile).relative_path_from(Pathname.new(@aip.data_dir)).to_s
+            dipfile = Mustache.render(IO.read(aipfile), :dip_id => @basename)
+            @dip.add_file(path) { |io|
+              io.puts dipfile
+            }
+          end
         end
       end
       @dip.manifest!
