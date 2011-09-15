@@ -50,6 +50,7 @@ module KDL
         fields[:text] += fields[:source_s]
       end
       fields[:unpaged_display] = true
+      fields[:format] = 'collections'
       fields
     end
 
