@@ -34,6 +34,25 @@ module KDL
       hash
     end
 
+    def finding_aid_xml
+      Nokogiri::XML(
+        IO.read(
+          File.join(
+            @dip_directory,
+            'data',
+            @mets.href(:fileGrp_use => 'Finding Aid',
+                       :file_use => 'access'))))
+    end
+
+    def has_finding_aid?
+      begin
+        @mets.href(:fileGrp_use => 'Finding Aid',
+                   :file_use => 'access')
+      rescue
+        false
+      end
+    end
+
     def finding_aid_fields
       fields = @solr_doc.dup
       fields[:title_display] = @title
@@ -92,6 +111,20 @@ module KDL
         fields[:format] = 'images'
       elsif page_type == 'part'
         fields[:format] = 'archival folders'
+      end
+      if has_finding_aid?
+        begin
+          tag = File.basename(
+                  @mets.href(:fileGrp => @identifier,
+                             :use => 'tiles metadata'), '.txt').sub(/_0/, '_')
+          unless tag.nil?
+            subjects = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:subject").collect do |subject|
+              subject.content
+            end
+            fields[:subject_topic_facet] = subjects.flatten.uniq
+          end
+        rescue
+        end
       end
       fields
     end
