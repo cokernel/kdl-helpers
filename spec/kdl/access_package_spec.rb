@@ -52,8 +52,9 @@ module KDL
       end
 
       describe "#date_digitized" do
-        it "delegates to the METS object" do
+        it "generally delegates to the METS object" do
           access_package = AccessPackage.new dip_directory
+          access_package.stub(:hasFindingAid).and_return(false)
           access_package.mets.should_receive(:date_digitized)
           access_package.date_digitized
         end
@@ -142,6 +143,15 @@ module KDL
 
         after(:each) do
           FileUtils.rm_rf playground
+        end
+
+        describe "#date_digitized" do
+          it "pulls from EAD if possible" do
+            dip_dir_fa_with_images  = File.join('data', 'dips', '77pa102')
+            access_package = AccessPackage.new dip_dir_fa_with_images
+            access_package.mets.should_not_receive(:date_digitized)
+            access_package.date_digitized.should == '2003-09-21'
+          end
         end
 
         describe "#pages" do

@@ -141,7 +141,7 @@ KDL::AccessPackage
     #repository
       delegates to the METS object
     #date_digitized
-      delegates to the METS object
+      generally delegates to the METS object
     #ids
       delegates to the METS object
     #pages
@@ -159,6 +159,8 @@ KDL::AccessPackage
       #reference_audio_url
         partially delegates to METS
     finding aid fields
+      #date_digitized
+        pulls from EAD if possible
       #pages
         includes a page for the finding aid
         does not mark other pages as finding aids
@@ -371,6 +373,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 8.934106 seconds
+Finished in 8.052913 seconds
 
-206 examples, 0 failures
+207 examples, 0 failures

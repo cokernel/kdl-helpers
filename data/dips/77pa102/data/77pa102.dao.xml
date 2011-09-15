@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ead xmlns:ns2="http://www.w3.org/1999/xlink" xmlns="urn:isbn:1-931666-22-9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd">
+<eadheader langencoding="iso639-2b" findaidstatus="edited-full-draft">
+<eadid>kukav77pa102</eadid>
+<filedesc>
+<titlestmt>
+<titleproper>Guide to the Camp Nelson Photographic Collection, <date>1864</date>
+</titleproper>
+<author>Processed by: Staff, Antonio Thompson; machine-readable finding aid created by:Eric Weig</author>
+</titlestmt>
+<publicationstmt>
+<publisher>Special Collections</publisher>
+<address>
+<addressline>Audio-Visual Archives</addressline>
+<addressline>Special Collections</addressline>
+<addressline>University of Kentucky</addressline>
+<addressline>Margaret I. King Library</addressline>
+<addressline>Lexington, KY 40506-0039</addressline>
+<addressline>Phone: (859) 257-8611</addressline>
+<addressline>Fax: (859) 257-6311</addressline>
+<addressline>Email: sclref@lsv.uky.edu</addressline>
+<addressline>URL: http://www.uky.edu/Libraries/libpage.php?lweb_id=391&amp;llib_id=13</addressline>
+</address>
+<p>
+<date>  Copyright 2001</date> University of Kentucky Libraries. All Rights Reserved.</p>
+</publicationstmt>
+</filedesc>
+<profiledesc>
+<creation>Machine-readable finding aid derived from WordDate of source: <date>2001</date>.  
+Digital archival objects created: <date type="dao">2003-09-21</date>.</creation>
+<langusage>Description is in <language>English.</language>
+</langusage>
+</profiledesc>
+</eadheader>
+<frontmatter>
+<titlepage>
+<titleproper>Guide to the Camp Nelson Photographic Collection, <date>1864</date>
+</titleproper>
+<num>Collection number: 77PA102</num>
+<publisher>
+</publisher>
+<list type="simple">
+<head>Contact Information</head>
+<item>Audio-Visual Archives</item>
+<item>Special Collections</item>
+<item>University of Kentucky</item>
+<item>Margaret I. King Library</item>
+<item>Lexington, KY 40506-0039</item>
+<item>Phone: (859) 257-2654</item>
+<item>Fax: (859) 257-6311</item>
+<item>Email: <extref href="mailto:sclref@lsv.uky.edu">sclref@lsv.uky.edu</extref>
+</item>
+<item>URL: <extref href="http://www.uky.edu/Libraries/libpage.php?lweb_id=391&amp;llib_id=13"> http://www.uky.edu/Libraries/libpage.php?lweb_id=391&amp;llib_id=13</extref>
+</item>
+</list>
+<list type="simple">
+<item>Processed by: Staff, Antonio Thompson</item>
+<item>Date Completed: 2001</item>
+<item>Encoded by: Antonio Thompson</item>
+</list>
+<p>  Copyright 2001 University of Kentucky. All Rights Reserved.</p>
+</titlepage>
+</frontmatter>
+<archdesc level="collection" type="inventory" audience="external" relatedencoding="marc21">
+<did>
+<dao show="new" actuate="onload" href="/cgi/b/bib/bib-idx?type=boolean&amp;c=eadimages&amp;q1=77PA103&amp;rgn1=entire+record&amp;op2=And&amp;q2=image%2Fjpg&amp;rgn2=entire+record">
+<daodesc>
+<p>16 online images</p>
+</daodesc>
+</dao>
+<unittitle label="Title">Camp Nelson Photographic Collection, <unitdate type="inclusive">1864</unitdate>
+</unittitle>
+<unitid type="call number">77PA102</unitid>
+<origination label="creator">
+<persname>Foster, G.W.</persname>
+</origination>
+<physdesc label="extent">
+<extent>.35 cu. ft. (1 box): 16 items</extent>
+</physdesc>
+<langmaterial>The materials are in <language encodinganalog="041" langcode="eng">English.</language>
+</langmaterial>
+<repository label="Repository">
+<corpname>University of Kentucky Special Collections</corpname>
+<address>
+<addressline>Lexington, Kentucky 40506</addressline>
+</address>
+</repository>
+</did>
+<descgrp type="admin">
+<accessrestrict>
+<p>Collection is open to researchers by appointment.</p>
+</accessrestrict>
+<userestrict>
+<p>Copyright has not been assigned to the University of Kentucky.</p>
+</userestrict>
+<prefercite>
+<p>[Identification of item], Camp Nelson Photographic Collection, 1864, 77PA102,Special Collections, University of Kentucky.</p>
+</prefercite>
+</descgrp>
+<controlaccess>
+<subject>Camp Nelson (Jessamine County, Kentucky)</subject>
+<subject>Military camps--Kentucky--Jessamine County--History</subject>
+<subject>Excavations (Arcaeology)--Kentucky--Jessamine County</subject>
+<subject>United States--History--Civil War, 1861-1865--Hospitals--Kentucky--Jessamine County</subject>
+<subject>Camp Nelson (Ky.)</subject>
+<subject>Fee, John Gregg, 1816-1901</subject>
+<subject>Freedmen--Kentucky</subject>
+<subject>Camp Nelson (Ky.)--History</subject>
+<subject>National cemteries--Kentucky</subject>
+<subject>Camp Nelson National Cemetery (Nicholasville, Ky.)</subject>
+</controlaccess>
+<bioghist>
+<p>Camp Nelson, founded on June 12, 1863, in Jessamine County, Kentucky, served Union forces as a supply base and training center. Camp Nelson, named for Major-General William Nelson, was founded to assist Major-General Ambrose Burnside's advance into Tennessee. Union Army planners chose the site for its easily defendable location. Camp Nelson is best known for its role as the nation's third largest recruitment center for U.S. Colored Troops, helping to recruit, train, and equip eleven regiments. It also served as a recruitment and training facility for men drawn from Kentucky and Tennessee, but troops from nearly every state in the Union were stationed in or passed through Camp Nelson. At its height, Camp Nelson contained over 300 buildings and could garrison over 3,000 men.</p>
+<p>African-Americans brought their families with them to Camp Nelson. The camp was overwhelmed with refugees. Without clear orders on how to respond to this situation camp commanders were forced to take matters into their own hands. In 1864, Brigadier General Speed S. Fry, commander of Camp Nelson, burned refugee housing and forced them to leave. Without shelter or food many succumbed to disease and perished. Union Army officials and African-American soldiers balked at this treatment and Fry was forced to rescind these orders and establish a refugee camp.</p>
+<p>Missionaries helped administer the camp, providing schools and church services. Most notable among the missionaries was Reverend John G. Fee. Fee, an abolitionist, who also founded Berea College, which he encouraged refugees to attend.</p>
+<p>By June of 1866 Camp Nelson Military Depot was officially closed. The Camp Nelson cemetery was created in 1863 and was named a National Cemetery in 1866. The remnants of the Camp and Cemetery have been preserved in Nicholasville, Kentucky. It is now used as an archeological site and is open for tours.</p>
+</bioghist>
+<scopecontent>
+<p>Collection consists of 16 albumen prints taken by G.W. Foster and published in book form in 1864. Book is badly damaged, but front and back covers and frontispiece have been preserved.</p>
+</scopecontent>
+<descgrp type="add">
+<relatedmaterial>
+<head>Related Material</head>
+<p>Davis, William C., ed. <title>Touched By Fire: A National Historical Society Photographic Portrait of the Civil War.</title> New York: Black Dog and Leventhal Publishers, 1985.</p>
+<p>McBride, Stephen W. <title>Archeological Investigation at Camp Nelson: A Union quartermaster depot and hospital in Jessamine County, Kentucky.</title> Lexington, Ky: Program for Cultural Resource Assesment, University of Kentucky, 1991.</p>
+<p>National Cemetery System (U.S.) <title>Camp Nelson National Cemetery: 6980 Danville Road, Nicholasville, Kentucky 40356.</title> Washington, D.C.: Department of Veteran Affairs, National Cemetery System, 1990.</p>
+<p>Sears, Richard G. <title>"A Practical Recognition of the Brotherhood of Man": John G. Fee and the Camp Nelson Experience.</title> Berea, KY: Berea College Press, 1986.</p>
+<p>United States Army, Rhode Island Infantry Regiment, 7th. <title>Seventh Rhode Island Infantry Regiment Records, 1863-1864.</title> University of Kentucky Libraries, Special Collections.</p>
+<p>"Camp Nelson National Cemtery-Jessamine County, Kentucky." <extref href="http://www.interment.net/data/us/ky/jessamine/campnels/">http://www.interment.net/data/us/ky/jessamine/campnels/</extref>, (November 2, 2001).</p>
+<p>Camp Nelson Restoration and Preservation Society. 1998. "Camp Nelson Union Army Supply Depot, <extref href="http://www.campnelson.org/">http://www.campnelson.org/</extref>, (November 2, 2001).</p>
+<p>"Camp Nelson Union Army Base Overview."  February 15, 1998. <extref href="http://www.users.kih.net/~dparker/nelson/nelson.htm">http://www.users.kih.net/~dparker/nelson/nelson.htm</extref> (November 2, 2001).</p>
+<p>Superintendent, Camp Nelson National Cemetery. "Camp Nelson National Cemetery Grave Registration." <extref href="http://www.bjmjr.com/resting/camp_nelson.htm">http://www.bjmjr.com/resting/camp_nelson.htm</extref> (November 2, 2001).</p>
+<p>LWF Publications, "Refugees at Camp Nelson, Kentucky" <extref href="http://www.coax.net/people/lwf/refugees.htm">http://www.coax.net/people/lwf/refugees.htm</extref> (November 2, 2001).</p>
+</relatedmaterial>
+</descgrp>
+<dsc type="in-depth">
+<head>Container List</head>
+<c01 level="file">
+<did>
+<unittitle>Large posed group photograph; African-American men and women, some men in military uniform in front of large wooden white building ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">01</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_1"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>African Americans</subject>
+<subject>Blacks</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+<subject>Women</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Refugee camp; Street scene; dirt road with small white wooden houses lining both sides far into the distance, crowd of African-American women and children posing in street around man on horse.,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">02</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_2"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>African Americans</subject>
+<subject>Blacks</subject>
+<subject>Children</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Military</subject>
+<subject>Women</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Exterior of building; large white wooden sided building flanked by smaller buildings, two African-American men in front, one on horseback,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">03</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_3"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>African Americans</subject>
+<subject>Blacks</subject>
+<subject>Children</subject>
+<subject>Horses and horse industry</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Boone's Knob near the Kentucky River; mountain in background with creek running in front, trees in foreground, wagons near creek. ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">04</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_4"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Kentucky River</subject>
+<subject>Nature scenes</subject>
+<subject>Rivers</subject>
+<subject>Transportation</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>The Hickman Covered Bridge; constructed in 1838 over the Kentucky River it was replaced with a steel bridge in the 1930's.   A skirmish between the Union and Confederate soldiers occurred at the bridge on March 28, 1863.  It is a white covered bridge over the river, trees in foreground and background, building flanking bridge. ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">05</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_5"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Bridges</subject>
+<subject>Civil War, 1861-1865</subject>
+<subject>Covered Bridges</subject>
+<subject>Hickman, Kentucky</subject>
+<subject>Kentucky River</subject>
+<subject>Rivers</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>The Oliver Perry House, also known as the White House; it was appropriated to house officers and is currently in the process of restoration.  The house is a large white wooden sided building with two floors and columns, there are various African-Americans siting on upstairs and downstairs porches, Caucasian man in military uniform sitting on porch, horse, and horse and buggy in front of house, dirt road in foreground, with trees in the background ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">06</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_6"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>African Americans</subject>
+<subject>Architecture</subject>
+<subject>Blacks</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>The Post Headquarters; wooden building with two floors and cupola, two men are standing on sidewalk near wooden fence in foreground, trees and house with wooden fence in background ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">07</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_7"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Architecture</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Camp Nelson convalescent camp; eight rows of four white tents each, small group of people sitting in front of them, trees and more tents in background, cleared area and tree stumps in foreground, written on back in pencil, upper left corner, "Harmsfeld (?) No 2," on lower left "8 Phelps 3a (?)" ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">08</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_8"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Camp Nelson</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Military</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Landscape with building; three rows of white tents with wooden buildings behind them and two floor white wooden buildings adjacent, field in foreground and trees in background ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">09</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_9"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Architecture</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Military</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Reservoir;  large reservoir on raised ground surrounded by a wooden fence with three people standing on dirt road in foreground, buildings and trees in background.  Water is pumped to the reservoir from the Kentucky River.  There is a gazebo within the fence for officers. ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">10</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_10"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Architecture</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Kentucky River</subject>
+<subject>Military</subject>
+<subject>Rivers</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Exterior of building; large white wooden building, sign on building reads "U.S. Sanitary Commission, Soldier's Home," large group of men standing in front, white wooden fence with men resting in foreground, dirt road leading to buildings in background ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">11</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_11"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Architecture</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Office of the quartermaster and commissary; large wooden building with porch and two floors, three men riding in wagon pulled by horses while other men stand in front of building, dirt road and trees in foreground, trees in background ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">12</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_12"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Horses and horse industry</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+<subject>Rivers</subject>
+<subject>Transportation</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Steam powered pump house; wooden house built on mountainside raised with a concrete structure and wooden beams above the Kentucky River, three people looking out of window, men sitting on porch, trees and wooden staircase going over mountainside in background, creek in foreground ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">13</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_13"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Architecture</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Kentucky River</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+<subject>Rivers</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Landscape;  steam powered pump house from #13 above in center, surrounded by trees, creek in foreground, trees and clearing in background ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">14</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_14"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Architecture</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Military</subject>
+<subject>Trees</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Posed group photo; six men, four kneeling, two standing, all wearing coat and tie, bottom of photo reads "Isaac Damon, E.P. Knight, F.W. Boyden, J.B. Earnshaw, A.W. Waite, A.A. Livermore" ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">15</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_15"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+</controlaccess>
+</c01><c01 level="file">
+<did>
+<unittitle>Posed group photo, Approximately fifty-five African-American girls being taught outside by a Caucasian female while two bearded Caucasian men look on, white wooden building in background ,</unittitle> 
+<container type="Box" label="Text">1</container> 
+<container label="item" type="othertype">16</container> 
+<unitdate>1864</unitdate> 
+<dao entityref="77pa102_16"/></did>
+<controlaccess>
+<head>Subjects:</head>
+<subject>African Americans</subject>
+<subject>Blacks</subject>
+<subject>Children</subject>
+<subject>Education</subject>
+<subject>Jessamine County, Kentucky</subject>
+<subject>Men</subject>
+<subject>Military</subject>
+<subject>Women</subject>
+</controlaccess>
+</c01>
+</dsc>
+</archdesc>
+</ead>

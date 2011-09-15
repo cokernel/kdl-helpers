@@ -73,15 +73,19 @@ module KDL
       end
     end
 
+    def finding_aid_xml
+      Nokogiri::XML(
+        IO.read(
+          File.join(
+            @dip_directory,
+            'data',
+            @mets.href(:fileGrp_use => 'Finding Aid',
+                       :file_use => 'access'))))
+    end
+
     def finding_aid_text
       if hasFindingAid
-        Nokogiri::XML(
-          IO.read(
-            File.join(
-              @dip_directory,
-              'data',
-              @mets.href(:fileGrp_use => 'Finding Aid',
-                         :file_use => 'access')))).content
+        finding_aid_xml.content
       else
         return ''
       end
@@ -121,7 +125,16 @@ module KDL
     end
 
     def date_digitized
-      @mets.date_digitized
+      if hasFindingAid
+        begin
+          xml = finding_aid_xml
+          xml.xpath('//xmlns:date[@type="dao"]').first.content
+        rescue
+          @mets.date_digitized
+        end
+      else
+        @mets.date_digitized
+      end
     end
 
     def method_missing(name, *args)

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:rights="http://www.loc.gov/rights/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:lc="http://www.loc.gov/mets/profiles" xmlns:bib="http://www.loc.gov/mets/profiles/bibRecord" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OBJID="77pa102" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" PROFILE="lc:bibRecord">
+<metsHdr CREATEDATE="2011-09-15T12:54:35" LASTMODDATE="2011-09-15T12:54:35" RECORDSTATUS="Production">
+<mets:agent ROLE="CREATOR" TYPE="REPOSITORY">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS submitted to KDL.</mets:note>
+</mets:agent>
+<mets:agent ROLE="PRESERVATION" TYPE="ORGANIZATION">
+<mets:name>University of Kentucky</mets:name>
+<mets:note>SIP METS and associated file(s) submitted in University of Kentucky Preservation Repository.</mets:note>
+</mets:agent>
+<mets:altRecordID TYPE="DLXS">77pa102</mets:altRecordID>
+</metsHdr>
+<mets:dmdSec ID="DMD1">
+<mets:mdWrap MIMETYPE="text/xml" MDTYPE="OAI_DC">
+<mets:xmlData>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/     http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title xml:lang="en">Camp Nelson Photographic Collection, 1864</dc:title>
+  <dc:source>Camp Nelson Photographic Collection, 1864</dc:source>
+  <dc:creator>Foster, G.W.</dc:creator>
+  <dc:subject>Camp Nelson (Jessamine County, Kentucky)</dc:subject>
+  <dc:subject>Military camps--Kentucky--Jessamine County--History</dc:subject>
+  <dc:subject>Excavations (Arcaeology)--Kentucky--Jessamine County</dc:subject>
+  <dc:subject>United States--History--Civil War, 1861-1865--Hospitals--Kentucky--Jessamine County</dc:subject>
+  <dc:subject>Camp Nelson (Ky.)</dc:subject>
+  <dc:subject>Fee, John Gregg, 1816-1901</dc:subject>
+  <dc:subject>Freedmen--Kentucky</dc:subject>
+  <dc:subject>Camp Nelson (Ky.)--History</dc:subject>
+  <dc:subject>National cemteries--Kentucky</dc:subject>
+  <dc:subject>Camp Nelson National Cemetery (Nicholasville, Ky.)</dc:subject>
+  <dc:subject>African Americans</dc:subject>
+  <dc:subject>Blacks</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Women</dc:subject>
+  <dc:subject>African Americans</dc:subject>
+  <dc:subject>Blacks</dc:subject>
+  <dc:subject>Children</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Women</dc:subject>
+  <dc:subject>African Americans</dc:subject>
+  <dc:subject>Blacks</dc:subject>
+  <dc:subject>Children</dc:subject>
+  <dc:subject>Horses and horse industry</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Kentucky River</dc:subject>
+  <dc:subject>Nature scenes</dc:subject>
+  <dc:subject>Rivers</dc:subject>
+  <dc:subject>Transportation</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Bridges</dc:subject>
+  <dc:subject>Civil War, 1861-1865</dc:subject>
+  <dc:subject>Covered Bridges</dc:subject>
+  <dc:subject>Hickman, Kentucky</dc:subject>
+  <dc:subject>Kentucky River</dc:subject>
+  <dc:subject>Rivers</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>African Americans</dc:subject>
+  <dc:subject>Architecture</dc:subject>
+  <dc:subject>Blacks</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Architecture</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Camp Nelson</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Architecture</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Architecture</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Kentucky River</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Rivers</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Architecture</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Horses and horse industry</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Rivers</dc:subject>
+  <dc:subject>Transportation</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Architecture</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Kentucky River</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Rivers</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Architecture</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Trees</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>African Americans</dc:subject>
+  <dc:subject>Blacks</dc:subject>
+  <dc:subject>Children</dc:subject>
+  <dc:subject>Education</dc:subject>
+  <dc:subject>Jessamine County, Kentucky</dc:subject>
+  <dc:subject>Men</dc:subject>
+  <dc:subject>Military</dc:subject>
+  <dc:subject>Women</dc:subject>
+  <dc:publisher>University of Kentucky</dc:publisher>
+  <dc:date>1864</dc:date>
+  <dc:format>collections</dc:format>
+  <dc:type>text</dc:type>
+  <dc:language>english</dc:language>
+  <dc:rights xml:lang="en">This digital resource may be freely searched and displayed.  Permission must be received for subsequent distribution in print or electronically.  Physical rights are retained by the owning repository.  Copyright is retained in accordance with U. S. copyright laws.  Please go to http://kdl.kyvl.org for more information.</dc:rights>
+  <dc:description>.35 cu. ft. (1 box): 16 items</dc:description>
+</oai_dc:dc>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:dmdSec>
+<mets:amdSec>
+  <mets:rightsMD ID="RMD1">
+    <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="RIGHTSMD">
+      <mets:xmlData>
+        <mets:versionStatement>2011</mets:versionStatement>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:rightsMD>
+<mets:rightsMD ID="ADMRTS1">
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+<mets:xmlData>
+<mets:RightsDeclarationMD RIGHTSCATEGORY="">
+<mets:Context CONTEXTCLASS="GENERAL PUBLIC">
+<mets:Constraints CONSTRAINTTYPE="RE-USE">
+<mets:ConstraintDescription>View Collection Guide to obtain rights information.</mets:ConstraintDescription>
+</mets:Constraints>
+</mets:Context>
+</mets:RightsDeclarationMD>
+</mets:xmlData>
+</mets:mdWrap>
+</mets:rightsMD>
+</mets:amdSec>
+<mets:fileSec>
+  <mets:fileGrp ID="FileGrpFindingAid" USE="Finding Aid">
+    <mets:file ID="MasterFindingAid" USE="master" MIMETYPE="application/xml">
+      <mets:FLocat xlink:href="77pa102.xml" LOCTYPE="OTHER"/>
+    </mets:file>
+   <mets:file ID="AccessFindingAid" USE="access" MIMETYPE="application/xml">
+     <mets:FLocat xlink:href="77pa102.dao.xml" LOCTYPE="OTHER"/>
+   </mets:file>
+  </mets:fileGrp>
+  <mets:fileGrp ID="FileGrp1">
+    
+  <mets:file ID="ThumbnailFile1" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_01/77pa102_01_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile1" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_01/77pa102_01_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile1" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_01/77pa102_01.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile1" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_01/77pa102_01.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile1" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_01/77pa102_01.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile1" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_01/77pa102_01.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp2">
+    
+  <mets:file ID="ThumbnailFile2" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_02/77pa102_02_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile2" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_02/77pa102_02_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile2" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_02/77pa102_02.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile2" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_02/77pa102_02.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile2" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_02/77pa102_02.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile2" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_02/77pa102_02.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp3">
+    
+  <mets:file ID="ThumbnailFile3" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_03/77pa102_03_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile3" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_03/77pa102_03_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile3" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_03/77pa102_03.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile3" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_03/77pa102_03.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile3" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_03/77pa102_03.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile3" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_03/77pa102_03.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp4">
+    
+  <mets:file ID="ThumbnailFile4" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_04/77pa102_04_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile4" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_04/77pa102_04_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile4" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_04/77pa102_04.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile4" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_04/77pa102_04.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile4" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_04/77pa102_04.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile4" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_04/77pa102_04.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp5">
+    
+  <mets:file ID="ThumbnailFile5" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_05/77pa102_05_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile5" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_05/77pa102_05_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile5" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_05/77pa102_05.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile5" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_05/77pa102_05.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile5" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_05/77pa102_05.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile5" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_05/77pa102_05.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp6">
+    
+  <mets:file ID="ThumbnailFile6" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_06/77pa102_06_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile6" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_06/77pa102_06_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile6" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_06/77pa102_06.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile6" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_06/77pa102_06.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile6" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_06/77pa102_06.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile6" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_06/77pa102_06.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp7">
+    
+  <mets:file ID="ThumbnailFile7" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_07/77pa102_07_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile7" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_07/77pa102_07_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile7" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_07/77pa102_07.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile7" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_07/77pa102_07.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile7" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_07/77pa102_07.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile7" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_07/77pa102_07.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp8">
+    
+  <mets:file ID="ThumbnailFile8" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_08/77pa102_08_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile8" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_08/77pa102_08_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile8" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_08/77pa102_08.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile8" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_08/77pa102_08.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile8" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_08/77pa102_08.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile8" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_08/77pa102_08.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp9">
+    
+  <mets:file ID="ThumbnailFile9" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_09/77pa102_09_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile9" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_09/77pa102_09_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile9" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_09/77pa102_09.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile9" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_09/77pa102_09.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile9" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_09/77pa102_09.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile9" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_09/77pa102_09.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp10">
+    
+  <mets:file ID="ThumbnailFile10" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_10/77pa102_10_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile10" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_10/77pa102_10_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile10" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_10/77pa102_10.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile10" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_10/77pa102_10.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile10" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_10/77pa102_10.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile10" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_10/77pa102_10.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp11">
+    
+  <mets:file ID="ThumbnailFile11" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_11/77pa102_11_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile11" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_11/77pa102_11_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile11" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_11/77pa102_11.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile11" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_11/77pa102_11.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile11" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_11/77pa102_11.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile11" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_11/77pa102_11.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp12">
+    
+  <mets:file ID="ThumbnailFile12" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_12/77pa102_12_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile12" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_12/77pa102_12_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile12" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_12/77pa102_12.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile12" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_12/77pa102_12.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile12" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_12/77pa102_12.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile12" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_12/77pa102_12.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp13">
+    
+  <mets:file ID="ThumbnailFile13" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_13/77pa102_13_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile13" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_13/77pa102_13_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile13" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_13/77pa102_13.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile13" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_13/77pa102_13.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile13" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_13/77pa102_13.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile13" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_13/77pa102_13.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp14">
+    
+  <mets:file ID="ThumbnailFile14" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_14/77pa102_14_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile14" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_14/77pa102_14_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile14" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_14/77pa102_14.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile14" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_14/77pa102_14.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile14" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_14/77pa102_14.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile14" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_14/77pa102_14.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp15">
+    
+  <mets:file ID="ThumbnailFile15" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_15/77pa102_15_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile15" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_15/77pa102_15_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile15" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_15/77pa102_15.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile15" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_15/77pa102_15.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile15" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_15/77pa102_15.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile15" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_15/77pa102_15.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+  <mets:fileGrp ID="FileGrp16">
+    
+  <mets:file ID="ThumbnailFile16" USE="thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_16/77pa102_16_tb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="FrontThumbnailFile16" USE="front thumbnail" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_16/77pa102_16_ftb.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="TiledImageFile16" USE="tiled image" MIMETYPE="application/octet-stream"><mets:FLocat xlink:href="./77pa102_16/77pa102_16.tls" LOCTYPE="OTHER"/></mets:file><mets:file ID="TilesMetadataFile16" USE="tiles metadata" MIMETYPE="text/plain"><mets:FLocat xlink:href="./77pa102_16/77pa102_16.txt" LOCTYPE="OTHER"/></mets:file><mets:file ID="ReferenceImageFile16" USE="reference image" MIMETYPE="image/jpeg"><mets:FLocat xlink:href="./77pa102_16/77pa102_16.jpg" LOCTYPE="OTHER"/></mets:file><mets:file ID="PrintImageFile16" USE="print image" MIMETYPE="application/pdf"><mets:FLocat xlink:href="./77pa102_16/77pa102_16.pdf" LOCTYPE="OTHER"/></mets:file></mets:fileGrp>
+</mets:fileSec>
+<mets:structMap>
+    <mets:div TYPE="box" LABEL="Large posed group photograph; African-American men and women, some men in military uniform in front of large wooden white building ," ORDER="1">
+        
+    <mets:fptr FILEID="ThumbnailFile1"/><mets:fptr FILEID="FrontThumbnailFile1"/><mets:fptr FILEID="TiledImageFile1"/><mets:fptr FILEID="TilesMetadataFile1"/><mets:fptr FILEID="ReferenceImageFile1"/><mets:fptr FILEID="PrintImageFile1"/></mets:div>
+    <mets:div TYPE="box" LABEL="Refugee camp; Street scene; dirt road with small white wooden houses lining both sides far into the distance, crowd of African-American women and children posing in street around man on horse.," ORDER="2">
+        
+    <mets:fptr FILEID="ThumbnailFile2"/><mets:fptr FILEID="FrontThumbnailFile2"/><mets:fptr FILEID="TiledImageFile2"/><mets:fptr FILEID="TilesMetadataFile2"/><mets:fptr FILEID="ReferenceImageFile2"/><mets:fptr FILEID="PrintImageFile2"/></mets:div>
+    <mets:div TYPE="box" LABEL="Exterior of building; large white wooden sided building flanked by smaller buildings, two African-American men in front, one on horseback," ORDER="3">
+        
+    <mets:fptr FILEID="ThumbnailFile3"/><mets:fptr FILEID="FrontThumbnailFile3"/><mets:fptr FILEID="TiledImageFile3"/><mets:fptr FILEID="TilesMetadataFile3"/><mets:fptr FILEID="ReferenceImageFile3"/><mets:fptr FILEID="PrintImageFile3"/></mets:div>
+    <mets:div TYPE="box" LABEL="Boone's Knob near the Kentucky River; mountain in background with creek running in front, trees in foreground, wagons near creek. ," ORDER="4">
+        
+    <mets:fptr FILEID="ThumbnailFile4"/><mets:fptr FILEID="FrontThumbnailFile4"/><mets:fptr FILEID="TiledImageFile4"/><mets:fptr FILEID="TilesMetadataFile4"/><mets:fptr FILEID="ReferenceImageFile4"/><mets:fptr FILEID="PrintImageFile4"/></mets:div>
+    <mets:div TYPE="box" LABEL="The Hickman Covered Bridge; constructed in 1838 over the Kentucky River it was replaced with a steel bridge in the 1930's.   A skirmish between the Union and Confederate soldiers occurred at the bridge on March 28, 1863.  It is a white covered bridge over the river, trees in foreground and background, building flanking bridge. ," ORDER="5">
+        
+    <mets:fptr FILEID="ThumbnailFile5"/><mets:fptr FILEID="FrontThumbnailFile5"/><mets:fptr FILEID="TiledImageFile5"/><mets:fptr FILEID="TilesMetadataFile5"/><mets:fptr FILEID="ReferenceImageFile5"/><mets:fptr FILEID="PrintImageFile5"/></mets:div>
+    <mets:div TYPE="box" LABEL="The Oliver Perry House, also known as the White House; it was appropriated to house officers and is currently in the process of restoration.  The house is a large white wooden sided building with two floors and columns, there are various African-Americans siting on upstairs and downstairs porches, Caucasian man in military uniform sitting on porch, horse, and horse and buggy in front of house, dirt road in foreground, with trees in the background ," ORDER="6">
+        
+    <mets:fptr FILEID="ThumbnailFile6"/><mets:fptr FILEID="FrontThumbnailFile6"/><mets:fptr FILEID="TiledImageFile6"/><mets:fptr FILEID="TilesMetadataFile6"/><mets:fptr FILEID="ReferenceImageFile6"/><mets:fptr FILEID="PrintImageFile6"/></mets:div>
+    <mets:div TYPE="box" LABEL="The Post Headquarters; wooden building with two floors and cupola, two men are standing on sidewalk near wooden fence in foreground, trees and house with wooden fence in background ," ORDER="7">
+        
+    <mets:fptr FILEID="ThumbnailFile7"/><mets:fptr FILEID="FrontThumbnailFile7"/><mets:fptr FILEID="TiledImageFile7"/><mets:fptr FILEID="TilesMetadataFile7"/><mets:fptr FILEID="ReferenceImageFile7"/><mets:fptr FILEID="PrintImageFile7"/></mets:div>
+    <mets:div TYPE="box" LABEL="Camp Nelson convalescent camp; eight rows of four white tents each, small group of people sitting in front of them, trees and more tents in background, cleared area and tree stumps in foreground, written on back in pencil, upper left corner, &quot;Harmsfeld (?) No 2,&quot; on lower left &quot;8 Phelps 3a (?)&quot; ," ORDER="8">
+        
+    <mets:fptr FILEID="ThumbnailFile8"/><mets:fptr FILEID="FrontThumbnailFile8"/><mets:fptr FILEID="TiledImageFile8"/><mets:fptr FILEID="TilesMetadataFile8"/><mets:fptr FILEID="ReferenceImageFile8"/><mets:fptr FILEID="PrintImageFile8"/></mets:div>
+    <mets:div TYPE="box" LABEL="Landscape with building; three rows of white tents with wooden buildings behind them and two floor white wooden buildings adjacent, field in foreground and trees in background ," ORDER="9">
+        
+    <mets:fptr FILEID="ThumbnailFile9"/><mets:fptr FILEID="FrontThumbnailFile9"/><mets:fptr FILEID="TiledImageFile9"/><mets:fptr FILEID="TilesMetadataFile9"/><mets:fptr FILEID="ReferenceImageFile9"/><mets:fptr FILEID="PrintImageFile9"/></mets:div>
+    <mets:div TYPE="box" LABEL="Reservoir;  large reservoir on raised ground surrounded by a wooden fence with three people standing on dirt road in foreground, buildings and trees in background.  Water is pumped to the reservoir from the Kentucky River.  There is a gazebo within the fence for officers. ," ORDER="10">
+        
+    <mets:fptr FILEID="ThumbnailFile10"/><mets:fptr FILEID="FrontThumbnailFile10"/><mets:fptr FILEID="TiledImageFile10"/><mets:fptr FILEID="TilesMetadataFile10"/><mets:fptr FILEID="ReferenceImageFile10"/><mets:fptr FILEID="PrintImageFile10"/></mets:div>
+    <mets:div TYPE="box" LABEL="Exterior of building; large white wooden building, sign on building reads &quot;U.S. Sanitary Commission, Soldier's Home,&quot; large group of men standing in front, white wooden fence with men resting in foreground, dirt road leading to buildings in background ," ORDER="11">
+        
+    <mets:fptr FILEID="ThumbnailFile11"/><mets:fptr FILEID="FrontThumbnailFile11"/><mets:fptr FILEID="TiledImageFile11"/><mets:fptr FILEID="TilesMetadataFile11"/><mets:fptr FILEID="ReferenceImageFile11"/><mets:fptr FILEID="PrintImageFile11"/></mets:div>
+    <mets:div TYPE="box" LABEL="Office of the quartermaster and commissary; large wooden building with porch and two floors, three men riding in wagon pulled by horses while other men stand in front of building, dirt road and trees in foreground, trees in background ," ORDER="12">
+        
+    <mets:fptr FILEID="ThumbnailFile12"/><mets:fptr FILEID="FrontThumbnailFile12"/><mets:fptr FILEID="TiledImageFile12"/><mets:fptr FILEID="TilesMetadataFile12"/><mets:fptr FILEID="ReferenceImageFile12"/><mets:fptr FILEID="PrintImageFile12"/></mets:div>
+    <mets:div TYPE="box" LABEL="Steam powered pump house; wooden house built on mountainside raised with a concrete structure and wooden beams above the Kentucky River, three people looking out of window, men sitting on porch, trees and wooden staircase going over mountainside in background, creek in foreground ," ORDER="13">
+        
+    <mets:fptr FILEID="ThumbnailFile13"/><mets:fptr FILEID="FrontThumbnailFile13"/><mets:fptr FILEID="TiledImageFile13"/><mets:fptr FILEID="TilesMetadataFile13"/><mets:fptr FILEID="ReferenceImageFile13"/><mets:fptr FILEID="PrintImageFile13"/></mets:div>
+    <mets:div TYPE="box" LABEL="Landscape;  steam powered pump house from #13 above in center, surrounded by trees, creek in foreground, trees and clearing in background ," ORDER="14">
+        
+    <mets:fptr FILEID="ThumbnailFile14"/><mets:fptr FILEID="FrontThumbnailFile14"/><mets:fptr FILEID="TiledImageFile14"/><mets:fptr FILEID="TilesMetadataFile14"/><mets:fptr FILEID="ReferenceImageFile14"/><mets:fptr FILEID="PrintImageFile14"/></mets:div>
+    <mets:div TYPE="box" LABEL="Posed group photo; six men, four kneeling, two standing, all wearing coat and tie, bottom of photo reads &quot;Isaac Damon, E.P. Knight, F.W. Boyden, J.B. Earnshaw, A.W. Waite, A.A. Livermore&quot; ," ORDER="15">
+        
+    <mets:fptr FILEID="ThumbnailFile15"/><mets:fptr FILEID="FrontThumbnailFile15"/><mets:fptr FILEID="TiledImageFile15"/><mets:fptr FILEID="TilesMetadataFile15"/><mets:fptr FILEID="ReferenceImageFile15"/><mets:fptr FILEID="PrintImageFile15"/></mets:div>
+    <mets:div TYPE="box" LABEL="Posed group photo, Approximately fifty-five African-American girls being taught outside by a Caucasian female while two bearded Caucasian men look on, white wooden building in background ," ORDER="16">
+        
+    <mets:fptr FILEID="ThumbnailFile16"/><mets:fptr FILEID="FrontThumbnailFile16"/><mets:fptr FILEID="TiledImageFile16"/><mets:fptr FILEID="TilesMetadataFile16"/><mets:fptr FILEID="ReferenceImageFile16"/><mets:fptr FILEID="PrintImageFile16"/></mets:div>
+</mets:structMap>
+</mets:mets>
