@@ -84,7 +84,11 @@ module KDL
       label_path.pop
       label_path.push "#{page_type.capitalize} #{the_label}"
       fields = @solr_doc.dup
-      fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
+      if the_label =~ /^\d+$/
+        fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
+      else
+        fields[:title_display] = "#{the_label} of #{@title}"
+      end
       fields[:title_guide_display] = fields[:title_sort]
       fields[:title_t] = fields[:title_display]
       [

@@ -52,6 +52,7 @@ KDL::Page
       creates a hash of fields common to all pages
       includes all solr_doc fields for all pages
       includes a breadcrumb trail in title_display when possible
+      includes a minimal title when label is text
       includes a restricted set of fields for finding aid pages
   Page-specific metadata
     label_display
@@ -373,6 +374,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 8.052913 seconds
+Finished in 8.652381 seconds
 
-207 examples, 0 failures
+208 examples, 0 failures

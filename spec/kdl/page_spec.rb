@@ -123,6 +123,23 @@ module KDL
           page.page_fields[:title_t].should == page.page_fields[:title_display]
         end
 
+        it "includes a minimal title when label is text" do
+          FileUtils.mkdir_p File.join(playground, 'mets')
+          mets_src = File.join('data', 'mets', 'mets2.xml')
+          mets_file = File.join(playground, 'mets', 'mets2.xml')
+          FileUtils.cp mets_src, mets_file
+          mets = KDL::METS.new
+          mets.load mets_file
+          page = Page.new mets, 'FileGrp1_1_002_0003', dip_id, dip_directory, solr_doc
+          page.stub(:page_type).and_return('page')
+          page.stub(:sequence_number_display).and_return('3')
+          page.stub(:text).and_return('howdy')
+          page.stub(:page_type).and_return('item')
+          page.stub(:label_display).and_return('Francis Drake')
+          page.page_fields[:title_display].should == "Francis Drake of #{solr_doc[:title_sort]}"
+          page.page_fields[:title_t].should == page.page_fields[:title_display]
+        end
+
         it "includes a restricted set of fields for finding aid pages" do
           FileUtils.mkdir_p File.join(playground, 'mets')
           mets_src = File.join('data', 'mets', 'mets2.xml')
