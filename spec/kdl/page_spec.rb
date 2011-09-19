@@ -180,6 +180,33 @@ module KDL
       end
     end
 
+    context "Images in collections" do
+      describe "#page_fields" do
+        before (:each) do
+          FileUtils.mkdir_p File.join(playground, 'mets')
+          mets_src = File.join('data', 'dips', '77pa102', 'data', 'mets.xml')
+          mets_file = File.join(playground, 'mets', 'mets2.xml')
+          FileUtils.cp mets_src, mets_file
+          @mets = KDL::METS.new
+          @mets.load mets_file
+        end
+
+        after (:each) do
+          FileUtils.rm_rf playground
+        end
+
+        it "includes publication date" do
+          pd_dip_id = '77pa102'
+          pd_page_id = 'FileGrp1'
+          pd_dip_directory = File.join 'data', 'dips', pd_dip_id
+          page = Page.new @mets, pd_page_id, pd_dip_id, pd_dip_directory, full_sample_solr_doc, false
+          page.should have_finding_aid
+          page.page_fields.should have_key(:pub_date)
+          page.page_fields[:pub_date].should == '1864'
+        end
+      end
+    end
+
     context "Page-specific metadata" do
       [
         :label_display,

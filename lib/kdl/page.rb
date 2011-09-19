@@ -126,6 +126,7 @@ module KDL
               subject.content
             end
             fields[:subject_topic_facet] = subjects.flatten.uniq
+            fields[:pub_date] = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:unitdate").first.content
           end
         rescue
         end

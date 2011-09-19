@@ -54,6 +54,9 @@ KDL::Page
       includes a breadcrumb trail in title_display when possible
       includes a minimal title when label is text
       includes a restricted set of fields for finding aid pages
+  Images in collections
+    #page_fields
+      includes publication date
   Page-specific metadata
     label_display
       delegates to METS
@@ -374,6 +377,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 8.652381 seconds
+Finished in 8.992785 seconds
 
-208 examples, 0 failures
+209 examples, 0 failures
