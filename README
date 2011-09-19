@@ -57,6 +57,7 @@ KDL::Page
   Images in collections
     #page_fields
       includes publication date
+      includes accession number
   Page-specific metadata
     label_display
       delegates to METS
@@ -377,6 +378,6 @@ KDL::AipMaker
   #cleanup!
     clears out the AIP directory
 
-Finished in 9.17679 seconds
+Finished in 8.490647 seconds
 
-209 examples, 0 failures
+210 examples, 0 failures

@@ -87,7 +87,7 @@ module KDL
       if the_label =~ /^\d+$/
         fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
       else
-        fields[:title_display] = "#{the_label}"
+        fields[:title_display] = "#{the_label}".sub(/\s*([,.;:!?]+\s*)+$/, '')
       end
       fields[:title_guide_display] = fields[:title_sort]
       fields[:title_t] = fields[:title_display]
@@ -127,6 +127,10 @@ module KDL
             end
             fields[:subject_topic_facet] = subjects.flatten.uniq
             fields[:pub_date] = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:unitdate").first.content
+            fields[:accession_number_s] = [
+              finding_aid_xml.xpath("//xmlns:eadid").first.content.downcase.sub(/^kukav/, ''),
+              finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:container[@type='othertype']").first.content
+            ].join('_')
           end
         rescue
         end

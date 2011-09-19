@@ -135,7 +135,7 @@ module KDL
           page.stub(:sequence_number_display).and_return('3')
           page.stub(:text).and_return('howdy')
           page.stub(:page_type).and_return('item')
-          page.stub(:label_display).and_return('Francis Drake')
+          page.stub(:label_display).and_return('Francis Drake, ;!')
           page.page_fields[:title_display].should == "Francis Drake"
           page.page_fields[:title_t].should == page.page_fields[:title_display]
         end
@@ -203,6 +203,16 @@ module KDL
           page.should have_finding_aid
           page.page_fields.should have_key(:pub_date)
           page.page_fields[:pub_date].should == '1864'
+        end
+
+        it "includes accession number" do
+          pd_dip_id = '77pa102'
+          pd_page_id = 'FileGrp1'
+          pd_dip_directory = File.join 'data', 'dips', pd_dip_id
+          page = Page.new @mets, pd_page_id, pd_dip_id, pd_dip_directory, full_sample_solr_doc, false
+          page.should have_finding_aid
+          page.page_fields.should have_key(:accession_number_s)
+          page.page_fields[:accession_number_s].should == '77pa102_01'
         end
       end
     end
