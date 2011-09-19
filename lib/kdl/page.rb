@@ -87,7 +87,7 @@ module KDL
       if the_label =~ /^\d+$/
         fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
       else
-        fields[:title_display] = "#{the_label} of #{@title}"
+        fields[:title_display] = "#{the_label}"
       end
       fields[:title_guide_display] = fields[:title_sort]
       fields[:title_t] = fields[:title_display]

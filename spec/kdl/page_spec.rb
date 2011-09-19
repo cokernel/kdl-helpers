@@ -136,7 +136,7 @@ module KDL
           page.stub(:text).and_return('howdy')
           page.stub(:page_type).and_return('item')
           page.stub(:label_display).and_return('Francis Drake')
-          page.page_fields[:title_display].should == "Francis Drake of #{solr_doc[:title_sort]}"
+          page.page_fields[:title_display].should == "Francis Drake"
           page.page_fields[:title_t].should == page.page_fields[:title_display]
         end
 
