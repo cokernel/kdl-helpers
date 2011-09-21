@@ -118,9 +118,7 @@ module KDL
       end
       if has_finding_aid?
         begin
-          tag = File.basename(
-                  @mets.href(:fileGrp => @identifier,
-                             :use => 'tiles metadata'), '.txt').sub(/_0/, '_')
+          tag = fields[:id]
           unless tag.nil?
             subjects = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:subject").collect do |subject|
               subject.content
