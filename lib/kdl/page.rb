@@ -124,7 +124,7 @@ module KDL
               subject.content
             end
             fields[:subject_topic_facet] = subjects.flatten.uniq
-            fields[:pub_date] = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:unitdate").first.content
+            fields[:pub_date] = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:unitdate").first.content.gsub(/\D/, '')[0..3]
             fields[:accession_number_s] = [
               finding_aid_xml.xpath("//xmlns:eadid").first.content.downcase.sub(/^kukav/, ''),
               finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:container[@type='othertype']").first.content
