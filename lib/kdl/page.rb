@@ -113,8 +113,8 @@ module KDL
       end
       if page_type == 'photograph'
         fields[:format] = 'images'
-      elsif page_type == 'part'
-        fields[:format] = 'archival folders'
+      else 
+        fields[:format] = 'archival material'
       end
       if has_finding_aid?
         begin
