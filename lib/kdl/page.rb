@@ -129,7 +129,11 @@ module KDL
             end
 
             begin
-              fields[:pub_date] = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:unitdate").first.content.gsub(/\D/, '')[0..3]
+              unitdate = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../../xmlns:unitdate").first.content
+
+              if unitdate =~ /\d\d\d\d/
+                fields[:pub_date] = unitdate.sub(/.*(\d\d\d\d).*/, '\1')
+              end
             rescue
             end
 
