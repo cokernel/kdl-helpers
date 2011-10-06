@@ -120,14 +120,19 @@ module KDL
         begin
           tag = fields[:id]
           unless tag.nil?
-            subjects = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:subject").collect do |subject|
-              subject.content
+            begin
+              subjects = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:subject").collect do |subject|
+                subject.content
+              end
+              fields[:subject_topic_facet] = subjects.flatten.uniq
+            rescue
             end
-            fields[:subject_topic_facet] = subjects.flatten.uniq
+
             begin
               fields[:pub_date] = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:unitdate").first.content.gsub(/\D/, '')[0..3]
             rescue
             end
+
             fields[:accession_number_s] = [
               finding_aid_xml.xpath("//xmlns:eadid").first.content.downcase.sub(/^kukav/, ''),
               finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:container[@type='othertype']").first.content
