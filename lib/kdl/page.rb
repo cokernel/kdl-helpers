@@ -46,8 +46,9 @@ module KDL
 
     def has_finding_aid?
       begin
-        @mets.href(:fileGrp_use => 'Finding Aid',
+        ref = @mets.href(:fileGrp_use => 'Finding Aid',
                    :file_use => 'access')
+        return(ref and ref.length > 0)
       rescue
         false
       end
@@ -111,38 +112,38 @@ module KDL
       unless fields[:source_s].nil?
         fields[:text] += fields[:source_s]
       end
-      if page_type == 'photograph'
-        fields[:format] = 'images'
-      else 
-        fields[:format] = 'archival material'
-      end
       if has_finding_aid?
-        begin
+        if page_type == 'photograph'
+          fields[:format] = 'images'
+        else 
+          fields[:format] = 'archival material'
+        end
+        if fields.has_key?(:id) and fields[:id]
           tag = fields[:id]
-          unless tag.nil?
-            begin
-              subjects = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:subject").collect do |subject|
-                subject.content
-              end
-              fields[:subject_topic_facet] = subjects.flatten.uniq
-            rescue
+          begin
+            subjects = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:subject").collect do |subject|
+              subject.content
             end
+            fields[:subject_topic_facet] = subjects.flatten.uniq
+          rescue
+          end
 
-            begin
-              unitdate = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../../xmlns:unitdate").first.content
+          begin
+            unitdate = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:unitdate").first.content
 
-              if unitdate =~ /\d\d\d\d/
-                fields[:pub_date] = unitdate.sub(/.*(\d\d\d\d).*/, '\1')
-              end
-            rescue
+            if unitdate =~ /\d\d\d\d/
+              fields[:pub_date] = unitdate.sub(/.*(\d\d\d\d).*/, '\1')
             end
+          rescue
+          end
 
+          begin
             fields[:accession_number_s] = [
               finding_aid_xml.xpath("//xmlns:eadid").first.content.downcase.sub(/^kukav/, ''),
               finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:container[@type='othertype']").first.content
             ].join('_')
+          rescue
           end
-        rescue
         end
       end
       fields
