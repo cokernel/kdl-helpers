@@ -38,11 +38,12 @@ module KDL
     def cleanup
       pn = Pathname.new(File.join @dip_directory, 'data')
       Find.find(@dip_directory) do |path|
-        if path.downcase =~ /\.jp2$/ and File.file?(path)
+        if File.file?(path)
           rpn = Pathname.new(path)
           relpath = rpn.relative_path_from(pn)
-          unless relpath.nil?
+          unless relpath.nil? or relpath =~ /\.xml/i
             unless @mets.referenced?(relpath.to_s)
+              puts %-Deleting unreferenced file #{relpath}-
               @dip.remove_file(relpath)
             end
           end
