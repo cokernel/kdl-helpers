@@ -41,8 +41,8 @@ module KDL
         if File.file?(path)
           rpn = Pathname.new(path)
           relpath = rpn.relative_path_from(pn)
-          if relpath
-            unless @mets.referenced?(relpath.to_s) or relpath.to_s =~ /\.xml/
+          if relpath and relpath.to_s =~ /\.tif$/
+            unless @mets.referenced?(relpath.to_s) 
               puts %-Deleting unreferenced file #{relpath}-
               @dip.remove_file(relpath)
             end
@@ -163,10 +163,9 @@ module KDL
           master_id = @mets.file_id :fileGrp => fileGrp_id,
                          :use => use
           @mets.remove_file :file_id => master_id
-          @mets.save
-          @dip.manifest!
         end
         @mets.save
+        @dip.manifest!
       else
         @output.puts "No METS file loaded."
       end
