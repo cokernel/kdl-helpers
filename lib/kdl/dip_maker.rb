@@ -47,6 +47,10 @@ module KDL
               @dip.remove_file(relpath)
             end
           end
+          if relpath and relpath.to_s =~ /\.wav$/
+            puts %-Deleting wave file #{relpath}-
+            @dip.remove_file(relpath)
+          end
         end
       end
     end
