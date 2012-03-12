@@ -66,7 +66,7 @@ module KDL
     # item-level metadata
 
     def ids
-      mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'reel metadata' }.collect do |node|
+      mets.xpath('//mets:fileGrp').reject { |node| node['USE'] == 'reel metadata' or node['USE'] == 'wave files' }.collect do |node|
         node['ID']
       end
     end
