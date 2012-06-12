@@ -1,6 +1,7 @@
 require 'open3'
 require 'rubygems'
 require 'bagit'
+require 'exifr'
 require 'find'
 require 'json'
 require 'kdl'

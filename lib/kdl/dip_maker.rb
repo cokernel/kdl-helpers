@@ -30,9 +30,24 @@ module KDL
         return usage
       end
       stage
+      update_reel_metadata
       generate_tiles(Tiler.new @output)
       @output.puts("Built DIP at #{@dip_directory}")
       cleanup
+    end
+
+    def update_reel_metadata
+      if @mets.reel_metadata_href
+        reel_metadata_file = File.join @dip_directory, 'data', @mets.reel_metadata_href
+        tiff_file = File.join @dip_directory,
+                              'data',
+                              @mets.href(:fileGrp => @mets.ids.first, :use => 'master')
+        dpi = EXIFR::TIFF.new(tiff_file).x_resolution.to_i
+        xml = Nokogiri::XML open(reel_metadata_file)
+        xml.xpath('//ndnp:captureResolutionOriginal').first.content = dpi
+        File.open(reel_metadata_file, 'w') { |f| xml.write_xml_to f }
+        @dip.manifest!
+      end
     end
 
     def cleanup

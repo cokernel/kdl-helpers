@@ -170,8 +170,10 @@ module KDL
 
     def reel_metadata_href
       node = mets.xpath('//mets:fileGrp').select { |node| node['USE'] == 'reel metadata' }.first
-      href :fileGrp => node['ID'],
-           :use => 'reel metadata'
+      if node
+        href :fileGrp => node['ID'],
+             :use => 'reel metadata'
+      end
     end
 
     def self.add_div_field(method_name, field)
