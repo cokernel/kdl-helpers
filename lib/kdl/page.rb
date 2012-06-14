@@ -300,7 +300,7 @@ module KDL
                 IO.read(File.join(@dip_directory,
                                   'data',
                                   file)))
-        @resolution = xml.xpath('//ndnp:reelTechMD/ndnp:captureResolutionOriginal').first.content.to_i
+        @resolution = xml.xpath('//ndnp:captureResolutionOriginal').first.content.to_i
       end
       @resolution
     end
