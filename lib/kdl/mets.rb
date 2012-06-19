@@ -62,6 +62,7 @@ module KDL
 
     add_canned_query :repository, '//mets:agent[@TYPE="REPOSITORY"]/mets:name'
     add_canned_query :date_digitized, '//mets:amdSec//mets:versionStatement'
+    add_canned_query :base_resolution, '//mets:digiProvMD/mets:process/mets:process_reformat[@FIELDTYPE="reformatInfo"]'
 
     # item-level metadata
 

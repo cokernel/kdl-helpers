@@ -296,11 +296,15 @@ module KDL
     def resolution
       if @resolution.nil?
         file = @mets.reel_metadata_href
-        xml = Nokogiri::XML(
-                IO.read(File.join(@dip_directory,
-                                  'data',
-                                  file)))
-        @resolution = xml.xpath('//ndnp:captureResolutionOriginal').first.content.to_i
+        if file
+          xml = Nokogiri::XML(
+                  IO.read(File.join(@dip_directory,
+                                    'data',
+                                    file)))
+          @resolution = xml.xpath('//ndnp:captureResolutionOriginal').first.content.to_i
+        else
+          @resolution = @mets.base_resolution 
+        end
       end
       @resolution
     end
