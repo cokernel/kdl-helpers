@@ -31,6 +31,11 @@ module KDL
         hash = paged_page_fields
       end
       hash[:browse_key_sort] = browse_key_sort
+      hash.each_pair do |key, value|
+        if value.class == String
+          hash[key] = value.strip.gsub(/\.\.$/, '.')
+        end
+      end
       hash
     end
 
