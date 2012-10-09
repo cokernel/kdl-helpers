@@ -99,7 +99,10 @@ module KDL
     end
 
     def oral_history_text
-      sync_xml.xpath('//INST').first.content
+      [
+        sync_xml.xpath('//INST').first.content,
+        sync_xml.xpath('//IDX').first.content,
+      ].join(' ')
     end
 
     def sync_xml
