@@ -85,103 +85,115 @@ module KDL
           mimetype = @mets.mimetype :fileGrp => fileGrp_id,
                                     :use => use
 
-          next unless mimetype == "image/tiff"
-
-          stem = File.basename(href, '.tif')
-          base = File.join(
-            File.dirname(href),
-            stem
-          )
-          tiler.configure :input_directory => @dip.data_dir,
-                         :output_directory => @dip.data_dir,
-                         :no_move => true,
-                         :delete => true,
-                         :quiet => true,
-                         :file => href
-          
-          pdf_path = @mets.print_image_path(fileGrp_id)
-          if pdf_path.nil? or pdf_path.length == 0
-            pdf_path = @mets.href :fileGrp => fileGrp_id,
-                                  :use => 'master'
+          case mimetype
+          when "image/tiff"
+            stem = File.basename(href, '.tif')
+            base = File.join(
+              File.dirname(href),
+              stem
+            )
+            tiler.configure :input_directory => @dip.data_dir,
+                           :output_directory => @dip.data_dir,
+                           :no_move => true,
+                           :delete => true,
+                           :quiet => true,
+                           :file => href
+            
+            pdf_path = @mets.print_image_path(fileGrp_id)
             if pdf_path.nil? or pdf_path.length == 0
-              wants_pdf = true
-            else
-              if pdf_path =~ /\.pdf$/
-                wants_pdf = false
-              else
+              pdf_path = @mets.href :fileGrp => fileGrp_id,
+                                    :use => 'master'
+              if pdf_path.nil? or pdf_path.length == 0
                 wants_pdf = true
+              else
+                if pdf_path =~ /\.pdf$/
+                  wants_pdf = false
+                else
+                  wants_pdf = true
+                end
               end
+            else
+              wants_pdf = false
             end
-          else
-            wants_pdf = false
-          end
-
-          thumb_href = File.join(base, stem + '_tb.jpg')
-          front_thumb_href = File.join(base, stem + '_ftb.jpg')
-          tls_href = File.join(base, stem + '.tls')
-          meta_href = File.join(base, stem + '.txt')
-          ref_href = File.join(base, stem + '.jpg')
-
-          if wants_pdf
-            pdf_href = File.join(base, stem + '.pdf')
-          else
-            tiler.configure :make_pdfs => false
-          end
-
-          if @options.has_key?(:mets_only)
-            # fake creation
-            FileUtils.mkdir_p File.join(@dip.data_dir, base)
-            [
-              thumb_href,
-              front_thumb_href,
-              tls_href,
-              meta_href,
-              ref_href,
-            ].each do |file|
-              FileUtils.touch File.join(@dip.data_dir, file)
-            end
+  
+            thumb_href = File.join(base, stem + '_tb.jpg')
+            front_thumb_href = File.join(base, stem + '_ftb.jpg')
+            tls_href = File.join(base, stem + '.tls')
+            meta_href = File.join(base, stem + '.txt')
+            ref_href = File.join(base, stem + '.jpg')
+  
             if wants_pdf
-              FileUtils.touch File.join(@dip.data_dir, pdf_href)
+              pdf_href = File.join(base, stem + '.pdf')
+            else
+              tiler.configure :make_pdfs => false
             end
-          else
-            tiler.run
-          end
-
-          @mets.add_file :fileGrp => fileGrp_id,
-                         :use => 'thumbnail',
-                         :file => thumb_href,
-                         :mimetype => 'image/jpeg'
-
-          @mets.add_file :fileGrp => fileGrp_id,
-                         :use => 'front thumbnail',
-                         :file => front_thumb_href,
-                         :mimetype => 'image/jpeg'
-
-          @mets.add_file :fileGrp => fileGrp_id,
-                         :use => 'tiled image',
-                         :file => tls_href,
-                         :mimetype => 'application/octet-stream'
-
-          @mets.add_file :fileGrp => fileGrp_id,
-                         :use => 'tiles metadata',
-                         :file => meta_href,
-                         :mimetype => 'text/plain'
-
-          @mets.add_file :fileGrp => fileGrp_id,
-                         :use => 'reference image',
-                         :file => ref_href,
-                         :mimetype => 'image/jpeg'
-
-          if wants_pdf
+  
+            if @options.has_key?(:mets_only)
+              # fake creation
+              FileUtils.mkdir_p File.join(@dip.data_dir, base)
+              [
+                thumb_href,
+                front_thumb_href,
+                tls_href,
+                meta_href,
+                ref_href,
+              ].each do |file|
+                FileUtils.touch File.join(@dip.data_dir, file)
+              end
+              if wants_pdf
+                FileUtils.touch File.join(@dip.data_dir, pdf_href)
+              end
+            else
+              tiler.run
+            end
+  
             @mets.add_file :fileGrp => fileGrp_id,
-                           :use => 'print image',
-                           :file => pdf_href,
-                           :mimetype => 'application/pdf'
+                           :use => 'thumbnail',
+                           :file => thumb_href,
+                           :mimetype => 'image/jpeg'
+  
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'front thumbnail',
+                           :file => front_thumb_href,
+                           :mimetype => 'image/jpeg'
+  
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'tiled image',
+                           :file => tls_href,
+                           :mimetype => 'application/octet-stream'
+  
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'tiles metadata',
+                           :file => meta_href,
+                           :mimetype => 'text/plain'
+  
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'reference image',
+                           :file => ref_href,
+                           :mimetype => 'image/jpeg'
+  
+            if wants_pdf
+              @mets.add_file :fileGrp => fileGrp_id,
+                             :use => 'print image',
+                             :file => pdf_href,
+                             :mimetype => 'application/pdf'
+            end
+  
+            master_id = @mets.file_id :fileGrp => fileGrp_id,
+                           :use => use
+            @mets.remove_file :file_id => master_id
+          when "audio/wav"
+            # We assume that the OGG and MP3 files have already been generated,
+            # so we can just remove the master audio.
+            stem = File.basename(href, '.wav')
+            base = File.join(
+              File.dirname(href),
+              stem
+            )
+            master_id = @mets.file_id :fileGrp => fileGrp_id,
+                           :use => use
+            @mets.remove_file :file_id => master_id
           end
-
-          master_id = @mets.file_id :fileGrp => fileGrp_id,
-                         :use => use
-          @mets.remove_file :file_id => master_id
         end
         @mets.save
         @dip.manifest!

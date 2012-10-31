@@ -111,6 +111,8 @@ module KDL
         :pdf_url_display,
         :parent_id_s,
         :coordinates_s,
+        :reference_audio_url_s,
+        :secondary_reference_audio_url_s,
       ].each do |page_field|
         fields[page_field] = send(page_field)
       end
@@ -118,7 +120,9 @@ module KDL
         fields[:text] += fields[:source_s]
       end
       if has_finding_aid?
-        if page_type == 'photograph'
+        if fields[:reference_audio_url_s].length > 0
+          fields[:format] = 'audio'
+        elsif page_type == 'photograph'
           fields[:format] = 'images'
         else 
           fields[:format] = 'archival material'
@@ -149,6 +153,12 @@ module KDL
             ].join('_')
           rescue
           end
+        end
+      end
+      # trim nil fields
+      fields.keys.each do |key|
+        if fields[key].nil? 
+          fields.delete key
         end
       end
       fields
@@ -182,44 +192,43 @@ module KDL
       id.sub(/_\d+$/, '')
     end
 
+    def dip_field(method)
+      path = @mets.send(method, @identifier)
+      if path.length > 0
+        [ 'http://nyx.uky.edu/dips',
+          @parent_id,
+          'data',
+          path
+        ].join('/')
+      end
+    end
+
     def pdf_url_display
-      [ 'http://nyx.uky.edu/dips',
-        @parent_id,
-        'data',
-        @mets.print_image_path(@identifier)
-      ].join('/')
+      dip_field(:print_image_path)
     end
 
     def reference_image_url_s
-      [ 'http://nyx.uky.edu/dips',
-        @parent_id,
-        'data',
-        @mets.reference_image_path(@identifier)
-      ].join('/')
+      dip_field(:reference_image_path)
     end
 
     def thumbnail_url_s
-      [ 'http://nyx.uky.edu/dips',
-        @parent_id,
-        'data',
-        @mets.thumbnail_path(@identifier)
-      ].join('/')
+      dip_field(:thumbnail_path)
     end
 
     def front_thumbnail_url_s
-      [ 'http://nyx.uky.edu/dips',
-        @parent_id,
-        'data',
-        @mets.front_thumbnail_path(@identifier)
-      ].join('/')
+      dip_field(:front_thumbnail_path)
+    end
+
+    def reference_audio_url_s
+      dip_field(:reference_audio_path)
+    end
+
+    def secondary_reference_audio_url_s
+      dip_field(:secondary_reference_audio_path)
     end
 
     def viewer_url_s
-      [ 'http://nyx.uky.edu/dips',
-        @parent_id,
-        'data',
-        @mets.viewer_path(@identifier)
-      ].join('/')
+      dip_field(:viewer_path)
     end
 
     def sequence_number_display
