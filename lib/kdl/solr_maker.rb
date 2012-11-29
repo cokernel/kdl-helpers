@@ -151,7 +151,10 @@ module KDL
       method_name = solr_field ? solr_field : dc_field
       if count == 1
         define_method(method_name) {
-          @access_package.send(dc_field).first.strip
+          result = @access_package.send(dc_field).first
+          unless result.nil?
+            result.strip
+          end
         }
       else
         define_method(method_name) {
