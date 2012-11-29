@@ -129,6 +129,22 @@ module KDL
         end
         if fields.has_key?(:id) and fields[:id]
           tag = fields[:id]
+          if finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']").count == 0
+            tag.gsub(/_\d+$/, '_1')
+          end
+          containers = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../xmlns:container").collect do |container|
+            content = container.content.strip
+            if container['type'] == 'othertype'
+              structure = container['label'].strip.downcase
+            else
+              structure = container['type'].strip.downcase
+            end
+            %-#{structure} #{content}-
+          end
+          fields[:container_list_s] = containers.join(', ')
+        end
+        if fields.has_key?(:id) and fields[:id]
+          tag = fields[:id]
           begin
             subjects = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:subject").collect do |subject|
               subject.content

@@ -74,13 +74,16 @@ module KDL
     end
 
     def finding_aid_xml
-      Nokogiri::XML(
-        IO.read(
-          File.join(
-            @dip_directory,
-            'data',
-            @mets.href(:fileGrp_use => 'Finding Aid',
-                       :file_use => 'access'))))
+      if @finding_aid_xml.nil?
+        @finding_aid_xml = Nokogiri::XML(
+          IO.read(
+            File.join(
+              @dip_directory,
+              'data',
+              @mets.href(:fileGrp_use => 'Finding Aid',
+                         :file_use => 'access'))))
+      end
+      @finding_aid_xml
     end
 
     def finding_aid_text
