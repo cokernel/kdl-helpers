@@ -147,10 +147,7 @@ module KDL
           end
 
           begin
-            fields[:accession_number_s] = [
-              finding_aid_xml.xpath("//xmlns:eadid").first.content.downcase.sub(/^kukav/, ''),
-              finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:container[@type='othertype']").first.content
-            ].join('_')
+            fields[:accession_number_s] = finding_aid_xml.xpath("//xmlns:unitid").first.content.downcase.sub(/^kukav/, '')
           rescue
           end
         end
