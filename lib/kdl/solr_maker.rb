@@ -79,6 +79,11 @@ module KDL
         hash[:id] = identifier
         hash[:unpaged_display] = '1'
       end
+      hash[:source_sort_s] = [
+        hash[:source_s].strip.downcase,
+        '$',
+        hash[:source_s],
+      ].join('')
       hash[:object_id_s] = @access_package.identifier
       hash[:digital_content_available_s] = @access_package.hasDigitizedContent
       hash
@@ -146,7 +151,7 @@ module KDL
       method_name = solr_field ? solr_field : dc_field
       if count == 1
         define_method(method_name) {
-          @access_package.send(dc_field).first
+          @access_package.send(dc_field).first.strip
         }
       else
         define_method(method_name) {
