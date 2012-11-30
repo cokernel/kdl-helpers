@@ -130,7 +130,7 @@ module KDL
         if fields.has_key?(:id) and fields[:id]
           tag = fields[:id]
           if finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']").count == 0
-            tag.gsub(/_\d+$/, '_1')
+            tag.gsub!(/_\d+$/, '_1')
           end
           containers = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../xmlns:container").collect do |container|
             content = container.content.strip
