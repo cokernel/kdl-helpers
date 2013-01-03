@@ -128,7 +128,7 @@ module KDL
           fields[:format] = 'archival material'
         end
         if fields.has_key?(:id) and fields[:id]
-          tag = fields[:id]
+          tag = fields[:id].dup
           if finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']").count == 0
             tag.gsub!(/_\d+$/, '_1')
           end
@@ -164,6 +164,18 @@ module KDL
 
           begin
             fields[:accession_number_s] = finding_aid_xml.xpath("//xmlns:unitid").first.content.downcase.sub(/^kukav/, '')
+          rescue
+          end
+
+          begin
+            fields[:contributor_s] = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:origination[@label='contributor']").first.content
+          rescue
+          end
+
+          begin
+            author = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../..//xmlns:origination[@label='creator']").first.content
+            fields[:author_t] = author
+            fields[:author_display] = author
           rescue
           end
         end
