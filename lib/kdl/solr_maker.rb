@@ -79,11 +79,13 @@ module KDL
         hash[:id] = identifier
         hash[:unpaged_display] = '1'
       end
-      hash[:source_sort_s] = [
-        hash[:source_s].strip.downcase,
-        '$',
-        hash[:source_s],
-      ].join('')
+      if hash.has_key?(:source_s) and hash[:source_s]
+        hash[:source_sort_s] = [
+          hash[:source_s].strip.downcase,
+          '$',
+          hash[:source_s],
+        ].join('')
+      end
       hash[:object_id_s] = @access_package.identifier
       hash[:digital_content_available_s] = @access_package.hasDigitizedContent
       hash

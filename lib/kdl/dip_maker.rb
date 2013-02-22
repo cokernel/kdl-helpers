@@ -228,7 +228,7 @@ module KDL
     end
 
     def usage
-      @output.puts "Usage: dipmaker <AIP directory> <DIPs directory>"
+      @output.puts "Usage: dipmaker <AIP directory> <DIPs directory> [DIP identifier]"
     end
   end
 end

@@ -79,6 +79,16 @@ module KDL
       fields
     end
 
+    def container_type(container)
+      bad_types = ['folder/item', 'othertype']
+      candidates = [container['type'], container['label'], 'folder']
+      candidates.compact.collect {|candidate|
+        candidate.downcase.strip
+      }.reject {|candidate|
+        bad_types.include? candidate
+      }.first
+    end
+
     def paged_page_fields
       the_label = 
       if page_type == 'sequence'
@@ -134,11 +144,7 @@ module KDL
           end
           containers = finding_aid_xml.xpath("//xmlns:dao[@entityref='#{tag}']/../xmlns:container").collect do |container|
             content = container.content.strip
-            if container['type'] == 'othertype'
-              structure = container['label'].strip.downcase
-            else
-              structure = container['type'].strip.downcase
-            end
+            structure = container_type container
             %-#{structure} #{content}-
           end
           fields[:container_list_s] = containers.join(', ')
