@@ -98,13 +98,19 @@ module KDL
       end
       label_path = @mets.label_path @identifier
       label_path.pop
-      label_path.push "#{page_type.capitalize} #{the_label}"
       fields = @solr_doc.dup
-      if the_label =~ /^\d+$/
-        fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
+      if the_label =~ /^\[?\d+\]?$/
+        label_path.push "#{page_type.capitalize} #{the_label}"
       else
-        fields[:title_display] = "#{the_label}".sub(/\s*([,.;:!?]+\s*)+$/, '')
+        label_path.push "#{the_label.capitalize}"
       end
+      fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
+      #label_path.push "#{page_type.capitalize} #{the_label}"
+      #if the_label =~ /^\d+$/
+      #  fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
+      #else
+      #  fields[:title_display] = "#{the_label}".sub(/\s*([,.;:!?]+\s*)+$/, '')
+      ##end
       fields[:title_guide_display] = fields[:title_sort]
       fields[:title_t] = fields[:title_display]
       [

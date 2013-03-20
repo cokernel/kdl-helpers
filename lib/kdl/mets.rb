@@ -144,7 +144,7 @@ module KDL
         the_div = div(:fileGrp_id => identifier).first
         the_path = [the_div[field.to_s]]
         while the_div.parent.name == 'div'
-          the_path.unshift the_div.parent[field.to_s]
+          the_path.unshift the_div.parent[field.to_s].sub(/\s*([,.;:!?]+\s*)+$/, '')
           the_div = the_div.parent
         end
         the_path
