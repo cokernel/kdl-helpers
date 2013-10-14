@@ -60,7 +60,7 @@ module KDL
                   :no_move => true,
                   :quiet => true,
                   :file => 'just/this/one'
-        tiler.command.should == '/opt/pdp/bin/tiler.py --input-directory=/path/to/input --output-directory=/path/to/output --no-move --quiet --make-pdfs --file=just/this/one'
+        tiler.command.should == '/usr/local/bin/tiler.py --input-directory=/path/to/input --output-directory=/path/to/output --no-move --quiet --make-pdfs --file=just/this/one'
       end
     end
 

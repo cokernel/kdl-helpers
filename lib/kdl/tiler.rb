@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+#require 'spec/spec_helper'
 
 module KDL
   class Tiler
@@ -38,7 +38,7 @@ module KDL
     end
 
     def command
-      bits = ['/opt/pdp/bin/tiler.py']
+      bits = ['/usr/local/bin/tiler.py']
       if @options[:input_directory]
         bits << "--input-directory=#{@options[:input_directory]}"
       end

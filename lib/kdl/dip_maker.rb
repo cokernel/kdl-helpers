@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+#require 'spec/spec_helper'
 
 module KDL
   class DipMaker
@@ -56,15 +56,15 @@ module KDL
         if File.file?(path)
           rpn = Pathname.new(path)
           relpath = rpn.relative_path_from(pn)
-          if relpath and relpath.to_s =~ /\.tif$/
+          if relpath #and relpath.to_s =~ /\.tif$/
             unless @mets.referenced?(relpath.to_s) 
-              puts %-Deleting unreferenced file #{relpath}-
+              @output.puts %-Deleting unreferenced file #{relpath}-
               @dip.remove_file(relpath)
             end
-          end
-          if relpath and relpath.to_s =~ /\.wav$/
-            puts %-Deleting wave file #{relpath}-
-            @dip.remove_file(relpath)
+            if relpath and relpath.to_s =~ /\.wav$/
+              @output.puts %-Deleting wave file #{relpath}-
+              @dip.remove_file(relpath)
+            end
           end
         end
       end

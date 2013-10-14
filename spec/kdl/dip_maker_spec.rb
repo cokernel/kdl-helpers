@@ -182,11 +182,15 @@ module KDL
     describe "#build" do
       it "stages construction of the DIP" do
         dipmaker.should_receive(:stage)
+        dipmaker.stub(:update_reel_metadata)
+        dipmaker.stub(:cleanup)
         dipmaker.build
       end
 
       it "produces tiles for each master file" do
         dipmaker.should_receive(:generate_tiles)
+        dipmaker.stub(:update_reel_metadata)
+        dipmaker.stub(:cleanup)
         dipmaker.build
       end
 

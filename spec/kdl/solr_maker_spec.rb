@@ -272,7 +272,7 @@ module KDL
       context "All objects" do
         describe "#solr_doc" do
           it "creates a hash of fields common to all pages" do
-            access_package.stub(:dc_date).and_return('1908.')
+            access_package.stub(:dc_date).and_return(['1908.'])
             solr_maker = SolrMaker.new output, access_package, solrs_directory
             [
               :author_t,

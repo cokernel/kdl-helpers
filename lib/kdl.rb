@@ -1,3 +1,18 @@
+require 'open3'
+require 'rubygems'
+require 'bagit'
+require 'exifr'
+require 'find'
+require 'json'
+require 'kdl'
+require 'lorax'
+require 'mustache'
+require 'nokogiri'
+require 'pathname'
+require 'rails'
+
+require 'tempfile'
+
 require 'kdl/access_package'
 require 'kdl/aip_maker'
 require 'kdl/dip_maker'

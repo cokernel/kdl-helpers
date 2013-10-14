@@ -1,5 +1,3 @@
-require 'spec/spec_helper'
-
 module KDL
   class METS
     attr_reader :mets
