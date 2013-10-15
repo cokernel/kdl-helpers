@@ -1,5 +1,3 @@
-#require 'spec/spec_helper'
-
 module KDL
   class AipMaker
     def initialize(output, sip_directory=nil, identifier=nil, base_dir=nil)

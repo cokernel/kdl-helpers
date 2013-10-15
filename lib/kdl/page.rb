@@ -1,5 +1,3 @@
-#require 'spec/spec_helper'
-
 module KDL
   class Page
     attr_reader :identifier

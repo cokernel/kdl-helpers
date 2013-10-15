@@ -1,5 +1,3 @@
-#require 'spec/spec_helper'
-
 module KDL
   class Tiler
     def initialize(output)

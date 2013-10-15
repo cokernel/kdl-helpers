@@ -1,5 +1,3 @@
-#require 'spec/spec_helper'
-
 module KDL
   class DipMaker
     attr_reader :aip_directory, :dips_directory, :mets
