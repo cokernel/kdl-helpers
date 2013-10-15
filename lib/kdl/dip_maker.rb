@@ -54,13 +54,9 @@ module KDL
         if File.file?(path)
           rpn = Pathname.new(path)
           relpath = rpn.relative_path_from(pn)
-          if relpath #and relpath.to_s =~ /\.tif$/
-            unless @mets.referenced?(relpath.to_s) 
+          if relpath
+            unless @mets.referenced?(relpath.to_s)
               @output.puts %-Deleting unreferenced file #{relpath}-
-              @dip.remove_file(relpath)
-            end
-            if relpath and relpath.to_s =~ /\.wav$/
-              @output.puts %-Deleting wave file #{relpath}-
               @dip.remove_file(relpath)
             end
           end
