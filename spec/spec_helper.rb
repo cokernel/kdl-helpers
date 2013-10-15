@@ -31,3 +31,11 @@ class Sandbox
   end
 
 end
+
+def signatures_should_match(first, second)
+  signature(first).should == signature(second)
+end
+
+def signature(xml)
+  Lorax::Signature.new(xml.root).signature
+end

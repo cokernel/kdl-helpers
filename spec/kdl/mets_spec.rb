@@ -371,11 +371,3 @@ end
 def digest(file)
   Digest::MD5.hexdigest(File.read file)
 end
-
-def signatures_should_match(first, second)
-  signature(first).should == signature(second)
-end
-
-def signature(xml)
-  Lorax::Signature.new(xml.root).signature
-end
