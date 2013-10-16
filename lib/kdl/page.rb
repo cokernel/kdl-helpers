@@ -59,9 +59,7 @@ module KDL
 
     def finding_aid_fields
       fields = @solr_doc.dup
-      fields[:title_display] = @title
       fields[:title_guide_display] = fields[:title_sort]
-      fields[:title_t] = fields[:title_display]
       [
         :id,
         :text,
