@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 module KDL
   class METS
     attr_reader :mets
@@ -104,11 +106,20 @@ module KDL
 
     def referenced?(string)
       @mets.xpath('//mets:FLocat').each do |flocat|
-        if flocat['href'] == string or flocat['xlink:href'] == string
+        if normalize(flocat['href']) == normalize(string) or
+           normalize(flocat['xlink:href']) == normalize(string)
           return true
         end
       end
       false
+    end
+
+    def normalize(path)
+      begin
+        path.gsub(/^\.\//, "")
+      rescue
+        ""
+      end
     end
 
     def href(options)

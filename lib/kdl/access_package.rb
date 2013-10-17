@@ -1,3 +1,6 @@
+require 'kdl/mets'
+require 'nokogiri'
+
 module KDL
   class AccessPackage
     attr_reader :mets
