@@ -1,4 +1,5 @@
 require 'kdl/mets'
+require 'kdl/page'
 require 'nokogiri'
 
 module KDL
