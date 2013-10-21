@@ -1,5 +1,6 @@
 require 'kdl/mets'
 require 'kdl/tiler'
+require 'mustache'
 
 module KDL
   class DipMaker
