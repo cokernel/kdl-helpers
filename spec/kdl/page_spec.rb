@@ -131,21 +131,20 @@ module KDL
         end
 
         it "includes a minimal title when label is text" do
-        pending
           FileUtils.mkdir_p File.join(playground, 'mets')
-          mets_src = File.join('data', 'mets', 'mets2.xml')
-          mets_file = File.join(playground, 'mets', 'mets2.xml')
+          mets_src = File.join('data', 'mets', 'mets4.xml')
+          mets_file = File.join(playground, 'mets', 'mets4.xml')
           FileUtils.cp mets_src, mets_file
           mets = KDL::METS.new
           mets.load mets_file
-          page = Page.new mets, 'FileGrp1_1_002_0003', dip_id, dip_directory, solr_doc
+          page = Page.new mets, 'FileGrp08c7c134d60c307c3b41b448039b80df', dip_id, dip_directory, solr_doc
           page.stub(:finding_aid_xml).and_return(@xml)
           page.stub(:page_type).and_return('page')
           page.stub(:sequence_number_display).and_return('3')
           page.stub(:text).and_return('howdy')
           page.stub(:page_type).and_return('item')
-          page.stub(:label_display).and_return('Francis Drake, ;!')
-          page.page_fields[:title_display].should == "Francis Drake"
+          page.stub(:label_display).and_return('&quot;American Liberty League&quot; Statement by Jouett Shouse at the time of the announcement of the formation of this organization, August 23, 1934., ;!')
+          page.page_fields[:title_display].should == '&quot;American Liberty League&quot; Statement by Jouett Shouse at the time of the announcement of the formation of this organization, August 23, 1934'
           page.page_fields[:title_t].should == page.page_fields[:title_display]
         end
 
