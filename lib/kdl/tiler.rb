@@ -1,3 +1,5 @@
+require 'open3'
+
 module KDL
   class Tiler
     def initialize(output)

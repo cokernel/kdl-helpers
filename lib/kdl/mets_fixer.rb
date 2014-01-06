@@ -1,3 +1,5 @@
+require 'kdl/mets'
+
 module KDL
   class MetsFixer
     attr_reader :mets

@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 module KDL
   class Page
     attr_reader :identifier
@@ -96,11 +98,12 @@ module KDL
       label_path.pop
       fields = @solr_doc.dup
       if the_label =~ /^\[?\d+\]?$/
-        label_path.push "#{page_type.capitalize} #{the_label}"
+        label_path.push "#{page_type.sub(/^(\w)/){|c|c.capitalize}} #{the_label}"
+        fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
       else
-        label_path.push "#{the_label.capitalize}"
+        label_path.push "#{the_label}"
+        fields[:title_display] = the_label.sub(/\s*([,.;:!?]+\s*)+$/, '')
       end
-      fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"
       #label_path.push "#{page_type.capitalize} #{the_label}"
       #if the_label =~ /^\d+$/
       #  fields[:title_display] = "#{label_path.join(' > ')} of #{@title}"

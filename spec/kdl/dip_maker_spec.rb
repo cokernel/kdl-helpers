@@ -177,6 +177,15 @@ module KDL
         dipmaker_jp2.cleanup
         File.exists?(File.join dip_directory_jp2, 'data', '0259.jp2').should be_false
       end
+
+      it "does not remove the METS file" do
+        dip_directory_jp2 = File.join(dips_directory, File.basename(aip_directory_jp2))
+        dipmaker_jp2 = DipMaker.new output, aip_directory_jp2, dips_directory
+        dipmaker_jp2.stage
+        File.exists?(File.join dip_directory_jp2, 'data', 'mets.xml').should be_true
+        dipmaker_jp2.cleanup
+        File.exists?(File.join dip_directory_jp2, 'data', 'mets.xml').should be_true
+      end
     end
 
     describe "#build" do

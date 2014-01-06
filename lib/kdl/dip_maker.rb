@@ -1,3 +1,8 @@
+require 'kdl/mets'
+require 'kdl/tiler'
+require 'exifr'
+require 'mustache'
+
 module KDL
   class DipMaker
     attr_reader :aip_directory, :dips_directory, :mets
@@ -55,7 +60,7 @@ module KDL
           rpn = Pathname.new(path)
           relpath = rpn.relative_path_from(pn)
           if relpath
-            unless @mets.referenced?(relpath.to_s)
+            unless @mets.referenced?(relpath.to_s) or relpath.to_s == 'mets.xml'
               @output.puts %-Deleting unreferenced file #{relpath}-
               @dip.remove_file(relpath)
             end
