@@ -62,6 +62,7 @@ module KDL
           end
         end
       end
+      @dip.manifest!
     end
 
     def generate_tiles(tiler=nil)
