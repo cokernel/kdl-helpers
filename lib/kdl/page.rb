@@ -33,7 +33,7 @@ module KDL
       hash[:browse_key_sort] = browse_key_sort
       hash.each_pair do |key, value|
         if value.class == String
-          hash[key] = value.strip.gsub(/\.\.$/, '.')
+          hash[key] = value.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '').strip.gsub(/\.\.$/, '.')
         end
       end
       hash
