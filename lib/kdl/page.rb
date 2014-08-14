@@ -353,7 +353,11 @@ module KDL
                                     file)))
           @resolution = xml.xpath('//ndnp:captureResolutionOriginal').first.content.to_i
         else
-          @resolution = @mets.base_resolution 
+          begin
+            @resolution = @mets.base_resolution 
+          rescue
+            @resolution = 300
+          end
         end
       end
       @resolution
