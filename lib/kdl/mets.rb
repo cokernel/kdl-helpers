@@ -141,7 +141,7 @@ module KDL
     def self.add_file_attr(method_name, attribute)
       define_method method_name do |options|
         query = "//mets:fileGrp[@ID='#{options[:fileGrp]}']/mets:file[@USE='#{options[:use]}']/@#{attribute}"
-        @mets.xpath(query).to_s
+        @mets.xpath(query).first.to_s
       end
     end
 
