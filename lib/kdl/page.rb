@@ -137,6 +137,8 @@ module KDL
       if has_finding_aid?
         if fields[:reference_audio_url_s] and fields[:reference_audio_url_s].length > 0
           fields[:format] = 'audio'
+        elsif page_type == 'audio'
+          fields[:format] = 'audio'
         elsif page_type == 'photograph'
           fields[:format] = 'images'
         else 
