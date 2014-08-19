@@ -190,6 +190,19 @@ module KDL
               File.dirname(href),
               stem
             )
+
+            ref_href = "#{base}.mp3"
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'reference audio',
+                           :file => #thumb_href,
+                           :mimetype => 'audio/mpeg'
+
+            sref_href = "#{base}.ogg"
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'secondary reference audio',
+                           :file => #front_thumb_href,
+                           :mimetype => 'audio/ogg'
+
             master_id = @mets.file_id :fileGrp => fileGrp_id,
                            :use => use
             @mets.remove_file :file_id => master_id
