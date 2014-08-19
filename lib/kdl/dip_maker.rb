@@ -182,7 +182,7 @@ module KDL
             master_id = @mets.file_id :fileGrp => fileGrp_id,
                            :use => use
             @mets.remove_file :file_id => master_id
-          when "audio/wav"
+          when /^(vnd.)?audio\/(x-)?wave?$/
             # We assume that the OGG and MP3 files have already been generated,
             # so we can just remove the master audio.
             stem = File.basename(href, '.wav')
