@@ -141,6 +141,8 @@ module KDL
           fields[:format] = 'audio'
         elsif page_type == 'photograph'
           fields[:format] = 'images'
+        elsif page_type == 'sheet'
+          fields[:format] = 'maps'
         else 
           fields[:format] = 'archival material'
         end
