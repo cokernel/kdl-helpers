@@ -302,7 +302,7 @@ module KDL
         rescue
           ''
         end
-      end
+      end.tr("\u0000-\u001f\u007f\u0080-\u009f", '')
     end
 
     def text_s
