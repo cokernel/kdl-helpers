@@ -1,5 +1,5 @@
 module KDL
-  class Normalizer
+  module Normalizer
     def normalize thing
       # I know it is not idiomatic Ruby
       # to care about specific classes.
