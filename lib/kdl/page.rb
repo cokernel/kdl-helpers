@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'kdl/normalizer'
 
 module KDL
   class Page

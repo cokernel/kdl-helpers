@@ -1,3 +1,5 @@
+require 'kdl/normalizer'
+
 module KDL
   class SolrMaker
     include KDL::Normalizer
