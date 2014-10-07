@@ -12,6 +12,7 @@ require 'rails'
 
 require 'tempfile'
 
+require 'kdl/normalizer'
 require 'kdl/access_package'
 require 'kdl/aip_maker'
 require 'kdl/dip_maker'

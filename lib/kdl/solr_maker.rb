@@ -1,5 +1,7 @@
 module KDL
   class SolrMaker
+    include KDL::Normalizer
+
     def initialize(output, access_package, solrs_directory)
       @output = output
       @access_package = access_package
@@ -27,7 +29,7 @@ module KDL
       FileUtils.mkdir_p(@solr_directory)
       solr_file = File.join(@solr_directory, identifier)
       File.open(solr_file, 'w') { |f|
-        hash = solr_doc.dup
+        hash = normalize(solr_doc.dup)
         f.write hash.to_json
       }
     end

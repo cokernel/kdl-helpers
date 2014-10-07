@@ -2,6 +2,8 @@ require 'nokogiri'
 
 module KDL
   class Page
+    include KDL::Normalizer
+
     attr_reader :identifier
     attr_reader :solr_doc
 
@@ -19,7 +21,7 @@ module KDL
       FileUtils.mkdir_p(solr_directory)
       solr_file = File.join(solr_directory, id)
       File.open(solr_file, 'w') { |f|
-        f.write page_fields.to_json
+        f.write normalize(page_fields).to_json
       }
     end
 
@@ -302,7 +304,7 @@ module KDL
         rescue
           ''
         end
-      end.tr("\u0000-\u001f\u007f\u0080-\u009f", '')
+      end
     end
 
     def text_s
