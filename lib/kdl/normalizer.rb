@@ -7,18 +7,17 @@ module KDL
       # However, my use case specifically involves
       # a Hash whose values are known to be Arrays (of String),
       # Strings, TrueClasses, and FalseClasses.
-      case thing.class
-      when Hash
+      if thing.class == Hash
         result = {}
         thing.each_pair do |key, value|
           result[key] = normalize value
         end
         result
-      when Array
+      elsif thing.class == Array
         thing.collect do |item|
           normalize item
         end
-      when String
+      elsif thing.class == String
         thing.tr("\u0000-\u001f\u007f\u0080-\u009f", ' ').gsub(/\s+/, ' ')
       else
         thing
