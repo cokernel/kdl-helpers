@@ -128,7 +128,7 @@ module KDL
         :viewer_url_s,
         :pdf_url_display,
         :parent_id_s,
-        :coordinates_s,
+        :coordinates_display,
         :reference_audio_url_s,
         :secondary_reference_audio_url_s,
       ].each do |page_field|
@@ -326,7 +326,7 @@ module KDL
       end
     end
 
-    def coordinates_s
+    def coordinates_display
       JSON.dump coordinates_hash
     end
 
