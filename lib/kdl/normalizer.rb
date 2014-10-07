@@ -1,6 +1,6 @@
 module KDL
   module Normalizer
-    def normalize thing
+    def self.normalize thing
       # I know it is not idiomatic Ruby
       # to care about specific classes.
       #
@@ -22,6 +22,10 @@ module KDL
       else
         thing
       end
+    end
+
+    def normalize thing
+      self.normalize thing
     end
   end
 end
