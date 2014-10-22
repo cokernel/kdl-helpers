@@ -98,13 +98,17 @@ module KDL
       hash[:synchronization_url_s] = @access_package.synchronization_url
       hash[:reference_audio_url_s] = @access_package.reference_audio_url
       hash[:text] = oral_history_text
-      hash[:text_s] = oral_history_text
+      #hash[:text_s] = oral_history_text
+      hash[:compound_object_broad_b] = true
+      hash[:compound_object_split_b] = true
       hash
     end
 
     def finding_aid_fields
       hash = {}
       hash[:finding_aid_url_s] = @access_package.finding_aid_url
+      hash[:compound_object_broad_b] = true
+      hash[:compound_object_split_b] = true
       hash
     end
 

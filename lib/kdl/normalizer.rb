@@ -18,7 +18,7 @@ module KDL
           normalize item
         end
       elsif thing.class == String
-        thing.tr("\u0000-\u001f\u007f\u0080-\u009f", ' ').gsub(/\s+/, ' ')
+        thing.tr("\u0000-\u001f\u007f\u0080-\u009f", ' ').gsub(/\\f/, " ").gsub(/\s+/, " ")
       else
         thing
       end

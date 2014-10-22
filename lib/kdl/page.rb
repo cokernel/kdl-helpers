@@ -68,7 +68,7 @@ module KDL
       [
         :id,
         :text,
-        :text_s,
+        #:text_s,
       ].each do |page_field|
         fields[page_field] = send(page_field)
       end
@@ -77,6 +77,8 @@ module KDL
       end
       fields[:unpaged_display] = true
       fields[:format] = 'collections'
+      fields[:compound_object_broad_b] = true
+      fields[:compound_object_split_b] = true
       fields
     end
 
@@ -121,7 +123,7 @@ module KDL
         :sequence_number_display,
         :sequence_sort,
         :text,
-        :text_s,
+        #:text_s,
         :reference_image_url_s,
         :thumbnail_url_s,
         :front_thumbnail_url_s,
@@ -134,10 +136,19 @@ module KDL
       ].each do |page_field|
         fields[page_field] = send(page_field)
       end
+      if sequence_number_display.to_i > 1
+        fields[:compound_object_broad_b] = false
+        fields[:compound_object_split_b] = false
+      else
+        fields[:compound_object_broad_b] = true
+        fields[:compound_object_split_b] = true
+      end
       unless fields[:source_s].nil?
         fields[:text] += fields[:source_s]
       end
       if has_finding_aid?
+        fields[:compound_object_broad_b] = false
+        fields[:compound_object_split_b] = true
         if fields[:reference_audio_url_s] and fields[:reference_audio_url_s].length > 0
           fields[:format] = 'audio'
         elsif page_type == 'audio'
