@@ -1,7 +1,10 @@
 require 'nokogiri'
+require 'kdl/normalizer'
 
 module KDL
   class Page
+    include KDL::Normalizer
+
     attr_reader :identifier
     attr_reader :solr_doc
 
@@ -19,7 +22,7 @@ module KDL
       FileUtils.mkdir_p(solr_directory)
       solr_file = File.join(solr_directory, id)
       File.open(solr_file, 'w') { |f|
-        f.write page_fields.to_json
+        f.write normalize(page_fields).to_json
       }
     end
 
@@ -65,7 +68,7 @@ module KDL
       [
         :id,
         :text,
-        :text_s,
+        #:text_s,
       ].each do |page_field|
         fields[page_field] = send(page_field)
       end
@@ -74,6 +77,8 @@ module KDL
       end
       fields[:unpaged_display] = true
       fields[:format] = 'collections'
+      fields[:compound_object_broad_b] = true
+      fields[:compound_object_split_b] = true
       fields
     end
 
@@ -118,23 +123,32 @@ module KDL
         :sequence_number_display,
         :sequence_sort,
         :text,
-        :text_s,
+        #:text_s,
         :reference_image_url_s,
         :thumbnail_url_s,
         :front_thumbnail_url_s,
         :viewer_url_s,
         :pdf_url_display,
         :parent_id_s,
-        :coordinates_s,
+        :coordinates_display,
         :reference_audio_url_s,
         :secondary_reference_audio_url_s,
       ].each do |page_field|
         fields[page_field] = send(page_field)
       end
+      if sequence_number_display.to_i > 1
+        fields[:compound_object_broad_b] = false
+        fields[:compound_object_split_b] = false
+      else
+        fields[:compound_object_broad_b] = true
+        fields[:compound_object_split_b] = true
+      end
       unless fields[:source_s].nil?
         fields[:text] += fields[:source_s]
       end
       if has_finding_aid?
+        fields[:compound_object_broad_b] = false
+        fields[:compound_object_split_b] = true
         if fields[:reference_audio_url_s] and fields[:reference_audio_url_s].length > 0
           fields[:format] = 'audio'
         elsif page_type == 'audio'
@@ -302,7 +316,7 @@ module KDL
         rescue
           ''
         end
-      end.tr("\u0000-\u001f\u007f\u0080-\u009f", '')
+      end
     end
 
     def text_s
@@ -323,7 +337,7 @@ module KDL
       end
     end
 
-    def coordinates_s
+    def coordinates_display
       JSON.dump coordinates_hash
     end
 
