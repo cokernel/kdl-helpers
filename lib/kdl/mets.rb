@@ -233,11 +233,24 @@ module KDL
     end
 
     def remove_file(options)
-      @mets.xpath("//mets:file[@ID='#{options[:file_id]}']").first.remove
-      @mets.xpath("//mets:div/mets:fptr[@FILEID='#{options[:file_id]}']").each do |node|
-        node.remove
+      if options.has_key?(:file_id) and options[:file_id]
+        @mets.xpath("//mets:file[@ID='#{options[:file_id]}']").first.remove
+        @mets.xpath("//mets:div/mets:fptr[@FILEID='#{options[:file_id]}']").each do |node|
+          node.remove
+        end
+        @changed = true
+      elsif options.has_key?(:use) and options[:use]
+        @mets.xpath("//mets:fileGrp[@USE='#{options[:use]}']").each do |fileGrp|
+          fileGrp.xpath("mets:file").each do |file|
+            file_id = file['ID']
+            @mets.xpath("//mets:div/mets:fptr[@FILEID='#{file_id}']").each do |node|
+              node.remove
+            end
+          end
+          fileGrp.remove
+        end
+        @changed = true
       end
-      @changed = true
     end
   end
 end

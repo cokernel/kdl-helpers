@@ -54,6 +54,11 @@ module KDL
     end
 
     def cleanup
+      # clear waves
+      @mets.remove_file :use => 'wave files'
+      @mets.save
+
+      # clear unreferenced files
       pn = Pathname.new(File.join @dip_directory, 'data')
       Find.find(File.join @dip_directory, 'data') do |path|
         if File.file?(path)
