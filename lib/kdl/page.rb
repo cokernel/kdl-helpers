@@ -68,7 +68,7 @@ module KDL
       [
         :id,
         :text,
-        #:text_s,
+        :text_s,
       ].each do |page_field|
         fields[page_field] = send(page_field)
       end
@@ -123,7 +123,7 @@ module KDL
         :sequence_number_display,
         :sequence_sort,
         :text,
-        #:text_s,
+        :text_s,
         :reference_image_url_s,
         :thumbnail_url_s,
         :front_thumbnail_url_s,
