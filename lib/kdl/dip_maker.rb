@@ -211,6 +211,24 @@ module KDL
             master_id = @mets.file_id :fileGrp => fileGrp_id,
                            :use => use
             @mets.remove_file :file_id => master_id
+          when /^video\/avi$/
+            # We assume that the MP4 file has already been generated, so we
+            # can just remove the master video.
+            stem = File.basename(href, '.avi')
+            base = File.join(
+              File.dirname(href),
+              stem
+            )
+
+            ref_href = "#{base}.mp4"
+            @mets.add_file :fileGrp => fileGrp_id,
+                           :use => 'reference video',
+                           :file => ref_href,
+                           :mimetype => 'video/mp4'
+
+            master_id = @mets.file_id :fileGrp => fileGrp_id,
+                           :use => use
+            @mets.remove_file :file_id => master_id
           end
         end
         @mets.save
