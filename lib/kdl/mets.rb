@@ -174,6 +174,7 @@ module KDL
     add_href_field :reference_image_path, :reference_image
     add_href_field :thumbnail_path, :thumbnail
     add_href_field :front_thumbnail_path, :front_thumbnail
+    add_href_field :reference_video_path, :reference_video
     add_href_field :reference_audio_path, :reference_audio
     add_href_field :secondary_reference_audio_path, :secondary_reference_audio
     add_href_field :viewer_path, :tiles_metadata

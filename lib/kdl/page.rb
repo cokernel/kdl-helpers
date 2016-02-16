@@ -131,6 +131,7 @@ module KDL
         :pdf_url_display,
         :parent_id_s,
         :coordinates_display,
+        :reference_video_url_s,
         :reference_audio_url_s,
         :secondary_reference_audio_url_s,
       ].each do |page_field|
@@ -271,6 +272,10 @@ module KDL
 
     def front_thumbnail_url_s
       dip_field(:front_thumbnail_path)
+    end
+
+    def reference_video_url_s
+      dip_field(:reference_video_path)
     end
 
     def reference_audio_url_s
