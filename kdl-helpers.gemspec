@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'lorax'
   spec.add_dependency 'mustache'
   spec.add_dependency 'nokogiri'
+  spec.add_dependency 'parallel'
   spec.add_dependency 'rails'
 
   spec.add_development_dependency 'autotest-standalone'

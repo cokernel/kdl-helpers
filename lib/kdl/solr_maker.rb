@@ -1,4 +1,5 @@
 require 'kdl/normalizer'
+require 'parallel'
 
 module KDL
   class SolrMaker
@@ -19,7 +20,7 @@ module KDL
 
     def build
       if paged?
-        pages.each do |page|
+        Parallel.each(pages) do |page|
           page.save @solr_directory
         end
       else
