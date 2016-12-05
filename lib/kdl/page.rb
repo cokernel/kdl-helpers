@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'kdl/normalizer'
+require 'exifr'
 
 module KDL
   class Page
@@ -127,7 +128,8 @@ module KDL
         :reference_image_url_s,
         :thumbnail_url_s,
         :front_thumbnail_url_s,
-        :viewer_url_s,
+        :reference_image_width_s,
+        :reference_image_height_s,
         :pdf_url_display,
         :parent_id_s,
         :coordinates_display,
@@ -286,8 +288,27 @@ module KDL
       dip_field(:secondary_reference_audio_path)
     end
 
+    # XXX: No longer used -- remove?
     def viewer_url_s
       dip_field(:viewer_path)
+    end
+
+    def reference_image_width_s
+      path = File.join(
+        @dip_directory,
+        'data',
+        @mets.send(:reference_image_path, @identifier)
+      )
+      EXIFR::JPEG.new(path).width.to_i
+    end
+
+    def reference_image_height_s
+      path = File.join(
+        @dip_directory,
+        'data',
+        @mets.send(:reference_image_path, @identifier)
+      )
+      EXIFR::JPEG.new(path).height.to_i
     end
 
     def sequence_number_display
